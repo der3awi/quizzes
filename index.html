@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pathology Mastery Engine | OSPE & Theory</title>
+    <title>Pathology Mastery Engine | POD 242 Final</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -11,7 +11,6 @@
             --bg: #0f172a;
             --panel: #1e293b;
             --accent: #38bdf8;
-            --ospe: #f472b6;
             --success: #10b981;
             --danger: #f43f5e;
             --flag: #f59e0b;
@@ -26,64 +25,67 @@
         .nav-header { padding: 1rem 2rem; background: var(--panel); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; z-index: 100; }
         .logo { font-weight: 800; letter-spacing: 0.1em; font-size: 0.85rem; display: flex; align-items: center; gap: 12px; color: #fff; }
         .pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; }
-        
-        .mode-switcher { display: flex; gap: 4px; background: #020617; padding: 4px; border-radius: 8px; border: 1px solid var(--border); }
-        .mode-btn { padding: 6px 16px; border: none; border-radius: 6px; font-size: 0.7rem; font-weight: 800; cursor: pointer; color: var(--text-dim); background: transparent; transition: 0.2s; }
-        .mode-btn.active { background: var(--panel); color: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .mode-btn.ospe-active { color: var(--ospe); border: 1px solid var(--ospe); background: rgba(244, 114, 182, 0.1); }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
 
         .app-grid { display: grid; grid-template-columns: 340px 1fr; flex: 1; overflow: hidden; }
+
         .sidebar { background: rgba(15, 23, 42, 0.4); border-right: 1px solid var(--border); padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; }
         .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+        .chart-wrapper { height: 220px; width: 100%; position: relative; }
+        
+        .label-id { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
         .matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 10px; }
-        .node { aspect-ratio: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; cursor: pointer; color: var(--text-dim); transition: all 0.2s; }
+        .node { aspect-ratio: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; cursor: pointer; color: var(--text-dim); position: relative; transition: all 0.2s; }
         .node.active { border-color: var(--accent); background: rgba(56, 189, 248, 0.1); color: white; }
         .node.correct { border-color: var(--success); color: var(--success); }
         .node.wrong { border-color: var(--danger); color: var(--danger); }
-        
+        .node.flagged::before { content: ''; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: var(--flag); border-radius: 50%; border: 2px solid var(--bg); }
+
         .stage { padding: 2rem 3rem; display: flex; justify-content: center; overflow-y: auto; }
         .content-wrap { max-width: 800px; width: 100%; }
 
         .viewport { 
-            width: 100%; height: 320px; background: #020617; border-radius: 16px; margin-bottom: 2rem; 
+            width: 100%; height: 240px; background: #020617; border-radius: 16px; margin-bottom: 2rem; 
             display: none; align-items: center; justify-content: center; border: 1px solid var(--border);
             overflow: hidden; position: relative;
         }
         .viewport img { width: 100%; height: 100%; object-fit: contain; }
-        .caption { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.8); padding: 5px 10px; font-size: 0.65rem; font-family: 'JetBrains Mono'; border-radius: 4px; color: var(--ospe); border: 1px solid var(--ospe); }
+        .caption { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.7); padding: 5px 10px; font-size: 0.65rem; font-family: 'JetBrains Mono'; border-radius: 4px; border: 1px solid var(--border); color: var(--accent); }
 
         .proc-header { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 0.75rem; margin-bottom: 1rem; opacity: 0.8; }
-        .ospe-header { color: var(--ospe); letter-spacing: 0.2em; }
         .q-text { font-size: 1.85rem; font-weight: 800; line-height: 1.3; margin-bottom: 2.5rem; color: #fff; }
 
         .options { display: grid; gap: 0.85rem; }
-        .opt-item { background: var(--panel); border: 1px solid var(--border); padding: 1.25rem 1.75rem; border-radius: 14px; cursor: pointer; display: flex; align-items: center; gap: 1.25rem; transition: 0.2s; }
+        .opt-item { background: var(--panel); border: 1px solid var(--border); padding: 1.25rem 1.75rem; border-radius: 14px; cursor: pointer; display: flex; align-items: center; gap: 1.25rem; font-size: 1.05rem; font-weight: 500; transition: 0.2s; }
         .opt-item:hover { border-color: var(--accent); transform: translateX(6px); }
         .opt-item.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.1); color: var(--success); }
         .opt-item.wrong { border-color: var(--danger); background: rgba(244, 63, 94, 0.1); color: var(--danger); }
+        .opt-index { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; opacity: 0.4; }
 
-        .rationale { margin-top: 2rem; padding: 1.75rem; background: rgba(30, 41, 59, 0.6); border-left: 4px solid var(--accent); border-radius: 10px; display: none; line-height: 1.6; }
+        .hint-text { margin-top: 1.5rem; padding: 1.25rem; background: rgba(56, 189, 248, 0.05); border: 1px dashed var(--accent); border-radius: 12px; display: none; color: var(--accent); font-size: 0.95rem; line-height: 1.5; }
+        .rationale { margin-top: 2rem; padding: 1.75rem; background: rgba(30, 41, 59, 0.6); border-left: 4px solid var(--accent); border-radius: 10px; display: none; line-height: 1.6; color: var(--text-dim); }
+
+        .action-row { margin-top: 3rem; display: flex; gap: 1rem; }
+        .btn-ui { padding: 1rem 2rem; border-radius: 10px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border: none; transition: 0.2s; }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+        .btn-next { background: var(--success); color: #fff; flex: 1; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); }
     </style>
 </head>
 <body>
 
 <nav class="nav-header">
-    <div class="logo"><div class="pulse"></div> PATHOLOGY MASTER</div>
-    <div class="mode-switcher">
-        <button id="btnTheory" class="mode-btn active" onclick="setMode('theory')">THEORY CORE</button>
-        <button id="btnOspe" class="mode-btn" onclick="setMode('ospe')">OSPE PRACTICAL</button>
-    </div>
-    <button class="mode-btn" style="color: var(--danger);" onclick="wipe()">Reset</button>
+    <div class="logo"><div class="pulse"></div> PATHOLOGY MASTER CORE // POD 242</div>
+    <button class="btn-ui btn-outline" style="padding: 0.5rem 1rem; font-size: 0.6rem;" onclick="wipe()">Reset Progress</button>
 </nav>
 
 <div class="app-grid">
     <aside class="sidebar">
         <div class="card">
-            <span class="label-id">Diagnostic Metrics</span>
-            <div style="height: 200px;"><canvas id="radarChart"></canvas></div>
+            <span class="label-id">Domain Mastery Diagnostics</span>
+            <div class="chart-wrapper"><canvas id="radarChart"></canvas></div>
         </div>
         <div class="card" style="flex: 1;">
-            <span class="label-id" id="matrixTitle">Procedure Matrix</span>
+            <span class="label-id">Procedure Matrix</span>
             <div class="matrix" id="matrix"></div>
         </div>
     </aside>
@@ -91,15 +93,21 @@
     <main class="stage">
         <div class="content-wrap">
             <div class="viewport" id="viewport">
-                <img id="vImg" src="" alt="Clinical Specimen">
-                <div class="caption" id="vCaption">OSPE // SPECIMEN</div>
+                <img id="vImg" src="" alt="Specimen">
+                <div class="caption" id="vCaption">SPECIMEN // LOADING</div>
             </div>
+
             <div class="proc-header" id="pID">PROCEDURE // 01</div>
-            <div class="q-text" id="qBody">Loading Engine...</div>
+            <div class="q-text" id="qBody">Select a node to begin sequence.</div>
             <div class="options" id="optList"></div>
+            
+            <div class="hint-text" id="hintBox"></div>
             <div class="rationale" id="ratBox"></div>
-            <div style="margin-top: 30px;">
-                <button class="mode-btn active" style="width: 100%; padding: 15px;" onclick="proceed()">Next Station →</button>
+
+            <div class="action-row">
+                <button class="btn-ui btn-outline" onclick="toggleHint()">Hint</button>
+                <button class="btn-ui btn-outline" style="color: var(--flag);" id="flagBtn" onclick="toggleFlag()">Flag</button>
+                <button class="btn-ui btn-next" id="nextBtn" onclick="proceed()">Next Procedure</button>
             </div>
         </div>
     </main>
@@ -107,114 +115,182 @@
 
 <script>
     const fullPool = [
-        // PRACTICALS (1-9)
-        { cat: 0, q: "A 25-year-old cyclist has knee pain and morning stiffness. Imaging shows joint space narrowing and osteophytes. Diagnosis?", a: ["Rheumatoid Arthritis", "Osteoarthritis", "Gouty Arthritis", "Scurvy"], c: 1, r: "Osteoarthritis is degenerative, caused by mechanical stress and trauma to cartilage.", img: "q1.jpg", label: "X-RAY // KNEE" },
-        { cat: 0, q: "A 70-year-old with nocturia has a firm, nodular prostate. Histology shows increased stroma and epithelial density. Diagnosis?", a: ["Adenocarcinoma", "Benign Prostatic Hyperplasia", "Prostatitis", "Atrophy"], c: 1, r: "BPH involves a non-malignant proliferation of epithelial and stromal elements.", img: "q2.jpg", label: "HISTO // PROSTATE" },
-        { cat: 0, q: "A COVID-19 ARDS lung surface shows a 'cobblestone' gross appearance. This macroscopic hallmark indicates:", a: ["Acute Suppuration", "Widespread Pulmonary Fibrosis", "Bronchiectasis", "Lobar Haemorrhage"], c: 1, r: "Widespread fibrosis causes surface irregularities described as cobblestone gross appearance.", img: "q3.jpg", label: "GROSS // LUNG" },
-        { cat: 0, q: "Lymph node histology reveals malignant cells forming glandular units. What is the interpretation?", a: ["Primary Lymphoma", "Metastatic Adenocarcinoma", "Reactive Node", "Sarcoidosis"], c: 1, r: "Glandular units in a lymph node signify metastatic adenocarcinoma.", img: "q4.jpg", label: "HISTO // NODE" },
-        { cat: 0, q: "Multiple 'cannonball' masses are found radiographically in the lung fields. What is the classic primary origin?", a: ["Breast", "Prostate", "Kidney (RCC)", "Colon"], c: 2, r: "Renal Cell Carcinoma classically presents with cannonball metastases in the lung.", img: "q5.jpg", label: "X-RAY // LUNGS" },
-        { cat: 0, q: "A 58-year-old man with uncontrolled diabetes died 2 days after chest pain. Histology shows wavy fibers and neutrophils. Necrosis type?", a: ["Liquefactive", "Coagulative", "Caseous", "Fat"], c: 1, r: "Ischemic injury in solid organs results in coagulative necrosis.", img: "q6.jpg", label: "HISTO // HEART" },
-        { cat: 0, q: "Identify the wedge-shaped, well-demarcated pale area in the renal cortex shown here:", a: ["Abscess", "Infarct", "Tumor", "Cyst"], c: 1, r: "The wedge shape results from the kidney's vascular supply, typical of an infarct.", img: "q8.jpg", label: "GROSS // KIDNEY" },
+        // 1-9: PRACTICALS & CLINICALS
+        { cat: 0, q: "A 25-year-old cyclist has knee pain and morning stiffness. Imaging shows joint space narrowing and osteophytes. Diagnosis?", a: ["Rheumatoid Arthritis", "Osteoarthritis", "Gouty Arthritis", "Scurvy"], c: 1, r: "Osteoarthritis is degenerative, caused by mechanical stress and trauma to cartilage.", h: "Wear and tear etiology.", img: "q1.jpg", label: "X-RAY // KNEE" },
+        { cat: 0, q: "A 70-year-old with nocturia has a firm, nodular prostate. Histology shows increased stroma and epithelial density. Diagnosis?", a: ["Adenocarcinoma", "Benign Prostatic Hyperplasia", "Prostatitis", "Atrophy"], c: 1, r: "BPH involves a non-malignant proliferation of epithelial and stromal elements.", h: "Look for increased stromal density.", img: "q2.jpg", label: "HISTO // PROSTATE" },
+        { cat: 0, q: "A COVID-19 ARDS lung surface shows a 'cobblestone' gross appearance. This macroscopic hallmark indicates:", a: ["Acute Suppuration", "Widespread Pulmonary Fibrosis", "Bronchiectasis", "Lobar Haemorrhage"], c: 1, r: "Widespread fibrosis causes surface irregularities described as cobblestone gross appearance.", h: "Chronic scarring hallmark.", img: "q3.jpg", label: "GROSS // LUNG" },
+        { cat: 0, q: "Lymph node histology reveals malignant cells forming glandular units. What is the interpretation?", a: ["Primary Lymphoma", "Metastatic Adenocarcinoma", "Reactive Node", "Sarcoidosis"], c: 1, r: "Glandular units in a lymph node signify metastatic adenocarcinoma.", h: "Tissue foreign to a node.", img: "q4.jpg", label: "HISTO // NODE" },
+        { cat: 0, q: "Multiple 'cannonball' masses are found radiographically in the lung fields. What is the classic primary origin?", a: ["Breast", "Prostate", "Kidney (RCC)", "Colon"], c: 2, r: "Renal Cell Carcinoma classically presents with cannonball metastases in the lung.", h: "Vascular abdominal organ.", img: "q5.jpg", label: "X-RAY // LUNGS" },
+        { cat: 0, q: "A 58-year-old man with uncontrolled diabetes died 2 days after chest pain. Histology shows wavy fibers and neutrophils. Necrosis type?", a: ["Liquefactive", "Coagulative", "Caseous", "Fat"], c: 1, r: "Ischemic injury in solid organs like the heart results in coagulative necrosis.", h: "Hallmark of MI.", img: "q6.jpg", label: "HISTO // HEART" },
+        { cat: 0, q: "Identify the wedge-shaped, well-demarcated pale area in the renal cortex shown here:", a: ["Abscess", "Infarct", "Tumor", "Cyst"], c: 1, r: "The wedge shape results from the kidney's vascular supply, typical of an infarct.", h: "Vascular supply pattern.", img: "q8.jpg", label: "GROSS // KIDNEY" },
         { cat: 0, q: "A lung biopsy showing a central necrotic region surrounded by giant cells is called:", a: ["Abscess", "Granuloma", "Infarct", "Tumor"], c: 1, r: "A granuloma is a chronic inflammatory response to contain an infectious agent.", h: "TB hallmark." },
-        { cat: 0, q: "Identify the adaptation in this gross heart specimen showing thickened ventricular walls:", a: ["Hyperplasia", "Atrophy", "Hypertrophy", "Metaplasia"], c: 2, r: "Hypertrophy is an increase in cell size by increasing cell substance.", img: "q10.jpg", label: "GROSS // HEART" },
+        { cat: 0, q: "Identify the adaptation in this gross heart specimen showing thickened ventricular walls:", a: ["Hyperplasia", "Atrophy", "Hypertrophy", "Metaplasia"], c: 2, r: "Hypertrophy is an increase in cell size by increasing cell substance.", h: "Hypertension response.", img: "q10.jpg", label: "GROSS // HEART" },
 
-        // THEORY (10-70) - Shortened for brevity, use your full 79-question logic here
-        { cat: 1, q: "A smoker’s bronchial lining changes from columnar to squamous epithelium. Adaptation?", a: ["Hyperplasia", "Dysplasia", "Metaplasia", "Atrophy"], c: 2, r: "Metaplasia is reversible replacement of one adult cell type with another." },
-        { cat: 0, q: "A 30-year-old at 36 weeks gestation has RUQ pain. Biopsy shows microvesicular steatosis. Diagnosis?", a: ["Wilson's", "AFLP", "Hepatitis", "Preeclampsia"], c: 1, r: "AFLP is associated with mitochondrial defects in late pregnancy.", img: "q12.jpg", label: "HISTO // LIVER" },
-        { cat: 0, q: "Examine this brain specimen. It shows a space-occupying mass with tissue distortion. Diagnosis?", a: ["Liquefactive", "Brain Tumor", "MS", "Abscess"], c: 1, r: "A solid mass effect is characteristic of a primary tumor.", img: "q13.jpg", label: "GROSS // BRAIN TUMOR" },
-        
-        // Add all other 79 questions from previous version here...
-        
-        { cat: 0, q: "Elderly female with right-side weakness shows extensive liquefactive necrosis in the brain. Diagnosis?", a: ["Tumor", "Stroke / CVA", "Meningitis", "Abscess"], c: 1, r: "Stroke results in liquefactive necrosis in the CNS.", img: "q80.jpg", label: "GROSS // BRAIN" },
-        { cat: 0, q: "Examine this organ. Based on its swollen, dull, and hyperemic surface, what is the diagnosis?", a: ["Normal", "Acute Appendicitis", "Mucocele", "Carcinoid"], c: 1, r: "Swollen, dull surface is classic for acute appendicitis.", img: "q81.jpg", label: "GROSS // APPENDIX" }
+        // 10-19
+        { cat: 1, q: "A smoker’s bronchial lining changes from columnar to squamous epithelium. Which adaptation is this?", a: ["Hyperplasia", "Dysplasia", "Metaplasia", "Atrophy"], c: 2, r: "Metaplasia is the reversible replacement of one adult cell type with another better suited to stress.", h: "Change in cell type." },
+        { cat: 0, q: "A 30-year-old at 36 weeks gestation has RUQ pain and malaise. Biopsy shows microvesicular steatosis. Diagnosis?", a: ["Wilson's Disease", "Acute Fatty Liver of Pregnancy", "Alcoholic Hepatitis", "Hepatitis E"], c: 1, r: "AFLP is a clinical syndrome presenting in late pregnancy associated with mitochondrial defects.", h: "Pregnancy specific.", img: "q12.jpg", label: "HISTO // LIVER" },
+        { cat: 0, q: "Examine the gross appearance of this brain specimen. It shows a distinct, space-occupying mass with surrounding tissue distortion. What is the most likely diagnosis?", a: ["Liquefactive Necrosis", "Primary Brain Tumor", "Multiple Sclerosis", "Brain Abscess"], c: 1, r: "A brain tumor presents as a solid, space-occupying lesion causing mass effect, unlike the softened, cavity-forming appearance of liquefactive necrosis.", h: "Space-occupying mass.", img: "q13.jpg", label: "GROSS // BRAIN TUMOR" },
+        { cat: 1, q: "Which adaptation is characterized by a decrease in both the size and number of cells?", a: ["Hypertrophy", "Atrophy", "Metaplasia", "Dysplasia"], c: 1, r: "Atrophy involves cellular shrinkage and numerical reduction.", h: "Decreased size/number." },
+        { cat: 3, q: "What does the term 'hyperchromatic' refer to in a malignant cell nucleus?", a: ["DNA fragmentation", "Dark staining due to increased nucleic acid", "Pale appearance", "Nuclear shrinkage"], c: 1, r: "Hyperchromasia indicates increased DNA synthesis and unpacking.", h: "Dark staining." },
+        { cat: 3, q: "Which feature describes cells of unequal sizes and shapes in a tumor biopsy?", a: ["Pleomorphism", "Hyperchromasia", "Anaplasia", "Hyperplasia"], c: 0, r: "Pleomorphism is a key microscopic feature of malignant and dysplastic cells.", h: "Variation in shape." },
+        { cat: 1, q: "What is the result of hypoxic death in solid organs like the kidney or heart?", a: ["Liquefactive", "Coagulative", "Caseous", "Fat"], c: 1, r: "Ischemic injury in most solid organs results in coagulative necrosis.", h: "Solid organ ischemia." },
+        { cat: 1, q: "Identify the process involving calcium deposition in dead/dying tissues with normal serum calcium:", a: ["Metastatic calcification", "Dystrophic calcification", "Hyalinization", "Fibrosis"], c: 1, r: "Dystrophic calcification occurs in damaged tissues like aging valves.", h: "Damaged tissue." },
+        { cat: 2, q: "Which cardinal sign of inflammation was added by Rudolf Virchow?", a: ["Dolor", "Tumor", "Functio laesa", "Calor"], c: 2, r: "Virchow added Loss of Function to the original four signs.", h: "The 5th sign." },
+        { cat: 2, q: "What is the primary cellular hallmark of the acute inflammatory response?", a: ["Macrophages", "Neutrophils", "Plasma cells", "Lymphocytes"], c: 1, r: "Neutrophils are the first responders in acute inflammation.", h: "Acute hallmark." },
+
+        // 20-29
+        { cat: 2, q: "Which fluid is characterized by high protein content and inflammatory cells?", a: ["Transudate", "Exudate", "Serous fluid", "Effusion"], c: 1, r: "Exudates result from increased vascular permeability during inflammation.", h: "High protein." },
+        { cat: 2, q: "In leukocyte extravasation, what step immediately follows 'Rolling'?", a: ["Margination", "Adhesion", "Transmigration", "Chemotaxis"], c: 1, r: "Rolling is followed by firm adhesion via integrins.", h: "Next step after rolling." },
+        { cat: 2, q: "Which chemical mediator is primarily responsible for 'Dolor' (pain) of inflammation?", a: ["Histamine", "Heparin", "Prostaglandins", "Complement"], c: 2, r: "Prostaglandins, made via COX, are key pain mediators.", h: "Pain mediator." },
+        { cat: 2, q: "What is the mechanism of action for NSAIDs in reducing inflammation and pain?", a: ["Destroying neutrophils", "Inhibiting COX", "Blocking histamine", "Promoting collagen"], c: 1, r: "NSAIDs inhibit COX to prevent prostaglandin synthesis.", h: "COX inhibition." },
+        { cat: 2, q: "Which growth factor is primarily responsible for neovascularization during repair?", a: ["TGF-beta", "VEGF", "PDGF", "TNF"], c: 1, r: "VEGF stimulates the formation of new blood vessels.", h: "Neovascularization." },
+        { cat: 2, q: "Pus (suppuration) is composed primarily of which cell type?", a: ["Lymphocytes", "Plasma cells", "Dead/dying neutrophils", "Fibroblasts"], c: 2, r: "Pus is a purulent exudate rich in neutrophils.", h: "Pus composition." },
+        { cat: 2, q: "What is the immediate vascular response to injury before vasodilation?", a: ["Permeability increase", "Transient vasoconstriction", "Margination", "Stasis"], c: 1, r: "Injury initially causes brief vasoconstriction before dilation.", h: "Transient response." },
+        { cat: 2, q: "Which cell arrives 24-48 hours after injury to replace neutrophils?", a: ["Eosinophils", "Macrophages", "Basophils", "Plasma cells"], c: 1, r: "Macrophages are the dominant cells in later acute and chronic inflammation.", h: "Replacement cell." },
+        { cat: 2, q: "Which cell is known as the 'immunoglobulin factory' in chronic inflammation?", a: ["Macrophage", "Plasma cell", "Neutrophil", "Mast cell"], c: 1, r: "Plasma cells secrete antibodies.", h: "Antibody producer." },
+        { cat: 3, q: "What type of collagen is the structural hallmark of the basement membrane?", a: ["Type 1", "Type 2", "Type 3", "Type 4"], c: 3, r: "Type 4 collagen is found specifically in basement membranes.", h: "Basement = 4." },
+
+        // 30-39
+        { cat: 2, q: "At 3 months post-injury, a matured scar reaches what max % of original strength?", a: ["10%", "50%", "80%", "100%"], c: 2, r: "Scar strength peaks at 80% and remains slightly inferior to healthy skin.", h: "Max strength %." },
+        { cat: 1, q: "Which cell type is classified as 'Stable' (G0 phase)?", a: ["Epidermal cells", "Hepatocytes", "Neurons", "Cardiac myocytes"], c: 1, r: "Hepatocytes divide only when tissue is lost.", h: "G0 phase." },
+        { cat: 2, q: "A blind-ended tract connecting an abscess to a body surface is a:", a: ["Fistula", "Sinus", "Ulcer", "Keloid"], c: 1, r: "A sinus has one opening; a fistula connects two surfaces.", h: "Single opening tract." },
+        { cat: 2, q: "Which tissue is characterized by new capillaries, fibroblasts, and inflammatory cells?", a: ["Scar tissue", "Granulation tissue", "Necrotic tissue", "Granuloma"], c: 1, r: "Granulation tissue is the hallmark of healthy healing.", h: "Healthy healing hallmark." },
+        { cat: 2, q: "Healing of a large wound gap via contraction and granulation tissue is:", a: ["Primary intention", "Secondary intention", "Tertiary intention", "Resolution"], c: 1, r: "Secondary intention involves larger defects and contraction.", h: "Gap healing." },
+        { cat: 2, q: "Which cell in chronic inflammation is responsible for destruction and repair?", a: ["Neutrophil", "Macrophage", "Eosinophil", "Basophil"], c: 1, r: "Macrophages are central to the chronic inflammatory response.", h: "Dual role cell." },
+        { cat: 2, q: "Which type of collagen is primary in bone, tendons, and mature scars?", a: ["Type 1", "Type 2", "Type 3", "Type 4"], c: 0, r: "Type 1 is the most abundant and strong collagen type.", h: "Bone/tendon type." },
+        { cat: 2, q: "What process pulls the edges of a large wound together during secondary intention?", a: ["Vasodilation", "Wound contraction", "Epithelialization", "Calcification"], c: 1, r: "Myofibroblasts contract to close wound gaps.", h: "Pulling edges." },
+        { cat: 2, q: "What is the hallmark histological feature of Tuberculosis granulomas?", a: ["Liquefactive necrosis", "Caseous necrosis", "Suppuration", "Fat necrosis"], c: 1, r: "TB granulomas are characterized by cheesy caseous necrosis.", h: "Cheesy necrosis." },
+        { cat: 2, q: "Which specific stain is used to identify Mycobacterium Tuberculosis?", a: ["Gram", "ZN (Ziehl-Neelsen)", "PAS", "H&E"], c: 1, r: "The ZN stain identifies the waxy coat of TB bacilli.", h: "Acid-fast stain." },
+
+        // 40-49
+        { cat: 2, q: "Which multi-nucleated cell is classically found in a TB granuloma?", a: ["Foreign body giant cell", "Langhans giant cell", "Osteoclast", "Megakaryocyte"], c: 1, r: "Langhans giant cells have horseshoe nuclei.", h: "Horshoe nuclei.", img: "q41.jpg", label: "HISTO // LANGHANS" },
+        { cat: 2, q: "Granulomatous inflammation is a unique form of:", a: ["Acute inflammation", "Chronic inflammation", "Cell adaptation", "Malignancy"], c: 1, r: "It is a specialized pattern of chronic inflammation driven by macrophages.", h: "Special chronic pattern." },
+        { cat: 2, q: "Tuberculosis is primarily which type of hypersensitivity reaction?", a: ["Type I", "Type II", "Type III", "Type IV"], c: 3, r: "TB involves a T-cell mediated (delayed) Type IV hypersensitivity.", h: "Delayed type." },
+        { cat: 2, q: "In the evolution of a TB granuloma, which cell type recruits macrophages?", a: ["Neutrophils", "Sensitized T-cells", "Plasma cells", "Eosinophils"], c: 1, r: "T-cells produce cytokines that recruit and activate macrophages.", h: "Recruiter cell." },
+        { cat: 3, q: "An obstruction in the Left Anterior Descending (LAD) artery is most likely to result in:", a: ["Inferior infarct", "Lateral infarct", "Anterior infarct", "Posterior infarct"], c: 2, r: "Obstruction of the LAD typically results in an anterior infarction.", h: "LAD territory." },
+        { cat: 2, q: "Chronic granulomatous inflammation is most likely triggered by:", a: ["Acute trauma", "Persistent agents", "Allergic pollen", "Sunburn"], c: 1, r: "Agents like TB bacilli that cannot be cleared trigger granulomas.", h: "Persistent trigger." },
+        { cat: 2, q: "Where do the nuclei typically cluster in a Langhans Giant Cell?", a: ["Randomly", "At the periphery", "In the center", "At one pole"], c: 1, r: "Peripheral arrangement is typical of Langhans giant cells.", h: "Nuclei location." },
+        { cat: 3, q: "A benign tumor of glandular epithelium is termed an adenoma. The malignant version is:", a: ["Adenosarcoma", "Adenocarcinoma", "Papilloma", "Carcinoma in situ"], c: 1, r: "Epithelial malignant tumors are carcinomas; Adeno = glands.", h: "Malignant gland tumor." },
+        { cat: 3, q: "Malignant tumors derived from mesenchymal tissue are called:", a: ["Carcinomas", "Sarcomas", "Adenomas", "Lymphomas"], c: 1, r: "Sarcomas originate from bone, muscle, or fat.", h: "Connective malignancy." },
+        { cat: 3, q: "A 'pleomorphic' tumor cell shows variation in:", a: ["Growth rate", "Size and shape", "Staining only", "Location"], c: 1, r: "Pleomorphism refers to the loss of uniform size and shape.", h: "Size/shape variation." },
+
+        // 50-59
+        { cat: 3, q: "What does the 'Grade' of a tumor specifically refer to?", a: ["Spread distance", "Degree of differentiation", "Mass size", "Patient age"], c: 1, r: "Grade refers to the microscopic degree of differentiation.", h: "Differentiation level." },
+        { cat: 3, q: "Which finding is the most definitive sign of malignancy histologically?", a: ["Mitotic figures", "Local invasion", "Pleomorphism", "Hyperchromasia"], c: 1, r: "Invasion across the basement membrane is the definitive marker of cancer.", h: "Definitive marker." },
+        { cat: 3, q: "A benign tumor of fibrous tissue is a fibroma. A malignant one is a:", a: ["Fibrosarcoma", "Fibrocarcinoma", "Fibroadenoma", "Fibrapapilloma"], c: 0, r: "Connective tissue malignancies use the suffix -sarcoma.", h: "Fibrous malignancy." },
+        { cat: 3, q: "A tumor described as 'well-differentiated' most closely resembles:", a: ["Embryonic tissue", "The tissue of origin", "No known tissue", "Inflammatory tissue"], c: 1, r: "Well-differentiated cells look like the parent tissue.", h: "Parent resemblance." },
+        { cat: 3, q: "Which paraneoplastic syndrome results in high BP and a buffalo hump in lung cancer?", a: ["Hypercalcemia", "Cushing Syndrome", "Anemia", "Hypoglycemia"], c: 1, r: "Ectopic ACTH secretion causes paraneoplastic Cushing Syndrome.", h: "Ectopic ACTH." },
+        { cat: 3, q: "What is the term for disordered growth not breaching the basement membrane?", a: ["Metaplasia", "Carcinoma in situ", "Invasive carcinoma", "Hyperplasia"], c: 1, r: "Carcinoma in situ is high-grade dysplasia that hasn't invaded yet.", h: "Non-invasive growth." },
+        { cat: 3, q: "Tumors spread to the liver first from the GI tract due to:", a: ["Lymphatics", "Portal venous circulation", "Gravity", "Direct contact"], c: 1, r: "GI blood drains through the portal system into the liver filter.", h: "GI filter route.", img: "q58.jpg", label: "GROSS // LIVER META" },
+        { cat: 3, q: "What process maintains blood in a fluid state inside an intact vessel?", a: ["Thrombosis", "Embolism", "Haemostasis", "Fibrinolysis"], c: 2, r: "Haemostasis is the physiological process maintaining blood in a fluid state.", h: "Fluid state process." },
+        { cat: 3, q: "Which step is the formation of a fibrin clot via the coagulation cascade?", a: ["Primary haemostasis", "Secondary haemostasis", "Vascular spasm", "Fibrinolysis"], c: 1, r: "Secondary haemostasis involves fibrin clot formation.", h: "Clot formation step." },
+        { cat: 3, q: "Normal endothelial cells prevent platelet interaction by secreting:", a: ["Endothelin", "Nitric oxide/Prostacyclin", "Thromboxane A2", "vWF"], c: 1, r: "Endothelial cells secrete anti-aggregant substances.", h: "Anti-clot secretions." },
+
+        // 60-69
+        { cat: 3, q: "What is the typical lifespan of a platelet in the circulation?", a: ["120 days", "30 days", "7-10 days", "24 hours"], c: 2, r: "Platelets live in the circulation for 7-10 days.", h: "Platelet lifespan." },
+        { cat: 3, q: "Which clinical state is defined as diminished circulating platelet concentration?", a: ["Thrombosis", "Thrombocytopaenia", "Haemophilia", "Leukopenia"], c: 1, r: "Thrombocytopaenia leads to bleeding tendencies.", h: "Low platelets." },
+        { cat: 3, q: "Which triad describes predisposing factors to thrombosis?", a: ["Virchow's Triad", "Beck's Triad", "Cushing's Triad", "Whipple's Triad"], c: 0, r: "Virchow's Triad includes abnormalities of vessel wall, flow, and constituents.", h: "Thrombosis triad." },
+        { cat: 3, q: "Which type of shock is specifically characterized by BRADYCARDIA and WARM DRY SKIN?", a: ["Hypovolemic", "Septic", "Neurogenic", "Cardiogenic"], c: 2, r: "Neurogenic shock presents with bradycardia and warm, dry skin.", h: "Bradycardia shock." },
+        { cat: 3, q: "Which marker is the 'gold standard' for detecting cardiac necrosis in an MI?", a: ["CK-MB", "LDH", "Troponins", "Myoglobin"], c: 2, r: "Troponin I and T are specific gold standard markers.", h: "Gold standard marker." },
+        { cat: 3, q: "In the acronym 'PROVe' for Tetralogy of Fallot, what does 'O' stand for?", a: ["Obstruction", "Over-riding aorta", "Open ductus", "Oedema"], c: 1, r: "The 'O' stands for Over-riding aorta.", h: "PROVe acronym." },
+        { cat: 3, q: "A 'yellow rubbery centre' indicates an MI of what age?", a: ["18 hours", "24-48 hours", "3-4 days", "3-6 weeks"], c: 2, r: "A yellow rubbery center appears 3-4 days after the onset.", h: "3-4 day gross finding." },
+        { cat: 0, q: "A 50-year-old male fell and caught his arm. Imaging shows a break in the collarbone. Abnormality?", a: ["Scapular fracture", "Midshaft Clavicular Fracture", "Acromial dislocation", "Humerus neck fracture"], c: 1, r: "A fall on an outstretched arm or direct impact often breaks the midshaft clavicle.", h: "Shoulder trauma.", img: "q69.jpg", label: "X-RAY // SHOULDER" },
+        { cat: 0, q: "A 12-year-old on crutches for a year shows superior femoral displacement and increased radiolucency. Findings?", a: ["Femoral head necrosis", "Right femoral neck fracture & Osteopenia", "Hip dysplasia", "Slipped epiphysis"], c: 1, r: "Chronic disuse leads to osteopenia, and superior displacement indicates a fracture site.", h: "Pediatric hip trauma.", img: "q70.jpg", label: "X-RAY // HIP" },
+        { cat: 0, q: "A 62-year-old with shoulder aching shows a benign cartilaginous tumor on the proximal humerus. Diagnosis?", a: ["Osteosarcoma", "Enchondroma", "Chondrosarcoma", "Osteoma"], c: 1, r: "Enchondromas are common benign cartilaginous tumors found in the humerus and hands.", h: "Benign cartilaginous.", img: "q71.jpg", label: "X-RAY // HUMERUS" },
+
+        // 70-78
+        { cat: 0, q: "A white wedge-shape necrotic lesion observed on the kidney cortex during post-mortem. Cause?", a: ["Acute suppuration", "Renal Infarction", "Tuberculosis", "Nephroma"], c: 1, r: "Renal infarction typically presents as a wedge-shaped, pale area of coagulative necrosis.", h: "Wedge-shaped necrosis.", img: "q72.jpg", label: "GROSS // KIDNEY" },
+        { cat: 1, q: "Which cell is known as the 'sentinel' cell of the immune system in tissues?", a: ["Neutrophil", "Mast cell/Macrophage", "B-cell", "T-cell"], c: 1, r: "Macrophages and Mast cells reside in tissues to detect initial injury.", h: "Sentinel cell." },
+        { cat: 2, q: "The process of programmed cell death without triggering inflammation is called:", a: ["Necrosis", "Apoptosis", "Autolysis", "Heterolysis"], c: 1, r: "Apoptosis is an orderly, energy-dependent form of cell death.", h: "Non-inflammatory death." },
+        { cat: 2, q: "Which enzyme is the master executioner in the apoptotic pathway?", a: ["Caspase", "Lipase", "Protease", "Amylase"], c: 0, r: "Caspases cleave proteins to dismantle the cell during apoptosis.", h: "Executioner enzyme." },
+        { cat: 3, q: "A tumor that spreads through the pleural or peritoneal cavities is using which route?", a: ["Hematogenous", "Lymphatic", "Seeding of body cavities", "Invasion"], c: 2, r: "Seeding is a characteristic spread of cancers in the abdomen and chest.", h: "Cavity spread." },
+        { cat: 3, q: "The stage of a cancer (e.g., TNM) is based on what clinical factor?", a: ["Microscopic grade", "Size and extent of spread", "Number of mitoses", "Patient's age"], c: 1, r: "Stage determines the clinical extent of the disease.", h: "TNM meaning." },
+        { cat: 3, q: "Which syndrome involves hypercalcemia as a paraneoplastic effect?", a: ["Squamous cell lung cancer", "Small cell lung cancer", "Colon cancer", "Prostate cancer"], c: 0, r: "PTHrP production by squamous cell carcinoma leads to hypercalcemia.", h: "High calcium." },
+        { cat: 2, q: "Which of the following is a classic clinical sign of an acute lung abscess?", a: ["Weight gain", "Foul-smelling sputum", "Clear lungs", "Hypotension"], c: 1, r: "Lung abscesses often involve anaerobic bacteria causing foul-smelling breath/sputum.", h: "Foul breath.", img: "q79.jpg", label: "GROSS // LUNG ABSCESS" },
+        { cat: 0, q: "An elderly female with right-side weakness shows extensive liquefactive necrosis in the brain. Diagnosis?", a: ["Tumor", "Stroke / CVA", "Meningitis", "Abscess"], c: 1, r: "Liquefactive necrosis in the CNS is the pathological hallmark of a stroke.", h: "CNS ischemia.", img: "q80.jpg", label: "GROSS // BRAIN" },
+        { cat: 0, q: "Examine the gross specimen of this organ. Based on its swollen, dull, and hyperemic serosal surface, what is the most likely pathological diagnosis?", a: ["Normal Appendix", "Acute Appendicitis", "Mucocele", "Carcinoid Tumor"], c: 1, r: "The swollen, erythematous, and dull serosal surface is the classic gross appearance of acute appendicitis, driven by severe neutrophil infiltration.", h: "Swollen, dull surface.", img: "q81.jpg", label: "GROSS // APPENDIX" }
     ];
 
-    let currentMode = 'theory';
     let cur = 0;
-    let state = JSON.parse(localStorage.getItem('path_final_v5')) || { answers: {} };
+    // CRITICAL FIX v4: Updated key to v4 to clear any remaining broken data
+    let state = JSON.parse(localStorage.getItem('path_final_v4')) || { answers: {}, flagged: [] };
     let chart;
 
-    function getActivePool() {
-        return currentMode === 'ospe' ? fullPool.filter(q => q.img) : fullPool;
-    }
-
-    function setMode(m) {
-        currentMode = m;
-        cur = 0;
-        document.getElementById('btnTheory').className = `mode-btn ${m === 'theory' ? 'active' : ''}`;
-        document.getElementById('btnOspe').className = `mode-btn ${m === 'ospe' ? 'ospe-active active' : ''}`;
-        document.getElementById('matrixTitle').innerText = m === 'ospe' ? 'OSPE Stations' : 'Procedure Matrix';
-        render();
-    }
-
-    function render() {
-        const pool = getActivePool();
-        const grid = document.getElementById('matrix');
-        grid.innerHTML = '';
-        pool.forEach((d, i) => {
-            const n = document.createElement('div');
-            n.className = `node ${i === cur ? 'active' : ''}`;
-            const originalIndex = fullPool.indexOf(d);
-            if(state.answers[originalIndex] !== undefined) n.classList.add(state.answers[originalIndex] === d.c ? 'correct' : 'wrong');
-            n.innerText = i + 1;
-            n.onclick = () => { cur = i; render(); };
-            grid.appendChild(n);
-        });
-
-        const d = pool[cur];
-        const originalIndex = fullPool.indexOf(d);
-        document.getElementById('pID').innerText = `${currentMode.toUpperCase()} // STATION ${String(cur + 1).padStart(2, '0')}`;
-        document.getElementById('qBody').innerText = d.q;
-        
-        const vp = document.getElementById('viewport');
-        const vImg = document.getElementById('vImg');
-        if(d.img) {
-            vp.style.display = 'flex';
-            vImg.src = `images/${d.img}`;
-            document.getElementById('vCaption').innerText = `SPECIMEN // ${d.label}`;
-        } else {
-            vp.style.display = 'none';
-        }
-
-        const list = document.getElementById('optList');
-        list.innerHTML = '';
-        const rat = document.getElementById('ratBox');
-        rat.style.display = 'none';
-
-        d.a.forEach((txt, i) => {
-            const opt = document.createElement('div');
-            opt.className = `opt-item ${state.answers[originalIndex] !== undefined ? (i === d.c ? 'correct' : (i === state.answers[originalIndex] ? 'wrong' : '')) : ''}`;
-            opt.innerHTML = `<span style="opacity:0.3; margin-right:15px; font-family:monospace;">0${i+1}</span> ${txt}`;
-            if(state.answers[originalIndex] === undefined) opt.onclick = () => { state.answers[originalIndex] = i; localStorage.setItem('path_final_v5', JSON.stringify(state)); render(); };
-            list.appendChild(opt);
-        });
-
-        if(state.answers[originalIndex] !== undefined) {
-            rat.innerText = d.r;
-            rat.style.display = 'block';
-        }
-        updateChart();
-    }
+    function wipe() { if(confirm("Wipe all progress?")) { localStorage.removeItem('path_final_v4'); location.reload(); } }
 
     function updateChart() {
         const scores = [0,0,0,0], counts = [0,0,0,0];
         Object.keys(state.answers).forEach(k => {
             const q = fullPool[k];
-            if(q) { counts[q.cat]++; if(state.answers[k] === q.c) scores[q.cat]++; }
+            if(!q) return; 
+            counts[q.cat]++;
+            if(state.answers[k] === q.c) scores[q.cat]++;
         });
         const perf = scores.map((s, i) => counts[i] === 0 ? 0 : Math.round((s/counts[i])*100));
         const ctx = document.getElementById('radarChart').getContext('2d');
         if(chart) chart.destroy();
         chart = new Chart(ctx, {
             type: 'radar',
-            data: { labels: ['Practical', 'Injury', 'Inflammation', 'Neoplasia'], datasets: [{ data: perf, backgroundColor: 'rgba(56, 189, 248, 0.2)', borderColor: '#38bdf8' }] },
-            options: { scales: { r: { min: 0, max: 100, ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.05)' } } }, plugins: { legend: { display: false } } }
+            data: {
+                labels: ['Practical', 'Injury', 'Inflammation', 'Neoplasia'],
+                datasets: [{ data: perf, backgroundColor: 'rgba(56, 189, 248, 0.2)', borderColor: '#38bdf8', pointBackgroundColor: '#38bdf8' }]
+            },
+            options: { scales: { r: { min: 0, max: 100, ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.05)' }, pointLabels: { color: '#94a3b8', font: { size: 9, weight: 'bold' } } } }, plugins: { legend: { display: false } } }
         });
     }
 
-    function proceed() { if(cur < getActivePool().length - 1) { cur++; render(); } }
-    function wipe() { if(confirm("Clear Progress?")) { localStorage.removeItem('path_final_v5'); location.reload(); } }
-    
+    function render() {
+        const grid = document.getElementById('matrix');
+        grid.innerHTML = '';
+        fullPool.forEach((d, i) => {
+            const n = document.createElement('div');
+            n.className = `node ${i === cur ? 'active' : ''} ${state.flagged.includes(i) ? 'flagged' : ''}`;
+            if(state.answers[i] !== undefined) n.classList.add(state.answers[i] === d.c ? 'correct' : 'wrong');
+            n.innerText = i + 1;
+            n.onclick = () => { cur = i; render(); };
+            grid.appendChild(n);
+        });
+
+        updateChart();
+        const d = fullPool[cur];
+        document.getElementById('pID').innerText = `PROCEDURE // ${String(cur + 1).padStart(2, '0')}`;
+        document.getElementById('qBody').innerText = d.q;
+        
+        const vp = document.getElementById('viewport');
+        const vImg = document.getElementById('vImg');
+        
+        if(d.img) {
+            vp.style.display = 'flex';
+            vImg.src = `images/${d.img}`;
+            vImg.onerror = () => { vImg.style.display = 'none'; document.getElementById('vCaption').innerText = "IMG_MISSING // images/" + d.img; };
+            vImg.onload = () => { vImg.style.display = 'block'; document.getElementById('vCaption').innerText = `SPECIMEN // ${d.label}`; };
+        } else {
+            vp.style.display = 'none';
+        }
+
+        const list = document.getElementById('optList');
+        list.innerHTML = '';
+        document.getElementById('hintBox').style.display = 'none';
+        document.getElementById('ratBox').style.display = 'none';
+
+        d.a.forEach((txt, i) => {
+            const opt = document.createElement('div');
+            opt.className = `opt-item ${state.answers[cur] !== undefined ? (i === d.c ? 'correct' : (i === state.answers[cur] ? 'wrong' : '')) : ''}`;
+            opt.innerHTML = `<span class="opt-index">0${i+1}</span> ${txt}`;
+            if(state.answers[cur] === undefined) opt.onclick = () => { state.answers[cur] = i; localStorage.setItem('path_final_v4', JSON.stringify(state)); render(); };
+            list.appendChild(opt);
+        });
+
+        if(state.answers[cur] !== undefined) {
+            document.getElementById('ratBox').innerText = d.r;
+            document.getElementById('ratBox').style.display = 'block';
+        }
+    }
+
+    function proceed() { if(cur < fullPool.length - 1) { cur++; render(); } }
+    function toggleHint() { const h = document.getElementById('hintBox'); h.innerText = "HINT: " + (fullPool[cur].h || "Focus on clinical signs."); h.style.display = h.style.display === 'block' ? 'none' : 'block'; }
+    function toggleFlag() { if(state.flagged.includes(cur)) state.flagged = state.flagged.filter(id => id !== cur); else state.flagged.push(cur); localStorage.setItem('path_final_v4', JSON.stringify(state)); render(); }
+
     render();
 </script>
 </body>
