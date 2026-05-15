@@ -7,9 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f172a;
-            --panel: #1e293b;
-            --accent: #38bdf8;
+            --bg: #020617;
+            --panel: #0f172a;
+            --accent-path: #38bdf8; /* Blue */
+            --accent-pharm: #a78bfa; /* Purple */
+            --accent-ap-theory: #10b981; /* Green */
+            --accent-ap-lab: #f472b6; /* Pink/OSPE */
             --text: #f1f5f9;
             --text-dim: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
@@ -24,83 +27,102 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
-        .header { text-align: center; margin-bottom: 3rem; }
-        .header h1 { font-weight: 800; letter-spacing: -0.02em; font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .header p { color: var(--accent); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem; }
+        .header { text-align: center; margin-bottom: 4rem; }
+        .header h1 { font-weight: 800; letter-spacing: -0.04em; font-size: 3rem; margin-bottom: 0.5rem; }
+        .header p { color: var(--text-dim); font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.75rem; opacity: 0.8; }
 
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 20px; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 24px; 
             width: 100%; 
-            max-width: 900px; 
+            max-width: 1100px; 
         }
 
         .module-card {
             background: var(--panel);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 2.5rem;
             text-decoration: none;
             color: inherit;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 1.25rem;
             position: relative;
-            overflow: hidden;
         }
 
         .module-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            background: rgba(56, 189, 248, 0.05);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        .module-card h2 { font-weight: 800; font-size: 1.25rem; }
-        .module-card p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.5; }
+        /* Color Coding */
+        .card-path:hover { border-color: var(--accent-path); }
+        .card-pharm:hover { border-color: var(--accent-pharm); }
+        .card-ap-t:hover { border-color: var(--accent-ap-theory); }
+        .card-ap-l:hover { border-color: var(--accent-ap-lab); }
+
+        .module-card h2 { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; }
+        .module-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
         
         .status-tag {
-            font-size: 0.65rem;
-            font-weight: 800;
+            font-size: 0.6rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 4px 8px;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            border-radius: 4px;
+            letter-spacing: 0.1em;
+            padding: 6px 12px;
+            border-radius: 20px;
             width: fit-content;
         }
 
-        .footer { margin-top: 4rem; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 0.05em; }
+        .tag-path { background: rgba(56, 189, 248, 0.1); color: var(--accent-path); }
+        .tag-pharm { background: rgba(167, 139, 250, 0.1); color: var(--accent-pharm); }
+        .tag-ap-t { background: rgba(16, 185, 129, 0.1); color: var(--accent-ap-theory); }
+        .tag-ap-l { background: rgba(244, 114, 182, 0.1); color: var(--accent-ap-lab); }
+
+        .footer { margin-top: 5rem; color: var(--text-dim); font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.5; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <p>Unified Learning Environment</p>
-        <h1>Study Portal</h1>
+        <p>Pre-Clinical Academic Portal</p>
+        <h1>Study Hub</h1>
     </div>
 
     <div class="grid">
-        <a href="pathology/index.html" class="module-card">
-            <div class="status-tag">Module Active</div>
+        <a href="pathology/index.html" class="module-card card-path">
+            <div class="status-tag tag-path">Active Module</div>
             <h2>Pathology Core</h2>
-            <p>Practical & Theory Mastery Engine. Covers inflammation, neoplasia, and hemodynamics.</p>
+            <p>Mastery of tissue injury, inflammation, and neoplasia with OSPE specimen integration.</p>
         </a>
 
-        <a href="pharmacology/index.html" class="module-card">
-    <div class="status-tag">Module Active</div>
-    <h2>Pharmacology Core</h2>
-    <p>Mechanism of action, pharmacokinetics, and drug interactions core.</p>
-</a>
+        <a href="pharmacology/index.html" class="module-card card-pharm">
+            <div class="status-tag tag-pharm">Active Module</div>
+            <h2>Pharmacology</h2>
+            <p>In-depth focus on PK/PD, Adrenergics, and Antimicrobial mechanisms from session slides.</p>
+        </a>
+
+        <a href="ap-theory/index.html" class="module-card card-ap-t">
+            <div class="status-tag tag-ap-t">Module Initializing</div>
+            <h2>A&P Theory</h2>
+            <p>Comprehensive physiological systems and anatomical structures theory core.</p>
+        </a>
+
+        <a href="ap-lab/index.html" class="module-card card-ap-l">
+            <div class="status-tag tag-ap-l">Module Initializing</div>
+            <h2>A&P Lab (OSPE)</h2>
+            <p>Practical identification of anatomical models, histology slides, and physiological tests.</p>
+        </a>
     </div>
 
-    <div class="footer">POD 242 // SESSION 2026</div>
+    <div class="footer">AJMAN UNIVERSITY // COLLEGE OF MEDICINE // 2026</div>
 
 </body>
 </html>
