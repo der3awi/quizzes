@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacology Mastery Engine | Study Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #1e293b;
+            --accent: #a78bfa; /* Purple theme for Pharmacology */
+            --success: #10b981;
+            --danger: #f43f5e;
+            --flag: #f59e0b;
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; overflow: hidden; -webkit-font-smoothing: antialiased; }
+
+        .nav-header { padding: 1rem 2rem; background: var(--panel); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+        .logo { font-weight: 800; letter-spacing: 0.1em; font-size: 0.85rem; display: flex; align-items: center; gap: 12px; color: #fff; }
+        .pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        .app-grid { display: grid; grid-template-columns: 340px 1fr; flex: 1; overflow: hidden; }
+
+        .sidebar { background: rgba(15, 23, 42, 0.4); border-right: 1px solid var(--border); padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; }
+        .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+        .chart-wrapper { height: 220px; width: 100%; position: relative; }
+        
+        .label-id { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
+        .matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 10px; }
+        .node { aspect-ratio: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; cursor: pointer; color: var(--text-dim); position: relative; transition: all 0.2s; }
+        .node.active { border-color: var(--accent); background: rgba(167, 139, 250, 0.1); color: white; }
+        .node.correct { border-color: var(--success); color: var(--success); }
+        .node.wrong { border-color: var(--danger); color: var(--danger); }
+        .node.flagged::before { content: ''; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: var(--flag); border-radius: 50%; border: 2px solid var(--bg); }
+
+        .stage { padding: 2rem 3rem; display: flex; justify-content: center; overflow-y: auto; }
+        .content-wrap { max-width: 800px; width: 100%; }
+
+        .proc-header { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 0.75rem; margin-bottom: 1rem; opacity: 0.8; }
+        .q-text { font-size: 1.6rem; font-weight: 700; line-height: 1.4; margin-bottom: 2.5rem; color: #fff; }
+
+        .options { display: grid; gap: 0.85rem; }
+        .opt-item { background: var(--panel); border: 1px solid var(--border); padding: 1.25rem 1.75rem; border-radius: 14px; cursor: pointer; display: flex; align-items: center; gap: 1.25rem; font-size: 1.05rem; font-weight: 500; transition: 0.2s; }
+        .opt-item:hover { border-color: var(--accent); transform: translateX(6px); }
+        .opt-item.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .opt-item.wrong { border-color: var(--danger); background: rgba(244, 63, 94, 0.1); color: var(--danger); }
+        .opt-index { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; opacity: 0.4; }
+
+        .rationale { margin-top: 2rem; padding: 1.75rem; background: rgba(30, 41, 59, 0.6); border-left: 4px solid var(--accent); border-radius: 10px; display: none; line-height: 1.6; color: var(--text-dim); font-size: 0.95rem; }
+
+        .action-row { margin-top: 3rem; display: flex; gap: 1rem; }
+        .btn-ui { padding: 1rem 2rem; border-radius: 10px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border: none; transition: 0.2s; }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+        .btn-next { background: var(--accent); color: #fff; flex: 1; box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3); }
+        
+        .hub-link { color: var(--text-dim); text-decoration: none; font-size: 0.7rem; font-weight: 700; transition: 0.2s; }
+        .hub-link:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<nav class="nav-header">
+    <div class="logo"><div class="pulse"></div> PHARMACOLOGY CORE // POD 242</div>
+    <a href="../index.html" class="hub-link">← BACK TO PORTAL</a>
+</nav>
+
+<div class="app-grid">
+    <aside class="sidebar">
+        <div class="card">
+            <span class="label-id">Mechanism Mastery Diagnostics</span>
+            <div class="chart-wrapper"><canvas id="radarChart"></canvas></div>
+        </div>
+        <div class="card" style="flex: 1;">
+            <span class="label-id">Knowledge Matrix</span>
+            <div class="matrix" id="matrix"></div>
+        </div>
+    </aside>
+
+    <main class="stage">
+        <div class="content-wrap">
+            <div class="proc-header" id="pID">PHARMA // Q01</div>
+            <div class="q-text" id="qBody">Select a question to begin the sequence.</div>
+            <div class="options" id="optList"></div>
+            <div class="rationale" id="ratBox"></div>
+
+            <div class="action-row">
+                <button class="btn-ui btn-outline" style="color: var(--flag);" id="flagBtn" onclick="toggleFlag()">Flag</button>
+                <button class="btn-ui btn-next" id="nextBtn" onclick="proceed()">Next Question</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    const fullPool = [
+        // L1 & L2: PK/PD (cat: 0)
+        { cat: 0, q: "Which of the following refers to the effects of the body on a drug, including Absorption, Distribution, Metabolism, and Excretion (ADME)?", a: ["Pharmacodynamics", "Pharmacokinetics", "Toxicodynamics", "Bioavailability"], c: 1, r: "Pharmacokinetics describes what the body does to the drug (ADME)." },
+        { cat: 0, q: "How is the Therapeutic Index (TI) of a drug calculated to measure its relative safety?", a: ["ED50 / TD50", "TD50 / ED50", "LD50 × ED50", "Half-life / Clearance"], c: 1, r: "TI is the ratio of the toxic dose (TD50) to the effective dose (ED50) in half the population." },
+        { cat: 0, q: "To which receptor family does the nicotinic receptor belong?", a: ["G protein-coupled receptors", "Enzyme-linked receptors", "Intracellular receptors", "Ligand-gated ion channels"], c: 3, r: "Nicotinic receptors are transmembrane ligand-gated ion channels mediating neurotransmission." },
+        { cat: 0, q: "What type of antagonism is epinephrine's effect on histamine-induced bronchoconstriction?", a: ["Chemical antagonism", "Functional (physiological) antagonism", "Competitive antagonism", "Irreversible antagonism"], c: 1, r: "Functional antagonism involves agonists acting at separate receptors to produce opposite physiological effects." },
+        { cat: 0, q: "Which parameter refers to the fraction of an administered drug that reaches systemic circulation unchanged?", a: ["Metabolism", "Distribution", "Bioavailability", "Solubility"], c: 2, r: "Bioavailability is the percentage of the dose that reaches the bloodstream intact." },
+        { cat: 0, q: "The Cytochrome P450 (CYP450) system is primarily involved in which phase of metabolism?", a: ["Phase I", "Phase II", "Absorption", "Excretion"], c: 0, r: "Phase I (oxidation, reduction, hydrolysis) is predominantly managed by the CYP450 system." },
+        { cat: 0, q: "Phase II metabolic reactions are best characterized by:", a: ["Oxidation and reduction", "Conjugation with polar molecules", "Activation by enzymes", "Hydrolysis"], c: 1, r: "Phase II involves conjugation (e.g., glucuronidation) to make drugs water-soluble for excretion." },
+        { cat: 0, q: "Protamine sulfate neutralizing the effects of heparin is an example of:", a: ["Functional antagonism", "Chemical antagonism", "Competitive antagonism", "Metabolic antagonism"], c: 1, r: "A chemical antagonist modifies the agonist directly to prevent binding (Protamine binds Heparin)." },
+        { cat: 0, q: "Which receptor family typically binds lipid-soluble ligands like steroid hormones?", a: ["Ligand-gated ion channels", "G protein-coupled receptors", "Enzyme-linked receptors", "Intracellular receptors"], c: 3, r: "Steroid receptors are intracellular and require ligands to cross the cell membrane." },
+        { cat: 0, q: "What defines a pharmacological 'receptor'?", a: ["Only cell surface proteins", "Any biologic molecule to which a drug binds to produce a response", "Only DNA sequences", "Only hepatic enzymes"], c: 1, r: "Receptors are biologic molecules (proteins, enzymes, nucleic acids) that produce a response upon drug binding." },
+        { cat: 0, q: "The 'First-pass metabolism' significantly reduces bioavailability after which route?", a: ["Intravenous", "Oral", "Sublingual", "Intramuscular"], c: 1, r: "Oral drugs pass through the liver via the portal vein before reaching systemic circulation." },
+        { cat: 0, q: "A drug with a high Therapeutic Index (TI) indicates:", a: ["The drug is highly potent", "The drug has high toxicity", "A wide margin between effective and toxic doses", "The drug has a short half-life"], c: 2, r: "A larger TI value indicates a wider safety margin." },
+
+        // L3 & L4: Adrenergic (cat: 1)
+        { cat: 1, q: "What is the primary cardiac effect of blocking Beta-1 adrenoceptors?", a: ["Increased contractility", "Bronchoconstriction", "Decreased heart rate", "Vasodilation"], c: 2, r: "Beta-1 blockade reduces heart rate and conduction velocity in cardiac tissue." },
+        { cat: 1, q: "Which drug is the treatment of choice for reversing anaphylactic shock?", a: ["Dopamine", "Adrenaline (Epinephrine)", "Phenylephrine", "Isoproterenol"], c: 1, r: "Epinephrine is a mixed alpha/beta agonist that reverses life-threatening anaphylaxis." },
+        { cat: 1, q: "At low doses, dopamine acts primarily on dopamine receptors to cause:", a: ["Generalized vasoconstriction", "Renal vasodilation", "Bronchodilation", "CNS sedation"], c: 1, r: "Low-dose dopamine dilates renal vessels to increase blood flow." },
+        { cat: 1, q: "Which receptor subtype mediates epinephrine-induced bronchodilation in the lungs?", a: ["Alpha-1", "Alpha-2", "Beta-1", "Beta-2"], c: 3, r: "Beta-2 receptor stimulation on bronchial smooth muscle causes relaxation/dilation." },
+        { cat: 1, q: "Phenylephrine is clinically used primarily as a:", a: ["Beta-blocker", "Nasal mucosal decongestant", "Antiasthmatic", "Anti-diabetic"], c: 1, r: "Phenylephrine is a selective Alpha-1 agonist used as a pressor and decongestant." },
+        { cat: 1, q: "Indirect-acting sympathomimetics exert their effect by:", a: ["Binding directly to receptors", "Causing the release of norepinephrine from vesicles", "Blocking the breakdown of drugs", "Inhibiting Phase II metabolism"], c: 1, r: "Indirect agents increase neurotransmitter concentration by stimulating release." },
+        { cat: 1, q: "Which receptor is located presynaptically and inhibits further norepinephrine release?", a: ["Alpha-1", "Alpha-2", "Beta-1", "Beta-2"], c: 1, r: "Alpha-2 receptors provide feedback inhibition of neurotransmitter release." },
+        { cat: 1, q: "Beta-2 agonists are the primary therapeutic agents for:", a: ["Hypertension", "Bronchial Asthma", "Bradycardia", "Glaucoma"], c: 1, r: "Beta-2 stimulation is key for bronchodilation in asthma patients." },
+        { cat: 1, q: "Non-selective beta-blockers like Propranolol are contraindicated in patients with:", a: ["Hypertension", "Tachycardia", "Asthma", "Hyperthyroidism"], c: 2, r: "Blocking Beta-2 can cause dangerous bronchoconstriction in asthmatics." },
+        { cat: 1, q: "Adrenaline (Epinephrine) acts as a potent agonist at which receptors?", a: ["Alpha only", "Beta only", "Both Alpha and Beta", "Dopamine only"], c: 2, r: "Epinephrine is a mixed agonist at all alpha and beta adrenoceptors." },
+
+        // L5, L6, L7, L8: Antibacterials (cat: 2)
+        { cat: 2, q: "Starting treatment when infection is suspected but before the organism is identified is:", a: ["Definitive therapy", "Empiric therapy", "Prophylactic therapy", "Bacteriostatic therapy"], c: 1, r: "Empiric therapy is based on the most likely pathogens in a clinical setting." },
+        { cat: 2, q: "What is the primary mechanism of action for Beta-lactam antibiotics?", a: ["Protein synthesis inhibition", "Folate inhibition", "Cell wall synthesis inhibition", "DNA gyrase inhibition"], c: 2, r: "Beta-lactams interfere with peptidoglycan cross-linking in the cell wall." },
+        { cat: 2, q: "Which of the following is a Beta-lactamase inhibitor?", a: ["Clavulanic acid", "Vancomycin", "Gentamicin", "Erythromycin"], c: 0, r: "Clavulanic acid, sulbactam, and tazobactam protect beta-lactams from enzymatic degradation." },
+        { cat: 2, q: "Vancomycin is exclusively active against which group of bacteria?", a: ["Gram-negative only", "Gram-positive only", "Both Gram-pos and Neg", "Anaerobes only"], c: 1, r: "Vancomycin is a non-beta-lactam cell wall inhibitor active only against Gram-positives (e.g., MRSA)." },
+        { cat: 2, q: "Cephalosporin generations generally show increased Gram-negative activity in which generation?", a: ["First", "Second", "Third", "None of above"], c: 2, r: "Later generations (3rd and 4th) show expanded activity against Gram-negatives." },
+        { cat: 2, q: "Aminoglycosides like Gentamicin bind to which ribosomal subunit?", a: ["50S", "30S", "40S", "60S"], c: 1, r: "Aminoglycosides and Tetracyclines bind the 30S subunit." },
+        { cat: 2, q: "Which antibiotic class is known for potential permanent tooth discoloration in children?", a: ["Gentamicin", "Tetracyclines", "Penicillins", "Macrolides"], c: 1, r: "Tetracyclines chelate calcium in developing teeth and bones." },
+        { cat: 2, q: "Macrolide antibiotics like Erythromycin bind to which subunit?", a: ["30S", "50S", "30S + 50S", "DNA Gyrase"], c: 1, r: "Macrolides, Clindamycin, and Chloramphenicol bind the 50S subunit." },
+        { cat: 2, q: "What is the specific enzyme targeted by Sulfonamides?", a: ["Dihydrofolate reductase", "Dihydropteroate synthase", "Transpeptidase", "DNA Polymerase"], c: 1, r: "Sulfonamides are PABA analogs that inhibit dihydropteroate synthase." },
+        { cat: 2, q: "Trimethoprim inhibits which sequential enzyme in the folate pathway?", a: ["Dihydropteroate synthase", "Dihydrofolate reductase", "Topoisomerase", "Beta-lactamase"], c: 1, r: "Trimethoprim inhibits DHFR, the step after sulfonamide action." },
+        { cat: 2, q: "Which antibiotic is particularly useful against anaerobic infections?", a: ["Gentamicin", "Clindamycin", "Ciprofloxacin", "Amoxicillin"], c: 1, r: "Clindamycin has significant activity against anaerobes." },
+        { cat: 2, q: "Co-trimoxazole is a synergistic combination of Trimethoprim and:", a: ["Sulfamethoxazole", "Amoxicillin", "Clavulanic acid", "Tetracycline"], c: 0, r: "The combination provides sequential blockade of bacterial folate synthesis." },
+        { cat: 2, q: "Penicillin G is primarily administered via which route due to acid instability?", a: ["Oral", "Intramuscular/Intravenous", "Topical", "Sublingual"], c: 1, r: "Penicillin G is destroyed by gastric acid and must be given parenterally." },
+        { cat: 2, q: "Which penicillin is classified as an 'Extended-spectrum' penicillin?", a: ["Penicillin G", "Amoxicillin", "Methicillin", "Piperacillin"], c: 1, r: "Amoxicillin and Ampicillin have an expanded spectrum against some Gram-negatives." },
+        { cat: 2, q: "Chloramphenicol use in neonates is limited due to the risk of:", a: ["Red man syndrome", "Gray baby syndrome", "Tendon rupture", "Ototoxicity"], c: 1, r: "Neonates cannot conjugate chloramphenicol effectively, leading to toxicity." },
+        { cat: 2, q: "Aminoglycosides are most notably associated with which toxicities?", a: ["Hepatotoxicity", "Nephrotoxicity and Ototoxicity", "Gingival hyperplasia", "Cardiotoxicity"], c: 1, r: "Aminoglycosides are toxic to the kidneys and the vestibulocochlear nerve." },
+
+        // L10 & L11: Viral/Fungal (cat: 3)
+        { cat: 3, q: "What is the mechanism of Oseltamivir (Tamiflu) in influenza?", a: ["DNA polymerase inhibitor", "Neuraminidase inhibitor", "Reverse transcriptase inhibitor", "Uncoating inhibitor"], c: 1, r: "Oseltamivir prevents release of new virions by inhibiting neuraminidase." },
+        { cat: 3, q: "Acyclovir is used to treat which of the following infections?", a: ["HIV", "Herpes (HSV/VZV)", "Influenza B", "Hepatitis C"], c: 1, r: "Acyclovir is a DNA polymerase inhibitor for Herpes family viruses." },
+        { cat: 3, q: "Lamivudine is indicated for the treatment of HIV and:", a: ["Influenza", "Chronic Hepatitis B", "Herpes", "Fungal infection"], c: 1, r: "Lamivudine acts as a reverse transcriptase inhibitor for both HIV and HBV." },
+        { cat: 3, q: "How do Polyene antifungals like Amphotericin B work?", a: ["Inhibit DNA synthesis", "Bind ergosterol to form pores", "Inhibit ergosterol synthesis", "Inhibit cell wall"], c: 1, r: "Polyenes bind ergosterol in the fungal membrane, creating leaky pores." },
+        { cat: 3, q: "Azole antifungals like Ketoconazole work by inhibiting:", a: ["DNA polymerase", "Ergosterol synthesis (from lanosterol)", "Beta-glucan synthesis", "AChE"], c: 1, r: "Azoles inhibit the 14-alpha-demethylase required for ergosterol synthesis." },
+        { cat: 3, q: "Ketoconazole is known for which significant metabolic effect?", a: ["CYP450 Induction", "CYP450 Inhibition", "Renal failure", "Antagonism of beta receptors"], c: 1, r: "Ketoconazole is a potent CYP450 inhibitor leading to many drug interactions." },
+        { cat: 3, q: "Which antifungal inhibits fungal DNA and RNA synthesis?", a: ["Ketoconazole", "Flucytosine", "Amphotericin B", "Nystatin"], c: 1, r: "Flucytosine is converted to 5-FU inside fungal cells to block nucleic acid synthesis." },
+        { cat: 3, q: "Amantadine prevents influenza infection by:", a: ["Inhibiting neuraminidase", "Inhibiting viral uncoating", "Inhibiting DNA polymerase", "Blocking cell entry"], c: 1, r: "Amantadine inhibits the M2 protein required for viral uncoating." },
+        { cat: 3, q: "Amphotericin B is notably associated with which major toxicity?", a: ["Liver failure", "Nephrotoxicity", "Gray baby syndrome", "Tendon rupture"], c: 1, r: "Nephrotoxicity is the most significant dose-limiting side effect of Amphotericin B." },
+        { cat: 3, q: "Optimal oral absorption of Azoles requires which gastric environment?", a: ["Alkaline", "Acidic", "Neutral", "High-fat"], c: 1, r: "Gastric acidity is required for the dissolution and absorption of oral azoles." },
+        { cat: 3, q: "A drug that stops bacterial growth but doesn't kill is:", a: ["Bactericidal", "Bacteriostatic", "Narrow-spectrum", "Broad-spectrum"], c: 1, r: "Bacteriostatic agents inhibit growth; the immune system clears the rest." },
+        { cat: 3, q: "Which antibiotic inhibits the 30S ribosome and is bactericidal?", a: ["Tetracycline", "Gentamicin", "Erythromycin", "Penicillin"], c: 1, r: "Aminoglycosides like Gentamicin are 30S inhibitors and are uniquely bactericidal." }
+    ];
+
+    let cur = 0;
+    let state = JSON.parse(localStorage.getItem('pharm_final_v1')) || { answers: {}, flagged: [] };
+    let chart;
+
+    function wipe() { if(confirm("Wipe all progress?")) { localStorage.removeItem('pharm_final_v1'); location.reload(); } }
+
+    function updateChart() {
+        const scores = [0,0,0,0], counts = [0,0,0,0];
+        Object.keys(state.answers).forEach(k => {
+            const q = fullPool[k];
+            if(!q) return; 
+            counts[q.cat]++;
+            if(state.answers[k] === q.c) scores[q.cat]++;
+        });
+        const perf = scores.map((s, i) => counts[i] === 0 ? 0 : Math.round((s/counts[i])*100));
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        if(chart) chart.destroy();
+        chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Fundamentals', 'Adrenergic', 'Antibacterials', 'Viral/Fungal'],
+                datasets: [{ data: perf, backgroundColor: 'rgba(167, 139, 250, 0.2)', borderColor: '#a78bfa', pointBackgroundColor: '#a78bfa' }]
+            },
+            options: { scales: { r: { min: 0, max: 100, ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.05)' }, pointLabels: { color: '#94a3b8', font: { size: 9, weight: 'bold' } } } }, plugins: { legend: { display: false } } }
+        });
+    }
+
+    function render() {
+        const grid = document.getElementById('matrix');
+        grid.innerHTML = '';
+        fullPool.forEach((d, i) => {
+            const n = document.createElement('div');
+            n.className = `node ${i === cur ? 'active' : ''} ${state.flagged.includes(i) ? 'flagged' : ''}`;
+            if(state.answers[i] !== undefined) n.classList.add(state.answers[i] === d.c ? 'correct' : 'wrong');
+            n.innerText = i + 1;
+            n.onclick = () => { cur = i; render(); };
+            grid.appendChild(n);
+        });
+
+        updateChart();
+        const d = fullPool[cur];
+        document.getElementById('pID').innerText = `PHARMA // Q${String(cur + 1).padStart(2, '0')}`;
+        document.getElementById('qBody').innerText = d.q;
+        
+        const list = document.getElementById('optList');
+        list.innerHTML = '';
+        document.getElementById('ratBox').style.display = 'none';
+
+        d.a.forEach((txt, i) => {
+            const opt = document.createElement('div');
+            opt.className = `opt-item ${state.answers[cur] !== undefined ? (i === d.c ? 'correct' : (i === state.answers[cur] ? 'wrong' : '')) : ''}`;
+            opt.innerHTML = `<span class="opt-index">0${i+1}</span> ${txt}`;
+            if(state.answers[cur] === undefined) opt.onclick = () => { state.answers[cur] = i; localStorage.setItem('pharm_final_v1', JSON.stringify(state)); render(); };
+            list.appendChild(opt);
+        });
+
+        if(state.answers[cur] !== undefined) {
+            document.getElementById('ratBox').innerText = d.r;
+            document.getElementById('ratBox').style.display = 'block';
+        }
+    }
+
+    function proceed() { if(cur < fullPool.length - 1) { cur++; render(); } }
+    function toggleFlag() { if(state.flagged.includes(cur)) state.flagged = state.flagged.filter(id => id !== cur); else state.flagged.push(cur); localStorage.setItem('pharm_final_v1', JSON.stringify(state)); render(); }
+
+    render();
+</script>
+</body>
+</html>
