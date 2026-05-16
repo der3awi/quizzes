@@ -12,7 +12,8 @@
             --accent-path: #38bdf8; /* Blue */
             --accent-pharm: #a78bfa; /* Purple */
             --accent-ap-theory: #10b981; /* Green */
-            --accent-ap-lab: #f472b6; /* Pink/OSPE */
+            --accent-ap-lab: #f472b6; /* Pink */
+            --accent-ap-past: #fbbf24; /* Gold for Exams */
             --text: #f1f5f9;
             --text-dim: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
@@ -36,24 +37,23 @@
 
         .grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-            gap: 24px; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
             width: 100%; 
-            max-width: 1100px; 
+            max-width: 1200px; 
         }
 
         .module-card {
             background: var(--panel);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 2rem;
             text-decoration: none;
             color: inherit;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
-            position: relative;
+            gap: 1rem;
         }
 
         .module-card:hover {
@@ -62,21 +62,21 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        /* Color Coding */
         .card-path:hover { border-color: var(--accent-path); }
         .card-pharm:hover { border-color: var(--accent-pharm); }
         .card-ap-t:hover { border-color: var(--accent-ap-theory); }
         .card-ap-l:hover { border-color: var(--accent-ap-lab); }
+        .card-ap-past:hover { border-color: var(--accent-ap-past); }
 
-        .module-card h2 { font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; }
-        .module-card p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
+        .module-card h2 { font-weight: 800; font-size: 1.3rem; }
+        .module-card p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; }
         
         .status-tag {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            padding: 6px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
             width: fit-content;
         }
@@ -85,8 +85,9 @@
         .tag-pharm { background: rgba(167, 139, 250, 0.1); color: var(--accent-pharm); }
         .tag-ap-t { background: rgba(16, 185, 129, 0.1); color: var(--accent-ap-theory); }
         .tag-ap-l { background: rgba(244, 114, 182, 0.1); color: var(--accent-ap-lab); }
+        .tag-ap-past { background: rgba(251, 191, 36, 0.1); color: var(--accent-ap-past); }
 
-        .footer { margin-top: 5rem; color: var(--text-dim); font-size: 0.7rem; letter-spacing: 0.1em; opacity: 0.5; }
+        .footer { margin-top: 5rem; color: var(--text-dim); font-size: 0.7rem; opacity: 0.5; }
     </style>
 </head>
 <body>
@@ -98,31 +99,37 @@
 
     <div class="grid">
         <a href="pathology/index.html" class="module-card card-path">
-            <div class="status-tag tag-path">Active Module</div>
+            <div class="status-tag tag-path">Active</div>
             <h2>Pathology Core</h2>
-            <p>Mastery of tissue injury, inflammation, and neoplasia with OSPE specimen integration.</p>
+            <p>Tissue injury, inflammation, and neoplasia with specimen integration.</p>
         </a>
 
         <a href="pharmacology/index.html" class="module-card card-pharm">
-            <div class="status-tag tag-pharm">Active Module</div>
+            <div class="status-tag tag-pharm">Active</div>
             <h2>Pharmacology</h2>
-            <p>In-depth focus on PK/PD, Adrenergics, and Antimicrobial mechanisms from session slides.</p>
+            <p>PK/PD, Adrenergics, and Antimicrobial mechanisms.</p>
         </a>
 
         <a href="ap-theory/index.html" class="module-card card-ap-t">
-            <div class="status-tag tag-ap-t">Module Initializing</div>
-            <h2>Anatomy and Physiology</h2>
-            <p>Comprehensive physiological systems and anatomical structures theory core.</p>
+            <div class="status-tag tag-ap-t">Active</div>
+            <h2>A&P Theory</h2>
+            <p>Comprehensive physiological systems and anatomical theory.</p>
         </a>
 
         <a href="ap-lab/index.html" class="module-card card-ap-l">
-            <div class="status-tag tag-ap-l">Module Initializing</div>
-            <h2>Anatomy and Physiology Lab (OSPE)</h2>
-            <p>Practical identification of anatomical models, histology slides, and physiological tests.</p>
+            <div class="status-tag tag-ap-l">Active</div>
+            <h2>A&P Lab (OSPE)</h2>
+            <p>Practical identification of models and histology.</p>
+        </a>
+
+        <a href="ap-past-exams/index.html" class="module-card card-ap-past">
+            <div class="status-tag tag-ap-past">Past Papers</div>
+            <h2>A&P Past Finals</h2>
+            <p>A collection of high-yield questions from previous final examinations.</p>
         </a>
     </div>
 
-    <div class="footer">AJMAN UNIVERSITY // COLLEGE OF MEDICINE // 2026</div>
+    <div class="footer">POD 242 // SESSION 2026</div>
 
 </body>
 </html>
