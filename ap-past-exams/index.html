@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&P Final Exam Simulation | Study Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg: #020617;
+            --panel: #0f172a;
+            --accent: #fbbf24; /* Gold/Amber for Exam Mode */
+            --success: #10b981;
+            --danger: #f43f5e;
+            --flag: #f59e0b;
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; overflow: hidden; -webkit-font-smoothing: antialiased; }
+
+        .nav-header { padding: 1rem 2rem; background: var(--panel); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+        .logo { font-weight: 800; letter-spacing: 0.1em; font-size: 0.85rem; display: flex; align-items: center; gap: 12px; color: var(--accent); }
+        .pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        .app-grid { display: grid; grid-template-columns: 340px 1fr; flex: 1; overflow: hidden; }
+
+        .sidebar { background: rgba(15, 23, 42, 0.4); border-right: 1px solid var(--border); padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; }
+        .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+        .chart-wrapper { height: 220px; width: 100%; position: relative; }
+        
+        .label-id { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
+        .matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 10px; }
+        .node { aspect-ratio: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; cursor: pointer; color: var(--text-dim); position: relative; transition: all 0.2s; }
+        .node.active { border-color: var(--accent); background: rgba(251, 191, 36, 0.1); color: white; }
+        .node.correct { border-color: var(--success); color: var(--success); }
+        .node.wrong { border-color: var(--danger); color: var(--danger); }
+        .node.flagged::before { content: ''; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: var(--flag); border-radius: 50%; border: 2px solid var(--bg); }
+
+        .stage { padding: 2rem 3rem; display: flex; justify-content: center; overflow-y: auto; }
+        .content-wrap { max-width: 800px; width: 100%; }
+
+        .proc-header { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 0.75rem; margin-bottom: 1rem; opacity: 0.8; }
+        .q-text { font-size: 1.6rem; font-weight: 700; line-height: 1.4; margin-bottom: 2.5rem; color: #fff; }
+
+        .options { display: grid; gap: 0.85rem; }
+        .opt-item { background: var(--panel); border: 1px solid var(--border); padding: 1.25rem 1.75rem; border-radius: 14px; cursor: pointer; display: flex; align-items: center; gap: 1.25rem; font-size: 1.05rem; font-weight: 500; transition: 0.2s; }
+        .opt-item:hover { border-color: var(--accent); transform: translateX(6px); }
+        .opt-item.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .opt-item.wrong { border-color: var(--danger); background: rgba(244, 63, 94, 0.1); color: var(--danger); }
+        .opt-index { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; opacity: 0.4; }
+
+        .rationale { margin-top: 2rem; padding: 1.75rem; background: rgba(30, 41, 59, 0.6); border-left: 4px solid var(--accent); border-radius: 10px; display: none; line-height: 1.6; color: var(--text-dim); font-size: 0.95rem; }
+
+        .action-row { margin-top: 3rem; display: flex; gap: 1rem; }
+        .btn-ui { padding: 1rem 2rem; border-radius: 10px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border: none; transition: 0.2s; }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+        .btn-next { background: var(--accent); color: #000; flex: 1; box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3); }
+        
+        .hub-link { color: var(--text-dim); text-decoration: none; font-size: 0.7rem; font-weight: 700; transition: 0.2s; }
+        .hub-link:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+
+<nav class="nav-header">
+    <div class="logo"><div class="pulse"></div> A&P PAST FINALS // EXAM MODE</div>
+    <a href="../index.html" class="hub-link">← BACK TO HUB</a>
+</nav>
+
+<div class="app-grid">
+    <aside class="sidebar">
+        <div class="card">
+            <span class="label-id">Past Exam Analytics</span>
+            <div class="chart-wrapper"><canvas id="radarChart"></canvas></div>
+        </div>
+        <div class="card" style="flex: 1;">
+            <span class="label-id">Simulation Sequence</span>
+            <div class="matrix" id="matrix"></div>
+        </div>
+    </aside>
+
+    <main class="stage">
+        <div class="content-wrap">
+            <div class="proc-header" id="pID">EXAM // Q01</div>
+            <div class="q-text" id="qBody">Select a question node to start simulation.</div>
+            <div class="options" id="optList"></div>
+            <div class="rationale" id="ratBox"></div>
+
+            <div class="action-row">
+                <button class="btn-ui btn-outline" style="color: var(--flag);" id="flagBtn" onclick="toggleFlag()">Flag</button>
+                <button class="btn-ui btn-next" id="nextBtn" onclick="proceed()">Next Station</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    const fullPool = [
+        { cat: 0, q: "Which substance is primarily responsible for the vasoconstriction of blood vessels within the sympathetic nervous system response?", a: ["Acetylcholine", "Dopamine", "Norepinephrine", "Serotonin"], c: 2, r: "Norepinephrine acts on alpha-1 receptors to cause systemic vasoconstriction." },
+        { cat: 1, q: "Primordial germ cells (PGCs) first appear in the wall of which embryonic structure during the 4th week of development?", a: ["Allantois", "Yolk sac", "Amniotic cavity", "Chorionic villi"], c: 1, r: "PGCs originate in the epiblast and migrate to the wall of the yolk sac." },
+        { cat: 2, q: "A patient presenting with central obesity, moon face, and hypertension is found to have a pituitary adenoma. Which hormone is characteristically increased in this condition?", a: ["Aldosterone", "Thyroxine", "Insulin", "ACTH/Cortisol"], c: 3, r: "Cushing's Disease involves a pituitary tumor secreting ACTH, driving high cortisol." },
+        { cat: 1, q: "The kidneys, ureters, and the gonads develop from which embryonic germ layer?", a: ["Paraxial mesoderm", "Lateral plate mesoderm", "Intermediate mesoderm", "Surface ectoderm"], c: 2, r: "Intermediate mesoderm is the precursor for the entire urogenital system." },
+        { cat: 2, q: "A patient with a thyroid tumor that destroys C-cells would become deficient in which hormone, leading to high calcium levels?", a: ["Thyroxine", "Parathyroid hormone", "Calcitonin", "Glucagon"], c: 2, r: "Parafollicular C-cells produce calcitonin, which lowers blood calcium levels." },
+        { cat: 3, q: "Which spinal cord pathway is responsible for transmitting fine touch, vibration, and conscious proprioception?", a: ["Lateral spinothalamic", "Dorsal column", "Ventral spinothalamic", "Spinotectal"], c: 1, r: "The Dorsal Column-Medial Lemniscus pathway carries high-resolution sensory data." },
+        { cat: 3, q: "A lesion in the right medial lemniscus (above the sensory decussation) would result in a loss of:", a: ["Proprioception of the right leg", "Pain in the left leg", "Proprioception of the left leg", "Motor control of the left leg"], c: 2, r: "Decussation occurs in the medulla; above this point, lesions cause contralateral loss." },
+        { cat: 1, q: "Anatomically, which major vessel is located immediately posterior to the thyroid gland lobes?", a: ["Internal jugular vein", "Carotid artery", "Subclavian artery", "Inferior thyroid vein"], c: 1, r: "The common carotid artery lies within the carotid sheath, posterior to the thyroid lobes." },
+        { cat: 1, q: "During a thyroidectomy, a surgeon accidentally damages a nerve closely related to the inferior thyroid artery. The patient presents with:", a: ["Difficulty swallowing", "Hoarseness", "Loss of taste", "Neck muscle paralysis"], c: 1, r: "The recurrent laryngeal nerve is intimate with the inferior thyroid artery; damage causes vocal cord palsy." },
+        { cat: 2, q: "Which specific cells in the male reproductive system are responsible for the formation of the blood-testis barrier?", a: ["Leydig cells", "Spermatogonia", "Sertoli cells", "Myoid cells"], c: 2, r: "Tight junctions between Sertoli cells create the immunological barrier for developing sperm." },
+        { cat: 2, q: "A testicular biopsy shows failure of sperm maturation because the blood-testis barrier is compromised. Damage is to which cells?", a: ["Interstitial cells", "Sertoli cells", "Follicular cells", "Chief cells"], c: 1, r: "Sertoli cells ('nurse cells') maintain the environment required for spermatogenesis." },
+        { cat: 2, q: "During a vasectomy, which vessel must the surgeon be careful not to damage as it accompanies the ductus deferens?", a: ["Pudendal artery", "Inferior epigastric artery", "Testicular artery", "Internal iliac artery"], c: 2, r: "The testicular artery is the main blood supply within the spermatic cord." },
+        { cat: 2, q: "Interstitials cells of Leydig are the primary source of which hormone?", a: ["FSH", "Inhibin", "Testosterone", "LH"], c: 2, r: "Leydig cells in the testicular interstitium secrete testosterone in response to LH." },
+        { cat: 1, q: "An abnormal accumulation of serous fluid between the visceral and parietal layers of the tunica vaginalis is a:", a: ["Varicocele", "Hydrocele", "Hematocele", "Spermatocele"], c: 1, r: "A hydrocele is common in infants or after trauma to the scrotum." },
+        { cat: 1, q: "Which muscle is located between the Colles' fascia and the perineal membrane in the superficial perineal pouch?", a: ["Levator ani", "Obturator internus", "Bulbospongiosus", "Coccygeus"], c: 2, r: "The superficial pouch contains the bulbospongiosus, ischiocavernosus, and superficial transverse perineal muscles." },
+        { cat: 3, q: "A patient presents with tremors at rest and a 'shuffling' gait. Which part of the brain is primarily affected?", a: ["Cerebellum", "Basal ganglia", "Primary motor cortex", "Hypothalamus"], c: 1, r: "Parkinsonian symptoms stem from dopaminergic loss in the substantia nigra (basal ganglia)." },
+        { cat: 1, q: "Full myelination of the corticospinal tracts is typically completed by which age?", a: ["6 months", "1 year", "2 years", "5 years"], c: 2, r: "Myelination continues after birth and is complete by approximately age 2." },
+        { cat: 2, q: "A histological slide shows clusters of pale-staining cells surrounded by darker acinar tissue. These are the:", a: ["Adrenal cortex", "Islets of Langerhans", "Thyroid follicles", "Parathyroid glands"], c: 1, r: "Pancreatic islets (endocrine) appear pale against the darker exocrine acini." },
+        { cat: 2, q: "Which cells in the male gonad are found in the connective tissue between the seminiferous tubules?", a: ["Sertoli cells", "Spermatocytes", "Leydig cells", "Granulosa cells"], c: 2, r: "Leydig cells are 'interstitial' cells found outside the tubules." },
+        { cat: 2, q: "The production of testosterone is directly stimulated by which pituitary hormone acting on Leydig cells?", a: ["FSH", "ACTH", "TSH", "LH"], c: 3, r: "LH (Luteinizing Hormone) is the primary stimulus for androgen production." },
+        { cat: 2, q: "Thelarche (breast budding), the earliest sign of female puberty, is primarily driven by an increase in:", a: ["Progesterone", "Estrogen", "Testosterone", "Prolactin"], c: 1, r: "Estrogen triggers the development of secondary sexual characteristics in females." },
+        { cat: 2, q: "In the ovarian follicle, which cells respond to FSH to produce estrogen?", a: ["Theca interna", "Theca externa", "Granulosa cells", "Luteal cells"], c: 2, r: "FSH stimulates granulosa cells; LH stimulates theca cells (Two-cell theory)." },
+        { cat: 1, q: "The parathyroid glands develop embryologically from the:", a: ["1st & 2nd pharyngeal pouches", "Thyroglossal duct", "3rd & 4th pharyngeal pouches", "Neural crest"], c: 2, r: "The 3rd pouch forms inferior parathyroids; the 4th pouch forms superior ones." },
+        { cat: 1, q: "A midline cyst in the neck that moves upward when the patient protrudes their tongue is a:", a: ["Branchial cyst", "Thyroglossal duct remnant", "Dermoid cyst", "Goiter"], c: 1, r: "Thyroglossal cysts are tethered to the hyoid bone and tongue base." },
+        { cat: 2, q: "What is the typical histological lining of active thyroid follicles?", a: ["Simple squamous", "Simple cuboidal", "Stratified squamous", "Pseudostratified"], c: 1, r: "Follicular epithelium is cuboidal when active and squamous when inactive." },
+        { cat: 3, q: "A lesion in the midbrain involving the cerebral peduncle and exiting nerve fibers affects which functions?", a: ["Oculomotor and pyramidal", "Sensory and visual", "Hearing and balance", "Respiratory rate"], c: 0, r: "This describes Weber's Syndrome (CN III and corticospinal tract damage)." },
+        { cat: 1, q: "Which ligament contains the ovarian artery, vein, and nerve plexus?", a: ["Broad ligament", "Round ligament", "Suspensory ligament", "Ovarian ligament"], c: 2, r: "The suspensory ligament (infundibulopelvic) carries the gonadal vessels." },
+        { cat: 3, q: "Occlusion of the Posterior Inferior Cerebellar Artery (PICA) results in:", a: ["Weber's syndrome", "Wallenberg syndrome", "Benedikt's syndrome", "Millard-Gubler syndrome"], c: 1, r: "Lateral Medullary (Wallenberg) Syndrome is the classic PICA stroke presentation." },
+        { cat: 2, q: "Which part of the pituitary gland is responsible for the synthesis and secretion of ACTH?", a: ["Posterior pituitary", "Pars nervosa", "Anterior pituitary", "Hypothalamus"], c: 2, r: "The adenohypophysis (anterior) synthesizes ACTH from POMC." },
+        { cat: 3, q: "The oculomotor nerve (CN III) emerges from the brainstem at the:", a: ["Pontomedullary junction", "Interpeduncular fossa", "Pre-olivary sulcus", "Dorsal midbrain"], c: 1, r: "CN III exits between the cerebral peduncles in the midbrain." },
+        { cat: 3, q: "Which cranial nerve is found passing through the center of the cavernous sinus, adjacent to the ICA?", a: ["CN III", "CN IV", "CN VI (Abducens)", "CN V1"], c: 2, r: "CN VI is the only nerve that runs through the sinus; others are in the lateral wall." },
+        { cat: 3, q: "If only the lateral ventricles are dilated on a brain scan, where is the most likely site of obstruction?", a: ["Foramen of Monroe", "Cerebral aqueduct", "Foramen of Luschka", "Central canal"], c: 0, r: "Obstruction of the interventricular foramen prevents drainage from lateral to 3rd ventricles." },
+        { cat: 0, q: "In viral meningitis, which parameter of the CSF typically remains within the normal range?", a: ["Protein count", "White blood cell count", "Glucose levels", "Pressure"], c: 2, r: "Bacteria consume glucose; viruses do not, keeping glucose normal." },
+        { cat: 3, q: "CSF electrophoresis in a patient with Multiple Sclerosis (MS) would most likely show:", a: ["Decreased albumin", "Oligoclonal bands", "Increased glucose", "Presence of RBCs"], c: 1, r: "Oligoclonal bands represent intrathecal IgG production in MS." },
+        { cat: 3, q: "The simplest reflex arc, such as the knee-jerk reflex, is classified as:", a: ["Polysynaptic", "Monosynaptic", "Disynaptic", "Visceral"], c: 1, r: "Stretch reflexes involve a single synapse between a sensory and motor neuron." },
+        { cat: 3, q: "Which muscle fibers are responsible for actual contraction and are innervated by alpha motor neurons?", a: ["Intrafusal", "Extrafusal", "Spindle", "Nuclear bag"], c: 1, r: "Extrafusal fibers perform the work; intrafusal fibers act as sensors." },
+        { cat: 0, q: "The high spatial resolution of the fingertips is due to:", a: ["Low receptor density", "Large receptive fields", "High density / Small fields", "Deep receptor location"], c: 2, r: "Small receptive fields allow the brain to distinguish two close points." },
+        { cat: 0, q: "Meissner's and Pacinian corpuscles are examples of which type of receptor?", a: ["Nociceptors", "Thermoreceptors", "Mechanoreceptors", "Chemoreceptors"], a: 2, r: "They respond to physical deformation (touch and pressure)." },
+        { cat: 3, q: "Which hypothalamic nucleus is primarily responsible for the production of ADH?", a: ["Paraventricular", "Arcuate", "Supraoptic nucleus", "Preoptic"], c: 2, r: "Supraoptic = ADH; Paraventricular = Oxytocin (predominantly)." },
+        { cat: 3, q: "The straight sinus is located at the junction of which two dural structures?", a: ["Falx cerebri and cerebelli", "Falx cerebri and tentorium", "Tentorium and petrous bone", "Falx cerebelli and skull"], c: 1, r: "The straight sinus drains the inferior sagittal sinus and great cerebral vein." },
+        { cat: 3, q: "A subdural hematoma on a CT scan appears crescent-shaped. This is caused by rupture of:", a: ["Middle meningeal artery", "Bridging veins", "Internal carotid artery", "Basilar artery"], c: 1, r: "Subdural = Veins; Epidural = Middle Meningeal Artery." },
+        { cat: 3, q: "Which dural fold separates the cerebellum from the occipital lobes?", a: ["Falx cerebri", "Falx cerebelli", "Tentorium cerebelli", "Diaphragma sellae"], c: 2, r: "The tentorium forms a 'tent' over the posterior fossa." },
+        { cat: 3, q: "The cell bodies of preganglionic sympathetic neurons are located in the:", a: ["Dorsal horn", "Ventral horn", "Lateral horn (IML)", "Substantia gelatinosa"], c: 2, r: "Sympathetic outflow occurs from the T1-L2 lateral gray column." },
+        { cat: 2, q: "In a patient with Graves' disease (primary hyperthyroidism), which hormone is low?", a: ["T3", "T4", "TSH", "TRH"], c: 2, r: "High T3/T4 provides negative feedback to inhibit TSH release." },
+        { cat: 3, q: "Brodmann area 6 is functionally known as the:", a: ["Primary motor", "Premotor area", "Primary sensory", "Visual cortex"], c: 1, r: "Area 4 is Primary Motor; Area 6 is Premotor/Supplementary Motor." },
+        { cat: 3, q: "Damage to which cortical area results in agraphia and acalculia?", a: ["Broca's area", "Wernicke's area", "Angular gyrus", "Postcentral gyrus"], c: 2, r: "The angular gyrus is involved in language, mathematics, and cognition." },
+        { cat: 3, q: "Which part of the cerebral cortex is associated with personality and social behavior?", a: ["Occipital", "Prefrontal cortex", "Insula", "Temporal"], c: 1, r: "The prefrontal cortex handles executive function and social conduct." },
+        { cat: 1, q: "What causes the conus medullaris to be at L1/L2 in adults?", a: ["Cord retraction", "Disparate growth", "Neurulation failure", "Meningeal thickening"], c: 1, r: "The vertebral column grows faster and longer than the spinal cord." },
+        { cat: 3, q: "A stroke in which artery causes motor/sensory loss in the contralateral leg area?", a: ["Middle cerebral", "Anterior cerebral artery", "Posterior cerebral", "Basilar"], c: 1, r: "ACA supplies the medial aspect of the hemisphere (homunculus leg area)." },
+        { cat: 0, q: "A receptor decreasing its firing rate to a constant stimulus is called:", a: ["Summation", "Sensitization", "Adaptation", "Recruitment"], c: 2, r: "Adaptation prevents the brain from being overwhelmed by constant data." },
+        { cat: 0, q: "Which type of synapse allows for the fastest signal transmission?", a: ["Axosomatic", "Chemical", "Electrical gap junction", "Neuromuscular"], c: 2, r: "Electrical synapses allow direct flow of ions between cells." },
+        { cat: 0, q: "Opening of chloride channels in the postsynaptic membrane results in an:", a: ["EPSP", "Action potential", "IPSP", "Depolarization"], c: 2, r: "Cl- influx makes the cell more negative (hyperpolarization), inhibiting firing." },
+        { cat: 3, q: "The motor nucleus of the Trigeminal nerve (CN V) is located in the:", a: ["Medulla", "Upper Pons", "Lower Midbrain", "Thalamus"], c: 1, r: "CN V is the primary nerve associated with the pons." },
+        { cat: 1, q: "Which structure is a continuation of pia mater from the conus to the coccyx?", a: ["Cauda equina", "Ligamentum flavum", "Filum terminale", "Dura mater"], c: 2, r: "The filum terminale anchors the spinal cord." },
+        { cat: 3, q: "Which tract is responsible for turning the head/eyes toward visual/auditory stimuli?", a: ["Corticospinal", "Spinothalamic", "Spinotectal", "Vestibulospinal"], c: 2, r: "The tectum of the midbrain coordinates these orientation reflexes." },
+        { cat: 0, q: "Which second messenger is generated when Adenylyl Cyclase is activated?", a: ["IP3", "DAG", "cAMP", "Calcium"], c: 2, r: "AC converts ATP into cyclic AMP (cAMP)." },
+        { cat: 1, q: "Which muscle, along with the levator ani, forms the pelvic diaphragm?", a: ["Obturator internus", "Piriformis", "Coccygeus muscle", "Bulbospongiosus"], c: 2, r: "Pelvic Diaphragm = Levator Ani + Coccygeus." },
+        { cat: 2, q: "Which class of hormones acts primarily via intracellular receptors?", a: ["Peptide", "Steroid hormones", "Catecholamines", "Glycoproteins"], c: 1, r: "Steroids are lipophilic and act as transcription factors." },
+        { cat: 2, q: "Anatomically, where are developing follicles located within the ovary?", a: ["Ovarian medulla", "Ovarian cortex", "Tunica albuginea", "Hilus"], c: 1, r: "The cortex contains follicles; the medulla contains vessels." },
+        { cat: 2, q: "After ovulation, the remnants of the follicle transform into the:", a: ["Corpus albicans", "Corpus luteum", "Primary follicle", "Secondary oocyte"], c: 1, r: "The 'yellow body' secretes high levels of progesterone." },
+        { cat: 2, q: "The corpus luteum is the primary source of which hormone for the secretory phase?", a: ["Estrogen", "Progesterone", "LH", "FSH"], c: 1, r: "Progesterone 'pro-gestates' the uterine lining." },
+        { cat: 3, q: "A lesion in the right primary motor cortex results in paralysis of the:", a: ["Right arm", "Right leg", "Contralateral (Left) leg", "Both legs"], c: 2, r: "Upper motor neurons control the opposite side of the body." },
+        { cat: 1, q: "Which muscle forms the lateral wall of the ischio-anal fossa?", a: ["Levator ani", "Sphincter ani externus", "Obturator internus", "Puborectalis"], c: 2, r: "The ischio-anal fossa is bounded medially by levator ani and laterally by obturator internus." },
+        { cat: 2, q: "The release of ACTH from the anterior pituitary is stimulated by:", a: ["GnRH", "TRH", "CRH", "GHRH"], c: 2, r: "Corticotropin-releasing hormone (CRH) from the hypothalamus." }
+    ];
+
+    let cur = 0;
+    let state = JSON.parse(localStorage.getItem('ap_past_v2')) || { answers: {}, flagged: [] };
+    let chart;
+
+    function wipe() { if(confirm("Reset Simulation?")) { localStorage.removeItem('ap_past_v2'); location.reload(); } }
+
+    function updateChart() {
+        const scores = [0,0,0,0], counts = [0,0,0,0];
+        Object.keys(state.answers).forEach(k => {
+            const q = fullPool[k];
+            if(!q) return; 
+            counts[q.cat]++;
+            if(state.answers[k] === q.c) scores[q.cat]++;
+        });
+        const perf = scores.map((s, i) => counts[i] === 0 ? 0 : Math.round((s/counts[i])*100));
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        if(chart) chart.destroy();
+        chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Physiology', 'Embryo/Anatomy', 'Endo/Repro', 'Neuroscience'],
+                datasets: [{ data: perf, backgroundColor: 'rgba(251, 191, 36, 0.2)', borderColor: '#fbbf24', pointBackgroundColor: '#fbbf24' }]
+            },
+            options: { scales: { r: { min: 0, max: 100, ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.05)' }, pointLabels: { color: '#94a3b8', font: { size: 9, weight: 'bold' } } } }, plugins: { legend: { display: false } } }
+        });
+    }
+
+    function render() {
+        const grid = document.getElementById('matrix');
+        grid.innerHTML = '';
+        fullPool.forEach((d, i) => {
+            const n = document.createElement('div');
+            n.className = `node ${i === cur ? 'active' : ''} ${state.flagged.includes(i) ? 'flagged' : ''}`;
+            if(state.answers[i] !== undefined) n.classList.add(state.answers[i] === d.c ? 'correct' : 'wrong');
+            n.innerText = i + 1;
+            n.onclick = () => { cur = i; render(); };
+            grid.appendChild(n);
+        });
+
+        updateChart();
+        const d = fullPool[cur];
+        document.getElementById('pID').innerText = `EXAM // Q${String(cur + 1).padStart(2, '0')}`;
+        document.getElementById('qBody').innerText = d.q;
+        
+        const list = document.getElementById('optList');
+        list.innerHTML = '';
+        document.getElementById('ratBox').style.display = 'none';
+
+        d.a.forEach((txt, i) => {
+            const opt = document.createElement('div');
+            opt.className = `opt-item ${state.answers[cur] !== undefined ? (i === d.c ? 'correct' : (i === state.answers[cur] ? 'wrong' : '')) : ''}`;
+            opt.innerHTML = `<span class="opt-index">0${i+1}</span> ${txt}`;
+            if(state.answers[cur] === undefined) opt.onclick = () => { state.answers[cur] = i; localStorage.setItem('ap_past_v2', JSON.stringify(state)); render(); };
+            list.appendChild(opt);
+        });
+
+        if(state.answers[cur] !== undefined) {
+            document.getElementById('ratBox').innerText = d.r;
+            document.getElementById('ratBox').style.display = 'block';
+        }
+    }
+
+    function proceed() { if(cur < fullPool.length - 1) { cur++; render(); } }
+    function toggleFlag() { if(state.flagged.includes(cur)) state.flagged = state.flagged.filter(id => id !== cur); else state.flagged.push(cur); localStorage.setItem('ap_past_v2', JSON.stringify(state)); render(); }
+
+    render();
+</script>
+</body>
+</html>
