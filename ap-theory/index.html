@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESG3DJGVYD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ESG3DJGVYD');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A&P Comprehensive Mastery Engine | Study Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg: #020617; --panel: #0f172a; --accent: #3498db; 
+            --success: #10b981; --danger: #f43f5e; --flag: #f59e0b;
+            --text: #f1f5f9; --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+        .nav-header { padding: 1rem 2rem; background: var(--panel); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+        .logo { font-weight: 800; letter-spacing: 0.1em; font-size: 0.85rem; display: flex; align-items: center; gap: 12px; color: #fff; }
+        .pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+        .app-grid { display: grid; grid-template-columns: 340px 1fr; flex: 1; overflow: hidden; }
+        .sidebar { background: rgba(15, 23, 42, 0.4); border-right: 1px solid var(--border); padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; }
+        .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+        .chart-wrapper { height: 200px; width: 100%; position: relative; }
+        .label-id { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
+        .matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 10px; }
+        .node { aspect-ratio: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; cursor: pointer; color: var(--text-dim); position: relative; transition: 0.2s; }
+        .node.active { border-color: var(--accent); background: rgba(52, 152, 219, 0.1); color: white; }
+        .node.correct { border-color: var(--success); color: var(--success); }
+        .node.wrong { border-color: var(--danger); color: var(--danger); }
+        .node.flagged::before { content: ''; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: var(--flag); border-radius: 50%; border: 2px solid var(--bg); }
+        .stage { padding: 2rem 3rem; display: flex; justify-content: center; overflow-y: auto; }
+        .content-wrap { max-width: 800px; width: 100%; }
+        .proc-header { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 0.75rem; margin-bottom: 1rem; opacity: 0.8; }
+        .q-text { font-size: 1.6rem; font-weight: 700; line-height: 1.4; margin-bottom: 2.5rem; color: #fff; }
+        .options { display: grid; gap: 0.85rem; }
+        .opt-item { background: var(--panel); border: 1px solid var(--border); padding: 1.25rem 1.75rem; border-radius: 14px; cursor: pointer; display: flex; align-items: center; gap: 1.25rem; font-size: 1.05rem; transition: 0.2s; }
+        .opt-item:hover { border-color: var(--accent); transform: translateX(6px); }
+        .opt-item.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .opt-item.wrong { border-color: var(--danger); background: rgba(244, 63, 94, 0.1); color: var(--danger); }
+        .rationale { margin-top: 2rem; padding: 1.75rem; background: rgba(30, 41, 59, 0.6); border-left: 4px solid var(--accent); border-radius: 10px; display: none; line-height: 1.6; color: var(--text-dim); }
+        .action-row { margin-top: 3rem; display: flex; gap: 1rem; }
+        .btn-ui { padding: 1rem 2rem; border-radius: 10px; font-weight: 800; cursor: pointer; border: none; transition: 0.2s; }
+        .btn-next { background: var(--accent); color: #fff; flex: 1; }
+        .hub-link { color: var(--text-dim); text-decoration: none; font-size: 0.7rem; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<nav class="nav-header">
+    <div class="logo"><div class="pulse"></div> A&P COMPREHENSIVE CORE</div>
+    <div style="display: flex; gap: 20px; align-items: center;">
+        <button class="hub-link" style="background:none; border:none; cursor:pointer; color:var(--danger);" onclick="wipe()">WIPE PROGRESS</button>
+        <a href="../index.html" class="hub-link">← BACK TO A&P MENU</a>
+    </div>
+</nav>
+
+<div class="app-grid">
+    <aside class="sidebar">
+        <div class="card"><span class="label-id">Performance Radar</span><div class="chart-wrapper"><canvas id="radarChart"></canvas></div></div>
+        <div class="card" style="flex: 1;"><span class="label-id">Diagnostic Matrix</span><div class="matrix" id="matrix"></div></div>
+    </aside>
+
+    <main class="stage">
+        <div class="content-wrap">
+            <div class="proc-header" id="pID">EXAM // Q01</div>
+            <div class="q-text" id="qBody">Select a node to begin.</div>
+            <div class="options" id="optList"></div>
+            <div class="rationale" id="ratBox"></div>
+            <div class="action-row">
+                <button class="btn-ui" style="background:transparent; border:1px solid var(--border); color:var(--flag);" onclick="toggleFlag()">Flag</button>
+                <button class="btn-ui btn-next" onclick="proceed()">Next Question →</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    // Categories: 0=Neuro/Spinal, 1=Endocrine, 2=Repro/Development, 3=Anatomy/General
+    const fullPool = [
+        { cat: 0, q: "Failure of the anterior neuropore to close results in which condition?", a: ["Meningocele", "Spina Bifida Occulta", "Anencephaly", "Syringomyelia"], c: 2, r: "Anencephaly is a lethal neural tube defect where the brain fails to develop due to anterior neuropore failure." },
+        { cat: 3, q: "Which dural fold is attached anteriorly to the crista galli and internal frontal crest?", a: ["Tentorium cerebelli", "Falx cerebri", "Falx cerebelli", "Diaphragma sellae"], c: 1, r: "The falx cerebri is the large, sickle-shaped dural fold that separates the two cerebral hemispheres." },
+        { cat: 0, q: "A lesion in the left lateral spinothalamic tract at T8 would result in:", a: ["Ipsilateral pain loss at T8", "Contralateral pain loss starting at T10", "Ipsilateral proprioception loss", "Bilateral temperature loss"], c: 1, r: "The spinothalamic tract decussates at the spinal level; lesions cause contralateral loss 1-2 segments below." },
+        { cat: 3, q: "The correct CSF flow sequence is: Interventricular foramen to Third ventricle to:", a: ["Foramen of Magendie", "Cerebral Aqueduct", "Foramen of Luschka", "Central Canal"], c: 1, r: "CSF flows from the lateral ventricles to the 3rd via Monro, then to the 4th via the Aqueduct of Sylvius." },
+        { cat: 0, q: "Which protein serves as the primary calcium sensor for synaptic vesicle fusion?", a: ["Synaptotagmin", "Synaptobrevin", "Syntaxin", "SNAP-25"], c: 0, r: "Synaptotagmin on the vesicle membrane detects Ca2+ influx to trigger neurotransmitter release." },
+        { cat: 3, q: "Damage to the left precentral gyrus (Brodmann 4) primarily results in:", a: ["Right-sided sensory loss", "Left-sided paralysis", "Right-sided paralysis", "Broca's aphasia"], c: 2, r: "Area 4 is the Primary Motor Cortex; its neurons control voluntary movement on the opposite side." },
+        { cat: 0, q: "Which mechanoreceptor is slowly adapting and sensitive to skin stretch?", a: ["Meissner corpuscle", "Pacinian corpuscle", "Ruffini ending", "Merkel disc"], c: 2, r: "Ruffini endings detect tension and stretch deep within the dermis." },
+        { cat: 0, q: "The metencephalon secondary brain vesicle develops into the pons and the:", a: ["Thalamus", "Medulla", "Cerebellum", "Midbrain"], c: 2, r: "The metencephalon gives rise to the pons and the cerebellum." },
+        { cat: 3, q: "Wallenberg Syndrome is caused by the occlusion of which artery?", a: ["Middle Cerebral Artery", "Anterior Spinal Artery", "PICA", "Basilar Artery"], c: 2, r: "Lateral Medullary Syndrome (Wallenberg) is classically caused by a Posterior Inferior Cerebellar Artery stroke." },
+        { cat: 0, q: "Giant pyramidal cells of Betz are located in which histological layer of the motor cortex?", a: ["Layer II", "Layer III", "Layer IV", "Layer V"], c: 3, r: "Betz cells are massive output neurons found in the internal pyramidal layer (Layer V)." },
+        { cat: 1, q: "The enzyme responsible for the organification of iodine in the thyroid is:", a: ["Na+/K+ ATPase", "Thyroid peroxidase (TPO)", "Deiodinase", "Aromatase"], c: 1, r: "TPO is essential for the oxidation and organification of iodide onto thyroglobulin." },
+        { cat: 1, q: "Which cells secrete Parathyroid Hormone (PTH) to increase blood calcium?", a: ["Follicular cells", "Parafollicular C-cells", "Chief cells", "Oxyphil cells"], c: 2, r: "Chief cells of the parathyroid gland monitor and regulate serum calcium via PTH." },
+        { cat: 1, q: "The adrenal Zona Reticularis primarily secretes which of the following?", a: ["Aldosterone", "Cortisol", "Androgens (DHEA)", "Epinephrine"], c: 2, r: "Zona Glomerulosa (Aldosterone), Fasciculata (Cortisol), Reticularis (Androgens)." },
+        { cat: 1, q: "Acromegaly in adults is often associated with which metabolic abnormality?", a: ["Hypoglycemia", "Hyperglycemia", "Hypolipidemia", "Hyperkalemia"], c: 1, r: "Excessive Growth Hormone has anti-insulin effects, frequently leading to secondary diabetes/hyperglycemia." },
+        { cat: 2, q: "Rathke's pouch is the embryological precursor for the:", a: ["Neurohypophysis", "Adenohypophysis", "Thyroid", "Adrenal medulla"], c: 1, r: "The anterior pituitary (adenohypophysis) develops from an upward invagination of the oral ectoderm." },
+        { cat: 1, q: "Acidophils of the anterior pituitary (Somatotrophs) primarily secrete:", a: ["ACTH", "TSH", "Growth Hormone", "FSH"], c: 2, r: "Acidophils secrete GH and Prolactin; Basophils secrete ACTH, TSH, and Gonadotropins." },
+        { cat: 1, q: "Conn's Syndrome (Primary Hyperaldosteronism) is characterized by:", a: ["Hyponatremia", "Hyperkalemia", "Hypokalemia and Hypertension", "Hypotension"], c: 2, r: "High aldosterone causes sodium/water retention (hypertension) and potassium excretion (hypokalemia)." },
+        { cat: 2, q: "Inhibin, which regulates FSH, is secreted by which male cells?", a: ["Leydig cells", "Spermatogonia", "Sertoli cells", "Epididymal cells"], c: 2, r: "Sertoli cells produce inhibin to provide negative feedback to the pituitary." },
+        { cat: 2, q: "The direct trigger for ovulation is a surge in which hormone?", a: ["FSH", "Estrogen", "Luteinizing Hormone (LH)", "Progesterone"], c: 2, r: "The LH surge is the specific hormonal event that triggers the rupture of the Graafian follicle." },
+        { cat: 2, q: "Which structure maintains the testes at ~2°C below core body temperature?", a: ["Tunica albuginea", "Pampiniform plexus", "Seminal vesicles", "Cremaster muscle"], c: 1, r: "The pampiniform venous plexus acts as a heat exchanger to cool arterial blood entering the testis." },
+        { cat: 1, q: "Milk let-down and uterine contractions are mediated by which posterior pituitary hormone?", a: ["Prolactin", "Oxytocin", "ADH", "Vasopressin"], c: 1, r: "Oxytocin stimulates smooth muscle contraction in the breast and uterus." },
+        { cat: 2, q: "Primary oocytes remain arrested from birth until ovulation in which phase?", a: ["Metaphase I", "Metaphase II", "Prophase I", "Anaphase II"], c: 2, r: "Meiosis I begins in utero and arrests in Prophase I until the surge of puberty/ovulation." },
+        { cat: 3, q: "The 'ceiling' of the perineum is formed by which muscle?", a: ["Obturator internus", "Perineal membrane", "Levator ani", "Gluteus maximus"], c: 2, r: "The levator ani forms the pelvic diaphragm, acting as the roof of the perineum." },
+        { cat: 2, q: "Under testosterone influence, the Wolffian ducts develop into the:", a: ["Uterus", "Epididymis and Vas deferens", "Ovaries", "Penile urethra"], c: 1, r: "In males, testosterone maintains the mesonephric (Wolffian) ducts to form the internal tract." },
+        { cat: 2, q: "Which gland contributes approximately 60% of the total semen volume?", a: ["Testes", "Prostate", "Seminal vesicles", "Bulbourethral glands"], c: 2, r: "Seminal vesicles provide the majority of volume, including fructose and prostaglandins." },
+        { cat: 0, q: "Which neuroglia form the myelin sheath in the CNS?", a: ["Schwann cells", "Oligodendrocytes", "Astrocytes", "Microglia"], c: 1, r: "Oligodendrocytes myelinate multiple axons in the CNS; Schwann cells myelinate a single axon in the PNS." },
+        { cat: 0, q: "Multiple Sclerosis (MS) is an autoimmune attack on which cells?", a: ["Ependymal cells", "Astrocytes", "Oligodendrocytes", "Microglia"], c: 2, r: "MS is a demyelinating disease of the Central Nervous System (CNS)." },
+        { cat: 0, q: "The medial lemniscus (sensory decussation) forms at which level?", a: ["Lower Medulla", "Lower Pons", "Midbrain", "Spinal Cord"], c: 0, r: "The fibers from nuclei gracilis and cuneatus cross as internal arcuate fibers in the medulla." },
+        { cat: 3, q: "An ACA stroke primarily affects motor control of the contralateral:", a: ["Face", "Arm", "Leg and foot", "Hand"], c: 2, r: "The Anterior Cerebral Artery supplies the medial cortex where the leg representation is located." },
+        { cat: 0, q: "Which type of synapse uses gap junctions for nearly instantaneous ion flow?", a: ["Chemical", "Electrical", "Axodendritic", "Dendrosomatic"], c: 1, r: "Electrical synapses allow direct electrical coupling via gap junctions." },
+        { cat: 0, q: "The cremasteric reflex is used to test which spinal cord levels?", a: ["T10-T12", "L1-L2", "L5-S1", "S2-S4"], c: 1, r: "The sensory limb is the ilioinguinal nerve (L1) and the motor limb is the genitofemoral (L1-L2)." },
+        { cat: 3, q: "Which artery in the Circle of Willis connects the two Anterior Cerebral Arteries?", a: ["Posterior Communicating", "Internal Carotid", "Anterior Communicating", "Basilar"], c: 2, r: "The ACOM completes the anterior portion of the arterial circle." },
+        { cat: 3, q: "Broca's motor speech area corresponds to Brodmann areas:", a: ["17", "41/42", "44/45", "3,1,2"], c: 2, r: "Areas 44 and 45 in the dominant frontal lobe are responsible for motor speech production." },
+        { cat: 0, q: "The lateral horn (preganglionic sympathetic) exists only between:", a: ["C1-C8", "T1-L2", "L1-S4", "S2-S4"], c: 1, r: "Sympathetic outflow (Thoracolumbar) is restricted to the T1 through L2 segments." },
+        { cat: 3, q: "Bell's Palsy (facial paralysis) results from damage to which cranial nerve?", a: ["CN V", "CN III", "CN VII", "CN VI"], c: 2, r: "The Facial Nerve (CN VII) controls all muscles of facial expression." },
+        { cat: 1, q: "Which second messenger is used by ADH acting on renal V2 receptors?", a: ["IP3", "cAMP", "cGMP", "Tyrosine Kinase"], c: 1, r: "ADH V2 receptors use Gs-protein to activate adenylyl cyclase and increase cAMP." },
+        { cat: 1, q: "The primary hypothalamic source of Antidiuretic Hormone (ADH) is the:", a: ["Arcuate nucleus", "Suprachiasmatic nucleus", "Supraoptic nucleus", "Ventromedial nucleus"], c: 2, r: "Magnocellular neurons in the supraoptic and paraventricular nuclei synthesize ADH/Oxytocin." },
+        { cat: 1, q: "Somatostatin, which inhibits insulin and glucagon, is secreted by pancreatic:", a: ["Alpha cells", "Beta cells", "Delta cells", "PP cells"], c: 2, r: "Delta cells produce somatostatin to act locally as a paracrine inhibitor." },
+        { cat: 0, q: "Which protein serves as the 'molecular switch' in G-protein-coupled signaling?", a: ["Adenylyl cyclase", "G-alpha subunit", "Protein Kinase A", "cAMP"], c: 1, r: "The G-alpha subunit switches from 'off' (GDP-bound) to 'on' (GTP-bound)." },
+        { cat: 1, q: "High TSH with low T3/T4 indicates a primary pathology in the:", a: ["Hypothalamus", "Anterior Pituitary", "Thyroid Gland", "Adrenal Cortex"], a: 2, r: "If the thyroid fails, negative feedback is lost, leading to compensatory elevation of TSH." },
+        { cat: 1, q: "Hypercalcemia commonly presents clinically with:", a: ["Tetany", "Chvostek sign", "Kidney stones", "Hypotension"], c: 2, r: "Hypercalcemia motto: 'Stones, bones, abdominal moans, and psychic groans'." },
+        { cat: 1, q: "The adrenal medulla's chromaffin cells are modified:", a: ["Epithelial cells", "Postganglionic neurons", "Preganglionic neurons", "Glial cells"], c: 1, r: "Chromaffin cells function as postganglionic sympathetic neurons without axons." },
+        { cat: 2, q: "Sperm mature and gain motility in which structure?", a: ["Seminiferous tubules", "Rete testis", "Epididymis", "Vas deferens"], c: 2, r: "The epididymis is the site of final physiological maturation and storage of sperm." },
+        { cat: 2, q: "Final sperm activation (capacitation) occurs in the:", a: ["Testis", "Vagina", "Uterus or Uterine Tubes", "Epididymis"], c: 2, r: "Capacitation occurs within the female reproductive tract prior to fertilization." },
+        { cat: 2, q: "Identify the correct order of ovarian follicle development:", a: ["Primary-Secondary-Graafian", "Primordial-Primary-Secondary-Graafian", "Secondary-Primary-Graafian", "Primordial-Secondary-Graafian"], c: 1, r: "Follicles progress from dormant primordials through several stages to the mature antral/Graafian stage." },
+        { cat: 0, q: "The Blood-CSF barrier is formed by tight junctions of:", a: ["Endothelial cells", "Choroidal epithelial cells", "Astrocytes", "Microglia"], c: 1, r: "The choroid plexus epithelium creates the barrier between blood and cerebrospinal fluid." },
+        { cat: 0, q: "Miosis (pupillary constriction) in Horner's syndrome indicates damage to:", a: ["Parasympathetics", "Sympathetics", "CN III", "Optic nerve"], c: 1, r: "Horner's is a triad caused by loss of sympathetic innervation to the eye/face." },
+        { cat: 0, q: "The divider for somatotopy in the dorsal columns (Gracilis vs. Cuneatus) is level:", a: ["T2", "T6", "T10", "L1"], c: 1, r: "Below T6 contains only Gracilis; above T6 adds the Cuneatus (upper limb) bundle." },
+        { cat: 2, q: "Basal body temperature rises after ovulation due to which hormone?", a: ["Estrogen", "LH", "Progesterone", "FSH"], c: 2, r: "Progesterone has a thermogenic effect on the hypothalamic temperature-regulating center." },
+        { cat: 3, q: "The pudendal nerve originates from which spinal nerve roots?", a: ["L2-L4", "L4-S1", "S2-S4", "S4-Co1"], c: 2, r: "The pudendal nerve (S2-S4) is the primary nerve of the perineum." },
+        { cat: 3, q: "The primary thalamic relay for auditory information is the:", a: ["LGN", "MGB", "VPL", "VPM"], c: 1, r: "Medial Geniculate Body = Music (Auditory). Lateral Geniculate Body = Light (Visual)." },
+        { cat: 3, q: "The oculomotor nerve (CN III) emerges from the brainstem at the:", a: ["Pre-olivary sulcus", "Interpeduncular fossa", "Pontomedullary junction", "Dorsal midbrain"], c: 1, r: "CN III exits the midbrain between the cerebral peduncles." },
+        { cat: 0, q: "Equilibrium and ocular reflexes are coordinated by the cerebellar:", a: ["Cerebrocerebellum", "Spinocerebellum", "Vestibulocerebellum", "Deep nuclei"], c: 2, r: "The flocculonodular lobe (vestibulocerebellum) is essential for balance and eye movements." },
+        { cat: 0, q: "Resting tremor and lead-pipe rigidity suggest a lesion in the:", a: ["Cerebellum", "Pyramidal system", "Basal ganglia", "LMN"], c: 2, r: "These are classic 'extrapyramidal' signs associated with Parkinsonism/Basal Ganglia pathology." },
+        { cat: 0, q: "Dull, aching, and poorly localized pain is transmitted by:", a: ["A-alpha fibers", "A-delta fibers", "C fibers", "B fibers"], c: 2, r: "Slow pain is carried by unmyelinated, small-diameter C fibers." },
+        { cat: 3, q: "Referred pain occurs due to convergence at the:", a: ["Thalamus", "Dorsal horn of spinal cord", "Primary sensory cortex", "Brainstem"], c: 1, r: "Visceral and somatic sensory fibers converge on the same second-order neurons in the dorsal horn." },
+        { cat: 0, q: "The 'Inverse Stretch Reflex' (muscle relaxation) is mediated by:", a: ["Muscle Spindles", "Golgi Tendon Organs (GTO)", "Free nerve endings", "Merkel discs"], c: 1, r: "GTOs detect excessive tension and trigger reflex inhibition to prevent muscle damage." },
+        { cat: 3, q: "The internal capsule's posterior limb is primarily supplied by the:", a: ["Recurrent artery of Heubner", "Middle Cerebral Artery", "Anterior Choroidal Artery", "Anterior Spinal Artery"], c: 2, r: "The Anterior Choroidal Artery provides critical supply to the posterior limb of the internal capsule." },
+        { cat: 1, q: "Thyroglobulin is the precursor protein for T3/T4 stored in the thyroid:", a: ["Follicular cells", "Colloid", "C-cells", "Capillaries"], c: 1, r: "The thyroid is unique for storing its hormones extracellularly in the follicular colloid." },
+        { cat: 1, q: "Which process does cortisol promote in the liver to maintain fasting glucose?", a: ["Glycolysis", "Glycogenesis", "Gluconeogenesis", "Lipogenesis"], c: 2, r: "Cortisol stimulates the production of new glucose from non-carbohydrate sources (amino acids)." },
+        { cat: 1, q: "Oxytocin is synthesized in the hypothalamus but released from the:", a: ["Anterior Pituitary", "Posterior Pituitary", "Adrenal Medulla", "Ovary"], c: 1, r: "The neurohypophysis (posterior pituitary) stores and releases hypothalamic hormones." },
+        { cat: 2, q: "Estrogen switches to positive feedback to trigger the LH surge at the end of the:", a: ["Luteal phase", "Menstrual phase", "Follicular phase", "Secretory phase"], c: 2, r: "When estrogen levels reach a critical high threshold, it triggers LH release." },
+        { cat: 2, q: "Meiosis II in the oocyte is only completed upon:", a: ["LH surge", "Ovulation", "Fertilization", "Implantation"], c: 2, r: "The secondary oocyte remains in Metaphase II until fertilization by a sperm." },
+        { cat: 2, q: "Androgen Binding Protein (ABP) is produced by:", a: ["Leydig cells", "Sertoli cells", "Spermatids", "Prostate cells"], c: 1, r: "Sertoli cells produce ABP to maintain high local testosterone concentrations in the tubules." },
+        { cat: 3, q: "The cavernous sinus lateral wall contains which of the following?", a: ["Internal Carotid Artery", "CN III, IV, V1, V2", "CN VI", "Optic Nerve"], c: 1, r: "The lateral wall houses CN III, IV, and the first two divisions of the trigeminal nerve." },
+        { cat: 2, q: "The adrenal medulla is embryologically derived from:", a: ["Intermediate mesoderm", "Neural crest cells", "Endoderm", "Lateral plate mesoderm"], c: 1, r: "Chromaffin cells are derived from neural crest cells (ectoderm)." },
+        { cat: 2, q: "A thyroglossal duct remnant may present as a midline cyst that moves with:", a: ["Neck rotation", "Eye movement", "Tongue protrusion", "Deep breathing"], c: 2, r: "Because it is attached to the hyoid and tongue base, the cyst moves upward when sticking out the tongue." },
+        { cat: 2, q: "The Müllerian ducts develop into the uterus in the absence of:", a: ["Estrogen", "MIS and Testosterone", "LH", "Progesterone"], c: 1, r: "Müllerian Inhibiting Substance (MIS) must be absent for female internal structures to form." },
+        { cat: 3, q: "The most dependent part of the female pelvic cavity is the:", a: ["Vesicouterine pouch", "Pouch of Douglas", "Ischio-anal fossa", "Superficial pouch"], c: 1, r: "The rectouterine pouch is the lowest point where fluid/blood collects in the standing female." },
+        { cat: 3, q: "The uterine artery is a direct branch of the anterior trunk of the:", a: ["External iliac", "Internal iliac", "Aorta", "Femoral"], c: 1, r: "The internal iliac artery provides the primary blood supply to pelvic viscera." },
+        { cat: 3, q: "The shortest and least dilatable part of the male urethra is the:", a: ["Prostatic", "Membranous", "Spongy", "Preprostatic"], c: 1, r: "The membranous part passes through the urogenital diaphragm and is high-risk during catheterization." },
+        { cat: 3, q: "Berry's ligament attaches the thyroid gland to the:", a: ["Hyoid bone", "Thyroid cartilage", "Cricoid cartilage", "Tracheal rings"], c: 2, r: "The suspensory ligament of Berry anchors the thyroid to the cricoid and tracheal rings." },
+        { cat: 3, q: "The artery of Adamkiewicz is the vital feeder for the cord's:", a: ["Cervical segments", "Upper thoracic segments", "Lower thoracic and lumbar", "Medulla"], c: 2, r: "This major radicular artery provides the main supply to the lower two-thirds of the spinal cord." },
+        { cat: 3, q: "Cervical and lumbar enlargements exist to accommodate innervation of the:", a: ["Viscera", "Trunk", "Limbs", "Head and neck"], c: 2, r: "Extra gray matter is required for the large motor and sensory pools of the arms and legs." },
+        { cat: 3, q: "The straight sinus runs at the junction of the falx cerebri and:", a: ["Falx cerebelli", "Tentorium cerebelli", "Diaphragma sellae", "Skull bone"], c: 1, r: "The straight sinus is located where the falx cerebri meets the tentorium cerebelli." },
+        { cat: 3, q: "Normal Cerebrospinal Fluid (CSF) is characterized as being:", a: ["Turbid", "Clear and colorless", "Rich in protein", "Blood-stained"], c: 1, r: "CSF should be clear (like water); turbidity or color indicates infection or hemorrhage." },
+        { cat: 0, q: "An IPSP is typically caused by the opening of which channels?", a: ["Sodium", "Calcium", "Chloride or Potassium", "Magnesium"], c: 2, r: "Hyperpolarization occurs when negative Cl- enters or positive K+ leaves the cell." },
+        { cat: 0, q: "A 'Tonic' receptor is one that is:", a: ["Rapidly adapting", "Slowly adapting", "Inhibitory", "Only sensitive to vibration"], c: 1, r: "Tonic receptors provide continuous information about a constant stimulus (e.g., posture)." },
+        { cat: 2, q: "Adrenarche refers to the prepubertal increase in:", a: ["FSH/LH", "Ovarian estrogen", "Adrenal androgens", "Thyroid hormone"], c: 2, r: "Adrenarche is the activation of the adrenal reticularis before the onset of true puberty." },
+        { cat: 3, q: "Which muscle forms the lateral wall of the ischio-anal fossa?", a: ["Levator ani", "Obturator internus", "Pubococcygeus", "Piriformis"], c: 1, r: "The ischio-anal fossa is bounded medially by the pelvic diaphragm and laterally by the obturator internus muscle." }
+    ];
+
+    let cur = 0;
+    let state = JSON.parse(localStorage.getItem('ap_comp_final_v1')) || { answers: {}, flagged: [] };
+    let chart;
+
+    function wipe() { if(confirm("Clear progress?")) { localStorage.removeItem('ap_comp_final_v1'); location.reload(); } }
+
+    function updateChart() {
+        const scores = [0,0,0,0], counts = [0,0,0,0];
+        Object.keys(state.answers).forEach(k => {
+            const q = fullPool[k]; if(!q) return;
+            counts[q.cat]++; if(state.answers[k] === q.c) scores[q.cat]++;
+        });
+        const perf = scores.map((s, i) => counts[i] === 0 ? 0 : Math.round((s/counts[i])*100));
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        if(chart) chart.destroy();
+        chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Neuro/Spinal', 'Endocrine', 'Repro/Dev', 'Anatomy/Phys'],
+                datasets: [{ data: perf, backgroundColor: 'rgba(52, 152, 219, 0.2)', borderColor: '#3498db', pointBackgroundColor: '#3498db' }]
+            },
+            options: { scales: { r: { min: 0, max: 100, ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.05)' }, pointLabels: { color: '#94a3b8', font: { size: 9, weight: 'bold' } } } }, plugins: { legend: { display: false } } }
+        });
+    }
+
+    function render() {
+        const grid = document.getElementById('matrix'); grid.innerHTML = '';
+        fullPool.forEach((d, i) => {
+            const n = document.createElement('div');
+            n.className = `node ${i === cur ? 'active' : ''} ${state.flagged.includes(i) ? 'flagged' : ''}`;
+            if(state.answers[i] !== undefined) n.classList.add(state.answers[i] === d.c ? 'correct' : 'wrong');
+            n.innerText = i + 1; n.onclick = () => { cur = i; render(); };
+            grid.appendChild(n);
+        });
+
+        updateChart();
+        const d = fullPool[cur];
+        document.getElementById('pID').innerText = `EXAM // Q${String(cur + 1).padStart(2, '0')}`;
+        document.getElementById('qBody').innerText = d.q;
+        const list = document.getElementById('optList'); list.innerHTML = '';
+        document.getElementById('ratBox').style.display = 'none';
+
+        d.a.forEach((txt, i) => {
+            const opt = document.createElement('div');
+            opt.className = `opt-item ${state.answers[cur] !== undefined ? (i === d.c ? 'correct' : (i === state.answers[cur] ? 'wrong' : '')) : ''}`;
+            opt.innerHTML = `<span style="opacity:0.3; margin-right:15px; font-family:monospace;">0${i+1}</span> ${txt}`;
+            if(state.answers[cur] === undefined) opt.onclick = () => { state.answers[cur] = i; localStorage.setItem('ap_comp_final_v1', JSON.stringify(state)); render(); };
+            list.appendChild(opt);
+        });
+
+        if(state.answers[cur] !== undefined) {
+            document.getElementById('ratBox').innerText = d.r; document.getElementById('ratBox').style.display = 'block';
+        }
+    }
+
+    function proceed() { if(cur < fullPool.length - 1) { cur++; render(); } }
+    function toggleFlag() { if(state.flagged.includes(cur)) state.flagged = state.flagged.filter(id => id !== cur); else state.flagged.push(cur); localStorage.setItem('ap_comp_final_v1', JSON.stringify(state)); render(); }
+    render();
+</script>
+</body>
+</html>
