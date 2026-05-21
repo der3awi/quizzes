@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ESG3DJGVYD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ESG3DJGVYD');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESG3DJGVYD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ESG3DJGVYD');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Science Portal | Study Hub</title>
@@ -22,7 +20,8 @@
             --accent-pharm: #a78bfa; /* Purple */
             --accent-ap-theory: #10b981; /* Green */
             --accent-ap-lab: #f472b6; /* Pink */
-            --accent-ap-past: #fbbf24; /* Gold for Exams */
+            --accent-ap-past: #fbbf24; /* Gold */
+            --accent-pod: #f43f5e; /* Crimson for POD Past */
             --text: #f1f5f9;
             --text-dim: #94a3b8;
             --border: rgba(255, 255, 255, 0.08);
@@ -76,6 +75,7 @@
         .card-ap-t:hover { border-color: var(--accent-ap-theory); }
         .card-ap-l:hover { border-color: var(--accent-ap-lab); }
         .card-ap-past:hover { border-color: var(--accent-ap-past); }
+        .card-pod:hover { border-color: var(--accent-pod); }
 
         .module-card h2 { font-weight: 800; font-size: 1.3rem; }
         .module-card p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; }
@@ -95,6 +95,7 @@
         .tag-ap-t { background: rgba(16, 185, 129, 0.1); color: var(--accent-ap-theory); }
         .tag-ap-l { background: rgba(244, 114, 182, 0.1); color: var(--accent-ap-lab); }
         .tag-ap-past { background: rgba(251, 191, 36, 0.1); color: var(--accent-ap-past); }
+        .tag-pod { background: rgba(244, 63, 94, 0.1); color: var(--accent-pod); }
 
         .footer { margin-top: 5rem; color: var(--text-dim); font-size: 0.7rem; opacity: 0.5; }
     </style>
@@ -134,7 +135,13 @@
         <a href="ap-past-exams/index.html" class="module-card card-ap-past">
             <div class="status-tag tag-ap-past">Past Papers</div>
             <h2>APY Past Final</h2>
-            <p>A collection of high-yield questions from previous final examinations.</p>
+            <p>A collection of high-yield questions from previous examinations.</p>
+        </a>
+
+        <a href="pod past/index.html" class="module-card card-pod">
+            <div class="status-tag tag-pod">Exam Bank</div>
+            <h2>POD Past Exams</h2>
+            <p>Reverse-engineered question bank and station data for POD.</p>
         </a>
     </div>
 
