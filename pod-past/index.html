@@ -11,7 +11,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POD Integrated Mastery | Patho-Pharma-Immuno</title>
+    <title>POD Integrated Mastery | 72Q Fixed</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -94,16 +94,17 @@
             <div class="rationale" id="ratBox"></div>
 
             <div class="action-row">
+                <button class="btn-ui btn-outline" style="color: var(--text-dim);" id="prevBtn" onclick="prev()">← Back</button>
                 <button class="btn-ui btn-outline" style="color: var(--flag);" id="flagBtn" onclick="toggleFlag()">Flag</button>
-                <button class="btn-ui btn-next" id="nextBtn" onclick="proceed()">Next Station</button>
+                <button class="btn-ui btn-next" id="nextBtn" onclick="proceed()">Next Station →</button>
             </div>
         </div>
     </main>
 </div>
 
 <script>
+    // Categories: 0=Pathology, 1=Pharmacology, 2=Immunology, 3=Antimicrobials
     const fullPool = [
-        // PATHOLOGY (0-28)
         { cat: 0, q: "Which event is the most common trigger for the formation of an occlusive thrombus in a coronary artery?", a: ["Endothelial stable growth", "Atheromatous plaque rupture", "Chronic venous stasis", "Hypercalcemia"], c: 1, r: "Rupture leads to exposure of subendothelial matrix. [Pathology 10]" },
         { cat: 0, q: "Which coronary artery is most frequently involved in thrombotic occlusion leading to myocardial infarction?", a: ["Right Coronary Artery", "Left Anterior Descending (LAD)", "Left Circumflex", "Posterior Descending"], c: 1, r: "LAD is the 'widow maker' and most common site. [Pathology 10]" },
         { cat: 0, q: "Which of the following is the LEAST likely cause of vaginal dryness in an aging patient?", a: ["Senile atrophy", "Hormone deficiency", "Denervation atrophy", "Decreased blood supply"], c: 2, r: "Denervation usually affects skeletal muscle, not mucosal dryness. [Pathology 3]" },
@@ -154,16 +155,16 @@
         { cat: 1, q: "Epinephrine's effect on beta-2 receptors results in:", a: ["Decreased flow", "Vasodilation in muscle", "Bronchoconstriction", "Bradycardia"], c: 1, r: "Beta-2 relaxes smooth muscle. [Pharma L4]" },
         { cat: 3, q: "Chloramphenicol is avoided in children due to:", a: ["Gray Baby Syndrome", "Tendon rupture", "Tooth staining", "Hearing loss"], c: 0, r: "Inability to glucuronidate in neonates. [Pharma L7]" },
         { cat: 3, q: "Idiosyncratic toxicity of Chloramphenicol regardless of age?", a: ["Renal failure", "Aplastic anemia/Bone Marrow Depression", "Optic neuritis", "Colitis"], c: 1, r: "Unpredictable bone marrow depression. [Pharma L7]" },
-        { cat: 3, q: "Doxycycline is used in:", a: ["E.Coli Ulcers", "Acne", "Candidiasis", "Anti-pseudomonal], c: 1, r: "Used for acne treatment. [Pharma L7]" },
+        { cat: 3, q: "Doxycycline is used in:", a: ["E.Coli Ulcers", "Acne", "Candidiasis", "Anti-pseudomonal"], c: 1, r: "Used for acne treatment. [Pharma L7]" },
         { cat: 1, q: "Selective Beta-1 agonist for acute heart failure?", a: ["Propranolol", "Dobutamine", "Salbutamol", "Phenylephrine"], c: 1, r: "Increases contractility. [Pharma L4]" },
         { cat: 1, q: "Methylphenidate (Ritalin) is used for:", a: ["ADHD", "Hypertension", "Insomnia", "Glaucoma"], c: 0, r: "CNS stimulant. [Pharma L4]" },
         { cat: 1, q: "Indication for Amphetamines besides ADHD?", a: ["Anxiety", "Narcolepsy", "Bradycardia", "Asthma"], c: 1, r: "Sleep disorder stimulant. [Pharma L4]" },
         { cat: 3, q: "Common side effect of Interferon therapy for Hep C?", a: ["Weight gain", "Flu-like symptoms", "Appetite", "Constipation"], c: 1, r: "Notorious flu-like syndrome. [Pharma L11]" },
         { cat: 3, q: "Penicillin effective against Pseudomonas?", a: ["Penicillin G", "Piperacillin", "Amoxicillin", "Cloxacillin"], c: 1, r: "Anti-pseudomonal. [Pharma L6]" },
-        { cat: 3, q: "Drug for local anti-inflammatory effect in Ulcerative Colitis?", a: ["Trimethoprim", "Sulfasalazine", "Penicillin V", "Amphotericin"], c: 1, r: "Delivers 5-ASA to colon. [Pharma L8]" },
+        { cat: 3, q: "Drug for local anti-inflammatory effect in UC?", a: ["Trimethoprim", "Sulfasalazine", "Penicillin V", "Amphotericin"], c: 1, r: "Delivers 5-ASA to colon. [Pharma L8]" },
         { cat: 3, q: "Zanamivir mechanism of action?", a: ["DNA polymerase", "Neuraminidase", "Protease", "Cell wall"], c: 1, r: "Blocks virion release. [Pharma L11]" },
         { cat: 1, q: "Ratio of TD50 to ED50 determines:", a: ["Efficacy", "Potency", "Therapeutic Index", "Bioavailability"], c: 2, r: "Measures safety. [Pharma L2]" },
-        { cat: 3, q: "Purpose of Clavulanic Acid in Amoxicillin?", a: ["Absorption", "Inhibit beta-lactamase", "Excretion", "Taste"], c: 1, r: "Bacterial resistance inhibitor. [Pharma L6]" },
+        { cat: 3, q: "Purpose of adding Clavulanic Acid to Amoxicillin?", a: ["Absorption", "Inhibit beta-lactamase", "Excretion", "Taste"], c: 1, r: "Bacterial resistance inhibitor. [Pharma L6]" },
         { cat: 3, q: "Fluoroquinolones carry a unique risk of:", a: ["Red man", "Tendon rupture", "Diabetes", "Gingival"], c: 1, r: "Black box warning for tendons. [Pharma L5]" },
 
         // NEW IMMUNOLOGY QUESTIONS (59-71)
@@ -183,10 +184,10 @@
     ];
 
     let cur = 0;
-    let state = JSON.parse(localStorage.getItem('pod_integrated_72_v1')) || { answers: {}, flagged: [] };
+    let state = JSON.parse(localStorage.getItem('pod_integrated_72_v2')) || { answers: {}, flagged: [] };
     let chart;
 
-    function wipe() { if(confirm("Wipe all progress?")) { localStorage.removeItem('pod_integrated_72_v1'); location.reload(); } }
+    function wipe() { if(confirm("Wipe all progress?")) { localStorage.removeItem('pod_integrated_72_v2'); location.reload(); } }
 
     function updateChart() {
         const scores = [0,0,0,0], counts = [0,0,0,0];
@@ -228,7 +229,7 @@
             const opt = document.createElement('div');
             opt.className = `opt-item ${state.answers[cur] !== undefined ? (i === d.c ? 'correct' : (i === state.answers[cur] ? 'wrong' : '')) : ''}`;
             opt.innerHTML = `<span class="opt-index">0${i+1}</span> ${txt}`;
-            if(state.answers[cur] === undefined) opt.onclick = () => { state.answers[cur] = i; localStorage.setItem('pod_integrated_72_v1', JSON.stringify(state)); render(); };
+            if(state.answers[cur] === undefined) opt.onclick = () => { state.answers[cur] = i; localStorage.setItem('pod_integrated_72_v2', JSON.stringify(state)); render(); };
             list.appendChild(opt);
         });
 
@@ -238,7 +239,8 @@
     }
 
     function proceed() { if(cur < fullPool.length - 1) { cur++; render(); } }
-    function toggleFlag() { if(state.flagged.includes(cur)) state.flagged = state.flagged.filter(id => id !== cur); else state.flagged.push(cur); localStorage.setItem('pod_integrated_72_v1', JSON.stringify(state)); render(); }
+    function prev() { if(cur > 0) { cur--; render(); } }
+    function toggleFlag() { if(state.flagged.includes(cur)) state.flagged = state.flagged.filter(id => id !== cur); else state.flagged.push(cur); localStorage.setItem('pod_integrated_72_v2', JSON.stringify(state)); render(); }
     render();
 </script>
 </body>
