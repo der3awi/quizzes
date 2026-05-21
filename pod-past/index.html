@@ -11,12 +11,12 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patho-Pharma Mastery Engine | Study Hub</title>
+    <title>POD Integrated Mastery | 72 High-Yield Questions</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
-            --bg: #020617; --panel: #0f172a; --accent: #38bdf8; 
+            --bg: #020617; --panel: #0f172a; --accent: #f43f5e; 
             --success: #10b981; --danger: #f43f5e; --flag: #f59e0b;
             --text: #f1f5f9; --text-dim: #94a3b8; --border: rgba(255, 255, 255, 0.08);
         }
@@ -36,7 +36,7 @@
         .label-id { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
         .matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 10px; }
         .node { aspect-ratio: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; cursor: pointer; color: var(--text-dim); position: relative; transition: 0.2s; }
-        .node.active { border-color: var(--accent); background: rgba(56, 189, 248, 0.1); color: white; }
+        .node.active { border-color: var(--accent); background: rgba(244, 63, 94, 0.1); color: white; }
         .node.correct { border-color: var(--success); color: var(--success); }
         .node.wrong { border-color: var(--danger); color: var(--danger); }
         .node.flagged::before { content: ''; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: var(--flag); border-radius: 50%; border: 2px solid var(--bg); }
@@ -58,7 +58,7 @@
         .action-row { margin-top: 3rem; display: flex; gap: 1rem; }
         .btn-ui { padding: 1rem 2rem; border-radius: 10px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border: none; transition: 0.2s; }
         .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
-        .btn-next { background: var(--accent); color: #fff; flex: 1; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3); }
+        .btn-next { background: var(--accent); color: #fff; flex: 1; box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3); }
         
         .hub-link { color: var(--text-dim); text-decoration: none; font-size: 0.7rem; font-weight: 700; transition: 0.2s; }
         .hub-link:hover { color: var(--accent); }
@@ -67,7 +67,7 @@
 <body>
 
 <nav class="nav-header">
-    <div class="logo"><div class="pulse"></div> REVERSE-ENGINEERED EXAM (59Q)</div>
+    <div class="logo"><div class="pulse"></div> POD INTEGRATED MASTERY // 72Q</div>
     <div style="display: flex; gap: 20px; align-items: center;">
         <button class="hub-link" style="background: none; border: none; cursor: pointer; color: var(--danger); font-weight: 800;" onclick="wipe()">WIPE PROGRESS</button>
         <a href="../index.html" class="hub-link">← BACK TO PORTAL</a>
@@ -102,76 +102,89 @@
 </div>
 
 <script>
+    // Categories: 0=Pathology, 1=Pharmacology, 2=Immunology, 3=Antimicrobials
     const fullPool = [
-        // PATHOLOGY (0-28)
-        { cat: 0, q: "Which event is the most common trigger for the formation of an occlusive thrombus in a coronary artery?", a: ["Endothelial stable growth", "Atheromatous plaque rupture", "Chronic venous stasis", "Hypercalcemia"], c: 1, r: "Rupture leads to exposure of subendothelial matrix. [Pathology 10]" },
-        { cat: 0, q: "Which coronary artery is most frequently involved in thrombotic occlusion leading to myocardial infarction?", a: ["Right Coronary Artery", "Left Anterior Descending (LAD)", "Left Circumflex", "Posterior Descending"], c: 1, r: "LAD is the 'widow maker' and most common site. [Pathology 10]" },
-        { cat: 0, q: "Which of the following is the LEAST likely cause of vaginal dryness in an aging patient?", a: ["Senile atrophy", "Hormone deficiency", "Denervation atrophy", "Decreased blood supply"], c: 2, r: "Denervation usually affects skeletal muscle, not mucosal dryness. [Pathology 3]" },
-        { cat: 0, q: "On a mammogram, 'grains of salt' calcifications in an area of prior fat necrosis represent:", a: ["Metastatic calcification", "Dystrophic calcification", "Hyaline accumulation", "Amyloidosis"], c: 1, r: "Dystrophic calcification occurs in necrotic tissue with normal serum Ca. [Pathology 4]" },
-        { cat: 0, q: "An X-ray shows a patella divided into two pieces in an asymptomatic patient. This is likely a:", a: ["Comminuted fracture", "Bipartite patella (normal variant)", "Osteosarcoma", "Osgood-Schlatter disease"], c: 1, r: "Normal anatomical variants aren't always pathology. [Pathology 1b]" },
-        { cat: 0, q: "Which condition is a systemic cause of edema and passive congestion?", a: ["Localized DVT", "Congestive Heart Failure", "Lymphatic obstruction", "Acute inflammation"], c: 1, r: "CHF causes systemic hemodynamic backup. [Pathology 10]" },
-        { cat: 0, q: "Which systemic factor is most notorious for inhibiting secondary intention wound healing?", a: ["Vitamin C excess", "Diabetes Mellitus", "Foreign bodies", "Localized pressure"], c: 1, r: "DM causes microvascular changes and impaired immune response. [Pathology 7]" },
-        { cat: 0, q: "A septicemic patient develops widespread petechiae and microthrombi. This is:", a: ["Hemophilia A", "Vitamin K deficiency", "Thrombocytopenia", "Disseminated Intravascular Coagulation (DIC)"], c: 3, r: "Septicemia is a major trigger for DIC. [Pathology 10]" },
-        { cat: 0, q: "Which of the following is a genetic collagen disorder rather than an immunological one?", a: ["Systemic Lupus", "Rheumatoid Arthritis", "Osteogenesis Imperfecta", "Scleroderma"], c: 2, r: "OI is a structural defect in Type 1 collagen. [Pathology 1b]" },
-        { cat: 0, q: "Under light microscopy, the earliest sign of coagulative necrosis in the heart (0-12 hours) is:", a: ["Large collagen scars", "Wavy myocardial fibers", "Neutrophilic infiltration", "Granulation tissue"], c: 1, r: "Wavy fibers result from stretching of non-contractile dead fibers. [Pathology 10]" },
-        { cat: 1, q: "The HER2/neu gene is classified as an:", a: ["Tumor suppressor gene", "DNA repair gene", "Oncogene (growth signal)", "Pro-apoptotic gene"], c: 2, r: "Overexpression provides self-sufficiency in growth signals. [Pathology 9]" },
-        { cat: 1, q: "Testing for HER2 expression in breast cancer is clinically useful for:", a: ["Screening general population", "Determining prognosis/treatment", "Diagnosing fat necrosis", "Identifying viral origin"], c: 1, r: "HER2 status dictates eligibility for targeted therapy. [Pathology 9]" },
-        { cat: 0, q: "Which of the following is NOT typically used as a serum marker for myocardial infarction?", a: ["Troponin", "CK-MB", "Actinomycin", "Myoglobin"], c: 2, r: "Actinomycin is an antibiotic/chemo agent, not a marker. [Pathology 10]" },
-        { cat: 0, q: "In the sequence of tissue injury, which typically occurs first?", a: ["Chronic inflammation", "Acute inflammation", "Scar formation", "Tissue atrophy"], c: 1, r: "Acute inflammation is the immediate response. [Pathology 5]" },
-        { cat: 0, q: "A complication of prolonged labor involving the entry of fetal squames into maternal circulation is:", a: ["Air embolism", "Amniotic fluid embolism", "Fat embolism", "Septic embolism"], c: 1, r: "Amniotic fluid emboli are rare but highly fatal complications. [Pathology 10]" },
-        { cat: 0, q: "The toxic effect of Arsenate is primarily due to its ability to inhibit:", a: ["Phosphate (ATP production)", "Calcium channels", "Glucose transporters", "Ribosomal 50S subunit"], c: 0, r: "Arsenate competes with inorganic phosphate. [Pathology 3]" },
-        { cat: 0, q: "Carbon tetrachloride (CCl4) causes liver damage primarily through:", a: ["Direct DNA alkylation", "Free radical formation", "Inhibition of Na/K pump", "Massive apoptosis"], c: 1, r: "CCl4 is converted to CCl3 free radicals in the liver. [Pathology 3]" },
-        { cat: 0, q: "Which type of collagen is the primary structural component of hyaline cartilage?", a: ["Type 1", "Type 2", "Type 3", "Type 4"], c: 1, r: "Type 2 for Cartilage. [Pathology 7]" },
-        { cat: 0, q: "In the process of neutrophil extravasation, which step is NOT required for movement?", a: ["Margination", "Rolling", "Diapedesis", "Opsonization"], c: 3, r: "Opsonization is for phagocytosis, not movement. [Pathology 5]" },
-        { cat: 1, q: "The presence of prominent nucleoli in a malignant cell signifies:", a: ["Decreased metabolism", "Increased protein synthesis", "Viral replication", "Calcification"], c: 1, r: "Large nucleoli = high rRNA production for growth. [Pathology 8]" },
-        { cat: 1, q: "Which statement is UNTRUE regarding Carcinoma in Situ (CIS)?", a: ["It is pre-invasive", "It has an intact basement membrane", "It has already metastasized", "It shows high-grade dysplasia"], c: 2, r: "Metastasis requires crossing the basement membrane. [Pathology 8]" },
-        { cat: 0, q: "Physiological atrophy of the thymus gland typically occurs during:", a: ["Infancy", "Early adulthood", "Fetal development", "Post-menopause"], c: 1, r: "Thymic involution is a normal part of aging. [Pathology 3]" },
-        { cat: 1, q: "Which of the following is NOT a feature of a benign osteoma?", a: ["Slow growth", "Well-differentiated cells", "Osteolytic destruction", "Non-invasive"], c: 2, r: "Osteolytic growth is typical of malignancy. [Pathology 8]" },
-        { cat: 1, q: "Human Papillomavirus (HPV) is most strongly associated with which malignancy?", a: ["Breast carcinoma", "Cervical carcinoma", "Lung adenocarcinoma", "Colon cancer"], c: 1, r: "HPV 16/18 are high-risk for cervical cancer. [Pathology 9]" },
-        { cat: 1, q: "Most epithelial cancers (carcinomas) spread first via:", a: ["Hematogenous spread", "Seeding of body cavities", "Lymphatic channels", "Direct nerve invasion"], c: 2, r: "Carcinomas typically spread via lymphatics first. [Pathology 9]" },
-        { cat: 1, q: "The RB protein (Retinoblastoma) is an example of a:", a: ["Tumor suppressor gene", "Proto-oncogene", "Growth factor receptor", "Transcription factor"], c: 0, r: "RB acts as a brake on the cell cycle. [Pathology 9]" },
-        { cat: 0, q: "In terms of regenerative capacity, endothelial cells are classified as:", a: ["Labile", "Stable", "Permanent", "Plastic"], c: 1, r: "Stable cells re-enter the cycle only when injured. [Pathology 7]" },
-        { cat: 1, q: "A benign tumor arising from glandular epithelium is called an:", a: ["Adenocarcinoma", "Adenoma", "Papilloma", "Fibroma"], c: 1, r: "Adenoma for benign glands. [Pathology 8]" },
-        { cat: 1, q: "Which serum marker is used to monitor prostate cancer?", a: ["CEA", "PSA", "AFP", "CA-125"], c: 1, r: "PSA is the standard marker. [Pathology 9]" },
-
-        // PHARMACOLOGY (29-58)
-        { cat: 3, q: "A patient presents with Athlete's Foot. Which topical agent is appropriate?", a: ["Penicillin", "Terbinafine", "Acyclovir", "Tetracycline"], c: 1, r: "Allylamines like Terbinafine for Tinea pedis. [Pharma L10]" },
-        { cat: 3, q: "Which antibiotic can cause 'Red Man Syndrome' if infused too rapidly?", a: ["Vancomycin", "Ciprofloxacin", "Gentamicin", "Amoxicillin"], c: 0, r: "Histamine release during rapid Vancomycin infusion. [Pharma L6]" },
-        { cat: 3, q: "The most significant dose-limiting toxicity of Amphotericin B is:", a: ["Hepatotoxicity", "Ototoxicity", "Nephrotoxicity", "Visual disturbances"], c: 2, r: "Ampho-terrible for the kidneys. [Pharma L10]" },
-        { cat: 2, q: "At low doses, which drug increases renal blood flow via D1 receptors?", a: ["Epinephrine", "Norepinephrine", "Dopamine", "Isoproterenol"], c: 2, r: "Low-dose dopamine = renal vasodilation. [Pharma L4]" },
-        { cat: 3, q: "Which antiviral is used for the prophylaxis of Influenza A and B?", a: ["Oseltamivir", "Ribavirin", "Acyclovir", "Interferon"], c: 0, r: "Neuraminidase inhibitors for influenza. [Pharma L11]" },
-        { cat: 3, q: "Best topical treatment for white curd-like patches on the tongue (HIV patient)?", a: ["Fluconazole", "Nystatin", "Griseofulvin", "Penicillin"], c: 1, r: "Nystatin for oral thrush. [Pharma L10]" },
-        { cat: 3, q: "Which drug is used to treat severe RSV in children?", a: ["Amantadine", "Ribavirin", "Zanamivir", "Valacyclovir"], c: 1, r: "Ribavirin is an option for RSV. [Pharma L11]" },
-        { cat: 3, q: "Gram-negative treatment leads to permanent hearing loss. Likely drug?", a: ["Gentamycin", "Tetracycline", "Sulfamethoxazole", "Erythromycin"], c: 0, r: "Aminoglycoside ototoxicity. [Pharma L7]" },
-        { cat: 3, q: "Aminoglycosides are contraindicated in pregnancy due to:", a: ["Gray baby syndrome", "Fetal ototoxicity", "Cartilage damage", "Neural tube defects"], c: 1, r: "Can cause congenital deafness. [Pharma L7]" },
-        { cat: 3, q: "Drug of choice for Chlamydia trachomatis?", a: ["Penicillin V", "Tetracycline", "Vancomycin", "Metronidazole"], c: 1, r: "Tetracyclines cover atypicals. [Pharma L7]" },
-        { cat: 2, q: "Epinephrine antagonizing Histamine on bronchial muscle is:", a: ["Competitive", "Chemical", "Physiological", "Pharmacokinetic"], c: 2, r: "Two agonists, separate receptors, opposite effects. [Pharma L2]" },
-        { cat: 2, q: "Adrenergic receptors (alpha and beta) belong to which family?", a: ["Ion channels", "GPCRs", "Intracellular", "Enzyme-linked"], c: 1, r: "Metabotropic GPCRs. [Pharma L2]" },
-        { cat: 3, q: "Sulfonamides are contraindicated in which deficiency?", a: ["Vitamin B12", "G6PD", "Iron", "Factor VIII"], c: 1, r: "Risk of hemolysis in G6PD. [Pharma L8]" },
-        { cat: 2, q: "Alpha-agonist used as a nasal decongestant?", a: ["Oxymetazoline", "Propranolol", "Dobutamine", "Albuterol"], c: 0, r: "Direct alpha-1 vasoconstriction. [Pharma L4]" },
-        { cat: 2, q: "Adrenaline is used in cardiac arrest because it:", a: ["Inhibits SA node", "Stimulates alpha/beta", "Causes vasodilation", "Acts as cholinergic"], c: 1, r: "Increases BP and HR. [Pharma L4]" },
-        { cat: 2, q: "First-line treatment for life-threatening anaphylaxis?", a: ["Diphenhydramine", "Epinephrine", "Hydrocortisone", "Atropine"], c: 1, r: "Epinephrine is the DOC. [Pharma L4]" },
-        { cat: 2, q: "Epinephrine's effect on beta-2 receptors results in:", a: ["Decreased flow", "Vasodilation in muscle", "Bronchoconstriction", "Bradycardia"], c: 1, r: "Beta-2 relaxes smooth muscle. [Pharma L4]" },
-        { cat: 3, q: "Chloramphenicol is avoided in children due to:", a: ["Gray Baby Syndrome", "Tendon rupture", "Tooth staining", "Hearing loss"], c: 0, r: "Inability to glucuronidate in neonates. [Pharma L7]" },
-        { cat: 3, q: "Idiosyncratic toxicity of Chloramphenicol regardless of age?", a: ["Renal failure", "Aplastic anemia", "Optic neuritis", "Colitis"], c: 1, r: "Unpredictable bone marrow depression. [Pharma L7]" },
-        { cat: 3, q: "Doxycycline is contraindicated in:", a: ["Elderly", "Pregnant/Children", "Hypertension", "Males"], c: 1, r: "Tooth staining and bone inhibition. [Pharma L7]" },
-        { cat: 2, q: "Selective Beta-1 agonist for acute heart failure?", a: ["Propranolol", "Dobutamine", "Salbutamol", "Phenylephrine"], c: 1, r: "Increases contractility. [Pharma L4]" },
-        { cat: 2, q: "Methylphenidate (Ritalin) is used for:", a: ["ADHD", "Hypertension", "Insomnia", "Glaucoma"], c: 0, r: "CNS stimulant. [Pharma L4]" },
-        { cat: 2, q: "Indication for Amphetamines besides ADHD?", a: ["Anxiety", "Narcolepsy", "Bradycardia", "Asthma"], c: 1, r: "Sleep disorder stimulant. [Pharma L4]" },
-        { cat: 3, q: "Common side effect of Interferon therapy for Hep C?", a: ["Weight gain", "Flu-like symptoms", "Appetite", "Constipation"], c: 1, r: "Notorious flu-like syndrome. [Pharma L11]" },
-        { cat: 3, q: "Penicillin effective against Pseudomonas?", a: ["Penicillin G", "Piperacillin", "Amoxicillin", "Cloxacillin"], c: 1, r: "Anti-pseudomonal. [Pharma L6]" },
-        { cat: 3, q: "Drug for local anti-inflammatory effect in UC?", a: ["Trimethoprim", "Sulfasalazine", "Penicillin V", "Amphotericin"], c: 1, r: "Delivers 5-ASA to colon. [Pharma L8]" },
-        { cat: 3, q: "Zanamivir mechanism of action?", a: ["DNA polymerase", "Neuraminidase", "Protease", "Cell wall"], c: 1, r: "Blocks virion release. [Pharma L11]" },
-        { cat: 2, q: "Ratio of TD50 to ED50 determines:", a: ["Efficacy", "Potency", "Therapeutic Index", "Bioavailability"], c: 2, r: "Measures safety. [Pharma L2]" },
-        { cat: 3, q: "Purpose of Clavulanic Acid in Amoxicillin?", a: ["Absorption", "Inhibit beta-lactamase", "Excretion", "Taste"], c: 1, r: "Bacterial resistance inhibitor. [Pharma L6]" },
-        { cat: 3, q: "Fluoroquinolones carry a unique risk of:", a: ["Red man", "Tendon rupture", "Diabetes", "Gingival"], c: 1, r: "Black box warning for tendons. [Pharma L5]" }
+        { cat: 0, q: "Which event is the most common trigger for formation of an occlusive thrombus in a coronary artery?", a: ["Endothelial stable growth", "Atheromatous plaque rupture", "Chronic venous stasis", "Hypercalcemia"], c: 1, r: "Plaque rupture exposes the subendothelial matrix, triggering rapid clotting. [Patho 10]" },
+        { cat: 0, q: "Which coronary artery is most frequently involved in thrombotic occlusion leading to MI?", a: ["Right Coronary Artery", "Left Anterior Descending (LAD)", "Left Circumflex", "Posterior Descending"], c: 1, r: "LAD is the 'widow maker' and the most frequent site of occlusion. [Patho 10]" },
+        { cat: 0, q: "Which of the following is the LEAST likely cause of vaginal dryness in an aging patient?", a: ["Senile atrophy", "Hormone deficiency", "Denervation atrophy", "Decreased blood supply"], c: 2, r: "Denervation typically causes muscle paralysis/atrophy, not mucosal dryness. [Patho 3]" },
+        { cat: 0, q: "On a mammogram, 'grains of salt' calcifications in an area of prior fat necrosis represent:", a: ["Metastatic calcification", "Dystrophic calcification", "Hyaline accumulation", "Amyloidosis"], c: 1, r: "Dystrophic calcification occurs in necrotic tissue with normal serum Calcium. [Patho 4]" },
+        { cat: 0, q: "An X-ray shows a patella divided into two pieces in an asymptomatic patient. This is likely a:", a: ["Comminuted fracture", "Bipartite patella", "Osteosarcoma", "Osgood-Schlatter"], c: 1, r: "Bipartite patella is a normal anatomical variant, not a fracture. [Patho 1b]" },
+        { cat: 0, q: "Which condition is a systemic cause of edema and passive congestion?", a: ["Localized DVT", "Congestive Heart Failure", "Lymphatic obstruction", "Acute inflammation"], c: 1, r: "CHF leads to global hemodynamic backup and systemic congestion. [Patho 10]" },
+        { cat: 0, q: "Which systemic factor is most notorious for inhibiting secondary intention wound healing?", a: ["Vitamin C excess", "Diabetes Mellitus", "Foreign bodies", "Localized pressure"], c: 1, r: "DM causes microvascular damage and impaired immune function. [Patho 7]" },
+        { cat: 0, q: "A septicemic patient develops widespread petechiae and microthrombi. This is:", a: ["Hemophilia A", "Vitamin K deficiency", "Thrombocytopenia", "DIC"], c: 3, r: "Septicemia is a primary trigger for Disseminated Intravascular Coagulation. [Patho 10]" },
+        { cat: 0, q: "Which of the following is a genetic collagen disorder rather than an immunological one?", a: ["Systemic Lupus", "Rheumatoid Arthritis", "Osteogenesis Imperfecta", "Scleroderma"], c: 2, r: "OI is a structural defect in Type 1 collagen. [Patho 1b]" },
+        { cat: 0, q: "Under light microscopy, the earliest sign of coagulative necrosis in the heart (0-12 hours) is:", a: ["Large collagen scars", "Wavy myocardial fibers", "Neutrophilic infiltration", "Granulation tissue"], c: 1, r: "Wavy fibers result from dead fibers being stretched by remaining contraction. [Patho 10]" },
+        { cat: 0, q: "The HER2/neu gene is classified as an:", a: ["Tumor suppressor gene", "DNA repair gene", "Oncogene", "Pro-apoptotic gene"], c: 2, r: "HER2/neu is a proto-oncogene that triggers cell growth when overexpressed. [Patho 9]" },
+        { cat: 0, q: "Testing for HER2 expression in breast cancer is clinically useful for:", a: ["Screening general population", "Determining prognosis/treatment", "Diagnosing fat necrosis", "Identifying viral origin"], c: 1, r: "HER2 status determines eligibility for targeted therapy (Herceptin). [Patho 9]" },
+        { cat: 0, q: "Which of the following is NOT typically used as a serum marker for myocardial infarction?", a: ["Troponin", "CK-MB", "Actinomycin", "Myoglobin"], c: 2, r: "Actinomycin is a drug, not a biological marker of heart damage. [Patho 10]" },
+        { cat: 0, q: "In the sequence of tissue injury, which typically occurs first?", a: ["Chronic inflammation", "Acute inflammation", "Scar formation", "Tissue atrophy"], c: 1, r: "Acute inflammation is the immediate vascular and cellular response. [Patho 5]" },
+        { cat: 0, q: "A complication of prolonged labor involving the entry of fetal squames into maternal circulation is:", a: ["Air embolism", "Amniotic fluid embolism", "Fat embolism", "Septic embolism"], c: 1, r: "Amniotic fluid embolism is a rare but catastrophic labor complication. [Patho 10]" },
+        { cat: 0, q: "The toxic effect of Arsenate is primarily due to its ability to inhibit:", a: ["Phosphate (ATP production)", "Calcium channels", "Glucose transporters", "Ribosomal 50S subunit"], c: 0, r: "Arsenate competes with inorganic phosphate, stopping ATP synthesis. [Patho 3]" },
+        { cat: 0, q: "Carbon tetrachloride (CCl4) causes liver damage primarily through:", a: ["Direct DNA alkylation", "Free radical formation", "Inhibition of Na/K pump", "Massive apoptosis"], c: 1, r: "CCl4 is metabolized into highly reactive free radicals in the liver. [Patho 3]" },
+        { cat: 0, q: "Which type of collagen is the primary structural component of hyaline cartilage?", a: ["Type 1", "Type 2", "Type 3", "Type 4"], c: 1, r: "Mnemonic: 'Type 2 for Car-two-lage'. [Patho 7]" },
+        { cat: 0, q: "In the process of neutrophil extravasation, which step is NOT required for movement?", a: ["Margination", "Rolling", "Diapedesis", "Opsonization"], c: 3, r: "Opsonization marks targets for eating, not for cell movement. [Patho 5]" },
+        { cat: 0, q: "The presence of prominent nucleoli in a malignant cell signifies:", a: ["Decreased metabolism", "Increased protein synthesis", "Viral replication", "Calcification"], c: 1, r: "Large nucleoli indicate high rRNA/protein synthesis for cell growth. [Patho 8]" },
+        { cat: 0, q: "Which statement is UNTRUE regarding Carcinoma in Situ (CIS)?", a: ["It is pre-invasive", "It has an intact basement membrane", "It has already metastasized", "It shows high-grade dysplasia"], c: 2, r: "CIS is defined by being non-invasive (it has NOT metastasized). [Patho 8]" },
+        { cat: 0, q: "Physiological atrophy of the thymus gland typically occurs during:", a: ["Infancy", "Early adulthood", "Fetal development", "Post-menopause"], c: 1, r: "Thymic involution is a natural part of adult aging. [Patho 3]" },
+        { cat: 0, q: "Which of the following is NOT a feature of a benign osteoma?", a: ["Slow growth", "Well-differentiated cells", "Osteolytic destruction", "Non-invasive"], c: 2, r: "Osteolytic destruction is a hallmark of aggressive malignancy. [Patho 8]" },
+        { cat: 0, q: "Human Papillomavirus (HPV) is most strongly associated with which malignancy?", a: ["Breast carcinoma", "Cervical carcinoma", "Lung adenocarcinoma", "Colon cancer"], c: 1, r: "HPV 16 and 18 are responsible for most cervical cancers. [Patho 9]" },
+        { cat: 0, q: "Most epithelial cancers (carcinomas) spread first via:", a: ["Hematogenous spread", "Seeding body cavities", "Lymphatic channels", "Direct nerve invasion"], c: 2, r: "Carcinomas generally favor lymphatic spread; Sarcomas favor blood. [Patho 9]" },
+        { cat: 0, q: "The RB protein (Retinoblastoma) is an example of a:", a: ["Tumor suppressor gene", "Proto-oncogene", "Growth factor receptor", "Transcription factor"], c: 0, r: "RB acts as a critical brake on the cell cycle. [Patho 9]" },
+        { cat: 0, q: "In terms of regenerative capacity, endothelial cells are classified as:", a: ["Labile", "Stable", "Permanent", "Plastic"], c: 1, r: "Stable cells re-enter the cycle only upon injury/stimulation. [Patho 7]" },
+        { cat: 0, q: "A benign tumor arising from glandular epithelium is called an:", a: ["Adenocarcinoma", "Adenoma", "Papilloma", "Fibroma"], c: 1, r: "Adenoma refers to a benign tumor of glandular origin. [Patho 8]" },
+        { cat: 0, q: "Which serum marker is used to monitor the progression of prostate cancer?", a: ["CEA", "PSA", "AFP", "CA-125"], c: 1, r: "Prostate Specific Antigen is the standard monitoring marker. [Patho 9]" },
+        
+        { cat: 3, q: "Topical agent for scaling between the toes (Athlete's Foot)?", a: ["Penicillin", "Terbinafine", "Acyclovir", "Tetracycline"], c: 1, r: "Terbinafine is an allylamine effective against fungal dermatophytes. [Pharma 10]" },
+        { cat: 3, q: "Antibiotic causing 'Red Man Syndrome' (flushing) if infused too fast?", a: ["Vancomycin", "Ciprofloxacin", "Gentamicin", "Amoxicillin"], c: 0, r: "Rapid infusion triggers direct histamine release from mast cells. [Pharma 6]" },
+        { cat: 3, q: "Most significant dose-limiting toxicity of Amphotericin B?", a: ["Hepatotoxicity", "Ototoxicity", "Acute Renal Failure", "Visual disturbances"], c: 2, r: "Amphotericin B is notably nephrotoxic ('Ampho-terrible'). [Pharma 10]" },
+        { cat: 1, q: "Drug used at low doses to increase renal blood flow via D1 receptors?", a: ["Epinephrine", "Norepinephrine", "Dopamine", "Isoproterenol"], c: 2, r: "Low-dose dopamine causes selective renal vasodilation. [Pharma 4]" },
+        { cat: 3, q: "Antiviral used for prophylaxis of Influenza A and B?", a: ["Oseltamivir", "Ribavirin", "Acyclovir", "Interferon"], c: 0, r: "Neuraminidase inhibitors like Oseltamivir (Tamiflu) prevent viral release. [Pharma 11]" },
+        { cat: 3, q: "HIV patient with white curd-like patches on tongue. Best topical treatment?", a: ["Fluconazole", "Nystatin", "Griseofulvin", "Penicillin"], c: 1, r: "Nystatin 'swish and swallow' is first line for oral thrush. [Pharma 10]" },
+        { cat: 3, q: "Drug used to treat severe RSV (Respiratory Syncytial Virus) in children?", a: ["Amantadine", "Ribavirin", "Zanamivir", "Valacyclovir"], c: 1, r: "Ribavirin is used in aerosol form for severe RSV. [Pharma 11]" },
+        { cat: 3, q: "Serious Gram-negative infection treatment leads to permanent hearing loss. Drug?", a: ["Gentamycin", "Tetracycline", "Sulfamethoxazole", "Erythromycin"], c: 0, r: "Aminoglycosides are notoriously oto- and nephrotoxic. [Pharma 7]" },
+        { cat: 3, q: "Aminoglycosides are generally contraindicated in pregnancy because they cause:", a: ["Gray baby syndrome", "Fetal ototoxicity", "Cartilage damage", "Neural tube defects"], c: 1, r: "They cross the placenta and damage the fetal 8th cranial nerve. [Pharma 7]" },
+        { cat: 3, q: "Drug of choice for treating Chlamydia trachomatis infections?", a: ["Penicillin V", "Tetracycline/Azithromycin", "Vancomycin", "Metronidazole"], c: 1, r: "Doxycycline covers atypical intracellular organisms. [Pharma 7]" },
+        { cat: 1, q: "Epinephrine antagonizing Histamine effects on bronchial muscle is:", a: ["Competitive", "Chemical", "Physiological", "Pharmacokinetic"], c: 2, r: "Physiological antagonism: agonists acting on different receptors to produce opposite effects. [Pharma 2]" },
+        { cat: 1, q: "Adrenergic receptors (alpha and beta) belong to which family?", a: ["Ion channels", "GPCRs", "Intracellular", "Enzyme-linked"], c: 1, r: "Alpha and beta receptors are metabotropic G-protein coupled receptors. [Pharma 2]" },
+        { cat: 3, q: "Sulfonamides should not be given in which deficiency due to hemolysis risk?", a: ["Vitamin B12", "G6PD deficiency", "Iron deficiency", "Factor VIII"], c: 1, r: "Sulfa drugs induce oxidative stress leading to RBC lysis in G6PD patients. [Pharma 8]" },
+        { cat: 1, q: "Which alpha-agonist is used topically as a nasal decongestant?", a: ["Oxymetazoline", "Propranolol", "Dobutamine", "Albuterol"], c: 0, r: "Direct alpha-1 activation causes nasal vasoconstriction. [Pharma 4]" },
+        { cat: 1, q: "In cardiac arrest, Adrenaline is used because it:", a: ["Inhibits SA node", "Stimulates both alpha/beta", "Causes vasodilation", "Acts as cholinergic"], c: 1, r: "Alpha-1 increases BP; Beta-1 increases heart rate/contractility. [Pharma 4]" },
+        { cat: 1, q: "First-line treatment for life-threatening anaphylaxis (bee bite)?", a: ["Diphenhydramine", "Epinephrine", "Hydrocortisone", "Atropine"], c: 1, r: "Epinephrine is the absolute drug of choice for anaphylaxis. [Pharma 4]" },
+        { cat: 1, q: "Epinephrine's effect on beta-2 receptors results in:", a: ["Decreased blood flow", "Increased skeletal muscle flow", "Bronchoconstriction", "Bradycardia"], c: 1, r: "Beta-2 activation causes vasodilation and bronchodilation. [Pharma 4]" },
+        { cat: 3, q: "Chloramphenicol is generally avoided in children due to risk of:", a: ["Gray Baby Syndrome", "Tendon rupture", "Tooth discoloration", "Hearing loss"], c: 0, r: "Neonates cannot glucuronidate the drug, leading to circulatory collapse. [Pharma 7]" },
+        { cat: 3, q: "Idiosyncratic toxicity of Chloramphenicol regardless of age?", a: ["Acute renal failure", "Bone marrow depression", "Optic neuritis", "Colitis"], c: 1, r: "Bone marrow suppression/aplastic anemia is the most feared side effect. [Pharma 7]" },
+        { cat: 3, q: "Doxycycline (and other tetracyclines) are contraindicated in:", a: ["Elderly", "Pregnant/Young children", "Hypertensive patients", "Males"], c: 1, r: "Causes permanent tooth staining and inhibits bone growth. [Pharma 7]" },
+        { cat: 1, q: "Selective Beta-1 agonist used primarily for acute heart failure?", a: ["Propranolol", "Dobutamine", "Salbutamol", "Phenylephrine"], c: 1, r: "Dobutamine increases cardiac output with minimal HR effect. [Pharma 4]" },
+        { cat: 1, q: "Methylphenidate (Ritalin) is primarily used for:", a: ["ADHD", "Hypertension", "Insomnia", "Glaucoma"], c: 0, r: "It is an indirect-acting sympathomimetic stimulant. [Pharma 4]" },
+        { cat: 1, q: "Besides ADHD, Amphetamines are indicated for:", a: ["Anxiety", "Narcolepsy", "Bradycardia", "Asthma"], c: 1, r: "Amphetamines promote alertness in narcolepsy. [Pharma 4]" },
+        { cat: 3, q: "A patient on Interferon for Hep C is likely to experience:", a: ["Weight gain", "Flu-like symptoms", "Appetite increase", "Constipation"], c: 1, r: "IFN-alpha is notorious for severe flu-like side effects. [Pharma 11]" },
+        { cat: 3, q: "Which penicillin is effective against Pseudomonas aeruginosa?", a: ["Penicillin G", "Piperacillin", "Amoxicillin", "Cloxacillin"], c: 1, r: "Piperacillin is a specialized anti-pseudomonal penicillin. [Pharma 6]" },
+        { cat: 3, q: "Drug used for local anti-inflammatory effect in Ulcerative Colitis?", a: ["Trimethoprim", "Sulfasalazine", "Penicillin V", "Amphotericin"], c: 1, r: "Sulfasalazine delivers 5-ASA directly to the colon. [Pharma 8]" },
+        { cat: 3, q: "Zanamivir acts as a:", a: ["DNA polymerase inhibitor", "Neuraminidase inhibitor", "Protease inhibitor", "Cell wall inhibitor"], c: 1, r: "It prevents release of new virions from host cells. [Pharma 11]" },
+        { cat: 1, q: "The ratio of TD50 to ED50 determines a drug's:", a: ["Efficacy", "Potency", "Therapeutic Index", "Bioavailability"], c: 2, r: "Safety margin: a higher TI is generally safer. [Pharma 2]" },
+        { cat: 3, q: "Purpose of adding Clavulanic Acid to Amoxicillin?", a: ["Absorption", "Inhibit beta-lactamase", "Excretion", "Improve taste"], c: 1, r: "It protects Amoxicillin from enzymatic degradation by bacteria. [Pharma 6]" },
+        { cat: 3, q: "Fluoroquinolones like Ciprofloxacin carry a unique risk of:", a: ["Red man syndrome", "Tendon rupture", "Diabetes", "Gingival hyperplasia"], c: 1, r: "FDA black box warning for tendonitis and rupture. [Pharma 5]" },
+        
+        { cat: 2, q: "PCV13 (Pneumococcal Conjugate Vaccine) is typically administered to:", a: ["Elderly (>65y)", "Pediatric patients", "Healthcare workers", "Pregnant women"], c: 1, r: "Routine childhood immunization for pneumonia. [L9, S29]" },
+        { cat: 2, q: "The BCG vaccine for TB prophylaxis is classified as:", a: ["Subunit", "Inactivated", "Live attenuated", "DNA"], c: 2, r: "Live attenuated bacterial vaccine. [L9, S18]" },
+        { cat: 2, q: "Which surface marker is most characteristic of Regulatory T cells (Tregs)?", a: ["CD20", "CD25", "CD56", "CD14"], c: 1, r: "Tregs are CD4+ CD25+ FoxP3+. [L10, S30]" },
+        { cat: 2, q: "The Measles component of MMR is what technology?", a: ["Live attenuated", "Recombinant", "Toxoid", "Synthetic"], c: 0, r: "MMR components are live attenuated viruses. [L9, S18]" },
+        { cat: 2, q: "What is the alternative name for Type I Hypersensitivity?", a: ["Delayed", "Immune complex", "Cytotoxic", "Immediate"], c: 3, r: "Occurs within minutes of exposure. [L11, S6]" },
+        { cat: 2, q: "Microbial peptides mimicking self-peptides triggering autoimmunity is:", a: ["Bystander activation", "Molecular mimicry", "Central tolerance", "Epitope spreading"], c: 1, r: "Cross-reactivity between self and microbial antigens. [L10, S32]" },
+        { cat: 2, q: "Which organ is primarily targeted in Graves' disease?", a: ["Pancreas", "Adrenal", "Thyroid", "Kidney"], c: 2, r: "Organ-specific autoimmune thyroiditis. [L10]" },
+        { cat: 2, q: "Which of the following is NOT part of the mandatory childhood vaccine schedule?", a: ["DTP", "Hepatitis B", "Anthrax vaccine", "Hib"], c: 2, r: "Anthrax is for military/special high-risk, not routine kids. [L9]" },
+        { cat: 2, q: "Dermatitis from poison ivy is which type of hypersensitivity?", a: ["Type I", "Type II", "Type III", "Type IV"], c: 3, r: "Delayed-type hypersensitivity (T-cell mediated). [L11]" },
+        { cat: 2, q: "Central tolerance primarily occurs in which organ for T cells?", a: ["Bone marrow", "Spleen", "Thymus", "Lymph node"], c: 2, r: "T cells undergo negative selection in the thymus. [L10]" },
+        { cat: 2, q: "Which immunoglobulin is the mediator of Type I hypersensitivity?", a: ["IgG", "IgM", "IgA", "IgE"], c: 3, r: "IgE binds to mast cells, triggering histamine release. [L11]" },
+        { cat: 2, q: "Systemic Lupus Erythematosus is an example of which hypersensitivity?", a: ["Type I", "Type II", "Type III", "Type IV"], c: 2, r: "Immune-complex mediated (Ag-Ab complexes). [L11]" },
+        { cat: 2, q: "Rheumatic fever following a strep infection is due to:", a: ["Toxoid effect", "Molecular mimicry", "Anaphylaxis", "Sepsis"], c: 1, r: "Antibodies to Strep cross-react with cardiac tissue. [L10]" }
     ];
 
     let cur = 0;
-    let state = JSON.parse(localStorage.getItem('patho_pharma_final_v1')) || { answers: {}, flagged: [] };
+    let state = JSON.parse(localStorage.getItem('pod_full_72_v1')) || { answers: {}, flagged: [] };
     let chart;
 
-    function wipe() { if(confirm("Wipe all progress?")) { localStorage.removeItem('patho_pharma_final_v1'); location.reload(); } }
+    function wipe() { if(confirm("Wipe all progress?")) { localStorage.removeItem('pod_full_72_v1'); location.reload(); } }
 
     function updateChart() {
         const scores = [0,0,0,0], counts = [0,0,0,0];
@@ -185,8 +198,8 @@
         chart = new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ['Pathology', 'Neoplasia', 'Clin Pharma', 'Antimicrobials'],
-                datasets: [{ data: perf, backgroundColor: 'rgba(56, 189, 248, 0.2)', borderColor: '#38bdf8', pointBackgroundColor: '#38bdf8' }]
+                labels: ['Pathology', 'Pharmacology', 'Immunology', 'Antimicrobials'],
+                datasets: [{ data: perf, backgroundColor: 'rgba(244, 63, 94, 0.2)', borderColor: '#f43f5e', pointBackgroundColor: '#f43f5e' }]
             },
             options: { scales: { r: { min: 0, max: 100, ticks: { display: false }, grid: { color: 'rgba(255,255,255,0.05)' }, pointLabels: { color: '#94a3b8', font: { size: 9, weight: 'bold' } } } }, plugins: { legend: { display: false } } }
         });
@@ -213,7 +226,7 @@
             const opt = document.createElement('div');
             opt.className = `opt-item ${state.answers[cur] !== undefined ? (i === d.c ? 'correct' : (i === state.answers[cur] ? 'wrong' : '')) : ''}`;
             opt.innerHTML = `<span class="opt-index">0${i+1}</span> ${txt}`;
-            if(state.answers[cur] === undefined) opt.onclick = () => { state.answers[cur] = i; localStorage.setItem('patho_pharma_final_v1', JSON.stringify(state)); render(); };
+            if(state.answers[cur] === undefined) opt.onclick = () => { state.answers[cur] = i; localStorage.setItem('pod_full_72_v1', JSON.stringify(state)); render(); };
             list.appendChild(opt);
         });
 
@@ -223,7 +236,7 @@
     }
 
     function proceed() { if(cur < fullPool.length - 1) { cur++; render(); } }
-    function toggleFlag() { if(state.flagged.includes(cur)) state.flagged = state.flagged.filter(id => id !== cur); else state.flagged.push(cur); localStorage.setItem('patho_pharma_final_v1', JSON.stringify(state)); render(); }
+    function toggleFlag() { if(state.flagged.includes(cur)) state.flagged = state.flagged.filter(id => id !== cur); else state.flagged.push(cur); localStorage.setItem('pod_full_72_v1', JSON.stringify(state)); render(); }
     render();
 </script>
 </body>
