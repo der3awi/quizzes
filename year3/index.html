@@ -1,22 +1,153 @@
-<div class="grid">
-      <!-- Cardiovascular and Blood -->
-      <a href="cardiovascular-blood/index.html" class="card">
-        <div class="tag">Active Module</div>
-        <h2>Cardiovascular &amp; Blood</h2>
-        <p>Valvular disorders, arrhythmias, acute coronary syndromes, coagulopathies, and hematology cases.</p>
-      </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESG3DJGVYD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ESG3DJGVYD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Sciences Portal | Year 3 Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020617;
+            --panel: #0f172a;
+            --accent-cvs: #f43f5e;     /* Crimson / Ruby for Blood & Cardio */
+            --accent-resp: #38bdf8;    /* Sky Blue for Respiratory */
+            --accent-gi: #f59e0b;      /* Warm Amber for Gastrointestinal */
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
 
-      <!-- Respiratory -->
-      <a href="respiratory/index.html" class="card">
-        <div class="tag">Active Module</div>
-        <h2>Respiratory System</h2>
-        <p>Obstructive vs. restrictive diseases, infectious etiologies, acid-base balance, and chest imaging.</p>
-      </a>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
 
-      <!-- Gastrointestinal -->
-      <a href="gastrointestinal/index.html" class="card">
-        <div class="tag">Active Module</div>
-        <h2>Gastrointestinal System</h2>
-        <p>Hepatobiliary pathology, acute abdominal workups, luminal disorders, and GI pharmacology.</p>
-      </a>
+        .nav-bar {
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        .header { text-align: center; margin-bottom: 4rem; }
+        .header h1 { font-weight: 800; letter-spacing: -0.04em; font-size: 3rem; margin-bottom: 0.5rem; }
+        .header p { color: var(--text-dim); font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.75rem; opacity: 0.8; }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            width: 100%; 
+            max-width: 1200px; 
+        }
+
+        .module-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-cvs:hover { border-color: var(--accent-cvs); }
+        .card-resp:hover { border-color: var(--accent-resp); }
+        .card-gi:hover { border-color: var(--accent-gi); }
+
+        .module-card h2 { font-weight: 800; font-size: 1.3rem; }
+        .module-card p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; }
+        
+        .status-tag {
+            font-size: 0.55rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 10px;
+            border-radius: 20px;
+            width: fit-content;
+        }
+
+        .tag-cvs { background: rgba(244, 63, 94, 0.1); color: var(--accent-cvs); }
+        .tag-resp { background: rgba(56, 189, 248, 0.1); color: var(--accent-resp); }
+        .tag-gi { background: rgba(245, 158, 11, 0.1); color: var(--accent-gi); }
+
+        .footer { margin-top: 5rem; color: var(--text-dim); font-size: 0.7rem; opacity: 0.5; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="../index.html" class="back-link">← Back to Main Portal</a>
     </div>
+
+    <div class="header">
+        <p>Phase 2 // Clinical Systems</p>
+        <h1>Year 3 Hub</h1>
+    </div>
+
+    <div class="grid">
+        <!-- Cardiovascular and Blood -->
+        <a href="cardiovascular-blood/index.html" class="module-card card-cvs">
+            <div class="status-tag tag-cvs">Active Module</div>
+            <h2>Cardiovascular &amp; Blood</h2>
+            <p>Valvular pathology, arrhythmias, ischemic heart disease, hemostasis, coagulopathies, and hematology.</p>
+        </a>
+
+        <!-- Respiratory -->
+        <a href="respiratory/index.html" class="module-card card-resp">
+            <div class="status-tag tag-resp">Active Module</div>
+            <h2>Respiratory System</h2>
+            <p>Obstructive and restrictive lung diseases, infectious pneumonias, acid-base physiology, and arterial blood gas analysis.</p>
+        </a>
+
+        <!-- Gastrointestinal -->
+        <a href="gastrointestinal/index.html" class="module-card card-gi">
+            <div class="status-tag tag-gi">Active Module</div>
+            <h2>Gastrointestinal System</h2>
+            <p>Luminal gastroenterology, hepatobiliary disorders, acute abdominal emergencies, and GI pharmacology.</p>
+        </a>
+    </div>
+
+    <div class="footer">POD 242 // SESSION 2026</div>
+
+</body>
+</html>
