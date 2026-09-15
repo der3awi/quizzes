@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESG3DJGVYD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ESG3DJGVYD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular &amp; Blood | Study Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020617;
+            --panel: #0f172a;
+            --accent-tbl1: #f43f5e;    /* Rose/Crimson */
+            --accent-tbl2: #fb7185;    /* Coral/Pinkish-Red */
+            --accent-final: #fbbf24;   /* Gold/Amber for Final Exam */
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .nav-bar {
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-link:hover {
+            color: var(--text);
+        }
+
+        .header { text-align: center; margin-bottom: 4rem; }
+        .header h1 { font-weight: 800; letter-spacing: -0.04em; font-size: 3rem; margin-bottom: 0.5rem; }
+        .header p { color: var(--text-dim); font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.75rem; opacity: 0.8; }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 20px; 
+            width: 100%; 
+            max-width: 1200px; 
+        }
+
+        .module-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .module-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .card-tbl1:hover { border-color: var(--accent-tbl1); }
+        .card-tbl2:hover { border-color: var(--accent-tbl2); }
+        .card-final:hover { border-color: var(--accent-final); }
+
+        .module-card h2 { font-weight: 800; font-size: 1.3rem; }
+        .module-card p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; }
+        
+        .status-tag {
+            font-size: 0.55rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 10px;
+            border-radius: 20px;
+            width: fit-content;
+        }
+
+        .tag-tbl1 { background: rgba(244, 63, 94, 0.1); color: var(--accent-tbl1); }
+        .tag-tbl2 { background: rgba(251, 113, 133, 0.1); color: var(--accent-tbl2); }
+        .tag-final { background: rgba(251, 191, 36, 0.1); color: var(--accent-final); }
+
+        .footer { margin-top: 5rem; color: var(--text-dim); font-size: 0.7rem; opacity: 0.5; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-bar">
+        <a href="../index.html" class="back-link">← Back to Year 3 Hub</a>
+    </div>
+
+    <div class="header">
+        <p>Year 3 // Module 1</p>
+        <h1>Cardiovascular &amp; Blood</h1>
+    </div>
+
+    <div class="grid">
+        <!-- TBL 1 -->
+        <a href="tbl1/index.html" class="module-card card-tbl1">
+            <div class="status-tag tag-tbl1">Team-Based Learning</div>
+            <h2>TBL 1</h2>
+            <p>Readiness assurance and application exercises for cardiovascular foundations and hemodynamics.</p>
+        </a>
+
+        <!-- TBL 2 -->
+        <a href="tbl2/index.html" class="module-card card-tbl2">
+            <div class="status-tag tag-tbl2">Team-Based Learning</div>
+            <h2>TBL 2</h2>
+            <p>Clinical scenarios, hematology, coagulopathies, and advanced pharmacotherapy cases.</p>
+        </a>
+
+        <!-- Final Exam -->
+        <a href="final-exam/index.html" class="module-card card-final">
+            <div class="status-tag tag-final">Assessment Bank</div>
+            <h2>Final Examination</h2>
+            <p>High-yield multi-step clinical vignettes, ECG interpretations, and past examination questions.</p>
+        </a>
+    </div>
+
+    <div class="footer">POD 242 // SESSION 2026</div>
+
+</body>
+</html>
