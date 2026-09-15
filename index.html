@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Hub // Portal</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+      --muted: #8b949e;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 3rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 80vh;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .badge {
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin: 0;
+      color: #f0f6fc;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 800px;
+      width: 100%;
+    }
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .tag {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      width: fit-content;
+      margin-bottom: 0.75rem;
+    }
+    .tag-active { background: rgba(56, 139, 253, 0.15); color: #58a6ff; }
+    .tag-archive { background: rgba(139, 148, 158, 0.15); color: var(--muted); }
+    h2 { margin: 0 0 0.5rem 0; font-size: 1.3rem; color: #f0f6fc; }
+    p { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.4; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="badge">Academic Portal</div>
+    <h1>Study Hub</h1>
+  </div>
+
+  <div class="grid">
+    <!-- Year 3 Hub -->
+    <a href="year3/index.html" class="card">
+      <div class="tag tag-active">Current • Year 3</div>
+      <h2>Clinical Rotations</h2>
+      <p>Internal medicine, surgery, pediatrics, OB/GYN, and clinical question banks.</p>
+    </a>
+
+    <!-- Pre-Clinical Archive -->
+    <a href="preclinical/index.html" class="card">
+      <div class="tag tag-archive">Archive • Years 1 & 2</div>
+      <h2>Pre-Clinical Core</h2>
+      <p>Pathology, Pharmacology, AP Theory, OSPE, and POD past exams.</p>
+    </a>
+  </div>
+
+</body>
+</html>
