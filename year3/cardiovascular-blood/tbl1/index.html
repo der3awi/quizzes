@@ -105,14 +105,18 @@
         .btn-next { background: var(--accent); color: #fff; flex: 1; box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3); }
         .btn-next:hover { opacity: 0.95; }
         
-        .hub-link { color: var(--text-dim); text-decoration: none; font-size: 0.7rem; font-weight: 700; transition: 0.2s; }
-        .hub-link:hover { color: var(--accent); }
+        .hub-link { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 700; transition: 0.2s; display: inline-flex; align-items: center; }
+        .hub-link:hover { color: var(--text); }
     </style>
 </head>
 <body>
 
 <nav class="nav-header">
-    <div class="logo"><div class="pulse" id="pulseDot"></div> CARDIOVASCULAR &amp; BLOOD // TBL 1</div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="../../../index.html" class="hub-link" style="color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 700;">🏠 HOME</a>
+        <span style="color: var(--border); font-size: 0.8rem;">/</span>
+        <div class="logo"><div class="pulse" id="pulseDot"></div> CVS &amp; BLOOD // TBL 1</div>
+    </div>
     
     <!-- Mode Switcher -->
     <div class="tab-switcher">
@@ -120,9 +124,9 @@
         <button class="mode-tab" id="tabPast" onclick="switchMode('past')">Past Exam (37)</button>
     </div>
 
-    <div style="display: flex; gap: 20px; align-items: center;">
+    <div style="display: flex; gap: 18px; align-items: center;">
         <button class="hub-link" style="background: none; border: none; cursor: pointer; color: var(--danger); font-weight: 800;" onclick="wipe()">WIPE PROGRESS</button>
-        <a href="../index.html" class="hub-link">← BACK TO CVS HUB</a>
+        <a href="../../../index.html" class="hub-link" style="color: var(--text-dim); text-decoration: none; font-weight: 800; font-size: 0.75rem;">✕ EXIT</a>
     </div>
 </nav>
 
@@ -155,12 +159,6 @@
 </div>
 
 <script>
-    // Categories:
-    // 0: Anatomy & Imaging (Cardiac Topography, Auscultation, Valves, Vessels, Radiology)
-    // 1: Erythrocytes & Transfusion (RBC Physiology, Anemias, Immunohematology)
-    // 2: Hemostasis & Thrombosis (Platelets, Coagulation Cascade, Anticoagulants, Fibrinolytics)
-    // 3: Neoplasia & Host Defense (Leukocytes, Lymphomas, Microorganisms, Immunosurveillance)
-
     // Pool 1: 30 Core Practice Questions
     const corePool = [
         { cat: 0, q: "A 48-year-old female with a history of untreated rheumatic fever presents with worsening dyspnea, progressive difficulty swallowing solid food, and persistent voice hoarseness over the past several months. Laryngoscopy reveals paralysis of the left vocal cord, and imaging shows an enlarged heart chamber compressing the adjacent esophagus and left recurrent laryngeal nerve. Which cardiac chamber forms this base and is most posteriorly situated?", a: ["Right ventricle", "Left ventricle", "Left atrium", "Right atrium", "Superior vena cava"], c: 2, r: "The left atrium forms the base and is the most posterior part of the heart. Enlargement of the left atrium (such as in mitral stenosis) can compress the esophagus (causing dysphagia) and the left recurrent laryngeal nerve (Ortner syndrome, causing hoarseness)." },

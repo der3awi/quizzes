@@ -1,102 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Study Hub // Portal</title>
-  <style>
-    :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --border: #30363d;
-      --text: #c9d1d9;
-      --accent: #58a6ff;
-      --muted: #8b949e;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: 3rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 80vh;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 2.5rem;
-    }
-    .badge {
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin: 0;
-      color: #f0f6fc;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      max-width: 800px;
-      width: 100%;
-    }
-    .card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s, transform 0.2s;
-      display: flex;
-      flex-direction: column;
-    }
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-    .tag {
-      font-size: 0.7rem;
-      padding: 2px 8px;
-      border-radius: 12px;
-      width: fit-content;
-      margin-bottom: 0.75rem;
-    }
-    .tag-active { background: rgba(56, 139, 253, 0.15); color: #58a6ff; }
-    .tag-archive { background: rgba(139, 148, 158, 0.15); color: var(--muted); }
-    h2 { margin: 0 0 0.5rem 0; font-size: 1.3rem; color: #f0f6fc; }
-    p { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.4; }
-  </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESG3DJGVYD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ESG3DJGVYD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Sciences Portal | Year 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020617;
+            --panel: #0f172a;
+            --panel-hover: #17223b;
+            --accent-cvs: #f43f5e;
+            --accent-resp: #38bdf8;
+            --accent-gi: #f59e0b;
+            --gold: #fbbf24;
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(255, 255, 255, 0.18);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 20px 60px;
+        }
+
+        .nav-bar {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand {
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pulse { width: 8px; height: 8px; background: var(--accent-cvs); border-radius: 50%; box-shadow: 0 0 10px var(--accent-cvs); }
+
+        .archive-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            padding: 6px 14px;
+            border-radius: 20px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .archive-pill:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .header { text-align: center; margin-bottom: 3rem; }
+        .header h1 { font-weight: 800; letter-spacing: -0.04em; font-size: 2.6rem; margin-bottom: 0.4rem; }
+        .header p { color: var(--text-dim); font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.72rem; }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 1100px;
+        }
+
+        .system-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            transition: border-color 0.3s, transform 0.2s;
+        }
+        .system-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+
+        .card-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+        }
+        .system-tag {
+            font-size: 0.58rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+        .system-card h2 { font-weight: 800; font-size: 1.3rem; }
+        .system-card p.desc { color: var(--text-dim); font-size: 0.82rem; line-height: 1.5; }
+
+        /* Specific System Themes */
+        .cvs { border-top: 3px solid var(--accent-cvs); }
+        .cvs .system-tag { background: rgba(244, 63, 94, 0.12); color: var(--accent-cvs); }
+        
+        .resp { border-top: 3px solid var(--accent-resp); }
+        .resp .system-tag { background: rgba(56, 189, 248, 0.12); color: var(--accent-resp); }
+
+        .gi { border-top: 3px solid var(--accent-gi); }
+        .gi .system-tag { background: rgba(245, 158, 11, 0.12); color: var(--accent-gi); }
+
+        /* Launch Links Section */
+        .launch-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        .launch-title {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            margin-bottom: 2px;
+        }
+
+        .launch-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        .launch-btn {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 12px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.78rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.2s ease;
+        }
+        .launch-btn:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateX(2px);
+        }
+        .launch-btn span.badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            color: var(--text-dim);
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 5px;
+        }
+        .launch-btn.gold span.badge { color: var(--gold); }
+        .launch-btn.disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .footer { margin-top: 4rem; color: var(--text-dim); font-size: 0.7rem; opacity: 0.5; }
+    </style>
 </head>
 <body>
 
-  <div class="header">
-    <div class="badge">Academic Portal</div>
-    <h1>Study Hub</h1>
-  </div>
+    <nav class="nav-bar">
+        <div class="brand">
+            <div class="pulse"></div>
+            Clinical Science Engine
+        </div>
+        <a href="preclinical/index.html" class="archive-pill">
+            <span>Pre-Clinical Archive</span> →
+        </a>
+    </nav>
 
-  <div class="grid">
-    <!-- Year 3 Hub -->
-    <a href="year3/index.html" class="card">
-      <div class="tag tag-active">Current • Year 3</div>
-      <h2>Pre-Clerkship Block</h2>
-      
-    </a>
+    <div class="header">
+        <p>Phase 2 // Active Academic Rotations</p>
+        <h1>Year 3 Modules</h1>
+    </div>
 
-    <!-- Pre-Clinical Archive -->
-    <a href="preclinical/index.html" class="card">
-      <div class="tag tag-archive">Archive • Years 1 & 2</div>
-      <h2>Pre-Clinical Core</h2>
-      <p>Pathology, Pharmacology, AP Theory, OSPE, and POD past exams.</p>
-    </a>
-  </div>
+    <div class="dashboard-grid">
+        
+        <!-- CARDIOVASCULAR & BLOOD -->
+        <div class="system-card cvs">
+            <div class="card-header">
+                <h2>Cardiovascular &amp; Blood</h2>
+                <div class="system-tag">Active Block</div>
+            </div>
+            <p class="desc">Valvular disorders, arrhythmias, ACS, coagulopathies, and hematology cases.</p>
+            
+            <div class="launch-group">
+                <span class="launch-title">Quick Launch Question Banks</span>
+                
+                <!-- TBL 1 Direct Launch Row -->
+                <div class="launch-row">
+                    <a href="year3/cardiovascular-blood/tbl1/index.html" class="launch-btn">
+                        TBL 1 Core <span class="badge">30 Q</span>
+                    </a>
+                    <a href="year3/cardiovascular-blood/tbl1/index.html" class="launch-btn gold">
+                        TBL 1 Past <span class="badge">37 Q</span>
+                    </a>
+                </div>
+
+                <!-- TBL 2 Launch Row -->
+                <div class="launch-row">
+                    <a href="year3/cardiovascular-blood/tbl2/index.html" class="launch-btn disabled">
+                        TBL 2 Core <span class="badge">Upcoming</span>
+                    </a>
+                    <a href="year3/cardiovascular-blood/tbl2/index.html" class="launch-btn disabled">
+                        TBL 2 Past <span class="badge">Upcoming</span>
+                    </a>
+                </div>
+
+                <!-- Final Exam Launch Row -->
+                <div class="launch-row">
+                    <a href="year3/cardiovascular-blood/final-exam/index.html" class="launch-btn disabled">
+                        Final Exam Recall Bank <span class="badge">TBD</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESPIRATORY -->
+        <div class="system-card resp">
+            <div class="card-header">
+                <h2>Respiratory System</h2>
+                <div class="system-tag">Upcoming Block</div>
+            </div>
+            <p class="desc">Obstructive vs restrictive diseases, pneumonia, acid-base, and thoracic imaging.</p>
+            
+            <div class="launch-group">
+                <span class="launch-title">Quick Launch Question Banks</span>
+                <div class="launch-row">
+                    <a href="#" class="launch-btn disabled">TBL 1 Question Bank <span class="badge">Queued</span></a>
+                </div>
+                <div class="launch-row">
+                    <a href="#" class="launch-btn disabled">Final Examination Bank <span class="badge">Queued</span></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- GASTROINTESTINAL -->
+        <div class="system-card gi">
+            <div class="card-header">
+                <h2>Gastrointestinal</h2>
+                <div class="system-tag">Upcoming Block</div>
+            </div>
+            <p class="desc">Hepatobiliary pathology, acute abdomen workup, luminal GI, and pharmacology.</p>
+            
+            <div class="launch-group">
+                <span class="launch-title">Quick Launch Question Banks</span>
+                <div class="launch-row">
+                    <a href="#" class="launch-btn disabled">TBL 1 Question Bank <span class="badge">Queued</span></a>
+                </div>
+                <div class="launch-row">
+                    <a href="#" class="launch-btn disabled">Final Examination Bank <span class="badge">Queued</span></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">SESSION 2026 // YEAR 3 CLINICAL PORTAL</div>
 
 </body>
 </html>
