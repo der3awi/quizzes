@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESG3DJGVYD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ESG3DJGVYD');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular &amp; Blood TBL 2 | Study Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --panel: #1e293b;
+            --accent: #f43f5e; /* Crimson for CVS */
+            --success: #10b981;
+            --danger: #f43f5e;
+            --flag: #f59e0b;
+            --text: #f1f5f9;
+            --text-dim: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; overflow: hidden; -webkit-font-smoothing: antialiased; }
+
+        .nav-header { padding: 0.85rem 2rem; background: var(--panel); border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; z-index: 100; gap: 1rem; }
+        .logo { font-weight: 800; letter-spacing: 0.1em; font-size: 0.85rem; display: flex; align-items: center; gap: 12px; color: #fff; }
+        .pulse { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        .app-grid { display: grid; grid-template-columns: 340px 1fr; flex: 1; overflow: hidden; }
+
+        .sidebar { background: rgba(15, 23, 42, 0.4); border-right: 1px solid var(--border); padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; }
+        .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+        .chart-wrapper { height: 220px; width: 100%; position: relative; }
+        
+        .label-id { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; font-weight: 800; letter-spacing: 0.1em; margin-bottom: 0.5rem; display: block; }
+        .matrix { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin-top: 10px; }
+        .node { aspect-ratio: 1; background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 600; cursor: pointer; color: var(--text-dim); position: relative; transition: all 0.2s; }
+        .node.active { border-color: var(--accent); background: rgba(244, 63, 94, 0.12); color: white; }
+        .node.correct { border-color: var(--success); color: var(--success); }
+        .node.wrong { border-color: var(--danger); color: var(--danger); }
+        .node.flagged::before { content: ''; position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: var(--flag); border-radius: 50%; border: 2px solid var(--bg); }
+
+        .stage { padding: 2rem 3rem; display: flex; justify-content: center; overflow-y: auto; }
+        .content-wrap { max-width: 800px; width: 100%; }
+
+        .proc-header { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 0.75rem; margin-bottom: 1rem; opacity: 0.8; }
+        .q-text { font-size: 1.25rem; font-weight: 700; line-height: 1.5; margin-bottom: 2rem; color: #fff; }
+
+        .options { display: grid; gap: 0.85rem; }
+        .opt-item { background: var(--panel); border: 1px solid var(--border); padding: 1.15rem 1.5rem; border-radius: 14px; cursor: pointer; display: flex; align-items: center; gap: 1.25rem; font-size: 0.98rem; font-weight: 500; transition: 0.2s; }
+        .opt-item:hover { border-color: var(--accent); transform: translateX(6px); }
+        .opt-item.correct { border-color: var(--success); background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .opt-item.wrong { border-color: var(--danger); background: rgba(244, 63, 94, 0.1); color: var(--danger); }
+        .opt-index { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; opacity: 0.4; flex-shrink: 0; }
+
+        .rationale { margin-top: 2rem; padding: 1.5rem; background: rgba(30, 41, 59, 0.6); border-left: 4px solid var(--accent); border-radius: 10px; display: none; line-height: 1.6; color: var(--text-dim); font-size: 0.92rem; }
+
+        .action-row { margin-top: 2.5rem; display: flex; gap: 1rem; }
+        .btn-ui { padding: 0.9rem 1.75rem; border-radius: 10px; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; border: none; transition: 0.2s; }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.05); }
+        .btn-next { background: var(--accent); color: #fff; flex: 1; box-shadow: 0 4px 15px rgba(244, 63, 94, 0.3); }
+        .btn-next:hover { opacity: 0.95; }
+        
+        .hub-link { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 700; transition: 0.2s; display: inline-flex; align-items: center; }
+        .hub-link:hover { color: var(--text); }
+    </style>
+</head>
+<body>
+
+<nav class="nav-header">
+    <div style="display: flex; align-items: center; gap: 12px;">
+        <a href="../../../index.html" class="hub-link">🏠 HOME</a>
+        <span style="color: var(--border); font-size: 0.8rem;">/</span>
+        <div class="logo"><div class="pulse"></div> CVS &amp; BLOOD // TBL 2</div>
+    </div>
+
+    <div style="display: flex; gap: 18px; align-items: center;">
+        <button class="hub-link" style="background: none; border: none; cursor: pointer; color: var(--danger); font-weight: 800;" onclick="wipe()">WIPE PROGRESS</button>
+        <a href="../../../index.html" class="hub-link" style="color: var(--text-dim); text-decoration: none; font-weight: 800; font-size: 0.75rem;">✕ EXIT</a>
+    </div>
+</nav>
+
+<div class="app-grid">
+    <aside class="sidebar">
+        <div class="card">
+            <span class="label-id">Discipline Diagnostic</span>
+            <div class="chart-wrapper"><canvas id="radarChart"></canvas></div>
+        </div>
+        <div class="card" style="flex: 1;">
+            <span class="label-id">Knowledge Matrix</span>
+            <div class="matrix" id="matrix"></div>
+        </div>
+    </aside>
+
+    <main class="stage">
+        <div class="content-wrap">
+            <div class="proc-header" id="pID">TBL2 // Q01</div>
+            <div class="q-text" id="qBody">Select a question to begin the sequence.</div>
+            <div class="options" id="optList"></div>
+            <div class="rationale" id="ratBox"></div>
+
+            <div class="action-row">
+                <button class="btn-ui btn-outline" onclick="prev()">Previous</button>
+                <button class="btn-ui btn-outline" style="color: var(--flag);" id="flagBtn" onclick="toggleFlag()">Flag</button>
+                <button class="btn-ui btn-next" id="nextBtn" onclick="proceed()">Next Question</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    // Categories:
+    // 0: Embryology & Anatomy
+    // 1: Physiology & Arrhythmias
+    // 2: Cardiomyopathy & CAD
+    // 3: Infection & Valves
+
+    const questions = [
+        { cat: 0, q: "A premature neonate presents with tachypnea, bounding peripheral pulses, and a continuous \"machinery\" murmur heard loudest at the left infraclavicular area. Maternal history is notable for a first-trimester viral illness featuring a maculopapular rash and lymphadenopathy. Which embryological structure failed to close in this infant?", a: ["Foramen ovale", "Ductus arteriosus", "Ductus venosus", "Truncus arteriosus"], c: 1, r: "Patent ductus arteriosus (PDA) occurs when the fetal shunt connecting the pulmonary trunk to the aorta fails to close postnatally. It results in a left-to-right shunt (aorta → pulmonary trunk) and is classically associated with maternal rubella infection and prematurity." },
+        { cat: 0, q: "A 48-year-old female presents with persistent hoarseness. A thoracic CT angiogram reveals a large saccular aneurysm of the aortic arch compressing adjacent neural structures. Which specific nerve is compressed in the groove between the trachea and esophagus?", a: ["Right recurrent laryngeal nerve", "Left recurrent laryngeal nerve", "Left phrenic nerve", "Sympathetic trunk"], c: 1, r: "The left recurrent laryngeal nerve branches from the left vagus nerve at the inferior margin of the aortic arch lateral to the ligamentum arteriosum, loops under the arch, and ascends in the groove between the trachea and esophagus. Compression from an aortic arch aneurysm or mediastinal mass causes vocal cord paralysis and hoarseness." },
+        { cat: 0, q: "During elective coronary artery bypass graft (CABG) surgery, the cardiothoracic surgeon inserts a vascular clamp into a pericardial recess situated posterior to the ascending aorta and pulmonary trunk, but anterior to the superior vena cava. Which anatomical space is utilized to control arterial outflow hemorrhage?", a: ["Oblique pericardial sinus", "Transverse pericardial sinus", "Costodiaphragmatic recess", "Anterior mediastinum"], c: 1, r: "The transverse pericardial sinus lies posterior to the aorta and pulmonary trunk and anterior to the superior vena cava (superior to the left atrium). Placing a clamp or finger through this passage separates arteries from veins to divert or stop blood flow during bypass surgery." },
+        { cat: 0, q: "A newborn infant is evaluated for cyanosis and tachypnea. Echocardiography demonstrates that the aorta originates anteriorly from the morphological right ventricle, while the pulmonary trunk originates from the morphological left ventricle. Which embryological error is responsible?", a: ["Incomplete formation of the endocardial cushions", "Failure of the aorticopulmonary septum to spiral", "Deficient growth of the septum secundum", "Leftward looping of the primitive heart tube"], c: 1, r: "In Transposition of the Great Arteries (TGA), the aorticopulmonary (spiral) septum fails to complete its normal 180° spiral rotation during partitioning of the truncus arteriosus and bulbus cordis. Consequently, the aorta arises anteriorly from the right ventricle and the pulmonary trunk arises from the left ventricle." },
+        { cat: 0, q: "A 24-year-old female presents with severe pleuritic retrosternal chest pain that improves markedly when she sits upright and leans forward. A pericardial friction rub is auscultated over the left sternal border. Which nerve fibers carry the somatic pain sensation from the parietal pericardium?", a: ["Vagus nerves (CN X)", "Phrenic nerves (C3–C5)", "Intercostal nerves (T1–T4)", "Thoracic sympathetic splanchnic nerves"], c: 1, r: "Somatic sensation (pain) from the fibrous pericardium and parietal layer of the serous pericardium is carried exclusively by the phrenic nerves (C3, C4, C5), explaining why pericardial pain is frequently referred to the supraclavicular shoulder or neck area dermatomes." },
+        { cat: 2, q: "A 32-year-old asymptomatic runner undergoes a family screening evaluation after his brother died suddenly at age 19. Genetic testing identifies a missense mutation in a sarcomeric protein gene. Histological examination of cardiac tissue in patients with hypertrophic obstructive cardiomyopathy (HOCUM) characteristically demonstrates which finding?", a: ["Stretched, attenuated myocytes with no disarray", "Marked myocyte disarray with disordered, enlarged myocytes", "Massive replacement of myocardium with adipose tissue", "Extensive extracellular calcification of the fibrous skeleton"], c: 1, r: "HCM/HOCUM is a 100% genetic disease of sarcomeric proteins marked histologically by prominent \"myocyte disarray\" (disordered, hypertrophied myocytes that are inefficient in linear force generation) and interstitial fibrosis." },
+        { cat: 3, q: "A 66-year-old male with a prosthetic mechanical mitral valve develops subacute bacterial endocarditis. Blood cultures reveal Gram-positive, coagulase-negative staphylococci (Staphylococcus epidermidis). What initial pathogenic mechanism is most responsible for this organism establishing chronic infection on prosthetic devices?", a: ["Production of an extracellular slime/biofilm matrix", "Secretion of potent alpha-toxin and exfoliatin", "Production of coagulase leading to fibrin clots", "Spore germination within the fibrous capsule"], c: 0, r: "Staphylococcus epidermidis adheres to abiotic synthetic material (prosthetic valves, cardiac devices) and produces an extracellular slime/biofilm matrix composed of polysaccharides, proteins, and eDNA, protecting bacteria from antibiotics and immune clearance." },
+        { cat: 3, q: "A 55-year-old male immigrant from rural Latin America presents with chronic dyspnea, pedal edema, and syncope. An ECG displays a right bundle branch block. Echocardiogram reveals an apical ventricular aneurysm with a mural thrombus and dilated cardiac chambers. Which vector transmitted the causative protozoan?", a: ["Reduviid (triatomine) bug", "Anopheles mosquito", "Ixodes tick", "Tsetse fly"], c: 0, r: "Chagas disease is caused by the protozoan Trypanosoma cruzi, transmitted by the triatomine (reduviid) bug. Chronic Chagas cardiomyopathy leads to conduction system damage (RBBB), apical aneurysms, mural thrombi, and dilated cardiomyopathy." },
+        { cat: 2, q: "A 62-year-old male with a history of exertional stable angina takes sublingual nitroglycerin during an episode of substernal discomfort. Within three minutes, the pain subsides. What is the primary hemodynamic mechanism responsible for this relief?", a: ["Direct dilation of coronary resistance arterioles", "Systemic venodilation resulting in reduced ventricular preload", "Increased heart rate and increased contractility", "Selective inhibition of cardiac slow calcium channels"], c: 1, r: "Organic nitrates act primarily as systemic venodilators at therapeutic doses. By increasing peripheral venous capacitance, they reduce venous return (preload) to the heart, decreasing end-diastolic wall tension and myocardial oxygen demand." },
+        { cat: 1, q: "A 70-year-old male with long-standing severe chronic obstructive pulmonary disease (COPD) presents with worsening bilateral ankle edema, right upper quadrant fullness, and prominent jugular venous distension. Lungs reveal wheezes without crackles. What is the primary initiating pathological mechanism leading to this patient's cor pulmonale?", a: ["Left ventricular systolic failure causing backward pulmonary congestion", "Hypoxic pulmonary vasoconstriction and vascular remodeling", "Direct sarcomeric gene mutations causing right ventricular dilation", "Constrictive caseous pericarditis from previous infection"], c: 1, r: "In chronic lung disease like COPD, alveolar hypoxia triggers hypoxic pulmonary vasoconstriction and vascular remodeling (intimal thickening and medial hypertrophy). This elevates pulmonary vascular resistance, increasing right ventricular afterload and precipitating cor pulmonale." },
+        { cat: 0, q: "A newborn develops respiratory distress, cyanosis, and a scaphoid abdomen shortly after birth. Auscultation reveals bowel sounds in the left hemithorax and displaced heart sounds. Chest X-ray demonstrates bowel loops in the thoracic cavity. Defective development of which embryological structure causes this congenital diaphragmatic hernia?", a: ["Septum transversum", "Left pleuroperitoneal membrane", "Dorsal mesentery of the esophagus", "Muscular ingrowth from body wall"], c: 1, r: "Congenital diaphragmatic hernia (Bochdalek hernia) results from failure of the pleuroperitoneal membrane (most commonly on the left posterolateral side) to fuse completely with the other diaphragmatic components, allowing abdominal viscera into the thorax." },
+        { cat: 0, q: "A 54-year-old male undergoes surgical resection of a tumor in the posterior mediastinum. On postoperative day 3, thoracostomy drainage produces hundreds of milliliters of milky fluid rich in triglycerides (chyle). Through which anatomical hiatus in the diaphragm did the injured thoracic duct enter the thorax?", a: ["Caval opening", "Esophageal hiatus", "Aortic hiatus", "Foramen of Morgagni"], c: 2, r: "The thoracic duct originates from the cisterna chyli at L2 and enters the posterior mediastinum through the aortic hiatus of the diaphragm (alongside the aorta and azygos vein). Laceration causes chylothorax." },
+        { cat: 3, q: "A 44-year-old male with a history of intravenous drug abuse presents with high fever and a new systolic murmur. Physical exam reveals flat, nontender, erythematous macules on the palms and soles (Janeway lesions). What is the pathological mechanism of these lesions?", a: ["Immune complex deposition causing localized vasculitis", "Septic microemboli producing microabscesses", "Fungal mycelial obstruction of large digital arteries", "Localized hypersensitivity reaction to antibiotic therapy"], c: 1, r: "Janeway lesions are flat, painless, erythematous macules on the palms and soles caused by septic microemboli from valvar vegetations. By contrast, Osler's nodes are tender, painful subcutaneous nodules caused by immune complex deposition." },
+        { cat: 2, q: "A 61-year-old male presents with acute retrosternal chest pain. A 12-lead ECG demonstrates ST-segment elevation in leads II, III, and aVF with reciprocal depression in leads I and aVL. Which epicardial coronary artery is acutely occluded?", a: ["Left anterior descending artery (LAD)", "Left circumflex artery (LCx)", "Right coronary artery (RCA)", "Left internal thoracic artery (LITA)"], c: 2, r: "Occlusion of the RCA leads to an inferior wall myocardial infarction, presenting with ST elevations in the inferior leads (II, III, aVF) and reciprocal depression in leads I and aVL." },
+        { cat: 1, q: "A 58-year-old hypertensive patient has a low-frequency presystolic sound heard at the apex immediately before S1 (S4). What physiological event produces this fourth heart sound?", a: ["Rapid passive filling of blood into an overcompliant ventricle", "Atrial contraction forcing blood into a stiff, noncompliant ventricle", "Sudden closure of the atrioventricular valves", "Vibration of the aortic root during rapid ejection"], c: 1, r: "The fourth heart sound (S4) occurs during atrial systole (late diastole) when active atrial contraction propels blood into a noncompliant, hypertrophied, or stiff ventricle." },
+        { cat: 2, q: "A 63-year-old male suffers an acute STEMI. Two days later, while hospitalized, he develops recurrent severe crushing chest pain. Which biomarker is most clinically useful to diagnose an early re-infarction occurring within 48 to 72 hours?", a: ["Troponin T", "Troponin I", "CK-MB", "Lactate dehydrogenase (LDH)"], c: 2, r: "Cardiac troponins remain elevated for 5 to 14 days, obscuring an acute recurrent event. CK-MB peaks within 24 hours and normalizes within 48 to 72 hours, making a secondary rise indicative of early re-infarction." },
+        { cat: 2, q: "A 52-year-old female with hypercholesterolemia is started on atorvastatin. What is the primary molecular mechanism by which statins reduce circulating LDL-cholesterol?", a: ["Binding bile acids in the intestine to prevent reabsorption", "Inhibiting HMG-CoA reductase, leading to upregulation of hepatic LDL receptors", "Activating lipoprotein lipase to hydrolyze plasma triglycerides", "Selectively blocking cholesterol absorption at the brush border via NPC1L1"], c: 1, r: "Statins competitively inhibit HMG-CoA reductase (the rate-limiting enzyme in cholesterol synthesis). The resulting depletion of intracellular hepatic cholesterol triggers upregulation of cell-surface LDL receptors, clearing LDL particles from circulation." },
+        { cat: 2, q: "A 67-year-old male with stable exertional angina suffers sudden cardiac death. Autopsy reveals acute plaque rupture with occlusive coronary thrombosis. Histopathological evaluation of the vulnerable plaque shows which profile?", a: ["Thick fibrous cap, minimal lipid, and low macrophage count", "Thin fibrous cap, large lipid core, and increased inflammatory cells", "Dense calcification without any lipid core", "Extensive smooth muscle cell hyperplasia with intact endothelium"], c: 1, r: "Vulnerable plaques are prone to acute rupture and thrombosis because they have a thin fibrous cap, a large necrotic lipid core, and a dense concentration of inflammatory cells (macrophages)." },
+        { cat: 3, q: "A 38-year-old hunter presents with fever, periorbital edema, muscle pain, and subungual splinter hemorrhages after eating undercooked wild meat. Blood work shows marked eosinophilia. What is the major cause of death associated with this parasitic infection?", a: ["Massive gastrointestinal bleeding", "Myocarditis (eosinophilic infiltration)", "Chronic megaesophagus", "Acute hepatic sinusoidal rupture"], c: 1, r: "In trichinosis (Trichinella spiralis), larval invasion triggers profound eosinophilia, periorbital edema, myalgia, and splinter hemorrhages. Eosinophilic myocarditis is the most severe and primary life-threatening complication." },
+        { cat: 0, q: "A 16-year-old male presents with upper extremity hypertension and weak, delayed femoral pulses. A chest radiograph demonstrates translucent notches along the inferior borders of ribs III to VI. Which collateral pathways enlarge to bypass the aortic coarctation?", a: ["Vertebral and basilar arteries", "Internal thoracic arteries anastomosing with posterior intercostal arteries", "Bronchial arteries anastomosing with pulmonary veins", "Celiac trunk anastomosing with superior mesenteric arteries"], c: 1, r: "In aortic coarctation distal to the left subclavian, collateral flow travels from the internal thoracic arteries through anterior intercostals to posterior intercostals in a retrograde direction to supply the descending aorta. The resulting vascular enlargement erodes the costal grooves of ribs 3 to 6." },
+        { cat: 0, q: "A 4-year-old girl is diagnosed with an ostium secundum atrial septal defect (ASD). Which embryological defect accounts for this cardiac abnormality?", a: ["Complete absence of the endocardial cushions", "Excessive resorption of septum primum or deficient septum secundum", "Failure of the left sinus horn to regress into the coronary sinus", "Incomplete absorption of the pulmonary veins into the left atrium"], c: 1, r: "Ostium secundum ASD—the most common type of ASD—is located at the fossa ovalis and is caused by excessive apoptosis/resorption of the septum primum or incomplete growth of the septum secundum, preventing normal valve overlap." },
+        { cat: 3, q: "A patient with fever and a new heart murmur has standard blood cultures that show no growth after 48 hours. However, extended incubation beyond 5 days yields fastidious Gram-negative bacilli. Which group of organisms is responsible for this culture-negative endocarditis?", a: ["Enterobacteriaceae", "HACEK group", "Viridans group streptococci", "Coagulase-negative staphylococci"], c: 1, r: "The HACEK organisms are fastidious Gram-negative bacilli that colonize the oropharynx and represent a classic cause of culture-negative infective endocarditis due to their slow growth requiring extended incubation." },
+        { cat: 2, q: "A 65-year-old male presents with progressive heart failure. Echocardiography reveals stiff ventricles with impaired compliance that do not relax and expand during diastole, accompanied by bi-atrial dilation. A myocardial biopsy reveals amyloid deposition and fibrosis. What is the diagnosis?", a: ["Dilated cardiomyopathy", "Hypertrophic cardiomyopathy", "Restrictive cardiomyopathy", "Arrhythmogenic right ventricular dysplasia"], c: 2, r: "Restrictive cardiomyopathy is characterized by stiff, noncompliant ventricular walls that impair diastolic relaxation and filling while preserving systolic contractility early on. Amyloidosis and sarcoidosis are classic causes, and biopsy confirms diagnosis." },
+        { cat: 1, q: "In a cardiac physiology experiment, ventricular muscle fibers are stretched by increasing end-diastolic volume. According to Starling's law of the heart, what is the primary physical reason the force of contraction increases?", a: ["Membrane resting potential shifts to -70 mV", "Sarcomere length approaches optimal initial length (2.0 to 2.25 µm) maximizing myofilament overlap", "Influx of sodium through fast channels increases", "Potassium permeability through delayed rectifier channels is blocked"], c: 1, r: "Starling's law states that force of contraction is directly proportional to initial fiber length. Stretching the myocyte toward optimal resting sarcomere length (2.0–2.25 µm) maximizes crossbridge interaction between actin and myosin filaments." },
+        { cat: 2, q: "A young athlete experiences recurrent ventricular arrhythmias and syncope. Workup reveals fibrofatty tissue replacement restricted primarily to the right ventricular myocardium. An inherited problem with which structure causes arrhythmogenic right ventricular cardiomyopathy/dysplasia (ARVC)?", a: ["Sarcomeric contractile proteins", "Desmosomes", "Sarcoplasmic reticulum Ryanodine receptors", "Cytoskeletal titin proteins"], c: 1, r: "ARVC/dysplasia is an inherited disorder characterized by fibrous and fatty tissue replacement of the right ventricular wall, leading to ventricular arrhythmias and sudden death, caused by mutations in desmosomal cell-adhesion proteins." },
+        { cat: 2, q: "A 56-year-old male with exertional angina is prescribed oral atenolol. What is the fundamental antianginal mechanism of action of this cardioselective β1-blocker?", a: ["Direct stimulation of endothelial nitric oxide synthase", "Decreased heart rate and contractility, reducing oxygen demand and prolonging diastolic perfusion", "Systemic venodilation reducing venous preload", "Lowering blood pressure by inhibiting angiotensin-converting enzyme"], c: 1, r: "Beta-blockers block β1-receptors on the myocardium, lowering heart rate and inotropy. This reduces myocardial oxygen demand and lengthens the duration of diastole, which enhances coronary perfusion." },
+        { cat: 0, q: "During a dissection of the posterior mediastinum, a sympathetic trunk nerve originating from ganglia T5 to T9 is identified passing obliquely across the thoracic vertebrae. It pierces the crus of the diaphragm to relay in which ganglion?", a: ["Celiac ganglion", "Aorticorenal ganglion", "Renal plexus", "Inferior mesenteric ganglion"], c: 0, r: "The greater splanchnic nerve arises from thoracic sympathetic ganglia 5 through 9 (or 10), traverses the posterior mediastinum, pierces the diaphragmatic crus, and terminates primarily in the celiac ganglion." },
+        { cat: 0, q: "At birth, lung expansion dramatically alters vascular resistance. Which combination of pressure changes causes functional closure of the foramen ovale?", a: ["Increased pulmonary vascular resistance and increased right atrial pressure", "Decreased pulmonary vascular resistance and increased left atrial pressure", "Constriction of the ductus venosus and loss of left ventricular pressure", "Systemic hypotension and reversal of flow across the aortic arch"], c: 1, r: "Expansion of neonatal lungs reduces pulmonary vascular resistance, increasing pulmonary venous return to the left atrium. When left atrial pressure exceeds right atrial pressure, the flexible septum primum is pressed against the septum secundum, producing functional closure." },
+        { cat: 3, q: "A patient living in an area where freshwater snail control and sanitation measures are emphasized presents with shortness of breath and signs of right-sided heart dysfunction (cor pulmonale). Imaging demonstrates pulmonary granulomas and a pulmonary artery aneurysm. What is the primary mechanism causing this cardiac condition?", a: ["Direct encystment of larvae in the ventricular myocardium", "Schistosoma egg emboli lodging in the pulmonary vasculature and vasa vasorum", "Reduviid bug feces contaminating a bite wound", "Toxin production causing apical ventricular aneurysms"], c: 1, r: "In schistosomiasis, eggs embolize into the pulmonary arterioles and vasa vasorum, inducing granulomatous inflammation and fibrosis, culminating in pulmonary arterial hypertension, aneurysms, and cor pulmonale." },
+        { cat: 2, q: "A patient presents with extreme hypertriglyceridemia. Laboratory work confirms a hereditary defect in Apolipoprotein C-II. What enzymatic process is impaired by the lack of Apo C-II?", a: ["Direct uptake of chylomicron remnants by hepatic Apo E receptors", "Activation of lipoprotein lipase (LPL)", "Esterification of free cholesterol via LCAT", "Conversion of VLDL to IDL by hepatic lipase"], c: 1, r: "Apolipoprotein C-II is an essential enzyme cofactor transferred from HDL to chylomicrons and VLDL that enhances and activates lipoprotein lipase (LPL). Absence of Apo C-II prevents triglyceride hydrolysis, causing hypertriglyceridemia." },
+        { cat: 2, q: "A 54-year-old male with central chest pain is evaluated in the emergency department. Blood tests show elevated CK-MB and cardiac Troponin I. Based on the biomarkers lecture, within what timeframe does Troponin I typically peak, and when does it disappear from the blood?", a: ["Peaks at 3–4 hours; disappears in 2–3 days", "Peaks at 8–18 hours; disappears in 5–9 days", "Peaks at 18–36 hours; disappears in 3–4 days", "Peaks at 24–48 hours; disappears in 7–15 days"], c: 1, r: "Following myocardial necrosis, Troponin I appears in blood within 2–6 hours, reaches its peak concentration between 8 and 18 hours, and remains elevated before disappearing at 5 to 9 days." },
+        { cat: 1, q: "A 72-year-old patient with congestive heart failure is evaluated. On cardiac auscultation, a low-pitched third heart sound (S3) is heard at the apex during early diastole. During which mechanical phase of the cardiac cycle is this sound recorded?", a: ["Isovolumetric contraction phase", "Reduced ejection phase", "Rapid filling phase", "Atrial systole"], c: 2, r: "S3 is generated during the early ventricular rapid filling phase when blood rushes into a dilated, volume-overloaded ventricle." },
+        { cat: 0, q: "A histological section of an elastic artery (such as the aorta) is compared with a muscular artery. Which of the following features is uniquely characteristic of the tunica media of elastic arteries?", a: ["Predominantly smooth muscle cells with a recognizable external elastic membrane", "40 to 70 broad fenestrated elastic lamellae with smooth muscle cells adopting fibroblast functions", "Longitudinal bundles of smooth muscle fibers in the adventitia", "Absence of an endothelial lining and basal lamina"], c: 1, r: "Elastic (conducting) arteries have a media populated by 40–70 fenestrated sheets of elastic lamellae interlaced with smooth muscle cells that synthesize collagen and elastin, lacking a distinct external elastic lamina." },
+        { cat: 3, q: "An ICU patient with a central venous catheter develops high fever, hypotension, and leukocytosis. Which two Gram-negative bacilli are common causes of bloodstream infections, and which structural component represents their major endotoxin?", a: ["Streptococcus viridans and Staphylococcus aureus; coagulase", "Escherichia coli and Klebsiella spp.; lipopolysaccharides (LPS)", "Brucella spp. and Treponema pallidum; corkscrew flagella", "Candida spp. and Aspergillus; ergosterol"], c: 1, r: "E. coli and Klebsiella are common Gram-negative pathogens causing bloodstream infections whose primary outer-membrane endotoxin is lipopolysaccharide (LPS)." },
+        { cat: 3, q: "A 45-year-old male with fever and a new heart murmur has blood drawn for suspected infective endocarditis. On exam, he has painful nodules on his finger pads (Osler's nodes) and retinal hemorrhages with pale centers (Roth spots). According to the Modified Duke Criteria, what category do these two findings fall under?", a: ["Major criteria", "Embolic phenomena (Minor criteria)", "Immunological phenomena (Minor criteria)", "Predisposition / Risk factor (Minor criteria)"], c: 2, r: "In the Modified Duke Criteria mnemonic (BE TIMER), the letter I stands for Immunological phenomena, which specifically comprises Osler's nodes, Roth spots, and glomerulonephritis." },
+        { cat: 3, q: "During evaluation of a prosthetic cardiac valve infection, laboratory diagnostic methods are discussed. Why might a patient with a confirmed mature biofilm on their prosthetic valve have negative blood cultures despite testing positive on PCR?", a: ["The bacteria in a biofilm turn into dormant single-cell bacterial spores", "The biofilm matrix protects the bacterial community and inhibits organism growth in culture, while PCR detects extracellular DNA (eDNA)", "Biofilms only contain Gram-negative endotoxins without any intact bacteria", "Biofilms only grow on MacConkey agar under anaerobic conditions"], c: 1, r: "Biofilms sequester bacteria within an extracellular protective matrix, preventing active planktonic shedding into blood cultures, whereas molecular PCR can amplify shed extracellular DNA (eDNA)." },
+        { cat: 0, q: "A newborn infant is noted to have a heart that is completely exposed on the anterior surface of the thorax due to a cleft sternum. What is the diagnosis for this congenital defect?", a: ["Dextrocardia", "Ectopia cordis", "Transposition of the great arteries", "Eventration of the diaphragm"], c: 1, r: "Ectopia cordis is a rare congenital anomaly where the embryonic heart fails to be internalized within the thoracic cage, leaving it exposed externally through a cleft sternum." },
+        { cat: 1, q: "A 28-year-old female presents with sudden onset of regular palpitations at a rate of 180 beats/min with narrow QRS complexes. An ECG demonstrates that P waves are buried within the QRS complexes, though a \"pseudo r'\" wave is visible in lead V1. What is the underlying re-entrant mechanism causing this typical arrhythmia?", a: ["Multiple disorganized re-entrant wavelets in the atria fibrillating at 350–600 beats/min", "An accessory bundle of Kent bypassing the AV node", "Dual AV nodal pathways where the impulse travels antegrade down a slow pathway and retrograde up a fast pathway", "Early afterdepolarizations triggered by prolonged QT interval"], c: 2, r: "Typical Atrioventricular Nodal Re-entrant Tachycardia (slow-fast AVNRT) utilizes dual AV nodal pathways (antegrade conduction via the slow pathway and retrograde conduction via the fast pathway), activating atria and ventricles concurrently to create hidden P waves or pseudo-r' in lead V1." },
+        { cat: 1, q: "A patient with severe atherosclerosis is found to have severe narrowing of the renal artery. How does the affected kidney attempt to restore perfusion through this stenosed vessel, causing secondary hypertension?", a: ["By secreting nitric oxide to cause local venodilation", "By activating the Renin-Angiotensin system to raise systemic blood pressure", "By converting HDL into LDL to clear fat from the renal arterioles", "By inhibiting lipoprotein lipase in the renal capillaries"], c: 1, r: "Renal artery stenosis decreases renal perfusion pressure. The juxtaglomerular apparatus senses reduced renal blood flow and activates the Renin-Angiotensin-Aldosterone System (RAAS), producing systemic vasoconstriction and fluid retention that causes renovascular hypertension." },
+        { cat: 0, q: "In the posterior mediastinum, the thoracic sympathetic trunk gives off splanchnic nerves from its lower ganglia. Which splanchnic nerve arises from the 12th thoracic ganglion and which autonomic plexus does it supply?", a: ["Greater splanchnic nerve; Celiac ganglion", "Lesser splanchnic nerve; Aorticorenal ganglion", "Least splanchnic nerve; Renal plexus", "Phrenic nerve; Diaphragmatic plexus"], c: 2, r: "The lowest/least splanchnic nerve originates from the 12th thoracic sympathetic ganglion, pierces the diaphragmatic crus, and enters the abdomen to terminate in the renal plexus." }
+    ];
+
+    let cur = 0;
+    let chart;
+    const STORAGE_KEY = 'cvb351_tbl2_core_v1';
+
+    function getState() {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { answers: {}, flagged: [] };
+    }
+
+    function saveState(s) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(s));
+    }
+
+    function wipe() { 
+        if(confirm("Wipe all progress for TBL 2 Core Practice (40 Qs)?")) { 
+            localStorage.removeItem(STORAGE_KEY); 
+            render(); 
+        } 
+    }
+
+    function updateChart() {
+        const state = getState();
+        const scores = [0, 0, 0, 0], counts = [0, 0, 0, 0];
+        
+        Object.keys(state.answers).forEach(k => {
+            const q = questions[k];
+            if(!q) return; 
+            counts[q.cat]++;
+            if(state.answers[k] === q.c) scores[q.cat]++;
+        });
+        
+        const perf = scores.map((s, i) => counts[i] === 0 ? 0 : Math.round((s / counts[i]) * 100));
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        if(chart) chart.destroy();
+        
+        chart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Embryology & Anat', 'Physio & Arrhythmia', 'Cardiomyopathy & CAD', 'Infection & Valves'],
+                datasets: [{ 
+                    data: perf, 
+                    backgroundColor: 'rgba(244, 63, 94, 0.2)', 
+                    borderColor: '#f43f5e', 
+                    pointBackgroundColor: '#f43f5e' 
+                }]
+            },
+            options: { 
+                scales: { 
+                    r: { 
+                        min: 0, 
+                        max: 100, 
+                        ticks: { display: false }, 
+                        grid: { color: 'rgba(255,255,255,0.05)' }, 
+                        pointLabels: { color: '#94a3b8', font: { size: 9, weight: 'bold' } } 
+                    } 
+                }, 
+                plugins: { legend: { display: false } } 
+            }
+        });
+    }
+
+    function render() {
+        const state = getState();
+        const grid = document.getElementById('matrix');
+        grid.innerHTML = '';
+        
+        questions.forEach((d, i) => {
+            const n = document.createElement('div');
+            n.className = `node ${i === cur ? 'active' : ''} ${state.flagged.includes(i) ? 'flagged' : ''}`;
+            if(state.answers[i] !== undefined) n.classList.add(state.answers[i] === d.c ? 'correct' : 'wrong');
+            n.innerText = i + 1;
+            n.onclick = () => { cur = i; render(); };
+            grid.appendChild(n);
+        });
+
+        updateChart();
+        const d = questions[cur];
+        document.getElementById('pID').innerText = `TBL2 // Q${String(cur + 1).padStart(2, '0')}`;
+        document.getElementById('qBody').innerText = d.q;
+        
+        const list = document.getElementById('optList');
+        list.innerHTML = '';
+        document.getElementById('ratBox').style.display = 'none';
+
+        d.a.forEach((txt, i) => {
+            const opt = document.createElement('div');
+            opt.className = `opt-item ${state.answers[cur] !== undefined ? (i === d.c ? 'correct' : (i === state.answers[cur] ? 'wrong' : '')) : ''}`;
+            opt.innerHTML = `<span class="opt-index">0${i+1}</span> ${txt}`;
+            if(state.answers[cur] === undefined) {
+                opt.onclick = () => { 
+                    state.answers[cur] = i; 
+                    saveState(state); 
+                    render(); 
+                };
+            }
+            list.appendChild(opt);
+        });
+
+        if(state.answers[cur] !== undefined) {
+            document.getElementById('ratBox').innerText = d.r;
+            document.getElementById('ratBox').style.display = 'block';
+        }
+    }
+
+    function proceed() { 
+        if(cur < questions.length - 1) { 
+            cur++; 
+            render(); 
+        } 
+    }
+
+    function prev() { 
+        if(cur > 0) { 
+            cur--; 
+            render(); 
+        } 
+    }
+
+    function toggleFlag() { 
+        const state = getState();
+        if(state.flagged.includes(cur)) {
+            state.flagged = state.flagged.filter(id => id !== cur);
+        } else {
+            state.flagged.push(cur);
+        }
+        saveState(state); 
+        render(); 
+    }
+
+    render();
+</script>
+</body>
+</html>
