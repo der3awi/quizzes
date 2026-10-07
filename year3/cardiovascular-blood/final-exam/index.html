@@ -106,6 +106,10 @@
         
         .hub-link { color: var(--text-dim); text-decoration: none; font-size: 0.75rem; font-weight: 700; transition: 0.2s; display: inline-flex; align-items: center; }
         .hub-link:hover { color: var(--text); }
+
+        /* End Score Modal */
+        .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); z-index: 200; align-items: center; justify-content: center; }
+        .modal-card { background: var(--panel); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; max-width: 440px; width: 90%; text-align: center; padding: 2.5rem 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
     </style>
 </head>
 <body>
@@ -124,7 +128,8 @@
     </div>
 
     <div style="display: flex; gap: 18px; align-items: center;">
-        <button class="hub-link" style="background: none; border: none; cursor: pointer; color: var(--danger); font-weight: 800;" onclick="wipe()">WIPE PROGRESS</button>
+        <button class="hub-link" style="background: none; border: none; cursor: pointer; color: var(--success); font-weight: 800;" onclick="showScoreModal()">📊 SCORE</button>
+        <button class="hub-link" style="background: none; border: none; cursor: pointer; color: var(--danger); font-weight: 800;" onclick="wipe()">WIPE</button>
         <a href="../../../index.html" class="hub-link" style="color: var(--text-dim); text-decoration: none; font-weight: 800; font-size: 0.75rem;">✕ EXIT</a>
     </div>
 </nav>
@@ -136,7 +141,7 @@
             <div class="chart-wrapper"><canvas id="radarChart"></canvas></div>
         </div>
         <div class="card" style="flex: 1;">
-            <span class="label-id" id="matrixLabel">Knowledge Matrix</span>
+            <span class="label-id" id="matrixLabel">Knowledge Matrix (1–100)</span>
             <div class="matrix" id="matrix"></div>
         </div>
     </aside>
@@ -155,6 +160,19 @@
             </div>
         </div>
     </main>
+</div>
+
+<!-- Score Modal -->
+<div class="modal-overlay" id="scoreModal">
+    <div class="modal-card">
+        <div style="font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; color: var(--text-dim); text-transform: uppercase; margin-bottom: 0.5rem;" id="modalBankTitle">FINAL PRACTICE COMPLETED</div>
+        <div style="font-size: 3.5rem; font-weight: 800; color: #fff; font-family: 'JetBrains Mono', monospace; line-height: 1;" id="scorePercent">0%</div>
+        <div style="font-size: 0.95rem; color: var(--text-dim); margin-top: 0.75rem; font-weight: 600;" id="scoreFraction">0 / 0 Correct</div>
+        <div style="display: flex; gap: 0.75rem; margin-top: 2rem;">
+            <button class="btn-ui btn-outline" style="flex: 1;" onclick="closeModal()">Review</button>
+            <button class="btn-ui btn-next" style="flex: 1;" onclick="resetCurrentBank()">Retake</button>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -372,9 +390,47 @@
         localStorage.setItem(getStorageKey(), JSON.stringify(s));
     }
 
+    function calculateScore() {
+        const activePool = getCurrentPool();
+        const state = getState();
+        let correct = 0;
+        
+        activePool.forEach((q, i) => {
+            if (state.answers[i] === q.c) correct++;
+        });
+
+        const total = activePool.length;
+        const answeredCount = Object.keys(state.answers).length;
+        const percent = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+        return { correct, total, answeredCount, percent };
+    }
+
+    function showScoreModal() {
+        const stats = calculateScore();
+        const isCore = currentMode === 'core';
+        
+        document.getElementById('modalBankTitle').innerText = isCore 
+            ? 'Final Practice Diagnostic' 
+            : 'Past Exam Recall Diagnostic';
+        document.getElementById('scorePercent').innerText = `${stats.percent}%`;
+        document.getElementById('scoreFraction').innerText = `${stats.correct} / ${stats.total} Correct (${stats.answeredCount} answered)`;
+        document.getElementById('scoreModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('scoreModal').style.display = 'none';
+    }
+
+    function resetCurrentBank() {
+        wipe();
+        closeModal();
+    }
+
     function switchMode(mode) {
         currentMode = mode;
         cur = 0;
+        closeModal();
         
         const tabCore = document.getElementById('tabCore');
         const tabPast = document.getElementById('tabPast');
@@ -500,7 +556,9 @@
         if(cur < getCurrentPool().length - 1) { 
             cur++; 
             render(); 
-        } 
+        } else {
+            showScoreModal();
+        }
     }
 
     function prev() { 
