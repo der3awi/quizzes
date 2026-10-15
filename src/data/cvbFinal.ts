@@ -1,0 +1,2197 @@
+import { Question } from "./types";
+
+// Categories:
+// 0: Anatomy & Development
+// 1: Physiology & Hemodynamics
+// 2: Hematology & Coagulation
+// 3: Pathology & Pharmacology
+
+export const cvbFinalCoreQuestions: Question[] = [
+  {
+    "cat": 0,
+    "q": "A 45-year-old male presents with acute cardiac tamponade due to a massive pericardial effusion. Emergency pericardiocentesis is performed using a subxiphoid approach. Which layer of the pericardial sac is traversed immediately after the needle penetrates the fibrous pericardium?",
+    "a": [
+      "Parietal serous pericardium",
+      "Visceral serous pericardium (epicardium)",
+      "Myocardium",
+      "Endocardium"
+    ],
+    "c": 0,
+    "r": "The pericardium consists of an outer tough fibrous pericardium lined internally by the parietal layer of the serous pericardium. Piercing the fibrous pericardium immediately enters through the closely adherent parietal serous pericardium into the pericardial cavity."
+  },
+  {
+    "cat": 0,
+    "q": "During fetal circulation, highly oxygenated blood returning from the placenta enters the right atrium via the inferior vena cava (IVC). By which anatomical mechanism is this oxygen-rich stream preferentially shunted into the left atrium?",
+    "a": [
+      "High pulmonary vascular resistance diverting flow backward into the superior vena cava",
+      "Guidance by the valve of the inferior vena cava (Eustachian valve) across the foramen ovale",
+      "Active contraction of the pectinate muscles within the right auricle",
+      "Direct streaming through the ductus venosus into the left coronary vein"
+    ],
+    "c": 1,
+    "r": "In the fetus, the valve of the IVC (Eustachian valve) and crista dividens preferentially direct the oxygen-rich stream from the IVC across the foramen ovale into the left atrium."
+  },
+  {
+    "cat": 0,
+    "q": "During thoracic surgery involving the posterior mediastinum, the surgical team isolates the principal longitudinal structures. Which of the following structures lies within the posterior mediastinum and is positioned immediately posterior to the fibrous pericardium and left atrium?",
+    "a": [
+      "Internal thoracic artery",
+      "Thymus gland remnants",
+      "Esophagus accompanied by the esophageal nerve plexus",
+      "Phrenic nerve running with the pericardiacophrenic vessels"
+    ],
+    "c": 2,
+    "r": "The esophagus descends through the posterior mediastinum directly posterior to the fibrous pericardium and left atrium (left atrial enlargement in mitral stenosis can compress it and cause dysphagia)."
+  },
+  {
+    "cat": 1,
+    "q": "In left ventricular pressure-volume loop analysis, an isolated increase in myocardial contractility (positive inotropic state, such as during sympathetic stimulation) produces which characteristic change on the diagram?",
+    "a": [
+      "Decreases total Stroke Volume (SV) while elevating End-Systolic Volume",
+      "Shifts the End-Diastolic Pressure-Volume Relationship (EDPVR) curve upward and to the left, reducing ventricular compliance",
+      "Expands the loop exclusively to the right by increasing End-Diastolic Volume (EDV) without altering ESV",
+      "Shifts the End-Systolic Pressure-Volume Relationship (ESPVR) line upward and to the left, decreasing End-Systolic Volume (ESV)"
+    ],
+    "c": 3,
+    "r": "Positive inotropic stimulation increases the slope of the ESPVR line, shifting it upward and to the left. The ventricle ejects blood more completely, resulting in a lower End-Systolic Volume (ESV) and higher Stroke Volume (SV)."
+  },
+  {
+    "cat": 1,
+    "q": "During Phase 2 (plateau phase) of the ventricular cardiac action potential, the prolonged depolarization is maintained primarily by a delicate balance between which opposing ionic currents?",
+    "a": [
+      "Sustained inward Ca2+ influx through L-type calcium channels balanced by outward K+ efflux (IK)",
+      "Rapid inward Na+ current (INa) balanced by outward Cl- influx",
+      "Inward funny current (If) balanced by primary Na+/K+-ATPase electrogenic pumping",
+      "Inward Na+/Ca2+ exchange current balanced solely by T-type calcium channel inactivation"
+    ],
+    "c": 0,
+    "r": "Phase 2 (plateau) reflects an electrical balance between inward Ca2+ current through L-type calcium channels and outward repolarizing K+ currents (IK delayed rectifier)."
+  },
+  {
+    "cat": 1,
+    "q": "A 58-year-old male presents to the emergency department with acute retrosternal chest pain. The 12-lead ECG demonstrates acute ST-segment elevation in leads II, III, and aVF with reciprocal ST depression in lead aVL. Transmural infarction is localized to which ventricular wall, and which coronary artery is typically occluded?",
+    "a": [
+      "Anterior LV wall; Left Anterior Descending (LAD) artery (~50% of cases)",
+      "Inferior LV wall; Right Coronary Artery (RCA) (~30% of cases)",
+      "Lateral LV wall; Left Circumflex (LCx) artery (~20% of cases)",
+      "Anteroseptal wall; Left main coronary trunk"
+    ],
+    "c": 1,
+    "r": "Leads II, III, and aVF face the inferior surface of the left ventricle, which is supplied by the Right Coronary Artery (RCA) in the vast majority of individuals (~30% of all acute infarctions)."
+  },
+  {
+    "cat": 1,
+    "q": "A 62-year-old female experiences typical angina pectoris during exercise treadmill testing. Which electrocardiographic finding characteristically signifies acute transient subendocardial ischemia on the 12-lead ECG?",
+    "a": [
+      "Convex-upward ST-segment elevation with reciprocal ST depression",
+      "Pathological broad Q waves measuring > 0.04 seconds in duration",
+      "Horizontal or downsloping ST-segment depression >= 1 mm and/or symmetrical T-wave inversion",
+      "Widening of the QRS complex > 120 ms with marked axis deviation"
+    ],
+    "c": 2,
+    "r": "Subendocardial ischemia involves only the inner layer of the myocardium and characteristically produces ST-segment depression (horizontal or downsloping) and/or T-wave inversion."
+  },
+  {
+    "cat": 2,
+    "q": "In secondary hemostasis, both the intrinsic and extrinsic coagulation cascades converge to activate a critical common protease. Which coagulation factor activation marks the beginning of the common pathway?",
+    "a": [
+      "Activation of Factor XII to XIIa by subendothelial collagen",
+      "Proteolytic conversion of soluble fibrinogen directly by Factor IXa",
+      "Direct activation of Factor XIII into fibrinoligase by tissue factor",
+      "Activation of Factor X to Xa, which complexes with Factor Va on phospholipids to form prothrombinase"
+    ],
+    "c": 3,
+    "r": "Both pathways converge on the cleavage of Factor X to Factor Xa. Factor Xa complexes with Factor Va, Ca2+, and platelet phospholipids to form the prothrombinase complex."
+  },
+  {
+    "cat": 2,
+    "q": "A 54-year-old male is admitted for acute deep vein thrombosis and started on intravenous Unfractionated Heparin (UFH). Which laboratory coagulation parameter is routinely utilized to monitor UFH therapeutic intensity and adjust dosing?",
+    "a": [
+      "Activated Partial Thromboplastin Time (aPTT)",
+      "Prothrombin Time / International Normalized Ratio (PT/INR)",
+      "Bleeding Time (BT)",
+      "Thrombin Time (TT)"
+    ],
+    "c": 0,
+    "r": "Unfractionated Heparin inhibits Factors IIa, Xa, and IXa in the intrinsic and common pathways; its anticoagulant effect is monitored clinically using the aPTT (target 1.5–2.5x control)."
+  },
+  {
+    "cat": 2,
+    "q": "A 23-year-old female presents with persistent fatigue, pallor, and pica. A CBC demonstrates microcytic, hypochromic red blood cells with low Hb (9.2 g/dL) and low MCV (68 fL). Which complete iron profile pattern confirms iron deficiency anemia and distinguishes it from anemia of chronic disease?",
+    "a": [
+      "Elevated serum ferritin, decreased Total Iron-Binding Capacity (TIBC / transferrin), and elevated serum iron",
+      "Decreased serum ferritin, elevated transferrin / TIBC, and low serum iron",
+      "Normal serum ferritin, normal TIBC, and elevated serum transferrin saturation",
+      "Markedly elevated serum ferritin, normal transferrin, and high transferrin saturation"
+    ],
+    "c": 1,
+    "r": "In iron deficiency anemia, iron stores are depleted: serum ferritin is low (most specific) and TIBC/transferrin is elevated as the liver attempts to capture circulating iron."
+  },
+  {
+    "cat": 1,
+    "q": "Examination of the internal jugular venous pulse waveform demonstrates three positive deflections (a, c, and v waves). What physiological mechanical event is responsible for generating the prominent 'a' wave?",
+    "a": [
+      "Bulging of the tricuspid valve into the right atrium during right ventricular isovolumetric contraction",
+      "Passive venous filling of the right atrium against a closed tricuspid valve during ventricular systole",
+      "Active contraction of the right atrium during atrial systole",
+      "Rapid emptying of the right atrium into the ventricle following tricuspid valve opening"
+    ],
+    "c": 2,
+    "r": "The 'a' wave of the JVP corresponds to active right atrial contraction (atrial systole), occurring just prior to S1 and coinciding with the PR interval on ECG."
+  },
+  {
+    "cat": 2,
+    "q": "During the final stage of blood coagulation, soluble circulating fibrinogen is converted into insoluble fibrin meshwork. Which enzyme cleaves fibrinopeptides A and B from fibrinogen and subsequently activates Factor XIII to cross-link the fibrin monomers?",
+    "a": [
+      "Activated Factor X (Factor Xa)",
+      "Plasmin",
+      "Tissue Plasminogen Activator (tPA)",
+      "Thrombin (Factor IIa)"
+    ],
+    "c": 3,
+    "r": "Thrombin (Factor IIa) cleaves fibrinopeptides A and B from fibrinogen to generate fibrin monomers and activates Factor XIII to covalently cross-link the strands into an insoluble clot."
+  },
+  {
+    "cat": 1,
+    "q": "On a left ventricular pressure-volume loop, what specific mechanical phase of the cardiac cycle begins at the exact point of aortic valve closure (point 3 on the diagram)?",
+    "a": [
+      "Isovolumetric ventricular relaxation",
+      "Reduced ejection phase",
+      "Rapid ejection phase",
+      "Rapid ventricular filling"
+    ],
+    "c": 0,
+    "r": "When LV pressure falls below aortic diastolic pressure, the aortic valve closes. All valves remain closed as ventricular pressure drops at constant ESV, defining isovolumetric relaxation."
+  },
+  {
+    "cat": 1,
+    "q": "The sinoatrial (SA) node functions as the dominant primary pacemaker of the human heart. Which electrophysiological characteristic enables the SA node to override and suppress all latent pacemakers (AV node, Purkinje fibers)?",
+    "a": [
+      "Longest refractory period and largest resting membrane potential (-90 mV)",
+      "Steepest slope of spontaneous diastolic Phase 4 depolarization driven by funny currents (If)",
+      "Fastest conduction velocity through gap junctions within nodal tissue",
+      "Exclusive reliance on voltage-gated fast Na+ channels during Phase 0"
+    ],
+    "c": 1,
+    "r": "The SA node possesses the steepest slope of Phase 4 spontaneous depolarization (fastest intrinsic firing rate: 60-100 bpm), overriding and suppressing all latent pacemakers via overdrive suppression."
+  },
+  {
+    "cat": 1,
+    "q": "A sudden acute elevation in systemic vascular resistance (increased LV afterload, such as in acute severe hypertension) produces which immediate hemodynamic adaptation on the left ventricular pressure-volume loop?",
+    "a": [
+      "Increases Stroke Volume (SV) and decreases End-Systolic Volume (ESV)",
+      "Shifts the loop downward and to the right by reducing End-Diastolic Volume",
+      "Elevates peak systolic pressure, increases End-Systolic Volume (ESV), and reduces Stroke Volume (SV)",
+      "Abolishes the isovolumetric contraction phase completely"
+    ],
+    "c": 2,
+    "r": "Increased afterload forces the LV to generate higher peak pressure and shortens ejection. Less blood is ejected, resulting in higher End-Systolic Volume (ESV) and reduced Stroke Volume (SV)."
+  },
+  {
+    "cat": 1,
+    "q": "According to the Starling hypothesis governing transcapillary fluid filtration, what is the primary physical force driving net filtration of fluid out of the capillary lumen into the interstitial space at the arterial end of the microcirculation?",
+    "a": [
+      "Interstitial fluid hydrostatic pressure (Pif)",
+      "Lymphatic pump suction pressure",
+      "Plasma colloid oncotic pressure (pi_c) generated by circulating albumin",
+      "Capillary hydrostatic pressure (Pc) exceeding plasma colloid oncotic pressure (pi_c)"
+    ],
+    "c": 3,
+    "r": "At the arterial end of capillaries, capillary hydrostatic pressure (Pc ~32-35 mmHg) exceeds plasma oncotic pressure (pi_c ~25-28 mmHg), driving fluid filtration into the interstitium."
+  },
+  {
+    "cat": 1,
+    "q": "On a standard surface 12-lead ECG, which waveform directly corresponds to the electrical repolarization of the ventricular myocardium?",
+    "a": [
+      "T wave",
+      "QRS complex",
+      "P wave",
+      "U wave"
+    ],
+    "c": 0,
+    "r": "The T wave represents ventricular repolarization (Phase 3 of the action potential). The P wave reflects atrial depolarization, and the QRS complex represents ventricular depolarization."
+  },
+  {
+    "cat": 0,
+    "q": "During embryonic development of the thoracoabdominal cavity, which embryological precursor gives rise to the central tendon of the adult diaphragm?",
+    "a": [
+      "Pleuroperitoneal membranes",
+      "Septum transversum",
+      "Dorsal mesentery of the esophagus (mesoesophagus)",
+      "Muscular ingrowth from lateral body wall somites"
+    ],
+    "c": 1,
+    "r": "The septum transversum grows dorsally from the anterior body wall to form the central tendon of the diaphragm."
+  },
+  {
+    "cat": 0,
+    "q": "In the fetal circulation, the ductus arteriosus shunts deoxygenated blood from the pulmonary trunk directly into the descending aorta, bypassing the high-resistance fetal lungs. What is the adult fibrous anatomical remnant of this vessel?",
+    "a": [
+      "Ligamentum teres hepatis",
+      "Ligamentum venosum",
+      "Ligamentum arteriosum",
+      "Medial umbilical ligament"
+    ],
+    "c": 2,
+    "r": "The ductus arteriosus closes postnatally and undergoes fibrous obliteration into the ligamentum arteriosum, connecting the pulmonary artery to the aortic arch concavity."
+  },
+  {
+    "cat": 0,
+    "q": "In approximately 60% of human hearts, the arterial branch that supplies blood to the sinoatrial (SA) node arises directly from which epicardial vessel?",
+    "a": [
+      "Left anterior descending (LAD) artery",
+      "Marginal branch of the posterior descending artery",
+      "Left circumflex (LCx) artery",
+      "Right coronary artery (RCA)"
+    ],
+    "c": 3,
+    "r": "The SA nodal artery arises from the Right Coronary Artery (RCA) in ~60% of individuals, and from the Left Circumflex (LCx) artery in ~40%."
+  },
+  {
+    "cat": 1,
+    "q": "A 64-year-old male undergoes a pre-operative ECG. The tracing shows regular sinus rhythm with a fixed, constant PR interval measuring 0.28 seconds (280 ms), with every P wave followed by a QRS complex (1:1 conduction). What is the diagnosis?",
+    "a": [
+      "First-degree atrioventricular (AV) block",
+      "Mobitz Type I (Wenckebach) second-degree AV block",
+      "Mobitz Type II second-degree AV block",
+      "Third-degree complete AV block"
+    ],
+    "c": 0,
+    "r": "First-degree AV block is defined electrocardiographically by uniform PR interval prolongation > 0.20 s (> 200 ms) with a constant 1:1 relationship between P waves and QRS complexes (no dropped beats)."
+  },
+  {
+    "cat": 1,
+    "q": "A 22-year-old college athlete undergoes a routine sports clearance ECG. The tracing shows normal sinus rhythm, but reveals a shortened PR interval (< 0.12 seconds / < 120 ms), a slurred initial upstroke on the QRS complex (delta wave), and a widened QRS complex. Which electrophysiological mechanism is responsible for this presentation?",
+    "a": [
+      "Conduction delay within the dual pathways of the compact AV node",
+      "Ventricular pre-excitation via an accessory pathway (Bundle of Kent) bypassing the AV node",
+      "Impaired impulse transmission through the right bundle branch within the moderator band",
+      "Re-entrant micro-circuitry localized entirely within the sinoatrial node tissue"
+    ],
+    "c": 1,
+    "r": "Wolff-Parkinson-White (WPW) syndrome features a short PR interval (< 120 ms), delta wave, and widened QRS caused by ventricular pre-excitation through an accessory pathway (Bundle of Kent)."
+  },
+  {
+    "cat": 2,
+    "q": "What is the normal reference range for circulating reticulocytes in healthy adult peripheral blood, and what clinical significance does a reticulocyte count >= 3% carry in an anemic patient?",
+    "a": [
+      "0.01%-0.1%; indicates primary bone marrow aplasia",
+      "5.0%-10.0%; indicates excessive ineffective erythropoiesis",
+      "0.5%-1.5% (up to 2.5%); an elevated count (>= 3%) indicates active bone marrow erythropoietic response to hemolysis or blood loss",
+      "12.0%-15.0%; indicates severe megaloblastic maturation arrest"
+    ],
+    "c": 2,
+    "r": "Normal adult reticulocytes make up 0.5%–1.5% (up to 2.5%) of RBCs. A count >= 3% in anemia reflects an active bone marrow response to hemolysis or acute blood loss."
+  },
+  {
+    "cat": 1,
+    "q": "Which plasma protein fraction is synthesized exclusively by hepatocytes and accounts for approximately 70% to 80% of total intravascular colloid osmotic (oncotic) pressure?",
+    "a": [
+      "Alpha-1 globulin",
+      "Gamma globulins (immunoglobulins)",
+      "Fibrinogen",
+      "Albumin"
+    ],
+    "c": 3,
+    "r": "Albumin (~66 kDa) circulates at high concentrations (3.5–5.0 g/dL) and is responsible for ~75–80% of total plasma oncotic pressure (pi_c)."
+  },
+  {
+    "cat": 2,
+    "q": "In a patient presenting with severe Vitamin B12 or folate deficiency (megaloblastic anemia with MCV > 100 fL), which combination of morphological findings on the peripheral blood smear is characteristic of impaired nuclear maturation?",
+    "a": [
+      "Hypersegmented neutrophils (>= 5 nuclear lobes) and oval macrocytes",
+      "Microcytic, hypochromic red blood cells with target cells",
+      "Sickle-shaped red cells and elevated reticulocytes (>= 3%)",
+      "Microspherocytes with loss of central pallor and polychromatophilia"
+    ],
+    "c": 0,
+    "r": "Impaired DNA synthesis in megaloblastic anemia produces nuclear-cytoplasmic asynchrony, manifesting as oval macrocytes and hypersegmented neutrophils with >= 5 nuclear lobes."
+  },
+  {
+    "cat": 2,
+    "q": "A peripheral blood smear identifies a granulocyte that constitutes less than 1% of total leukocytes, possesses a lobed nucleus obscured by large, dark blue/purple specific granules, and participates in immediate hypersensitivity reactions. Which cell is described?",
+    "a": [
+      "Eosinophil",
+      "Basophil",
+      "Monocyte",
+      "Neutrophil"
+    ],
+    "c": 1,
+    "r": "Basophils (< 1% of WBCs) have cytoplasm packed with dark-blue/purple specific granules rich in histamine, heparin, and leukotrienes, mediating immediate hypersensitivity."
+  },
+  {
+    "cat": 2,
+    "q": "During primary hemostasis, activated platelets undergo aggregation and cross-linking to form the primary hemostatic plug. Which plasma protein directly bridges adjacent platelets by binding to activated GP IIb/IIIa surface receptors?",
+    "a": [
+      "von Willebrand factor (vWF)",
+      "Tissue Factor (Thromboplastin)",
+      "Fibrinogen",
+      "Plasminogen"
+    ],
+    "c": 2,
+    "r": "Upon platelet activation, conformational changes expose GP IIb/IIIa receptors. Circulating fibrinogen binds to GP IIb/IIIa on adjacent platelets, bridging them into a platelet plug."
+  },
+  {
+    "cat": 2,
+    "q": "The Prothrombin Time (PT) test is performed by adding tissue thromboplastin and calcium to citrated patient plasma. Which coagulation pathway(s) and factors does the PT specifically evaluate?",
+    "a": [
+      "Intrinsic pathway exclusively (Factors XII, XI, IX, and VIII)",
+      "Platelet glycoprotein surface receptor density",
+      "Factor XIII cross-linking activity alone",
+      "Extrinsic pathway (Factor VII) and common pathway (Factors X, V, Prothrombin, and Fibrinogen)"
+    ],
+    "c": 3,
+    "r": "Prothrombin Time (PT) evaluates the extrinsic pathway (Factor VII) and the common pathway (Factors X, V, II, and I)."
+  },
+  {
+    "cat": 2,
+    "q": "Which ABO and Rh blood group is designated as the universal red blood cell donor in emergency transfusions because its erythrocytes lack A, B, and Rh(D) surface agglutinogens?",
+    "a": [
+      "Type O Negative",
+      "Type AB Positive",
+      "Type A Negative",
+      "Type B Positive"
+    ],
+    "c": 0,
+    "r": "Type O Negative red blood cells express neither A, B, nor Rh(D) surface agglutinogens, preventing recipient antibody-mediated hemolysis in emergency transfusions."
+  },
+  {
+    "cat": 2,
+    "q": "Intact vascular endothelium maintains an antithrombotic surface that actively prevents inappropriate clot formation. Antithrombin III activity is endogenously accelerated by several thousand-fold upon binding to which endothelial membrane structure?",
+    "a": [
+      "Thrombomodulin",
+      "Heparin-like molecules (heparan sulfate proteoglycans)",
+      "Prostacyclin (PGI2)",
+      "Endothelial-derived nitric oxide (NO)"
+    ],
+    "c": 1,
+    "r": "Heparan sulfate proteoglycans on intact endothelial surfaces bind Antithrombin III, inducing an allosteric conformational shift that accelerates inactivation of Factors IIa and Xa by >1000-fold."
+  },
+  {
+    "cat": 2,
+    "q": "Which eicosanoid synthesized by vascular endothelial cells from arachidonic acid acts via cell surface receptors to stimulate adenylate cyclase, elevating platelet cAMP to inhibit platelet aggregation and promote vasodilation?",
+    "a": [
+      "Thromboxane A2 (TXA2)",
+      "Leukotriene B4 (LTB4)",
+      "Prostacyclin (PGI2)",
+      "Endothelin-1"
+    ],
+    "c": 2,
+    "r": "Endothelial prostacyclin (PGI2) binds IP receptors to elevate platelet cAMP, preventing aggregation and promoting vasodilation, balancing platelet-derived TXA2."
+  },
+  {
+    "cat": 2,
+    "q": "In Classical Hodgkin Lymphoma, diagnostic binucleated Reed-Sternberg cells characteristically express which diagnostic cell-surface immunohistochemical markers according to your lecture curriculum?",
+    "a": [
+      "CD3 and CD4 (T-cell markers)",
+      "CD68 and CD163 (macrophage markers)",
+      "CD19 and CD20 (mature B-cell markers)",
+      "CD15 and CD30 (Hodgkin's cell markers)"
+    ],
+    "c": 3,
+    "r": "In Dr. Steele's slides ('Lymphoid cell markers you should know'), CD15 and CD30 are identified as classic Reed-Sternberg/Hodgkin's cell markers."
+  },
+  {
+    "cat": 2,
+    "q": "A 26-year-old female presents with easy bruising, spontaneous petechiae, and multiple subcutaneous hemorrhages. Evaluation confirms thrombocytopenic purpura with a platelet count of 35,000/uL. Which coagulation profile finding is characteristic of this primary hemostatic disorder?",
+    "a": [
+      "Prolonged bleeding time (BT) with normal PT and aPTT",
+      "Prolonged Prothrombin Time (PT) with normal bleeding time",
+      "Markedly prolonged aPTT with decreased fibrinogen",
+      "Elevated D-dimer with depleted Factor VIII"
+    ],
+    "c": 0,
+    "r": "Thrombocytopenic purpura impairs primary hemostasis, prolonging Bleeding Time (BT). Because plasma coagulation factors and liver synthesis are unaffected, PT and aPTT remain completely normal."
+  },
+  {
+    "cat": 2,
+    "q": "Which circulating plasma lipoprotein class is synthesized primarily by the liver and transports the highest percentage of endogenous triglycerides to peripheral adipose and muscle tissues?",
+    "a": [
+      "Chylomicrons",
+      "Very Low-Density Lipoprotein (VLDL)",
+      "Low-Density Lipoprotein (LDL)",
+      "High-Density Lipoprotein (HDL)"
+    ],
+    "c": 1,
+    "r": "VLDL is synthesized by hepatocytes to transport endogenous triglycerides (~55% of core volume). Chylomicrons transport dietary/exogenous triglycerides from the gut."
+  },
+  {
+    "cat": 2,
+    "q": "Familial Hypercholesterolemia (Type IIa) is a primary genetic dyslipidemia characterized by severe elevations in circulating LDL cholesterol and premature coronary atherogenesis. It is most commonly caused by loss-of-function mutations in the gene encoding:",
+    "a": [
+      "Apolipoprotein E (Apo E)",
+      "Lipoprotein lipase (LPL)",
+      "Low-Density Lipoprotein (LDL) receptor",
+      "Lecithin-cholesterol acyltransferase (LCAT)"
+    ],
+    "c": 2,
+    "r": "Familial Hypercholesterolemia (Type IIa) is an autosomal dominant disease caused by mutations in the LDL receptor gene, preventing hepatic LDL clearance and causing severe hypercholesterolemia."
+  },
+  {
+    "cat": 2,
+    "q": "A 68-year-old male presents with persistent lower back pain, hypercalcemia, renal insufficiency, and normocytic anemia. Serum protein electrophoresis reveals a monoclonal immunoglobulin spike (M component). A bone marrow biopsy is performed. Which characteristic finding confirms multiple myeloma?",
+    "a": [
+      "Myeloblasts containing crystalline Auer rods",
+      "Abundant ruptured, fragile 'smudge' cells in a background of small lymphocytes",
+      "Large binucleated Reed-Sternberg cells with prominent inclusion-like nucleoli",
+      "Sheets of neoplastic plasma cells displaying eccentric 'clock-face' chromatin and perinuclear halos"
+    ],
+    "c": 3,
+    "r": "Multiple myeloma features sheets of neoplastic plasma cells with eccentric round nuclei, clumped 'clock-face/cartwheel' chromatin, basophilic cytoplasm, and a prominent perinuclear halo."
+  },
+  {
+    "cat": 2,
+    "q": "Which major apolipoprotein serves as the essential structural protein embedded within VLDL, IDL, and LDL, functioning as the primary recognition ligand for binding to the hepatic LDL receptor?",
+    "a": [
+      "Apolipoprotein B-100 (Apo B-100)",
+      "Apolipoprotein A-I (Apo A-I)",
+      "Apolipoprotein C-II (Apo C-II)",
+      "Apolipoprotein B-48 (Apo B-48)"
+    ],
+    "c": 0,
+    "r": "Apolipoprotein B-100 is synthesized by the liver as the structural backbone of VLDL, IDL, and LDL, serving as the primary ligand recognized by hepatic LDL receptors."
+  },
+  {
+    "cat": 2,
+    "q": "Severe Vitamin B12 (cobalamin) deficiency results in subacute combined degeneration of the spinal cord (affecting dorsal and lateral columns). Which biochemical enzymatic defect directly accounts for this myelin damage?",
+    "a": [
+      "Defective conversion of homocysteine to methionine alone, causing folate trapping",
+      "Impaired conversion of methylmalonyl-CoA to succinyl-CoA, resulting in accumulation of methylmalonic acid and abnormal myelin fatty acids",
+      "Inability to absorb dietary iron through duodenal enterocytes",
+      "Failure of erythropoietin gene transcription in renal tubular cells"
+    ],
+    "c": 1,
+    "r": "Vitamin B12 is an essential cofactor for methylmalonyl-CoA mutase. Deficiency causes methylmalonic acid (MMA) accumulation, leading to abnormal fatty acid incorporation and spinal demyelination."
+  },
+  {
+    "cat": 2,
+    "q": "A 24-year-old male of Mediterranean descent presents with acute fatigue, jaundice, and dark urine following exposure to an oxidative trigger. A CBC reveals acute hemolytic anemia with reticulocytosis (>= 3%). In this patient's red blood cells, a deficiency in glucose-6-phosphate dehydrogenase (G6PD) impairs the generation of which essential protective substance?",
+    "a": [
+      "Adenosine triphosphate (ATP) via terminal glycolysis",
+      "2,3-Bisphosphoglycerate (2,3-BPG) to facilitate tissue oxygen unloading",
+      "Reduced NADPH (NADPH2) required to protect red blood cells from oxidants",
+      "CD59 membrane protein to protect against terminal complement lysis"
+    ],
+    "c": 2,
+    "r": "G6PD catalyzes the first step in the pentose phosphate pathway to generate NADPH (reduced form), which maintains reduced glutathione to protect RBCs against oxidative lysis."
+  },
+  {
+    "cat": 2,
+    "q": "A 28-year-old traveler presents with persistent periorbital edema, muscle weakness, and fever following suspected helminth infection. A peripheral blood differential reveals marked leukocytosis with 18% eosinophils (normal: 1-4%). Which substance stored within the large, refractile red cytoplasmic granules of these cells is primarily responsible for damaging invading parasites?",
+    "a": [
+      "Perforin and granzyme",
+      "Myeloperoxidase",
+      "Heparin and histamine",
+      "Major Basic Protein (MBP)"
+    ],
+    "c": 3,
+    "r": "Eosinophils store Major Basic Protein (MBP) and Eosinophil Cationic Protein (ECP) in their refractile granules, which are cytotoxic to invading helminthic parasites."
+  },
+  {
+    "cat": 2,
+    "q": "In the intrinsic pathway of blood coagulation, efficient conversion of Factor X to Factor Xa requires assembly of the multicomponent 'intrinsic tenase' complex on the activated platelet membrane. Which combination of factors constitutes this complex?",
+    "a": [
+      "Factor IXa, Factor VIIIa, Calcium, and platelet phospholipids",
+      "Factor VIIa, Tissue Factor, and Ca2+",
+      "Factor Xa, Factor Va, Calcium, and prothrombin",
+      "Thrombin, Thrombomodulin, and Protein C"
+    ],
+    "c": 0,
+    "r": "The intrinsic tenase complex consists of Factor IXa (enzyme), Factor VIIIa (cofactor), Ca2+, and platelet phospholipids, which cleaves Factor X into Factor Xa."
+  },
+  {
+    "cat": 2,
+    "q": "Inherited deficiency of Protein C or its cofactor Protein S is an established hereditary thrombophilia predisposing individuals to recurrent deep vein thrombosis and purpura fulminans. What is the physiological mechanism of Activated Protein C (APC)?",
+    "a": [
+      "Direct competitive inhibition of tissue factor pathway inhibitor (TFPI)",
+      "Proteolytic cleavage and inactivation of active coagulation Factors Va and VIIIa",
+      "Cleavage and permanent destruction of circulating Antithrombin III",
+      "Inhibition of tissue plasminogen activator (tPA) release"
+    ],
+    "c": 1,
+    "r": "Activated Protein C (APC), with its cofactor Protein S, proteolytically degrades and inactivates coagulation Factors Va and VIIIa, acting as an essential physiological anticoagulant brake."
+  },
+  {
+    "cat": 2,
+    "q": "A 28-year-old female presents with recurrent lower extremity deep vein thrombosis and a history of repeated miscarriages. Coagulation testing demonstrates an unexpectedly prolonged aPTT that fails to correct upon a 1:1 mixing study with normal plasma. Testing confirms Antiphospholipid Syndrome (APS). What explains the in vitro versus in vivo paradox in APS?",
+    "a": [
+      "Antibodies destroy Factor VIII causing hemophilia in vivo",
+      "Antibodies selectively stimulate endothelial prostacyclin production",
+      "Antiphospholipid antibodies interfere with phospholipid reagent surfaces causing prolonged aPTT in vitro, but promote cell damage and thrombosis in vivo",
+      "Defective platelet dense granule secretion causes prolonged in vitro clotting"
+    ],
+    "c": 2,
+    "r": "In APS, antiphospholipid antibodies interfere with phospholipid reagents used in laboratory assays causing prolonged in vitro aPTT, but induce endothelial injury and platelet activation in vivo causing thrombosis."
+  },
+  {
+    "cat": 0,
+    "q": "Histological examination of the systemic microcirculation distinguishes capillaries from arterioles and venules. Which structural characteristic uniquely defines true capillaries?",
+    "a": [
+      "A thick tunica media containing multiple concentric layers of smooth muscle",
+      "Bicuspid endothelial valves preventing retrograde fluid flow",
+      "Internal elastic lamina with well-developed connective tissue adventitia",
+      "Absence of vascular smooth muscle, consisting solely of a single layer of endothelial cells and basement membrane"
+    ],
+    "c": 3,
+    "r": "True capillaries lack smooth muscle and consist solely of a single layer of endothelial cells resting on a basal lamina, maximizing diffusion efficiency."
+  },
+  {
+    "cat": 2,
+    "q": "Elevated plasma homocysteine is a recognized independent risk factor for atherosclerosis and thrombophilia due to endothelial dysfunction and impaired nitric oxide release. Supplementation with which group of vitamins is clinically indicated to lower elevated homocysteine levels?",
+    "a": [
+      "Vitamin B6 (pyridoxine), Vitamin B12 (cobalamin), and Folic Acid",
+      "Vitamins A, C, and E",
+      "Vitamins D, K1, and K2",
+      "Niacin and Thiamine"
+    ],
+    "c": 0,
+    "r": "Homocysteine metabolism relies on remethylation (requiring Vitamin B12 and Folate) and transsulfuration (requiring Vitamin B6). Supplementing B6, B12, and folate lowers prothrombotic homocysteine."
+  },
+  {
+    "cat": 2,
+    "q": "In pathological conditions characterized by severe bone marrow fibrosis or severe chronic hemolytic stress, which organ serves as the primary site of extramedullary hematopoiesis?",
+    "a": [
+      "Thymus",
+      "Spleen (and liver)",
+      "Kidney",
+      "Adrenal cortex"
+    ],
+    "c": 1,
+    "r": "When bone marrow is infiltrated or fibrotic, the spleen and liver revert to their fetal role as the primary sites of extramedullary hematopoiesis."
+  },
+  {
+    "cat": 2,
+    "q": "A 34-year-old female with blood type O accidentally receives an emergency transfusion of packed red blood cells from a type A donor. Within minutes, she develops acute lumbar pain, fever, hemoglobinuria, and hypotension. According to blood group immunology, which primary mechanism and downstream complication occur in this mismatched transfusion?",
+    "a": [
+      "Donor plasma agglutinins attack recipient erythrocytes, causing splenic sequestration",
+      "Preformed IgE antibodies bind donor membrane antigens, causing systemic mast cell degranulation",
+      "Recipient anti-A agglutinins attack donor red cell agglutinogens, causing intravascular hemolysis that can precipitate acute renal failure and DIC",
+      "Donor cytotoxic T lymphocytes infiltrate recipient tissues, inducing graft-versus-host hemolysis"
+    ],
+    "c": 2,
+    "r": "In mismatched transfusions, recipient anti-A agglutinins attack donor red cell agglutinogens, causing acute intravascular hemolysis, hemoglobinuria, renal failure, and DIC."
+  },
+  {
+    "cat": 2,
+    "q": "In addition to mediating platelet adhesion to subendothelial collagen, what is the key physiological function of von Willebrand Factor (vWF) regarding Factor VIII in circulation?",
+    "a": [
+      "vWF proteolytically cleaves and inactivates Factor VIII to terminate clotting",
+      "vWF inhibits Factor VIII synthesis in the liver",
+      "vWF converts Factor VIII into active Factor VIIIa in the absence of thrombin",
+      "vWF binds and regulates circulating levels of Factor VIII, protecting it from degradation and releasing it upon activation"
+    ],
+    "c": 3,
+    "r": "vWF serves as the essential plasma carrier protein for Factor VIII, stabilizing its circulating levels and protecting it from premature proteolytic clearance."
+  },
+  {
+    "cat": 1,
+    "q": "A 38-year-old male suffers severe closed head trauma resulting in acutely elevated intracranial pressure (ICP) that severely reduces cerebral perfusion. The patient develops profound arterial hypertension accompanied by reflex bradycardia and irregular respirations (Cushing's triad). What physiological mechanism initiates this powerful 'last-ditch' CNS ischemic response?",
+    "a": [
+      "Medullary ischemia causing severe local accumulation of CO2 and H+, which powerfully excites the vasomotor center to trigger massive sympathetic vasoconstriction",
+      "Sudden activation of carotid sinus baroreceptors due to direct neck compression",
+      "Massive release of Atrial Natriuretic Peptide (ANP) from stretched atrial myocardium",
+      "Reflex parasympathetic vasodilatation of splanchnic and renal vascular beds"
+    ],
+    "c": 0,
+    "r": "The CNS ischemic response (Cushing reflex) is triggered by medullary ischemia; local CO2 and H+ accumulation powerfully excites the vasomotor center, inducing massive sympathetic peripheral vasoconstriction."
+  },
+  {
+    "cat": 1,
+    "q": "During cardiac excitation-contraction coupling, the influx of extracellular Ca2+ through sarcolemmal L-type calcium channels triggers massive 'calcium-induced calcium release' from the sarcoplasmic reticulum via which specific channel?",
+    "a": [
+      "Inositol trisphosphate (IP3) receptor",
+      "Ryanodine receptor-channel (RyR / RyR2)",
+      "Sarcoplasmic/endoplasmic reticulum Ca2+-ATPase (SERCA) pump",
+      "Sarcolemmal Na+/Ca2+ antiporter"
+    ],
+    "c": 1,
+    "r": "Extracellular trigger calcium entering through L-type channels binds to Ryanodine receptors (RyR2) on the sarcoplasmic reticulum, inducing massive calcium-induced calcium release."
+  },
+  {
+    "cat": 3,
+    "q": "A 64-year-old male is hospitalized following an acute transmural anterior myocardial infarction. On post-infarction day 5, he suddenly develops severe dyspnea, hypotension, jugular venous distension, and distant heart sounds (Beck's triad), rapidly progressing to pulseless electrical activity and death. Autopsy reveals hemopericardium caused by ventricular free-wall rupture. Why is the infarcted myocardium at highest risk for mechanical rupture specifically between days 3 and 7 post-infarction?",
+    "a": [
+      "Hyperacute reperfusion injury induces immediate microvascular spasm and contraction bands",
+      "Rapid accumulation of mature type I collagen fibers creates excessive wall stiffness and mechanical shear",
+      "Lytic degradation of necrotic myocytes by infiltrating macrophages is maximal before collagenous scar tissue is organized",
+      "Infiltration of eosinophils releasing major basic protein dissolves the fibrous pericardium"
+    ],
+    "c": 2,
+    "r": "Between days 3 and 7 post-MI, macrophage phagocytosis and enzymatic lysis of necrotic tissue are maximal while collagenous scar deposition is just beginning, leaving the ventricular wall at its weakest."
+  },
+  {
+    "cat": 3,
+    "q": "A 52-year-old male presents 6 hours after the onset of severe crushing chest pain. Which cardiac biomarker is the gold standard for diagnosing myocardial infarction, rising within 3-4 hours, peaking at 8-18 hours, and remaining elevated in serum for 7-10 days?",
+    "a": [
+      "Creatine Kinase-MB (CK-MB)",
+      "Lactate Dehydrogenase (LDH-1)",
+      "Aspartate Aminotransferase (AST)",
+      "Cardiac Troponin I / T (cTnI / cTnT)"
+    ],
+    "c": 3,
+    "r": "Cardiac Troponin I and T are the gold standard markers for myocardial infarction, elevating within 3–4 hours, peaking at 8–18 hours, and remaining detectable for 7–10 days."
+  },
+  {
+    "cat": 3,
+    "q": "Histopathological examination of an atheromatous coronary plaque from a patient with long-standing stable angina reveals a 'stable plaque' phenotype. Which morphological features characterize a stable plaque compared to a vulnerable plaque?",
+    "a": [
+      "Thick, dense collagenous fibrous cap with a small lipid core and minimal inflammatory infiltrate",
+      "Thin fibrous cap and large lipid-rich necrotic core with dense foam cell inflammation",
+      "Extensive superficial ulceration and intra-plaque hemorrhage with occlusive thrombus",
+      "Complete disruption of the internal elastic lamina with absence of vascular smooth muscle"
+    ],
+    "c": 0,
+    "r": "Stable plaques have a thick fibrous cap rich in collagen and smooth muscle cells, a small necrotic lipid core, and minimal inflammatory infiltrate, conferring resistance to rupture."
+  },
+  {
+    "cat": 3,
+    "q": "A 58-year-old male is recovering in the coronary care unit following an acute transmural left ventricular anterior myocardial infarction. On post-infarct day 5, he suddenly collapses with profound hypotension, distant/muffled heart sounds on auscultation, and marked jugular venous distension (Beck's triad). Emergency echocardiography confirms hemopericardium causing acute cardiac tamponade. What is the definitive anatomical diagnosis?",
+    "a": [
+      "Papillary muscle rupture producing acute mitral regurgitation",
+      "Ventricular free-wall rupture",
+      "Ventricular septal rupture causing an acute left-to-right shunt",
+      "Delayed autoimmune pericarditis (Dressler's syndrome)"
+    ],
+    "c": 1,
+    "r": "Between post-MI days 3 and 7, macrophage clearance renders the myocardium soft and weak. A transmural tear through the free wall causes hemopericardium, tamponade, and Beck's triad."
+  },
+  {
+    "cat": 3,
+    "q": "Which primary cardiomyopathy is inherited as an autosomal dominant trait caused by mutations in sarcomeric contractile proteins (such as beta-myosin heavy chain or myosin-binding protein C) and presents histopathologically with marked myofiber disarray and asymmetric septal hypertrophy?",
+    "a": [
+      "Dilated Cardiomyopathy (DCM)",
+      "Restrictive Cardiomyopathy",
+      "Hypertrophic Obstructive Cardiomyopathy (HOCM)",
+      "Arrhythmogenic Right Ventricular Cardiomyopathy"
+    ],
+    "c": 2,
+    "r": "HOCM is an autosomal dominant disorder caused by mutations in sarcomeric genes (e.g., beta-myosin heavy chain), causing asymmetric septal hypertrophy and chaotic myofiber disarray."
+  },
+  {
+    "cat": 3,
+    "q": "A 46-year-old male with a history of mitral valve prolapse presents with low-grade fever, malaise, and a new regurgitant murmur following an invasive dental extraction. Physical examination reveals painful, tender erythematous nodules on the pulp of his fingertips and painless hemorrhagic macules on his palms. Blood cultures grow alpha-hemolytic streptococci. Which mechanism correctly explains the fingertip lesions (Osler's nodes) versus the palmar lesions (Janeway lesions)?",
+    "a": [
+      "Both lesions represent sterile platelet-fibrin thrombi dislodged from damaged chordae tendineae",
+      "Osler's nodes are non-inflammatory calluses, whereas Janeway lesions represent localized Arthus-type granulomas",
+      "Osler's nodes represent direct fungal infiltration, whereas Janeway lesions are caused by IgA vasculitis",
+      "Osler's nodes are painful immunologic phenomena (immune-complex deposition), whereas Janeway lesions are painless embolic phenomena (septic microemboli)"
+    ],
+    "c": 3,
+    "r": "In Duke criteria (BE TIMER): Osler's nodes are painful immunologic deposits on the digits; Janeway lesions are painless embolic septic lesions on the palms and soles."
+  },
+  {
+    "cat": 3,
+    "q": "A 28-year-old female of Asian descent presents with upper extremity claudication, dizziness, and marked discrepancy in blood pressure between her arms. Physical examination reveals absent radial pulses bilaterally ('pulseless disease'). Biopsy confirms granulomatous inflammation of the aortic arch. Diagnosis?",
+    "a": [
+      "Takayasu Arteritis",
+      "Giant Cell (Temporal) Arteritis",
+      "Polyarteritis Nodosa (PAN)",
+      "Kawasaki Disease"
+    ],
+    "c": 0,
+    "r": "Takayasu Arteritis is a granulomatous large-vessel vasculitis of the aortic arch and its branches in young females (< 40 yrs), leading to luminal stenosis and absent upper limb pulses."
+  },
+  {
+    "cat": 3,
+    "q": "A 72-year-old female presents with severe unilateral temporal headache, jaw claudication while chewing, and tender induration along her scalp. ESR is markedly elevated (95 mm/hr). If treatment with high-dose corticosteroids is delayed, which severe complication carries the greatest clinical risk?",
+    "a": [
+      "Renal failure secondary to crescentic glomerulonephritis",
+      "Permanent irreversible blindness due to ischemic optic neuropathy from ophthalmic / posterior ciliary artery involvement",
+      "Coronary artery aneurysm rupture",
+      "Pulmonary hemorrhage with cavitation"
+    ],
+    "c": 1,
+    "r": "Giant Cell Arteritis carries a critical risk of permanent blindness due to anterior ischemic optic neuropathy secondary to ophthalmic or posterior ciliary artery occlusion."
+  },
+  {
+    "cat": 3,
+    "q": "A 3-year-old boy presents with high fever for 6 days, bilateral non-purulent conjunctivitis, erythema of the oral mucosa with a 'strawberry tongue', edema and erythema of hands and feet, and cervical lymphadenopathy. If untreated, which life-threatening cardiac sequela represents the primary risk?",
+    "a": [
+      "Infective endocarditis with aortic root abscess",
+      "Constrictive pericarditis with pericardial knock",
+      "Coronary artery aneurysms and thrombosis leading to myocardial infarction",
+      "Malignant hypertension secondary to renal artery stenosis"
+    ],
+    "c": 2,
+    "r": "Kawasaki disease is a necrotizing vasculitis with a predilection for coronary arteries in children; untreated cases have a ~20% risk of coronary artery aneurysms and thrombosis."
+  },
+  {
+    "cat": 3,
+    "q": "A 48-year-old male presents with chronic refractory sinusitis, nasal bridge collapse ('saddle-nose' deformity), hemoptysis from cavitary lung nodules, and hematuria from focal necrotizing glomerulonephritis. Biopsy demonstrates necrotizing granulomatous vasculitis. Which autoantibody marker is characteristically positive?",
+    "a": [
+      "Perinuclear antineutrophil cytoplasmic antibodies (p-ANCA / anti-MPO)",
+      "Anticentromere antibodies",
+      "Anti-double stranded DNA (anti-dsDNA)",
+      "Cytoplasmic antineutrophil cytoplasmic antibodies (c-ANCA / anti-PR3)"
+    ],
+    "c": 3,
+    "r": "Granulomatosis with Polyangiitis (GPA / Wegener's) features upper/lower respiratory granulomas and glomerulonephritis, and is strongly associated with c-ANCA (anti-proteinase 3)."
+  },
+  {
+    "cat": 3,
+    "q": "A 6-year-old boy presents 10 days after a resolved upper respiratory tract infection with palpable purpura localized to his buttocks and lower extremities, colicky abdominal pain, and knee arthralgias. Urinalysis reveals microscopic hematuria. Skin biopsy confirms leukocytoclastic vasculitis. Which type of immune deposition characteristically drives this disease?",
+    "a": [
+      "IgA-dominant immune complex deposition within vessel walls",
+      "IgG anti-glomerular basement membrane antibodies",
+      "Circulating IgE-mediated mast cell degranulation",
+      "Anti-cardiolipin IgM antibodies"
+    ],
+    "c": 0,
+    "r": "Henoch-Schönlein Purpura (HSP / IgA vasculitis) is mediated by IgA-containing immune complexes depositing in small vessels of skin, GI tract, joints, and kidneys."
+  },
+  {
+    "cat": 3,
+    "q": "A 42-year-old female with long-standing severe bronchial asthma presents with fever, palpable purpura, numbness and weakness in her right hand (mononeuritis multiplex), and marked peripheral eosinophilia (> 1,500/uL). Biopsy reveals necrotizing small-vessel vasculitis with eosinophil-rich extravascular granulomas. What is the diagnosis?",
+    "a": [
+      "Microscopic Polyangiitis (MPA)",
+      "Eosinophilic Granulomatosis with Polyangiitis (EGPA / Churg-Strauss)",
+      "Polyarteritis Nodosa (PAN)",
+      "Goodpasture syndrome"
+    ],
+    "c": 1,
+    "r": "EGPA (Churg-Strauss) is characterized by severe asthma, marked peripheral blood eosinophilia, necrotizing granulomas, mononeuritis multiplex, and p-ANCA positivity (~50%)."
+  },
+  {
+    "cat": 3,
+    "q": "A 52-year-old male presents with fever, unintended weight loss, severe abdominal pain, and new-onset renovascular hypertension. Serum serology is positive for Hepatitis B surface antigen (HBsAg). Visceral angiography reveals 'string-of-pearls' aneurysmal dilatations, and biopsy confirms transmural necrotizing inflammation with fibrinoid necrosis. Which vascular bed is characteristically spared in this disease?",
+    "a": [
+      "Renal arteries",
+      "Mesenteric arteries",
+      "Pulmonary circulation",
+      "Coronary arteries"
+    ],
+    "c": 2,
+    "r": "Polyarteritis Nodosa (PAN) is a necrotizing vasculitis of medium-sized arteries (often Hepatitis B-linked) that characteristically spares the pulmonary vasculature."
+  },
+  {
+    "cat": 3,
+    "q": "A 48-year-old male with a history of congenital bicuspid aortic valve undergoes an invasive dental extraction without antibiotic prophylaxis. Three weeks later, he develops low-grade fever, malaise, anorexia, and a new murmur. What is the most common causative organism of subacute infective endocarditis in this clinical setting?",
+    "a": [
+      "Staphylococcus aureus",
+      "Enterococcus faecalis",
+      "Staphylococcus epidermidis",
+      "Viridans group Streptococci (e.g., S. sanguinis, S. mitis)"
+    ],
+    "c": 3,
+    "r": "Viridans group streptococci (oral commensals) produce transient bacteremia after dental work, adhering to abnormal native valves via extracellular dextrans to cause subacute endocarditis."
+  },
+  {
+    "cat": 3,
+    "q": "A 31-year-old intravenous drug user (IVDU) is admitted with high spiking fevers, chills, pleuritic chest pain, and multiple septic pulmonary emboli on chest CT. Auscultation reveals a new holosystolic murmur at the lower left sternal border that intensifies with inspiration (Carvallo's sign). Which cardiac valve is most commonly infected, and by which organism?",
+    "a": [
+      "Tricuspid valve; Staphylococcus aureus",
+      "Mitral valve; Streptococcus pneumoniae",
+      "Aortic valve; Pseudomonas aeruginosa",
+      "Pulmonary valve; Candida albicans"
+    ],
+    "c": 0,
+    "r": "In IV drug users, injected skin flora hits the right heart first; Staphylococcus aureus is responsible in >60-70% of cases, commonly attacking the tricuspid valve."
+  },
+  {
+    "cat": 3,
+    "q": "A 66-year-old male underwent mechanical aortic valve replacement 6 weeks ago. He now presents with persistent low-grade fever, fatigue, and early prosthetic valve dysfunction. Repeated blood cultures grow Gram-positive, catalase-positive, coagulase-negative cocci. Which organism is the predominant cause of early prosthetic valve endocarditis (< 1 year post-surgery)?",
+    "a": [
+      "Streptococcus pyogenes",
+      "Staphylococcus epidermidis",
+      "Streptococcus pneumoniae",
+      "Staphylococcus aureus"
+    ],
+    "c": 1,
+    "r": "Early prosthetic valve endocarditis (< 1 year) is predominantly caused by Staphylococcus epidermidis (CoNS) via slime/biofilm production on synthetic valve materials."
+  },
+  {
+    "cat": 3,
+    "q": "During a physical examination of a patient with suspected infective endocarditis, the physician identifies multiple small, painless, flat erythematous macules on the palmar surface of the hands and soles of the feet. What are these lesions, and what is their underlying pathogenesis?",
+    "a": [
+      "Osler's nodes; caused by circulating immune complex deposition",
+      "Roth spots; caused by retinal flame-shaped hemorrhages",
+      "Janeway lesions; caused by septic microemboli from cardiac vegetations",
+      "Splinter hemorrhages; caused by trauma to the nail bed"
+    ],
+    "c": 2,
+    "r": "Janeway lesions are painless erythematous macules on the palms and soles representing septic microemboli from valvular vegetations."
+  },
+  {
+    "cat": 3,
+    "q": "A patient with a mechanical mitral valve is suspected of having prosthetic valve endocarditis, but an initial Transthoracic Echocardiogram (TTE) is inconclusive due to acoustic shadowing from the mechanical ring. Which diagnostic imaging modality offers superior sensitivity (> 90-95%) for detecting small vegetations (< 2 mm), perivalvular abscesses, and leaflet perforation?",
+    "a": [
+      "Repeat standard TTE in 48 hours",
+      "Coronary angiography",
+      "Standard contrast-enhanced chest CT alone",
+      "Transesophageal Echocardiogram (TEE)"
+    ],
+    "c": 3,
+    "r": "Transesophageal Echocardiography (TEE) avoids acoustic shadowing and achieves >90-95% sensitivity for detecting prosthetic vegetations and perivalvular root abscesses."
+  },
+  {
+    "cat": 3,
+    "q": "Bacterial biofilms formed on cardiac implantable electronic devices (CIEDs, pacemakers) and prosthetic valves produce a dense extracellular polymeric substance (EPS) matrix. How does this matrix primarily protect bacteria from host defenses and systemic antibiotics?",
+    "a": [
+      "Acting as a physical diffusion barrier, inducing metabolic dormancy (persister cells), and shielding microbes from phagocytes and antibodies",
+      "Rapidly mutating bacterial ribosomal 30S and 50S subunits",
+      "Secreting penicillinase enzymes exclusively into systemic plasma",
+      "Transforming bacterial colonies into heat-resistant spores"
+    ],
+    "c": 0,
+    "r": "The biofilm EPS matrix acts as a physical barrier, induces metabolic dormancy in deep persister cells, and shields bacteria from host antibodies and phagocytes."
+  },
+  {
+    "cat": 3,
+    "q": "A 68-year-old male with persistent bacteremia and subacute infective endocarditis has blood cultures growing non-enterococcal group D streptococci. According to the diagnostic source-to-pathogen clues taught in your cardiovascular microbiology lectures, an organism originating from a gut or genitourinary (GU) tract source points toward which likely pathogen?",
+    "a": [
+      "Viridans group streptococci (VGS)",
+      "Streptococcus gallolyticus (or Enterococcus faecalis)",
+      "Staphylococcus aureus",
+      "Coagulase-negative staphylococci (CoNS)"
+    ],
+    "c": 1,
+    "r": "Microbiology lectures teach that a gut or GU tract source points toward Enterococcus faecalis or Streptococcus gallolyticus (associated with occult colon lesions)."
+  },
+  {
+    "cat": 3,
+    "q": "Statins (e.g., Atorvastatin, Rosuvastatin) represent first-line pharmacotherapy for hypercholesterolemia. By which primary molecular mechanism do statins lower plasma Low-Density Lipoprotein (LDL) cholesterol?",
+    "a": [
+      "Directly inhibiting intestinal cholesterol absorption through enterocytes",
+      "Binding bile acids in the intestine to promote their fecal excretion",
+      "Competitively inhibiting HMG-CoA reductase, decreasing hepatic cholesterol synthesis and upregulating LDL receptors on hepatocytes",
+      "Activating PPAR-alpha to increase lipoprotein lipase synthesis"
+    ],
+    "c": 2,
+    "r": "Statins competitively inhibit HMG-CoA reductase; hepatic intracellular cholesterol depletion triggers upregulation of surface LDL receptors to clear circulating LDL."
+  },
+  {
+    "cat": 3,
+    "q": "A 56-year-old male with primary hypercholesterolemia exhibits inadequate LDL cholesterol reduction despite maximal tolerated statin therapy. Ezetimibe is added to his regimen. What is the primary mechanism of action of ezetimibe according to your pharmacology lectures?",
+    "a": [
+      "Competitively inhibits hepatic HMG-CoA reductase to shut down cholesterol synthesis",
+      "Selectively activates lipoprotein lipase to accelerate triglyceride clearance",
+      "Forms insoluble complexes with bile acids in the intestine to increase fecal elimination",
+      "Inhibits intestinal absorption of dietary and biliary cholesterol, decreasing cholesterol delivery to the liver (second-line therapy when statin alone is inadequate)"
+    ],
+    "c": 3,
+    "r": "Ezetimibe inhibits intestinal absorption of dietary and biliary cholesterol, decreasing cholesterol delivery to the liver; used as second-line therapy with statins."
+  },
+  {
+    "cat": 3,
+    "q": "An electrophysiological study evaluates an antiarrhythmic agent classified as Vaughan-Williams Class IA (e.g., Quinidine, Procainamide). Which combination of channel blockades explains why Class IA agents moderately depress Phase 0 depolarization and simultaneously prolong the total Action Potential Duration (APD)?",
+    "a": [
+      "Fast inward Na+ channel blockade combined with outward K+ channel blockade",
+      "Pure Na+ channel blockade with rapid dissociation and shortened repolarization",
+      "L-type Ca2+ channel blockade combined with beta-receptor blockade",
+      "Inward funny channel (If) blockade with activated K+ channels"
+    ],
+    "c": 0,
+    "r": "Class IA agents moderately block voltage-gated fast Na+ channels (slowing Phase 0) and block repolarizing K+ channels (IKr), prolonging repolarization and total APD."
+  },
+  {
+    "cat": 3,
+    "q": "Lidocaine is a Vaughan-Williams Class IB antiarrhythmic agent that binds rapidly to fast Na+ channels and dissociates rapidly, shortening Phase 3 repolarization and Action Potential Duration (APD). What is the primary clinical indication for intravenous lidocaine?",
+    "a": [
+      "Maintenance of sinus rhythm in chronic atrial fibrillation and flutter",
+      "Acute termination and suppression of ventricular tachycardia / fibrillation post-myocardial infarction",
+      "Paroxysmal supraventricular tachycardia due to AV nodal re-entry",
+      "Chronic prophylaxis of exertional angina pectoris"
+    ],
+    "c": 1,
+    "r": "Lidocaine binds rapidly to inactivated Na+ channels in depolarized/ischemic tissue, making it clinically indicated for acute post-MI ventricular tachycardia and fibrillation."
+  },
+  {
+    "cat": 3,
+    "q": "A 64-year-old male recovering from an acute myocardial infarction requires long-term antiarrhythmic therapy to reduce the incidence of ventricular arrhythmias and sudden cardiac death. Which drug is classified as a Vaughan-Williams Class III antiarrhythmic that uniquely possesses potent nonselective beta-adrenoceptor blocking activity to reduce post-MI mortality?",
+    "a": [
+      "Quinidine",
+      "Lidocaine",
+      "Sotalol",
+      "Flecainide"
+    ],
+    "c": 2,
+    "r": "In Dr. Alsbou's slides, Sotalol is highlighted as a Class III agent with potent nonselective beta-blocking activity that reduces post-MI mortality and sudden cardiac death."
+  },
+  {
+    "cat": 3,
+    "q": "Beta-adrenergic receptor blockers (Class II antiarrhythmics, e.g., Metoprolol, Bisoprolol) suppress automaticity and control ventricular rate in supraventricular tachycardias. Which electrophysiological action is primarily responsible for these effects?",
+    "a": [
+      "Increasing intracellular cAMP and accelerating L-type Ca2+ channel opening",
+      "Opening inward rectifier potassium channels during Phase 0",
+      "Markedly prolonging the QRS complex by blocking fast inward Na+ channels in Purkinje fibers",
+      "Decreasing the slope of Phase 4 spontaneous diastolic depolarization in the SA and AV nodes, slowing AV nodal conduction velocity"
+    ],
+    "c": 3,
+    "r": "Beta-blockers inhibit sympathetic stimulation, reducing intracellular cAMP and lowering the Phase 4 spontaneous diastolic depolarization slope in SA and AV nodes."
+  },
+  {
+    "cat": 3,
+    "q": "Amiodarone is a broad-spectrum Class III antiarrhythmic that prolongs Phase 3 repolarization and Action Potential Duration (APD) by blocking outward K+ channels (IKr). Which multi-organ adverse effect profile is associated with chronic amiodarone therapy, requiring baseline and serial monitoring?",
+    "a": [
+      "Pulmonary fibrosis, thyroid dysfunction (hypo- or hyperthyroidism due to high iodine content), corneal microdeposits, and hepatotoxicity",
+      "Agranulocytosis and lupus-like syndrome",
+      "Gingival hyperplasia, severe peripheral edema, and flushing",
+      "Cinchonism, thrombocytopenia, and intractable diarrhea"
+    ],
+    "c": 0,
+    "r": "Amiodarone exhibits extensive tissue accumulation causing pulmonary fibrosis, hypo/hyperthyroidism (high iodine content), corneal microdeposits, and hepatotoxicity."
+  },
+  {
+    "cat": 3,
+    "q": "Non-dihydropyridine Calcium Channel Blockers (Verapamil, Diltiazem) exert negative inotropic, chronotropic, and dromotropic actions. Concomitant administration of non-dihydropyridine CCBs with which drug class carries a dangerous risk of severe bradycardia and complete AV nodal block?",
+    "a": [
+      "Thiazide diuretics",
+      "Beta-adrenoceptor blockers (e.g., Metoprolol, Atenolol)",
+      "HMG-CoA reductase inhibitors (Statins)",
+      "Angiotensin-Converting Enzyme (ACE) inhibitors"
+    ],
+    "c": 1,
+    "r": "Combining Verapamil or Diltiazem with Beta-blockers produces additive depression of AV nodal conduction and myocardial contractility, risking severe bradycardia and AV block."
+  },
+  {
+    "cat": 3,
+    "q": "Dihydropyridine Calcium Channel Blockers (e.g., Amlodipine, Nifedipine) effectively lower arterial blood pressure in hypertensive patients primarily through which vascular mechanism?",
+    "a": [
+      "Selective inhibition of L-type Ca2+ channels in sinoatrial nodal pacemaker cells",
+      "Competitive antagonism of vascular alpha-1 adrenergic receptors",
+      "Selective blockade of voltage-gated L-type Ca2+ channels in peripheral arteriolar vascular smooth muscle, reducing total peripheral resistance",
+      "Inhibition of calcium reabsorption in the renal distal convoluted tubule"
+    ],
+    "c": 2,
+    "r": "Dihydropyridines selectively inhibit voltage-gated L-type Ca2+ channels in peripheral arteriolar smooth muscle, reducing total peripheral resistance (TPR)."
+  },
+  {
+    "cat": 3,
+    "q": "A 54-year-old male with hypertension and type 2 diabetes mellitus is started on Lisinopril. Three weeks later, he develops a persistent, dry, non-productive nocturnal cough without fever or wheezing. What is the pharmacological mechanism responsible for this adverse effect?",
+    "a": [
+      "Reflex sympathetic stimulation of bronchial beta-2 receptors",
+      "Drug-induced bronchospasm secondary to elevated aldosterone levels",
+      "Direct stimulation of histamine H1 receptors in bronchial mast cells",
+      "Inhibition of kininase II (ACE), leading to local accumulation of bradykinin and substance P in the respiratory tract"
+    ],
+    "c": 3,
+    "r": "ACE is identical to kininase II. Blocking ACE prevents bradykinin degradation; accumulated bradykinin and substance P irritate bronchial mucosa, causing a persistent dry cough."
+  },
+  {
+    "cat": 3,
+    "q": "A 29-year-old female at 18 weeks of gestation presents for routine antenatal care. Her blood pressure is persistently elevated at 155/98 mmHg, confirming gestational hypertension. According to Dr. Alsbou's cardiovascular pharmacology lecture, which antihypertensive regimen is considered safe and appropriate during pregnancy, and which class is strictly contraindicated?",
+    "a": [
+      "Hydralazine, Methyldopa, and Atenolol (or Labetalol) are safe choices; ACE inhibitors and ARBs are strictly contraindicated",
+      "ACE inhibitors (e.g., Enalapril) are first-line; Beta-blockers are strictly contraindicated",
+      "High-dose thiazide diuretics are first-line; Hydralazine is strictly contraindicated",
+      "Continuous intravenous Sodium Nitroprusside is first-line; Methyldopa is strictly contraindicated"
+    ],
+    "c": 0,
+    "r": "Dr. Alsbou's slides specify that hydralazine, methyldopa, and labetalol/atenolol are safe in pregnancy, whereas ACE inhibitors and ARBs are strictly contraindicated due to severe fetotoxicity."
+  },
+  {
+    "cat": 3,
+    "q": "Which electrolyte disturbance represents a well-recognized potential adverse effect of Angiotensin-Converting Enzyme Inhibitors (ACEIs) and Angiotensin Receptor Blockers (ARBs), particularly in patients with pre-existing renal insufficiency?",
+    "a": [
+      "Hypokalemia",
+      "Hyperkalemia",
+      "Hypercalcemia",
+      "Hypomagnesemia"
+    ],
+    "c": 1,
+    "r": "Inhibition of Angiotensin II production or receptor binding reduces adrenal aldosterone secretion, diminishing renal potassium excretion and predisposing to hyperkalemia."
+  },
+  {
+    "cat": 3,
+    "q": "Spironolactone and Eplerenone are used in heart failure and hypertension. At which anatomical and cellular site do these agents act as competitive antagonists?",
+    "a": [
+      "Na+/K+/2Cl- cotransporter in the thick ascending limb of the loop of Henle",
+      "Na+/Cl- cotransporter in the early distal convoluted tubule",
+      "Mineralocorticoid (Aldosterone) receptors in the late distal tubule and cortical collecting duct principal cells",
+      "Carbonic anhydrase enzyme in the proximal convoluted tubule"
+    ],
+    "c": 2,
+    "r": "Spironolactone and Eplerenone competitively block cytoplasmic mineralocorticoid receptors in the late distal tubule and collecting duct, reducing ENaC expression and retaining potassium."
+  },
+  {
+    "cat": 3,
+    "q": "Unfractionated Heparin (UFH) produces immediate parenteral anticoagulation. How does heparin molecularly interact with Antithrombin III to inhibit coagulation?",
+    "a": [
+      "Directly binds and hydrolyzes fibrin polymers within an established clot",
+      "Irreversibly blocks the platelet membrane GP IIb/IIIa receptor complex",
+      "Competitively antagonizes Vitamin K epoxide reductase in the endoplasmic reticulum of hepatocytes",
+      "Binds Antithrombin III via a specific pentasaccharide sequence, inducing a conformational change that accelerates inactivation of Thrombin (Factor IIa) and Factor Xa by ~1000-fold"
+    ],
+    "c": 3,
+    "r": "UFH binds Antithrombin III via a specific pentasaccharide sequence, inducing a conformational change that accelerates ATIII-mediated inactivation of Thrombin (IIa) and Factor Xa by ~1000-fold."
+  },
+  {
+    "cat": 3,
+    "q": "Low Molecular Weight Heparins (LMWH, e.g., Enoxaparin) have largely replaced Unfractionated Heparin (UFH) for routine venous thromboembolism management. What is the primary pharmacological and pharmacokinetic difference between LMWH and UFH?",
+    "a": [
+      "LMWH has higher anti-Factor Xa activity relative to anti-Factor IIa activity (~2:1 to 4:1), higher bioavailability, a longer half-life, and does not require routine aPTT monitoring",
+      "LMWH preferentially inhibits Thrombin (IIa) over Factor Xa",
+      "LMWH is given orally whereas UFH is given parenterally",
+      "LMWH cannot be used in patients with deep venous thrombosis"
+    ],
+    "c": 0,
+    "r": "LMWH has a shorter polysaccharide chain length, producing an anti-Xa:anti-IIa ratio of 2:1 to 4:1, with high bioavailability, long half-life, and no routine aPTT monitoring needed."
+  },
+  {
+    "cat": 3,
+    "q": "A 62-year-old male with a history of transient ischemic attacks (TIA) requires antiplatelet therapy for secondary stroke prevention. The clinical pharmacology team evaluates ticlopidine versus clopidogrel. Why is clopidogrel preferred over ticlopidine for routine clinical therapy according to your lecture slides?",
+    "a": [
+      "Ticlopidine is ineffective orally and must be administered by continuous intravenous infusion",
+      "Ticlopidine carries a high risk of life-threatening hematologic adverse reactions, including neutropenia/agranulocytosis, thrombotic thrombocytopenic purpura (TTP), and aplastic anemia",
+      "Ticlopidine causes severe acute renal failure and profound hyperkalemia in over 50% of patients",
+      "Ticlopidine has an extremely short elimination half-life of 15 minutes, requiring six doses daily"
+    ],
+    "c": 1,
+    "r": "Dr. Alsbou's slides highlight that ticlopidine carries life-threatening hematologic risks (agranulocytosis, TTP, aplastic anemia), making clopidogrel the preferred first-line agent."
+  },
+  {
+    "cat": 3,
+    "q": "A 54-year-old patient requiring systemic anticoagulation is evaluated on the surgical ward. According to Dr. Alsbou's pharmacology lecture on heparin, which clinical situation represents an absolute surgical contraindication to heparin administration, and which adverse effect is specifically associated with long-term heparin therapy?",
+    "a": [
+      "Recent minor dental scaling; Ototoxicity",
+      "History of uncomplicated deep vein thrombosis; Pulmonary fibrosis",
+      "During and after surgery of the brain, eye, or spinal cord; Osteoporosis",
+      "Concomitant administration of beta-blockers; Retinal detachment"
+    ],
+    "c": 2,
+    "r": "Heparin is absolutely contraindicated during and after surgery of the brain, eye, or spinal cord due to catastrophic hemorrhage risk; long-term use is associated with osteoporosis."
+  },
+  {
+    "cat": 3,
+    "q": "Warfarin is a widely utilized oral anticoagulant. Which enzyme does warfarin competitively inhibit in hepatocytes to interfere with the post-translational modification of Vitamin K-dependent clotting factors?",
+    "a": [
+      "Gamma-glutamyl carboxylase",
+      "Hepatic lipase",
+      "Factor Xa protease",
+      "Vitamin K epoxide reductase (VKORC1)"
+    ],
+    "c": 3,
+    "r": "Warfarin competitively inhibits Vitamin K epoxide reductase (VKORC1), blocking the regeneration of reduced vitamin K required for gamma-carboxylation of Factors II, VII, IX, X, C, and S."
+  },
+  {
+    "cat": 3,
+    "q": "During the initial 24 to 48 hours of starting Warfarin therapy without heparin bridging, a patient can develop a transient paradoxical hypercoagulable state predisposing to microvascular thrombosis and skin necrosis. What explains this phenomenon?",
+    "a": [
+      "Protein C has a very short half-life (~6 hours) and declines rapidly before procoagulant clotting factors (II, IX, X) are depleted",
+      "Factor II (prothrombin) levels plummet within 2 hours of administration",
+      "Warfarin induces immediate platelet aggregation via ADP release",
+      "Direct cytotoxicity of warfarin metabolites on cutaneous vascular endothelium"
+    ],
+    "c": 0,
+    "r": "Anticoagulant Protein C has a very short half-life (~6 hours) and is cleared rapidly before procoagulant Factors II, IX, and X decline, causing transient unopposed hypercoagulability."
+  },
+  {
+    "cat": 3,
+    "q": "Dabigatran etexilate is an oral anticoagulant prescribed for stroke prevention in non-valvular atrial fibrillation. Which specific molecular mechanism describes its action?",
+    "a": [
+      "Competitive antagonist of Vitamin K epoxide reductase",
+      "Potent, reversible direct competitive inhibitor of Thrombin (Factor IIa)",
+      "Direct allosteric activator of Antithrombin III",
+      "Irreversible selective blocker of Factor Xa"
+    ],
+    "c": 1,
+    "r": "Dabigatran etexilate is an oral prodrug converted to dabigatran, a reversible direct competitive inhibitor of free and clot-bound Thrombin (Factor IIa)."
+  },
+  {
+    "cat": 3,
+    "q": "Rivaroxaban, Apixaban, and Edoxaban belong to which class of anticoagulants, and how do they achieve their clinical anticoagulant effect?",
+    "a": [
+      "Direct Thrombin inhibitors that require routine aPTT monitoring",
+      "Indirect Vitamin K antagonists that inhibit Factor VII carboxylation",
+      "Direct Factor Xa inhibitors that selectively bind the active catalytic site of Factor Xa without requiring Antithrombin III",
+      "Fibrinolytic agents that convert plasminogen to active plasmin"
+    ],
+    "c": 2,
+    "r": "Rivaroxaban, Apixaban, and Edoxaban are direct Factor Xa inhibitors (DOACs) that bind directly to the active site of Factor Xa without requiring Antithrombin III."
+  },
+  {
+    "cat": 3,
+    "q": "Ticlopidine and Clopidogrel are antiplatelet agents used to prevent ischemic stroke and atherosclerotic complications following recent MI. By which specific molecular mechanism do these drugs inhibit platelet aggregation according to your pharmacology lectures?",
+    "a": [
+      "Reversibly inhibiting cyclooxygenase-1 (COX-1) to block thromboxane A2 synthesis",
+      "Directly binding active Glycoprotein IIb/IIIa receptors to physically block fibrinogen bridging",
+      "Inhibiting platelet phosphodiesterase to increase intracellular cAMP levels",
+      "Irreversibly inhibiting the binding of adenosine diphosphate (ADP) to its receptors on platelets, thereby preventing the secondary activation of GP IIb/IIIa receptors"
+    ],
+    "c": 3,
+    "r": "Dr. Alsbou teaches that ticlopidine and clopidogrel irreversibly block ADP binding to platelet P2Y12 receptors, preventing activation of GP IIb/IIIa receptors."
+  },
+  {
+    "cat": 3,
+    "q": "Aspirin produces effective cardioprotective antiplatelet effects at low daily doses (75-81 mg/day). What is the biochemical mechanism responsible for this selective and durable platelet inhibition?",
+    "a": [
+      "Irreversible covalent acetylation and inactivation of platelet Cyclooxygenase-1 (COX-1), blocking Thromboxane A2 (TXA2) synthesis for the platelet lifespan",
+      "Reversible competitive inhibition of endothelial prostacyclin synthase",
+      "Direct antagonism of platelet thromboxane prostanoid (TP) receptors",
+      "Inhibition of lipoxygenase, preventing leukotriene B4 generation"
+    ],
+    "c": 0,
+    "r": "Aspirin permanently acetylates and inactivates platelet COX-1, shutting down Thromboxane A2 synthesis for the entire 7–10 day lifespan of the anucleate platelet."
+  },
+  {
+    "cat": 3,
+    "q": "Abciximab, Eptifibatide, and Tirofiban are potent intravenous antiplatelet agents administered during percutaneous coronary intervention (PCI). Which statement accurately describes their mechanism of action?",
+    "a": [
+      "They selectively inhibit platelet phosphodiesterase-5",
+      "They bind directly to platelet Glycoprotein IIb/IIIa receptors, blocking fibrinogen binding and halting the final common pathway of platelet aggregation",
+      "They reversibly inhibit platelet cyclooxygenase-1",
+      "They accelerate the degradation of prothrombin by Antithrombin III"
+    ],
+    "c": 1,
+    "r": "GP IIb/IIIa inhibitors (Abciximab, Eptifibatide, Tirofiban) block the final common pathway of aggregation by preventing fibrinogen bridging between adjacent platelets."
+  },
+  {
+    "cat": 3,
+    "q": "Fibrinolytic (thrombolytic) agents such as Alteplase (recombinant tissue plasminogen activator, rtPA), Reteplase, and Tenecteplase dissolve established intravascular thrombi by which enzymatic mechanism?",
+    "a": [
+      "Directly cleaving fibrinogen molecules to prevent polymer formation",
+      "Activating Antithrombin III to degrade Factor XIIIa",
+      "Converting inactive plasminogen to active plasmin, which directly digests the insoluble fibrin clot meshwork",
+      "Inhibiting alpha-2-antiplasmin to prevent endogenous fibrinolysis"
+    ],
+    "c": 2,
+    "r": "Fibrinolytic agents convert inactive plasminogen into active plasmin, an enzyme that directly degrades the insoluble cross-linked fibrin meshwork of established clots."
+  },
+  {
+    "cat": 3,
+    "q": "A 65-year-old male receiving an intravenous infusion of Unfractionated Heparin develops acute severe retroperitoneal hemorrhage. Heparin is immediately stopped. Which specific pharmacological antidote is administered intravenously to neutralize circulating heparin?",
+    "a": [
+      "Vitamin K1 (Phytonadione)",
+      "Fresh Frozen Plasma alone without antidote",
+      "Aminocaproic acid",
+      "Protamine sulfate"
+    ],
+    "c": 3,
+    "r": "Protamine sulfate is a positively charged polycationic protein that complexes with strongly negatively charged heparin molecules via electrostatic bonds, neutralizing anticoagulant activity."
+  },
+  {
+    "cat": 3,
+    "q": "A 58-year-old male presents with acute anterior ST-elevation myocardial infarction (STEMI) presenting within 3 hours of symptom onset. Primary percutaneous coronary intervention (PCI) is unavailable, and emergency intravenous fibrinolysis with Alteplase (tPA) is considered. Which clinical condition represents an absolute contraindication to fibrinolytic therapy according to your cardiovascular pharmacology lecture?",
+    "a": [
+      "History of prior cerebrovascular accident (CVA / stroke) or active internal bleeding",
+      "Mild essential hypertension well-controlled on an ACE inhibitor",
+      "Concurrent daily administration of low-dose aspirin",
+      "Elevated serum LDL cholesterol on statin therapy"
+    ],
+    "c": 0,
+    "r": "In Dr. Alsbou's slides, absolute contraindications to fibrinolytics include prior cerebrovascular accident (stroke), peptic ulcer, bleeding disorders, and active internal hemorrhage."
+  },
+  {
+    "cat": 3,
+    "q": "A clinical pharmacology ward round compares the pharmacological and pharmacokinetic profiles of Unfractionated Heparin versus Warfarin. According to Dr. Alsbou's comparison table, which statement correctly distinguishes Heparin from Warfarin?",
+    "a": [
+      "Warfarin has an immediate onset of action within minutes, whereas Heparin requires several days to produce an anticoagulant effect",
+      "Heparin acts immediately via Antithrombin III and is antagonized by protamine sulfate, whereas Warfarin interferes with hepatic factor synthesis, requires several days for full effect, and is antagonized by Vitamin K",
+      "Warfarin is administered solely parenterally, whereas Heparin is taken orally",
+      "Warfarin is safe during pregnancy, whereas Heparin readily crosses the placenta and is teratogenic"
+    ],
+    "c": 1,
+    "r": "Heparin is rapid-acting, administered parenterally, acts via Antithrombin III, and is reversed with protamine. Warfarin takes 3–5 days to deplete factors, is taken orally, and is reversed with Vitamin K."
+  },
+  {
+    "cat": 3,
+    "q": "A 32-year-old female with severe iron deficiency anemia is unable to tolerate oral ferrous sulfate due to intractable gastrointestinal adverse effects. She is prescribed parenteral iron dextran (CosmoFer). According to Dr. Alsbou's lecture on iron therapy, which adverse effect and clinical contraindication are specifically emphasized for parenteral iron?",
+    "a": [
+      "Immediate hyperkalemia; contraindicated in congestive heart failure",
+      "Severe hypercalcemia and nephrolithiasis; contraindicated in chronic renal disease",
+      "Permanent skin staining on IM injection and risk of acute hypersensitivity / anaphylactoid reactions; contraindicated in patients with a history of allergic disorders (asthma, eczema)",
+      "Aplastic bone marrow failure; contraindicated in G6PD deficiency"
+    ],
+    "c": 2,
+    "r": "Dr. Alsbou's slides highlight that parenteral iron can cause permanent skin staining, acute hypersensitivity/anaphylaxis, and is contraindicated in patients with allergic histories (asthma/eczema)."
+  },
+  {
+    "cat": 3,
+    "q": "A 56-year-old male presents to a rural community hospital with acute anterior ST-elevation myocardial infarction (STEMI) presenting within 2 hours of symptom onset. The nearest cardiac catheterization facility is 4 hours away. According to clinical protocols taught in your cardiovascular pharmacology lectures, what is the appropriate emergency management?",
+    "a": [
+      "High-dose oral Warfarin loading and wait for inter-hospital transfer",
+      "Intravenous Vitamin K and observation in the emergency ward",
+      "Subcutaneous unfractionated heparin monotherapy without fibrinolytics",
+      "Immediate intravenous fibrinolytic therapy (e.g., Alteplase) within the optimal 4-6 hour therapeutic window plus dual antiplatelet therapy"
+    ],
+    "c": 3,
+    "r": "When PCI cannot be performed within 90–120 minutes, emergency intravenous fibrinolytic therapy (Alteplase) within the optimal 4–6 hour window plus DAPT is the standard of care."
+  }
+];
+
+export const cvbFinalPastQuestions: Question[] = [
+  {
+    "cat": 2,
+    "q": "A 58-year-old male with a 15-year history of chronic alcohol abuse and liver cirrhosis presents for pre-operative evaluation prior to an elective hernia repair. Laboratory analysis demonstrates a prolonged Prothrombin Time (PT) with a normal Activated Partial Thromboplastin Time (aPTT). Which of the following best explains why PT is the earliest coagulation parameter to become abnormal in severe hepatic dysfunction?",
+    "a": [
+      "Factor VIII has the shortest half-life of all liver-synthesized clotting factors.",
+      "Factor VII has the shortest biological half-life (~6 hours) among vitamin K-dependent factors synthesized by hepatocytes.",
+      "Fibrinogen synthesis is completely inhibited before any other clotting factor is affected.",
+      "Hepatic kupffer cells fail to clear endogenous antithrombin III from circulation."
+    ],
+    "c": 1,
+    "r": "The liver synthesizes almost all coagulation factors. Factor VII (extrinsic pathway) has the shortest half-life of all clotting factors (~6 hours). In acute or progressive severe hepatic impairment, Factor VII levels drop first, making PT/INR the earliest indicator of liver synthetic failure."
+  },
+  {
+    "cat": 1,
+    "q": "A 52-year-old male with a history of hypertension and exertional angina undergoes an exercise stress electrocardiogram (ECG) test on a treadmill. Which of the following findings on the exercise ECG constitutes a positive result indicative of inducible myocardial ischemia?",
+    "a": [
+      "Horizontal or downsloping ST-segment depression >= 1 mm measured 80 ms after the J-point during peak exercise.",
+      "PR-segment prolongation > 200 ms with incremental heart rate elevation.",
+      "Symmetrical T-wave inversion in lead V1 only.",
+      "Increase in systolic blood pressure of 20 mmHg during exercise."
+    ],
+    "c": 0,
+    "r": "Inducible subendocardial ischemia during exercise stress manifests as horizontal or downsloping ST-segment depression >= 1 mm (0.1 mV) measured 80 ms after the J-point."
+  },
+  {
+    "cat": 3,
+    "q": "A 60-year-old female with hypercholesterolemia is prescribed Atorvastatin. Which mechanism of action accounts for the primary therapeutic effect of statins in reducing circulating Low-Density Lipoprotein Cholesterol (LDL-C)?",
+    "a": [
+      "Inhibition of Niemann-Pick C1-Like 1 (NPC1L1) protein at the intestinal brush border.",
+      "Competitive inhibition of hepatic HMG-CoA reductase, leading to intracellular cholesterol depletion and upregulation of hepatic LDL receptors.",
+      "Activation of peroxisome proliferator-activated receptor alpha (PPAR-alpha), enhancing LPL expression.",
+      "Binding and sequestration of bile acids in the intestinal lumen."
+    ],
+    "c": 1,
+    "r": "Statins competitively inhibit HMG-CoA reductase, the rate-limiting enzyme in hepatic cholesterol synthesis. The resulting drop in intracellular cholesterol signals hepatocytes to upregulate surface LDL receptors, clearing circulating LDL."
+  },
+  {
+    "cat": 1,
+    "q": "A 62-year-old male presents with severe retrosternal chest pain and diaphoresis. An ECG confirms a transmural ST-elevation myocardial infarction (STEMI). Electrocardiographic follow-up 6 weeks later shows persistent pathological Q waves in leads V1-V4. What do persistent pathological Q waves represent pathophysiologically?",
+    "a": [
+      "Reversible myocardial stunning surrounding the ischemic zone.",
+      "Acute ongoing subendocardial ischemia.",
+      "Irreversible, full-thickness myocardial necrosis and replacement by non-conductive fibrotic scar tissue.",
+      "Transient coronary artery vasospasm."
+    ],
+    "c": 2,
+    "r": "Pathological Q waves represent electrically silent, non-conductive necrotic or fibrotic tissue created by full-thickness (transmural) myocardial infarction. Once scar tissue forms, these Q waves are generally permanent."
+  },
+  {
+    "cat": 3,
+    "q": "A 65-year-old patient with atrial fibrillation with rapid ventricular response is started on Verapamil. Which electrophysiological effect of non-dihydropyridine calcium channel blockers explains their utility in controlling ventricular rate?",
+    "a": [
+      "Blocking fast voltage-gated Na+ channels during Phase 0 in atrial myocytes.",
+      "Prolonging Phase 0 depolarization and extending the absolute refractory period in the AV node by blocking L-type Ca2+ channels.",
+      "Inhibiting Na+/K+ ATPase to increase intracellular sodium concentrations.",
+      "Accelerating Phase 4 spontaneous diastolic depolarization in Purkinje fibers."
+    ],
+    "c": 1,
+    "r": "Verapamil and Diltiazem selectively block voltage-gated L-type calcium channels in nodal tissue. In the AV node, where Phase 0 is calcium-dependent, this action slows conduction velocity and prolongs refractoriness, controlling ventricular rate."
+  },
+  {
+    "cat": 2,
+    "q": "A 22-year-old female presents with painless cervical lymphadenopathy and a persistent non-productive cough. Chest X-ray reveals a large anterior mediastinal mass. Lymph node biopsy demonstrates collagen bands dividing the lymphoid architecture into distinct cellular nodules containing classic lacunar cells (Reed-Sternberg variant). What is the diagnosis?",
+    "a": [
+      "Nodular sclerosis Hodgkin lymphoma",
+      "Diffuse large B-cell lymphoma",
+      "Burkitt lymphoma",
+      "Chronic lymphocytic leukemia"
+    ],
+    "c": 0,
+    "r": "Nodular sclerosis is the most common subtype of Hodgkin Lymphoma, characterized by broad fibrous collagen bands circumscribing nodules and lacunar-type Reed-Sternberg cells."
+  },
+  {
+    "cat": 2,
+    "q": "A newborn infant presents with severe hemolytic anemia, muscular weakness, and loss of deep tendon reflexes. The child is found to have a fat malabsorption syndrome. A deficiency of which fat-soluble vitamin causes oxidative membrane damage to RBCs leading to hemolysis?",
+    "a": [
+      "Vitamin A",
+      "Vitamin D",
+      "Vitamin E",
+      "Vitamin K"
+    ],
+    "c": 2,
+    "r": "Vitamin E (alpha-tocopherol) functions as an antioxidant protecting red blood cell membranes from lipid peroxidation by free radicals. Deficiency leads to hemolytic anemia and spinocerebellar symptoms."
+  },
+  {
+    "cat": 1,
+    "q": "During which phase of the cardiac cycle do all four heart valves remain closed while intraventricular pressure increases rapidly without any change in ventricular volume?",
+    "a": [
+      "Isovolumetric relaxation",
+      "Isovolumetric (isometric) contraction",
+      "Rapid ventricular ejection",
+      "Reduced ventricular filling"
+    ],
+    "c": 1,
+    "r": "Isovolumetric contraction begins with AV valve closure (S1) and ends with semilunar valve opening. Ventricular volume is constant (EDV) while ventricular muscle contracts, causing a steep rise in pressure."
+  },
+  {
+    "cat": 1,
+    "q": "In a severe hemorrhagic shock patient whose Mean Arterial Pressure (MAP) drops below 60 mmHg, the central nervous system ischemic response is triggered. Which of the following characterizes this physiological emergency response?",
+    "a": [
+      "Parasympathetic outflow from the vagus nerve causes severe vasodilation.",
+      "Massive sympathetic discharge causes intense systemic peripheral vasoconstriction to preserve cerebral and coronary perfusion.",
+      "Peripheral chemoreceptors undergo reflex inhibition.",
+      "Baroreceptors increase their firing rate to depress the vasomotor center."
+    ],
+    "c": 1,
+    "r": "When severe hypotension occurs, accumulation of CO2 and lactic acid in the brainstem triggers the CNS ischemic response—the most powerful activator of the sympathetic vasoconstrictor system."
+  },
+  {
+    "cat": 3,
+    "q": "A 68-year-old patient with heart failure and diabetic nephropathy is started on Enalapril. Two weeks later, routine laboratory tests show an elevation in serum potassium from 4.2 mEq/L to 5.8 mEq/L. What mechanism underlies this adverse drug reaction?",
+    "a": [
+      "Inhibition of the Na+/K+/2Cl- cotransporter in the thick ascending limb.",
+      "Decreased Angiotensin II levels reduce adrenal aldosterone secretion, diminishing K+ excretion in the cortical collecting duct.",
+      "Direct blockage of renal epithelial sodium channels (ENaC).",
+      "Increased aldosterone responsiveness leading to intracellular K+ shift."
+    ],
+    "c": 1,
+    "r": "ACE inhibitors block Angiotensin II formation, decreasing adrenal aldosterone release. Lower aldosterone reduces distal renal K+ excretion, leading to potassium retention and hyperkalemia."
+  },
+  {
+    "cat": 1,
+    "q": "A 72-year-old male with chronic ischemic heart disease presents with worsening orthopnea and bilateral lower extremity edema. Serum testing reveals elevated Brain Natriuretic Peptide (BNP). What physiological stimulus triggers the release of BNP, and what is its primary effect?",
+    "a": [
+      "Decreased atrial stretch; increases renal sodium reabsorption.",
+      "Ventricular wall stretch due to volume or pressure overload; promotes renal natriuresis, diuresis, and systemic vasodilation.",
+      "Sympathetic stimulation of Juxtaglomerular cells; promotes renin secretion.",
+      "Hypoxia in renal cortical tissue; stimulates erythropoiesis."
+    ],
+    "c": 1,
+    "r": "BNP is synthesized and released by ventricular cardiomyocytes in response to increased wall tension. It counteracts RAAS by inducing natriuresis, diuresis, and systemic vasodilation."
+  },
+  {
+    "cat": 1,
+    "q": "During severe lactic acidosis in septic shock (arterial pH < 7.15), which direct effect does severe acidosis exert on cardiac performance?",
+    "a": [
+      "Enhances myofilament sensitivity to intracellular calcium, increasing stroke volume.",
+      "Depresses myocardial contractility and decreases vascular responsiveness to endogenous catecholamines.",
+      "Shifts the oxygen-hemoglobin dissociation curve to the left.",
+      "Accelerates conduction velocity through the AV node."
+    ],
+    "c": 1,
+    "r": "Severe systemic acidosis (pH < 7.20) directly impairs myocardial contractility by displacing calcium from troponin C and blunts vascular smooth muscle reactivity to catecholamines."
+  },
+  {
+    "cat": 2,
+    "q": "A 64-year-old male presents with weakness, tingling in his feet, and smooth glossy red tongue (atrophic glossitis). CBC shows Hb 7.8 g/dL, MCV 115 fL, WBC 3.1 x 10^9/L, and Platelets 110 x 10^9/L. Blood smear reveals hypersegmented neutrophils. Which diagnostic feature confirms Vitamin B12 deficiency megaloblastic anemia rather than a primary hematologic malignancy such as acute leukemia?",
+    "a": [
+      "Marked elevation of blast cells (>20%) in bone marrow.",
+      "Pancytopenia with erythroid hyperplasia containing megaloblasts and elevated serum methylmalonic acid (MMA).",
+      "Presence of Auer rods in immature myeloid precursor cells.",
+      "Clonal chromosomal translocations t(15;17)."
+    ],
+    "c": 1,
+    "r": "B12 deficiency impairs DNA synthesis, producing pancytopenia, hypersegmented neutrophils, megaloblastic erythroid hyperplasia, and raised MMA/homocysteine without malignant blasts."
+  },
+  {
+    "cat": 2,
+    "q": "In the sequence of primary and secondary hemostasis following vascular injury, what constitutes the structural foundation of the definitive stable hemostatic plug?",
+    "a": [
+      "Isolated collagen fibril meshwork without cellular components.",
+      "Aggregated platelets bound via GPIIb/IIIa receptors embedded within a cross-linked fibrin polymer scaffold.",
+      "Von Willebrand factor (vWF) monomers cross-linked by Factor VIII.",
+      "Monocyte-macrophage aggregates held together by fibronectin."
+    ],
+    "c": 1,
+    "r": "Primary hemostasis forms a platelet plug; secondary hemostasis generates thrombin to cleave fibrinogen into fibrin, which is cross-linked by Factor XIIIa around platelets into a definitive plug."
+  },
+  {
+    "cat": 3,
+    "q": "A 55-year-old patient receiving long-term antiarrhythmic therapy for ventricular ectopy presents with fever, malar rash, joint pain, and positive anti-histone antibodies. Which antiarrhythmic drug is most strongly associated with drug-induced lupus erythematosus?",
+    "a": [
+      "Lidocaine",
+      "Amiodarone",
+      "Procainamide",
+      "Verapamil"
+    ],
+    "c": 2,
+    "r": "Procainamide (Class Ia antiarrhythmic) causes drug-induced lupus erythematosus in up to 20-30% of chronic users, marked by positive anti-histone antibodies and arthralgias."
+  },
+  {
+    "cat": 3,
+    "q": "A patient taking high-dose Atorvastatin and Amiodarone develops nausea and jaundice. Routine lab panels reveal AST 450 U/L and ALT 520 U/L. What is the clinical significance of elevated transaminases in the context of lipid-lowering and antiarrhythmic pharmacology?",
+    "a": [
+      "Drug-induced hepatotoxicity requiring immediate evaluation and discontinuation of offending agents.",
+      "Expected benign physiological adaptation of peroxisomes.",
+      "Indicator of skeletal muscle rhabdomyolysis without hepatic involvement.",
+      "Rapid breakdown of intestinal chylomicrons."
+    ],
+    "c": 0,
+    "r": "Both statins and amiodarone undergo hepatic metabolism and can cause drug-induced liver injury (DILI). Elevated AST/ALT (>3x ULN) warrants drug dose adjustment or discontinuation."
+  },
+  {
+    "cat": 0,
+    "q": "During clinical cardiovascular examination, where is the apex beat (point of maximal impulse, PMI) normally palpated, and which cardiac chamber forms it?",
+    "a": [
+      "2nd right intercostal space; Right Atrium",
+      "4th left intercostal space at parasternal line; Right Ventricle",
+      "5th left intercostal space in midclavicular line; Left Ventricle",
+      "5th left intercostal space at midaxillary line; Left Atrium"
+    ],
+    "c": 2,
+    "r": "The apex of the heart is located in the 5th left intercostal space in the midclavicular line (8–9 cm from the midsternal line) and is formed entirely by the left ventricle."
+  },
+  {
+    "cat": 1,
+    "q": "When evaluating left ventricular myocardial perfusion, why does the vast majority of left coronary artery blood flow occur during cardiac diastole rather than systole?",
+    "a": [
+      "Aortic pressure is highest during diastole.",
+      "Severe extravascular compression by contracting myocardium during systole increases coronary vascular resistance in intramyocardial vessels.",
+      "The aortic valve leaflets cover the coronary ostia during diastole.",
+      "Coronary sinus pressure drops to negative values during systole."
+    ],
+    "c": 1,
+    "r": "During systole, high intramyocardial wall tension compresses intramural coronary vessels, markedly elevating resistance. During diastole, relaxation relieves compression, permitting peak perfusion."
+  },
+  {
+    "cat": 2,
+    "q": "A fasting lipid panel reveals Total Cholesterol 240 mg/dL, Triglycerides 150 mg/dL, and HDL 50 mg/dL. Using the Friedewald equation, what is the calculated LDL-C value?",
+    "a": [
+      "160 mg/dL",
+      "190 mg/dL",
+      "140 mg/dL",
+      "120 mg/dL"
+    ],
+    "c": 0,
+    "r": "Friedewald equation: LDL-C = Total Cholesterol - HDL-C - (Triglycerides / 5). LDL = 240 - 50 - (150 / 5) = 190 - 30 = 160 mg/dL."
+  },
+  {
+    "cat": 0,
+    "q": "In fetal circulation, what is the physiological role of the ductus arteriosus, and what substance maintains its patency in utero?",
+    "a": [
+      "Shunts oxygenated blood from umbilical vein to IVC; maintained by oxygen.",
+      "Shunts blood from pulmonary artery to descending aorta, bypassing non-functional lungs; maintained by PGE2.",
+      "Connects left and right atria; maintained by indomethacin.",
+      "Connects SVC directly to left ventricle; maintained by bradykinin."
+    ],
+    "c": 1,
+    "r": "The ductus arteriosus connects pulmonary trunk to descending aorta, shunting blood away from fluid-filled lungs. Patency is actively maintained by low fetal PaO2 and circulating Prostaglandin E2 (PGE2)."
+  },
+  {
+    "cat": 1,
+    "q": "On an aortic pressure tracing, what cardiac event directly produces the dicrotic notch (incisura)?",
+    "a": [
+      "Opening of the mitral valve at the start of filling.",
+      "Sudden closure of the aortic valve accompanied by a brief backflow of blood against the closed valve leaflets.",
+      "Peak ventricular ejection pressure.",
+      "Contraction of the left atrium."
+    ],
+    "c": 1,
+    "r": "The dicrotic notch on the aortic pressure tracing marks the closure of the aortic valve at the end of ventricular ejection."
+  },
+  {
+    "cat": 2,
+    "q": "Which blood group is designated as the \"universal donor\" for packed red blood cell (RBC) transfusions, and why?",
+    "a": [
+      "AB positive; because its red cells express A, B, and Rh antigens.",
+      "O negative; because its RBCs lack A, B, and Rh (D) surface antigens, preventing recipient anti-A, anti-B, or anti-D antibody-mediated hemolysis.",
+      "O positive; because it contains anti-A and anti-B antibodies in plasma.",
+      "AB negative; because plasma contains no ABO antibodies."
+    ],
+    "c": 1,
+    "r": "Group O Negative red blood cells express neither A nor B oligosaccharides nor Rh(D) protein antigen on their surface, preventing recipient antibody-mediated hemolysis."
+  },
+  {
+    "cat": 2,
+    "q": "A 30-year-old traveler returning from a tropical region presents with fever, abdominal pain, and marked peripheral leukocytosis with 22% eosinophils. Which primary mechanism accounts for eosinophil-mediated destruction of helminthic parasites?",
+    "a": [
+      "Phagocytosis and intralysosomal destruction by myeloperoxidase.",
+      "Antibody-dependent cellular cytotoxicity (ADCC) releasing Major Basic Protein (MBP) and Eosinophil Cationic Protein (ECP).",
+      "Secretion of IgA antibodies into the intestinal lumen.",
+      "Release of histamine and heparin granules causing local vasoconstriction."
+    ],
+    "c": 1,
+    "r": "Eosinophils bind antibody-coated parasites via Fc receptors and release cytotoxic granule contents—principally Major Basic Protein (MBP) and Eosinophil Cationic Protein (ECP)."
+  },
+  {
+    "cat": 2,
+    "q": "In cancer immunology, how do Tumor-Specific Antigens (TSAs) differ fundamentally from Tumor-Associated Antigens (TAAs)?",
+    "a": [
+      "TSAs are expressed exclusively on tumor cells and not on normal non-malignant tissues.",
+      "TAAs are unique neoantigens caused by somatic frame-shift mutations.",
+      "TSAs are expressed at high levels on fetal tissue only.",
+      "TAAs are recognized only by NK cells."
+    ],
+    "c": 0,
+    "r": "Tumor-Specific Antigens (TSAs) are neoantigens expressed exclusively on malignant cells. Tumor-Associated Antigens (TAAs) are expressed on tumor cells but also present in low amounts on normal tissues."
+  },
+  {
+    "cat": 0,
+    "q": "In fetal circulation, which vascular shunt directs highly oxygenated blood from the umbilical vein directly into the Inferior Vena Cava (IVC), bypassing the hepatic microcirculation?",
+    "a": [
+      "Ductus arteriosus",
+      "Ductus venosus",
+      "Foramen ovale",
+      "Umbilical artery"
+    ],
+    "c": 1,
+    "r": "The ductus venosus connects the umbilical vein directly to the IVC, allowing oxygenated placental blood to bypass the liver sinusoids and reach the heart directly."
+  },
+  {
+    "cat": 2,
+    "q": "Which of the following plasma lipoproteins is LEAST directly affected by the catalytic hydrolytic activity of Lipoprotein Lipase (LPL)?",
+    "a": [
+      "Chylomicrons",
+      "Very Low-Density Lipoproteins (VLDL)",
+      "Low-Density Lipoproteins (LDL)",
+      "Chylomicron remnants"
+    ],
+    "c": 2,
+    "r": "LPL hydrolyzes triglyceride-rich lipoproteins (chylomicrons and VLDL). LDL is a cholesterol-rich particle cleared primarily via hepatic LDL receptors, not direct LPL hydrolysis."
+  },
+  {
+    "cat": 3,
+    "q": "A 60-year-old male develops sustained ventricular tachycardia 12 hours after an acute anterior myocardial infarction. Lidocaine is administered IV. Which electrophysiological property makes Lidocaine selectively effective in ischemic ventricular tissue?",
+    "a": [
+      "High affinity for open and inactivated voltage-gated Na+ channels in depolarized/ischemic myocardium with rapid unbinding during diastole.",
+      "Prolongation of the action potential duration in normal atrial myocardium.",
+      "Blockade of L-type calcium channels in the AV node.",
+      "Direct inhibition of beta-1 adrenergic receptors."
+    ],
+    "c": 0,
+    "r": "Lidocaine (Class Ib) binds rapidly to open and inactivated fast Na+ channels in depolarized/ischemic tissue, unbinding quickly in normal tissue, effectively suppressing post-MI ventricular arrhythmias."
+  },
+  {
+    "cat": 0,
+    "q": "Histological examination of the Inferior Vena Cava demonstrates a well-developed wall. Which layer contains prominent longitudinal bundles of smooth muscle fibers, characteristic of large vena cava-class veins?",
+    "a": [
+      "Tunica intima",
+      "Tunica media",
+      "Tunica adventitia",
+      "Internal elastic lamina"
+    ],
+    "c": 2,
+    "r": "Large veins (SVC/IVC) possess a relatively thin tunica media and a very thick, prominent tunica adventitia containing longitudinally arranged bundles of smooth muscle cells."
+  },
+  {
+    "cat": 0,
+    "q": "During thoracic dissection, the diaphragm is inspected. Structurally, the muscular portion of the diaphragm consists of peripheral skeletal muscle bundles that converge into which central structure?",
+    "a": [
+      "Septum transversum",
+      "Central tendon",
+      "Median arcuate ligament",
+      "Crus of the diaphragm"
+    ],
+    "c": 1,
+    "r": "The muscular components of the diaphragm originate circumferentially and insert into an aponeurotic central tendon."
+  },
+  {
+    "cat": 0,
+    "q": "During embryological development of the diaphragm, which mesodermal structure forms the central tendon of the diaphragm?",
+    "a": [
+      "Pleuroperitoneal membranes",
+      "Septum transversum",
+      "Dorsal mesentery of the esophagus",
+      "Paraxial mesoderm of body wall"
+    ],
+    "c": 1,
+    "r": "The septum transversum gives rise to the central tendon of the adult diaphragm."
+  },
+  {
+    "cat": 0,
+    "q": "In embryonic diaphragm development, which component gives rise to the muscular crura of the adult diaphragm?",
+    "a": [
+      "Septum transversum",
+      "Pleuroperitoneal folds",
+      "Dorsal mesentery of the esophagus",
+      "Cervical myotomes C3-C5"
+    ],
+    "c": 2,
+    "r": "The dorsal mesentery of the esophagus forms the median portion of the diaphragm and develops into the right and left muscular crura."
+  },
+  {
+    "cat": 0,
+    "q": "A thoracic surgeon performs procedures in the posterior mediastinum. Which anatomical path correctly describes the thoracic duct as it ascends through the thorax?",
+    "a": [
+      "Passes through the caval opening at T8, ascending anterior to the esophagus.",
+      "Originates from cisterna chyli, enters thorax via aortic hiatus at T12, ascends between thoracic aorta and azygos vein, crosses to left at T4-T5, and drains into junction of left internal jugular and subclavian veins.",
+      "Enters via esophageal hiatus at T10, draining into right lymphatic duct.",
+      "Ascends along anterior sternal border to enter right subclavian vein."
+    ],
+    "c": 1,
+    "r": "The thoracic duct enters via the aortic hiatus (T12), ascends between the aorta and azygos vein, crosses left at T4-T5, and drains into the left venous angle (IJV and subclavian junction)."
+  },
+  {
+    "cat": 0,
+    "q": "The anterior intercostal arteries supplying the upper six intercostal spaces arise directly as branch vessels from which artery?",
+    "a": [
+      "Thoracic aorta",
+      "Musculophrenic artery",
+      "Internal thoracic (internal mammary) artery",
+      "Superior epigastric artery"
+    ],
+    "c": 2,
+    "r": "The internal thoracic artery descends lateral to the sternum, directly branching into anterior intercostal arteries for the upper 6 intercostal spaces."
+  },
+  {
+    "cat": 1,
+    "q": "An ECG reveals acute ST-segment elevation in leads II, III, and aVF with reciprocal ST depression in lead I and aVL. Which coronary artery is occluded?",
+    "a": [
+      "Left Anterior Descending (LAD) artery",
+      "Right Coronary Artery (RCA)",
+      "Left Circumflex (LCx) artery",
+      "Left main coronary artery"
+    ],
+    "c": 1,
+    "r": "Leads II, III, and aVF view the inferior LV wall, supplied by the Right Coronary Artery (RCA) in dominant anatomy."
+  },
+  {
+    "cat": 0,
+    "q": "Occlusion of the Left Anterior Descending (LAD) coronary artery leads to myocardial infarction affecting which anatomical regions of the heart?",
+    "a": [
+      "Inferior wall and posterior LV",
+      "Anterior 2/3 of interventricular septum, anterior wall of left ventricle, and heart apex",
+      "Right atrial wall and SA node",
+      "Posterior interventricular septum only"
+    ],
+    "c": 1,
+    "r": "The LAD courses in the anterior interventricular groove, supplying the anterior LV wall, anterior two-thirds of the interventricular septum, and apex."
+  },
+  {
+    "cat": 0,
+    "q": "In the superior mediastinum, the left brachiocephalic vein courses anterior to major arterial branches. Which anatomical relation is correct regarding its position?",
+    "a": [
+      "It passes behind the ascending aorta.",
+      "It runs obliquely from left to right, crossing anterior to the three major branches of the aortic arch (brachiocephalic trunk, left common carotid, left subclavian) to join the right brachiocephalic vein forming the SVC.",
+      "It lies posterior to the trachea.",
+      "It drains directly into the left atrium."
+    ],
+    "c": 1,
+    "r": "The left brachiocephalic vein runs obliquely across the superior mediastinum anterior to the roots of the three aortic arch branches, joining the right brachiocephalic vein to form the SVC."
+  },
+  {
+    "cat": 2,
+    "q": "A 32-year-old female with a history of three consecutive early pregnancy losses presents with a deep vein thrombosis (DVT) in her left lower extremity. Laboratory evaluation shows a prolonged aPTT that fails to correct upon 1:1 mixing study with normal pooled plasma. Serology is positive for Anti-beta-2-glycoprotein I IgG. What is the diagnosis?",
+    "a": [
+      "Hemophilia A",
+      "Antiphospholipid Syndrome (APS)",
+      "Von Willebrand Disease",
+      "Factor V Leiden mutation"
+    ],
+    "c": 1,
+    "r": "Antiphospholipid Syndrome (APS) presents with venous/arterial thromboses, pregnancy loss, and lupus anticoagulant/anticardiolipin/anti-beta-2-glycoprotein antibodies causing in vitro aPTT prolongation."
+  },
+  {
+    "cat": 3,
+    "q": "An 18-year-old competitive athlete collapses during basketball practice and dies suddenly. Post-mortem examination shows disproportionate asymmetric hypertrophy of the interventricular septum with myofiber disarray and interstitial fibrosis. What is the diagnosis?",
+    "a": [
+      "Dilated cardiomyopathy",
+      "Hypertrophic Obstructive Cardiomyopathy (HOCM)",
+      "Restrictive cardiomyopathy",
+      "Acute viral myocarditis"
+    ],
+    "c": 1,
+    "r": "HOCM is a leading cause of sudden cardiac death in young athletes, characterized by asymmetric septal hypertrophy, chaotic myofiber disarray, and interstitial fibrosis."
+  },
+  {
+    "cat": 3,
+    "q": "Genetic analysis of patients with Hypertrophic Obstructive Cardiomyopathy (HOCM) most commonly identifies autosomal dominant mutations encoding which class of cellular proteins?",
+    "a": [
+      "Sarcomeric contractile proteins (e.g., MYH7 encoding beta-myosin heavy chain and MYBPC3 encoding myosin-binding protein C)",
+      "Lysosomal storage enzymes",
+      "Mitochondrial electron transport chain complexes",
+      "Desmosomal cell junction proteins"
+    ],
+    "c": 0,
+    "r": "HOCM is an autosomal dominant disorder caused by mutations in sarcomeric contractile genes, primarily MYH7 (beta-myosin heavy chain) and MYBPC3 (cardiac myosin-binding protein C)."
+  },
+  {
+    "cat": 3,
+    "q": "A 48-year-old male presents with chronic recurrent sinusitis, saddle nose deformity, hemoptysis with bilateral cavitary pulmonary nodules on chest CT, and red cell casts in urine (glomerulonephritis). Serum immunofluorescence is positive for PR3-ANCA (c-ANCA). What is the diagnosis?",
+    "a": [
+      "Microscopic Polyangiitis (MPA)",
+      "Granulomatosis with Polyangiitis (Wegener's Granulomatosis)",
+      "Eosinophilic Granulomatosis with Polyangiitis (Churg-Strauss)",
+      "Polyarteritis Nodosa (PAN)"
+    ],
+    "c": 1,
+    "r": "Granulomatosis with Polyangiitis (GPA) is characterized by necrotizing granulomas of the upper/lower respiratory tracts, crescentic glomerulonephritis, and PR3-ANCA / c-ANCA positivity."
+  },
+  {
+    "cat": 2,
+    "q": "A patient with an acute localized tissue infection exhibits massive recruitment of circulating white blood cells. Monocytes migrate into the tissue matrix and differentiate into macrophages. Which of the following functions is performed by macrophages?",
+    "a": [
+      "Secretion of IgE immunoglobulins.",
+      "Phagocytosis of cellular debris/pathogens, antigen presentation on MHC class II molecules, and secretion of pro-inflammatory cytokines (TNF-alpha, IL-1, IL-6).",
+      "Production of major basic protein to kill helminths.",
+      "Synthesis of factor VIII for coagulation."
+    ],
+    "c": 1,
+    "r": "Macrophages are professional antigen-presenting cells (MHC II) that clear debris through phagocytosis and release cytokines such as TNF-alpha, IL-1, and IL-6."
+  },
+  {
+    "cat": 2,
+    "q": "Prostacyclin (PGI2), synthesized by intact vascular endothelial cells from arachidonic acid, plays a vital role in maintaining vascular patency. What are its dual physiological actions on blood vessels and platelets?",
+    "a": [
+      "Vasoconstriction and promotion of platelet aggregation.",
+      "Potent vasodilation and inhibition of platelet aggregation (via intracellular cAMP elevation).",
+      "Local bronchoconstriction and neutrophil chemotaxis.",
+      "Increased systemic vascular resistance and activation of GPIIb/IIIa."
+    ],
+    "c": 1,
+    "r": "Endothelial prostacyclin (PGI2) increases cAMP, causing vasodilation and preventing platelet aggregation, balancing platelet-derived Thromboxane A2."
+  },
+  {
+    "cat": 1,
+    "q": "A 22-year-old male with Wolff-Parkinson-White (WPW) syndrome experiences episodes of sudden-onset rapid palpitations. Which electrophysiological mechanism causes Atrioventricular Re-entrant Tachycardia (AVRT) in this patient?",
+    "a": [
+      "Abnormal automaticity originating in pulmonary vein sleeves.",
+      "Re-entry circuit involving anterograde conduction through the AV node and retrograde conduction through a congenital accessory pathway (Bundle of Kent).",
+      "Delayed afterdepolarizations induced by digoxin toxicity.",
+      "Sinus node dysfunction."
+    ],
+    "c": 1,
+    "r": "WPW involves an accessory pathway (Bundle of Kent). In orthodromic AVRT, the impulse conducts down the AV node and circles retrogradely up the accessory pathway."
+  },
+  {
+    "cat": 1,
+    "q": "A 30-year-old female presents to the emergency department with a sudden onset of narrow-complex tachycardia at a rate of 190 bpm. Retrograde P waves are buried within the QRS complex (pseudo-R' in lead V1). Carotid sinus massage terminates the arrhythmia abruptly. What is the mechanism of this arrhythmia?",
+    "a": [
+      "Atrioventricular Nodal Re-entrant Tachycardia (AVNRT) involving dual pathways (slow and fast) within the AV node.",
+      "Atrial flutter with 2:1 block.",
+      "Ventricular tachycardia originating in the LV apex.",
+      "Sinus tachycardia driven by high sympathetic tone."
+    ],
+    "c": 0,
+    "r": "AVNRT relies on dual pathways (slow and fast) within the AV node. Vagal maneuvers increase vagal tone to the AV node, terminating the re-entrant circuit."
+  },
+  {
+    "cat": 1,
+    "q": "According to fluid dynamics and the principle of continuity (Q = A x v), in which segment of the systemic circulation is blood flow velocity the HIGHEST?",
+    "a": [
+      "Capillaries",
+      "Arterioles",
+      "Ascending Aorta",
+      "Inferior Vena Cava"
+    ],
+    "c": 2,
+    "r": "Velocity is inversely proportional to total cross-sectional area. The ascending aorta has the smallest total cross-sectional area of the arterial tree, resulting in peak linear flow velocity."
+  },
+  {
+    "cat": 3,
+    "q": "A 68-year-old female presents with a 4-week history of low-grade fever, night sweats, weight loss, and general malaise. Extensive workup yields no localized infection, leading to a preliminary diagnosis of Pyrexia of Unknown Origin (PUO). ESR is elevated at 110 mm/hr. Which class of vascular diseases frequently manifests as PUO before focal ischemic symptoms develop?",
+    "a": [
+      "Large vessel vasculitides (e.g., Giant Cell Arteritis / Takayasu Arteritis)",
+      "Capillary hemangiomas",
+      "Monogenic hyperlipidemia",
+      "Venous insufficiency"
+    ],
+    "c": 0,
+    "r": "Large vessel vasculitides routinely present with non-specific constitutional features (fever of unknown origin, elevated ESR, weight loss) before localized ischemic signs appear."
+  },
+  {
+    "cat": 3,
+    "q": "A 42-year-old male with a long history of severe asthma and allergic rhinitis presents with peripheral neuropathy (glove-and-stocking numbness) and palpable purpura. Laboratory testing shows marked eosinophilia (35% WBCs) and positive p-ANCA (anti-MPO). Biopsy demonstrates necrotizing small-vessel vasculitis with extravascular granulomas. What is the diagnosis?",
+    "a": [
+      "Granulomatosis with Polyangiitis (Wegener)",
+      "Eosinophilic Granulomatosis with Polyangiitis (Churg-Strauss syndrome)",
+      "Henoch-Schönlein Purpura",
+      "Kawasaki disease"
+    ],
+    "c": 1,
+    "r": "Eosinophilic Granulomatosis with Polyangiitis (EGPA) features the triad of asthma, marked peripheral eosinophilia, necrotizing vasculitis with granulomas, and p-ANCA / MPO antibodies."
+  },
+  {
+    "cat": 3,
+    "q": "A 7-year-old boy presents 10 days after a viral upper respiratory infection with palpable purpura over his buttocks and lower extremities, colicky abdominal pain, and microscopic hematuria. Platelet count is normal. Biopsy reveals leukocytoclastic vasculitis with IgA immune complex deposition. What is the typical clinical course for this vasculitis?",
+    "a": [
+      "Universal progression to end-stage renal disease within 6 months.",
+      "Excellent prognosis with self-limiting disease requiring supportive care in most pediatric patients.",
+      "Fatal coronary artery aneurysms if untreated with IVIG.",
+      "Lifelong requirement for plasmapheresis."
+    ],
+    "c": 1,
+    "r": "Henoch-Schönlein Purpura (IgA Vasculitis) in children generally carries an excellent prognosis, resolving spontaneously with supportive care over several weeks."
+  },
+  {
+    "cat": 1,
+    "q": "On a standard Pressure-Volume (PV) loop diagram, which specific point on the loop corresponds to the opening of the aortic valve and the start of ventricular ejection?",
+    "a": [
+      "Bottom-right corner (End-Diastolic Volume point)",
+      "Bottom-left corner (End-Systolic Volume point)",
+      "Point along the left vertical line where pressure exceeds aortic diastolic pressure",
+      "Point along the right vertical line where intraventricular pressure exceeds aortic diastolic pressure"
+    ],
+    "c": 3,
+    "r": "During isovolumetric contraction (right vertical line), LV pressure rises until it exceeds aortic diastolic pressure; at that moment, the aortic valve opens and ejection begins."
+  },
+  {
+    "cat": 1,
+    "q": "How do systemic arterioles and pulmonary arterioles respond differently to acute tissue hypoxia?",
+    "a": [
+      "Systemic arterioles constrict; pulmonary arterioles dilate.",
+      "Systemic arterioles dilate (to increase blood flow); pulmonary arterioles constrict (Hypoxic Pulmonary Vasoconstriction to divert blood to ventilated alveoli).",
+      "Both systemic and pulmonary arterioles dilate equally.",
+      "Both systemic and pulmonary arterioles undergo irreversible thrombosis."
+    ],
+    "c": 1,
+    "r": "Systemic arterioles dilate to match local tissue metabolic demand during hypoxia, while pulmonary vessels undergo hypoxic vasoconstriction to shunt blood toward well-ventilated alveoli."
+  },
+  {
+    "cat": 2,
+    "q": "What is the physiological role of plasminogen in the fibrinolytic pathway?",
+    "a": [
+      "Inactive zymogen that binds to fibrin clots and is cleaved by tPA into active plasmin, which degrades cross-linked fibrin into D-dimers.",
+      "Factor that stabilizes fibrin monomers into insoluble polymers.",
+      "Endothelial enzyme that converts arachidonic acid to TXA2.",
+      "Platelet membrane receptor for vWF."
+    ],
+    "c": 0,
+    "r": "Plasminogen binds to fibrin and is cleaved by tPA into active plasmin, an enzyme that degrades fibrin clots into degradation products including D-dimers."
+  },
+  {
+    "cat": 3,
+    "q": "What is the exact cellular mechanism of action of Clopidogrel as an antiplatelet agent?",
+    "a": [
+      "Reversible inhibition of COX-1 enzyme.",
+      "Irreversible binding and blockade of the P2Y12 ADP receptor on platelets, preventing ADP-induced activation of GPIIb/IIIa complex.",
+      "Direct inhibition of thrombin (Factor IIa).",
+      "Phosphodiesterase-3 inhibition causing cAMP elevation."
+    ],
+    "c": 1,
+    "r": "Clopidogrel is an oral thienopyridine prodrug whose active metabolite irreversibly blocks platelet P2Y12 ADP receptors, preventing downstream activation of GPIIb/IIIa."
+  },
+  {
+    "cat": 2,
+    "q": "A newborn develops severe purpura fulminans characterized by extensive cutaneous microvascular thrombosis and hemorrhagic skin necrosis shortly after birth. Genetic testing reveals homozygous deficiency of Protein C. What is the physiological function of activated Protein C?",
+    "a": [
+      "Inactivation of Factors Va and VIIIa in the presence of cofactor Protein S.",
+      "Direct activation of Factor X to Xa.",
+      "Cleavage of prothrombin to thrombin.",
+      "Blockade of antithrombin III."
+    ],
+    "c": 0,
+    "r": "Activated Protein C, together with Protein S, proteolytically degrades activated Factors Va and VIIIa, acting as an essential endogenous anticoagulant mechanism."
+  },
+  {
+    "cat": 2,
+    "q": "An Rh-negative mother delivers her second child, an Rh-positive infant, who presents with severe jaundice, anemia, hepatosplenomegaly, and hydrops fetalis. What immunological mechanism causes Hemolytic Disease of the Newborn (HDN)?",
+    "a": [
+      "Maternal IgM antibodies crossing placenta to attack fetal RBCs.",
+      "Maternal IgG anti-D antibodies (formed during prior Rh+ pregnancy sensitization) crossing the placenta and causing immune-mediated intravascular/extravascular hemolysis of fetal Rh-positive RBCs.",
+      "Direct viral destruction of fetal bone marrow stem cells.",
+      "ABO mismatch causing complement-mediated fetal erythrocyte lysis."
+    ],
+    "c": 1,
+    "r": "Sensitization during a previous pregnancy generates maternal IgG anti-D antibodies that cross the placenta to bind and destroy Rh(D)-positive fetal erythrocytes."
+  },
+  {
+    "cat": 2,
+    "q": "A 35-year-old patient with severe hyperhomocysteinemia is at high risk for premature arterial thrombosis. Which combination of vitamin supplements is therapeutically administered to lower serum homocysteine levels?",
+    "a": [
+      "Vitamin A, Vitamin C, Vitamin E",
+      "Pyridoxine (Vitamin B6), Folic Acid (Vitamin B9), and Cyanocobalamin (Vitamin B12)",
+      "Thiamine (Vitamin B1), Riboflavin (Vitamin B2), Niacin (Vitamin B3)",
+      "Vitamin K1 and Vitamin K2"
+    ],
+    "c": 1,
+    "r": "Homocysteine clearance involves remethylation (requiring B9 and B12) and transsulfuration (requiring B6). Supplementing B6, B9, and B12 effectively reduces elevated serum levels."
+  },
+  {
+    "cat": 3,
+    "q": "Pathologically, severe homocysteinemia causes vascular injury through which primary mechanism?",
+    "a": [
+      "Direct endothelial cell damage, oxidative stress, smooth muscle proliferation, and inhibition of nitric oxide synthesis leading to premature atherosclerosis and thrombosis.",
+      "Deposition of amyloid fibrils in vessel walls.",
+      "Destruction of vascular elastic lamina by elastase.",
+      "Autoimmune vasculitis with granuloma formation."
+    ],
+    "c": 0,
+    "r": "Elevated homocysteine produces reactive oxygen species, directly damaging endothelial cells, promoting smooth muscle proliferation, reducing NO availability, and triggering thrombosis."
+  },
+  {
+    "cat": 3,
+    "q": "Which of the following vaccine types is strictly CONTRAINDICATED in severely immunocompromised patients or organ transplant recipients receiving antirejection therapy?",
+    "a": [
+      "Inactivated viral vaccines (e.g., annual influenza shot)",
+      "Recombinant subunit vaccines (e.g., Hepatitis B vaccine)",
+      "Live attenuated vaccines (e.g., MMR, Varicella, Yellow Fever)",
+      "Toxoid vaccines (e.g., Tetanus toxoid)"
+    ],
+    "c": 2,
+    "r": "Live attenuated vaccines contain replication-competent organisms that can undergo unchecked replication in immunocompromised hosts, causing severe or fatal vaccine-strain disease."
+  },
+  {
+    "cat": 3,
+    "q": "How is a true Bloodstream Infection (BSI) clinically defined, and what primary diagnostic step is required before initiating empirical antibiotic therapy?",
+    "a": [
+      "Transient skin flora contamination; single sputum culture.",
+      "Presence of viable bacteria or fungi circulating in blood causing systemic inflammatory response (sepsis); verified by drawing serial blood culture sets from separate venipuncture sites.",
+      "Localized subcutaneous abscess without systemic signs; urine dipstick.",
+      "Viral infection of monocytes; stool antigen test."
+    ],
+    "c": 1,
+    "r": "Bloodstream infections involve viable microorganisms in the circulation triggering systemic illness. Diagnostic protocol requires obtaining at least two separate blood culture sets before initiating therapy."
+  },
+  {
+    "cat": 3,
+    "q": "What is the fundamental clinical distinction between a Bloodstream Infection (BSI) and a Blood-Borne Infection (BBI)?",
+    "a": [
+      "BSIs are viral; BBIs are bacterial.",
+      "BSI refers to acute circulating bacteremia/fungemia (e.g., S. aureus, E. coli), whereas BBI refers specifically to viral pathogens transmitted via blood/body fluids causing chronic systemic disease (e.g., HBV, HCV, HIV).",
+      "BBIs are localized to heart valves; BSIs affect lower extremity veins.",
+      "There is no clinical distinction."
+    ],
+    "c": 1,
+    "r": "BSI refers to acute bacteremia or fungemia, whereas BBI refers to chronic systemic viral infections (HBV, HCV, HIV) transmitted through blood/body fluid exposure."
+  },
+  {
+    "cat": 3,
+    "q": "In suspected Infective Endocarditis (IE), why is Transesophageal Echocardiography (TEE) preferred over Transthoracic Echocardiography (TTE) in patients with prosthetic heart valves or suspected perivalvular abscess?",
+    "a": [
+      "TEE does not require ultrasound waves.",
+      "TEE provides superior spatial resolution and diagnostic sensitivity (>90–95%) for small vegetations (<2 mm), prosthetic valve endocarditis, and perivalvular abscesses due to the transducer's close proximity to the posterior heart.",
+      "TTE cannot image the left ventricle.",
+      "TEE can replace blood cultures completely."
+    ],
+    "c": 1,
+    "r": "TEE positions the probe in the esophagus immediately posterior to the left atrium, avoiding acoustic shadowing and yielding high sensitivity (>90%) for prosthetic vegetations and root abscesses."
+  },
+  {
+    "cat": 3,
+    "q": "A patient with a central venous catheter develops high fevers. Blood cultures grow Candida albicans. To fulfill major Duke criteria for fungal Infective Endocarditis, what blood culture pattern is required?",
+    "a": [
+      "Single positive blood culture drawn from catheter tip only.",
+      "Isolation of Candida spp. from at least two separate blood culture sets drawn at different times.",
+      "Positive urine fungal culture.",
+      "Sputum fungal stain."
+    ],
+    "c": 1,
+    "r": "Major Duke microbiological criteria require isolating the typical pathogen from at least two separate blood culture draws to confirm sustained bacteremia/fungemia over transient contamination."
+  },
+  {
+    "cat": 3,
+    "q": "In cases of culture-negative endocarditis where standard blood cultures fail to grow an organism due to prior antibiotic administration, which advanced molecular technique can identify pathogen DNA directly from plasma?",
+    "a": [
+      "Western blot",
+      "Next-Generation Sequencing (NGS) / PCR of plasma microbial cell-free DNA (cfDNA)",
+      "Hemagglutination assay",
+      "Serum protein electrophoresis"
+    ],
+    "c": 1,
+    "r": "PCR and next-generation sequencing targeting microbial cell-free DNA (cfDNA) allow rapid pathogen detection directly from blood when cultures are suppressed by antimicrobial therapy."
+  },
+  {
+    "cat": 3,
+    "q": "A 45-year-old male with a history of mitral valve prolapse undergoes dental extraction. Two weeks later, he presents with low-grade fever, fatigue, and a new systolic murmur. Which organism is the most common cause of subacute bacterial endocarditis following dental procedures?",
+    "a": [
+      "Staphylococcus aureus",
+      "Viridans group streptococci (e.g., S. sanguinis, S. mutans)",
+      "Pseudomonas aeruginosa",
+      "Streptococcus pyogenes"
+    ],
+    "c": 1,
+    "r": "Viridans group streptococci inhabit the oral flora and can produce transient bacteremia following dental manipulation, adhering to damaged or abnormal native heart valves."
+  },
+  {
+    "cat": 3,
+    "q": "How do Staphylococcus aureus and Viridans group streptococci differ in their clinical presentation and valvular targeting in Infective Endocarditis?",
+    "a": [
+      "S. aureus causes acute endocarditis attacking normal heart valves with rapid destruction; Viridans streptococci cause subacute endocarditis attacking previously damaged/diseased valves.",
+      "S. aureus only infects prosthetic valves; Viridans only infects aortic valve.",
+      "Viridans streptococci cause large emboli in IV drug users; S. aureus is low virulence.",
+      "Both behave identically."
+    ],
+    "c": 0,
+    "r": "S. aureus is highly virulent, causing acute, destructive endocarditis on structurally normal valves. Viridans streptococci are low-virulence organisms producing indolent, subacute disease on pre-damaged valves."
+  },
+  {
+    "cat": 3,
+    "q": "A patient who lived in an endemic region along the Nile River presents with portal hypertension, splenomegaly, and cor pulmonale. Liver biopsy reveals granulomatous inflammation surrounding parasitic eggs in portal venules. What parasite causes egg embolization to portal and pulmonary microvessels?",
+    "a": [
+      "Plasmodium falciparum",
+      "Schistosoma mansoni / Schistosoma haematobium",
+      "Trypanosoma cruzi",
+      "Toxoplasma gondii"
+    ],
+    "c": 1,
+    "r": "Schistosoma eggs deposited in mesenteric vessels embolize to the liver, causing Symmers pipestem periportal fibrosis, and can shunt to pulmonary arterioles causing granulomas and cor pulmonale."
+  },
+  {
+    "cat": 3,
+    "q": "Following successful percutaneous coronary intervention (PCI) for an acute STEMI, some patients suffer microvascular obstruction (\"no-reflow phenomenon\"). What distinguishes microvascular injury from direct cardiomyocyte necrosis?",
+    "a": [
+      "Microvascular injury involves capillary endothelial swelling, microthrombi, and microvascular destruction preventing tissue perfusion despite epicardial vessel patency; cardiomyocyte necrosis involves cellular death marked by Troponin release.",
+      "Microvascular injury increases cardiac output.",
+      "Cardiomyocyte necrosis is reversible; microvascular injury is prevented by aspirin alone.",
+      "Microvascular injury affects only the right atrium."
+    ],
+    "c": 0,
+    "r": "Cardiomyocyte necrosis is cellular death releasing biomarkers. Microvascular obstruction (no-reflow) results from capillary endothelial edema, plugging, and breakdown, impeding myocardial perfusion despite patent epicardial vessels."
+  },
+  {
+    "cat": 0,
+    "q": "A 38-year-old male presents with sharp chest pain relieved by sitting forward and diffuse ST-segment elevation on ECG. Cardiac MRI is performed. Which CMR finding confirms acute pericarditis and pericardial inflammation?",
+    "a": [
+      "Transmural subendocardial late gadolinium enhancement (LGE) of the LV myocardium.",
+      "Pericardial thickening (>3 mm) with intense pericardial late gadolinium enhancement and high T2-weighted signal intensity indicating pericardial edema.",
+      "Systolic anterior motion of the mitral valve.",
+      "Right ventricular apical akinesis."
+    ],
+    "c": 1,
+    "r": "CMR confirms acute pericardial inflammation via pericardial thickening (>3 mm), T2-weighted edema, and intense late gadolinium enhancement of the inflamed pericardial layers."
+  },
+  {
+    "cat": 2,
+    "q": "A 45-year-old female with severe iron deficiency anemia receives an intravenous infusion of ferric carboxymaltose (parenteral iron). Ten minutes into the infusion, she experiences sudden chest tightness, back pain, flushing, and hypotension. What is the cause of this adverse event?",
+    "a": [
+      "Acute anaphylactic or complement-activation-related pseudoallergy (CARPA) / rapid free iron toxicity.",
+      "Acute transmural myocardial infarction.",
+      "Hemolytic reaction due to ABO blood mismatch.",
+      "Bacterial sepsis from contaminated IV fluid."
+    ],
+    "c": 0,
+    "r": "Parenteral iron formulations can cause acute non-IgE complement activation-related pseudoallergy (Fishbane reaction) or labile iron reactions presenting with chest/back pain and flushing."
+  },
+  {
+    "cat": 3,
+    "q": "A 58-year-old patient with essential hypertension is started on Nifedipine. What is the cellular site of action and hemodynamic effect of dihydropyridine calcium channel blockers?",
+    "a": [
+      "Blockade of L-type Ca2+ channels in vascular smooth muscle cells, causing arterial vasodilation and reduced systemic vascular resistance (afterload).",
+      "Direct inhibition of the Na+/Ca2+ exchanger in Purkinje fibers.",
+      "Venodilation with prominent reduction in preload.",
+      "Central alpha-2 adrenergic stimulation."
+    ],
+    "c": 0,
+    "r": "Dihydropyridines (e.g., Nifedipine) selectively block voltage-gated L-type calcium channels on vascular smooth muscle, causing arteriolar dilation and reducing systemic vascular resistance."
+  },
+  {
+    "cat": 3,
+    "q": "What structural component forms the basis of the recombinant Human Papillomavirus (HPV) vaccine, and what immune response does it elicit?",
+    "a": [
+      "Live attenuated HPV genome; induces cytotoxic T-cell lysis of cervix cells.",
+      "Recombinant L1 major capsid protein self-assembled into non-infectious Virus-Like Particles (VLPs), inducing high titers of neutralizing anti-L1 IgG antibodies.",
+      "Purified E6 and E7 oncogenic proteins.",
+      "Inactivated whole viral DNA."
+    ],
+    "c": 1,
+    "r": "The HPV vaccine utilizes recombinant L1 major capsid proteins assembled into non-infectious virus-like particles (VLPs), inducing neutralizing IgG antibodies that block viral entry."
+  },
+  {
+    "cat": 1,
+    "q": "For a healthy adult at rest with a heart rate of 75 beats/min and a stroke volume of 80 mL/beat, what is the calculated cardiac output?",
+    "a": [
+      "3.0 L/min",
+      "4.5 L/min",
+      "6.0 L/min",
+      "8.5 L/min"
+    ],
+    "c": 2,
+    "r": "Cardiac Output = Heart Rate x Stroke Volume. CO = 75 beats/min x 0.080 L/beat = 6.0 L/min."
+  },
+  {
+    "cat": 2,
+    "q": "Immunohistochemical staining of a malignant lymph node biopsy shows strong positivity for CD79a and BCL6. Which cell lineage and lymphoma category do these markers represent?",
+    "a": [
+      "T-lymphocyte lineage; Anaplastic large cell lymphoma",
+      "B-lymphocyte lineage; Germinal center B-cell derived Non-Hodgkin Lymphoma (e.g., Follicular Lymphoma or DLBCL)",
+      "Myeloid lineage; Acute Myeloid Leukemia",
+      "NK-cell lineage; NK-cell lymphoma"
+    ],
+    "c": 1,
+    "r": "CD79a is a lineage-specific B-cell marker, and BCL6 is expressed by germinal center B-cells, indicating a germinal center-derived B-cell non-Hodgkin lymphoma."
+  },
+  {
+    "cat": 1,
+    "q": "A patient in cardiogenic shock exhibits a leftward and downward shift of the end-systolic point on their PV loop, resulting in a narrowed horizontal width of the loop. What parameter is directly reduced?",
+    "a": [
+      "End-Diastolic Volume only",
+      "Stroke Volume (SV = EDV - ESV)",
+      "Systemic Vascular Resistance",
+      "Venous compliance"
+    ],
+    "c": 1,
+    "r": "The width of the ventricular PV loop represents Stroke Volume (SV = EDV - ESV). In pump failure, systolic emptying is impaired, increasing ESV and narrowing stroke volume."
+  },
+  {
+    "cat": 2,
+    "q": "A 28-year-old female undergoes laboratory evaluation for fatigue. Her CBC shows Hb 9.2 g/dL, and her reticulocyte count is reported as 1.5% (normal reference range: 0.5% to 2.5–3.0%). What does a normal/uncompensated reticulocyte count in the presence of significant anemia indicate?",
+    "a": [
+      "Active hyperproliferative bone marrow response to intravascular hemolysis.",
+      "Inadequate bone marrow erythroid response (hypoproliferative anemia) due to nutrient deficiency (iron, B12, folate) or marrow failure.",
+      "Acute severe gastrointestinal hemorrhage within the last 2 hours.",
+      "Normal physiological adaptation to high altitude."
+    ],
+    "c": 1,
+    "r": "In significant anemia, a functioning marrow should increase reticulocyte production above normal (>2.5-3.0%). A non-elevated reticulocyte count points to hypoproliferative anemia."
+  },
+  {
+    "cat": 3,
+    "q": "Histological analysis of coronary artery atheromatous plaques identifies structural variations that determine plaque stability. Which combination of features characterizes the LEAST vulnerable (most stable) coronary plaque?",
+    "a": [
+      "Thin fibrous cap (<65 um), large necrotic lipid core (>40% plaque volume), and dense macrophage infiltration.",
+      "Thick intact collagenous fibrous cap, small lipid core, low inflammatory cell density, and abundant extracellular matrix/smooth muscle cells.",
+      "Superficial erosion with occlusive erythrocyte-rich thrombus.",
+      "Intra-plaque hemorrhage with active rupture."
+    ],
+    "c": 1,
+    "r": "Stable plaques feature a thick, intact collagenous fibrous cap, small necrotic lipid core, and minimal inflammatory cell infiltration, providing resistance to rupture."
+  },
+  {
+    "cat": 2,
+    "q": "A patient diagnosed with pernicious anemia due to anti-intrinsic factor antibodies requires lifelong Vitamin B12 replacement. Which pharmaceutical form of Vitamin B12 is administered parenterally to treat this condition?",
+    "a": [
+      "Ferrous sulfate",
+      "Cyanocobalamin / Hydroxocobalamin",
+      "Pyridoxine",
+      "Folinic acid"
+    ],
+    "c": 1,
+    "r": "Cyanocobalamin or hydroxocobalamin is administered parenterally via intramuscular injection to bypass intrinsic-factor dependent ileal absorption."
+  },
+  {
+    "cat": 3,
+    "q": "Which of the following conditions represents a major MODIFIABLE risk factor for the development of accelerated atherosclerosis and coronary artery disease?",
+    "a": [
+      "Advanced age",
+      "Male sex",
+      "Family history of premature CAD",
+      "Diabetes Mellitus / Systemic Hypertension"
+    ],
+    "c": 3,
+    "r": "Diabetes mellitus, hypertension, smoking, and dyslipidemia are classic modifiable risk factors, whereas age, biological sex, and family history are non-modifiable."
+  },
+  {
+    "cat": 3,
+    "q": "A 55-year-old male arrives at a rural emergency department with acute STEMI onset 90 minutes ago. Percutaneous Coronary Intervention (PCI) is unavailable within 2 hours. Alteplase (tPA) is administered. What is the mechanism of action and primary risk of Alteplase?",
+    "a": [
+      "Direct cleavage of fibrinogen; risk of hypertension.",
+      "Recombinant tissue plasminogen activator that converts clot-bound plasminogen to plasmin, lysing the coronary thrombus; primary risk is severe systemic bleeding (especially intracranial hemorrhage).",
+      "Blockade of ADP P2Y12 receptors; risk of agranulocytosis.",
+      "Inhibition of Vitamin K epoxide reductase; risk of skin necrosis."
+    ],
+    "c": 1,
+    "r": "Alteplase activates clot-bound plasminogen to plasmin, degrading coronary thrombi. Its major risk is serious systemic bleeding, particularly hemorrhagic stroke."
+  },
+  {
+    "cat": 1,
+    "q": "A 60-year-old male with untreated essential hypertension maintains a baseline blood pressure of 165/95 mmHg for several years without acute spells of hypotension or bradycardia. How do arterial baroreceptors respond to chronic sustained hypertension over time?",
+    "a": [
+      "They increase firing permanently, keeping heart rate below 40 bpm.",
+      "They undergo \"resetting\" within 1–2 days, shifting their operational sensitivity threshold upward to maintain the higher baseline BP while continuing to buffer acute fluctuations.",
+      "They undergo complete anatomical necrosis.",
+      "They shift control entirely to renal chemoreceptors."
+    ],
+    "c": 1,
+    "r": "Arterial baroreceptors reset their operating range upward within 24 to 48 hours of sustained elevated arterial pressure, buffering acute fluctuations around the new elevated setpoint."
+  },
+  {
+    "cat": 0,
+    "q": "During coronary anatomy dissection, which venous structure runs along the anterior interventricular sulcus side-by-side with the Left Anterior Descending (LAD) artery?",
+    "a": [
+      "Great Cardiac Vein",
+      "Middle Cardiac Vein",
+      "Small Cardiac Vein",
+      "Anterior Cardiac Veins"
+    ],
+    "c": 0,
+    "r": "The great cardiac vein ascends in the anterior interventricular sulcus parallel to the LAD before curving into the coronary sinus."
+  },
+  {
+    "cat": 2,
+    "q": "A 24-year-old female presents with heavy menstrual bleeding and severe fatigue. Laboratory results demonstrate microcytic hypochromic anemia. Which diagnostic serum panel profile confirms Iron Deficiency Anemia?",
+    "a": [
+      "High Ferritin, Low TIBC, High Serum Iron",
+      "Low Serum Ferritin (<30 ng/mL), High Total Iron-Binding Capacity (TIBC), Low Serum Iron, and Low Transferrin Saturation (<15%)",
+      "Normal Ferritin, Low TIBC, High Vitamin B12",
+      "High Ferritin, High TIBC, High Transferrin Saturation"
+    ],
+    "c": 1,
+    "r": "Iron deficiency anemia is characterized by depleted iron stores indicated by low ferritin, high TIBC, low serum iron, and low transferrin saturation (<15%)."
+  },
+  {
+    "cat": 2,
+    "q": "A 68-year-old male is evaluated for back pain, anemia, and elevated serum creatinine. Serum protein electrophoresis shows an IgG M-spike. Bone marrow aspirate reveals 35% clonal plasma cells. Which of the following features is NOT characteristic of Multiple Myeloma?",
+    "a": [
+      "Punched-out lytic bone lesions on skeletal survey.",
+      "Hypercalcemia and renal insufficiency (light chain cast nephropathy).",
+      "Predominant IgM monoclonal spike with marked hyperviscosity syndrome (which characterizes Waldenström Macroglobulinemia).",
+      "Rouleaux formation on peripheral blood smear."
+    ],
+    "c": 2,
+    "r": "Multiple Myeloma produces IgG or IgA paraproteins and presents with CRAB features. A high IgM paraprotein peak with hyperviscosity defines Waldenström Macroglobulinemia."
+  }
+];

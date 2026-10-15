@@ -1,0 +1,572 @@
+import { Question } from './types';
+
+// Categories:
+// 0: Embryology & Anatomy
+// 1: Physiology & Arrhythmias
+// 2: Cardiomyopathy & CAD
+// 3: Infection & Valves
+export const cvbTbl2Questions: Question[] = [
+  // Questions 1 to 40
+  {
+    cat: 0,
+    q: 'A premature neonate presents with tachypnea, bounding peripheral pulses, and a continuous "machinery" murmur heard loudest at the left infraclavicular area. Maternal history is notable for a first-trimester viral illness featuring a maculopapular rash and lymphadenopathy. Which embryological structure failed to close in this infant?',
+    a: ['Foramen ovale', 'Ductus arteriosus', 'Ductus venosus', 'Truncus arteriosus'],
+    c: 1,
+    r: 'Patent ductus arteriosus (PDA) occurs when the fetal shunt connecting the pulmonary trunk to the aorta fails to close postnatally. It results in a left-to-right shunt (aorta → pulmonary trunk) and is classically associated with maternal rubella infection and prematurity.'
+  },
+  {
+    cat: 0,
+    q: 'A 48-year-old female presents with persistent hoarseness. A thoracic CT angiogram reveals a large saccular aneurysm of the aortic arch compressing adjacent neural structures. Which specific nerve is compressed in the groove between the trachea and esophagus?',
+    a: ['Right recurrent laryngeal nerve', 'Left recurrent laryngeal nerve', 'Left phrenic nerve', 'Sympathetic trunk'],
+    c: 1,
+    r: 'The left recurrent laryngeal nerve branches from the left vagus nerve at the inferior margin of the aortic arch lateral to the ligamentum arteriosum, loops under the arch, and ascends in the groove between the trachea and esophagus. Compression from an aortic arch aneurysm or mediastinal mass causes vocal cord paralysis and hoarseness.'
+  },
+  {
+    cat: 0,
+    q: 'During elective coronary artery bypass graft (CABG) surgery, the cardiothoracic surgeon inserts a vascular clamp into a pericardial recess situated posterior to the ascending aorta and pulmonary trunk, but anterior to the superior vena cava. Which anatomical space is utilized to control arterial outflow hemorrhage?',
+    a: ['Oblique pericardial sinus', 'Transverse pericardial sinus', 'Costodiaphragmatic recess', 'Anterior mediastinum'],
+    c: 1,
+    r: 'The transverse pericardial sinus lies posterior to the aorta and pulmonary trunk and anterior to the superior vena cava (superior to the left atrium). Placing a clamp or finger through this passage separates arteries from veins to divert or stop blood flow during bypass surgery.'
+  },
+  {
+    cat: 0,
+    q: 'A newborn infant is evaluated for cyanosis and tachypnea. Echocardiography demonstrates that the aorta originates anteriorly from the morphological right ventricle, while the pulmonary trunk originates from the morphological left ventricle. Which embryological error is responsible?',
+    a: ['Incomplete formation of the endocardial cushions', 'Failure of the aorticopulmonary septum to spiral', 'Deficient growth of the septum secundum', 'Leftward looping of the primitive heart tube'],
+    c: 1,
+    r: 'In Transposition of the Great Arteries (TGA), the aorticopulmonary (spiral) septum fails to complete its normal 180° spiral rotation during partitioning of the truncus arteriosus and bulbus cordis. Consequently, the aorta arises anteriorly from the right ventricle and the pulmonary trunk arises from the left ventricle.'
+  },
+  {
+    cat: 0,
+    q: 'A 24-year-old female presents with severe pleuritic retrosternal chest pain that improves markedly when she sits upright and leans forward. A pericardial friction rub is auscultated over the left sternal border. Which nerve fibers carry the somatic pain sensation from the parietal pericardium?',
+    a: ['Vagus nerves (CN X)', 'Phrenic nerves (C3–C5)', 'Intercostal nerves (T1–T4)', 'Thoracic sympathetic splanchnic nerves'],
+    c: 1,
+    r: 'Somatic sensation (pain) from the fibrous pericardium and parietal layer of the serous pericardium is carried exclusively by the phrenic nerves (C3, C4, C5), explaining why pericardial pain is frequently referred to the supraclavicular shoulder or neck area dermatomes.'
+  },
+  {
+    cat: 2,
+    q: 'A 32-year-old asymptomatic runner undergoes a family screening evaluation after his brother died suddenly at age 19. Genetic testing identifies a missense mutation in a sarcomeric protein gene. Histological examination of cardiac tissue in patients with hypertrophic obstructive cardiomyopathy (HOCUM) characteristically demonstrates which finding?',
+    a: ['Stretched, attenuated myocytes with no disarray', 'Marked myocyte disarray with disordered, enlarged myocytes', 'Massive replacement of myocardium with adipose tissue', 'Extensive extracellular calcification of the fibrous skeleton'],
+    c: 1,
+    r: 'HCM/HOCUM is a 100% genetic disease of sarcomeric proteins marked histologically by prominent "myocyte disarray" (disordered, hypertrophied myocytes that are inefficient in linear force generation) and interstitial fibrosis.'
+  },
+  {
+    cat: 3,
+    q: 'A 66-year-old male with a prosthetic mechanical mitral valve develops subacute bacterial endocarditis. Blood cultures reveal Gram-positive, coagulase-negative staphylococci (Staphylococcus epidermidis). What initial pathogenic mechanism is most responsible for this organism establishing chronic infection on prosthetic devices?',
+    a: ['Production of an extracellular slime/biofilm matrix', 'Secretion of potent alpha-toxin and exfoliatin', 'Production of coagulase leading to fibrin clots', 'Spore germination within the fibrous capsule'],
+    c: 0,
+    r: 'Staphylococcus epidermidis adheres to abiotic synthetic material (prosthetic valves, cardiac devices) and produces an extracellular slime/biofilm matrix composed of polysaccharides, proteins, and eDNA, protecting bacteria from antibiotics and immune clearance.'
+  },
+  {
+    cat: 3,
+    q: 'A 55-year-old male immigrant from rural Latin America presents with chronic dyspnea, pedal edema, and syncope. An ECG displays a right bundle branch block. Echocardiogram reveals an apical ventricular aneurysm with a mural thrombus and dilated cardiac chambers. Which vector transmitted the causative protozoan?',
+    a: ['Reduviid (triatomine) bug', 'Anopheles mosquito', 'Ixodes tick', 'Tsetse fly'],
+    c: 0,
+    r: 'Chagas disease is caused by the protozoan Trypanosoma cruzi, transmitted by the triatomine (reduviid) bug. Chronic Chagas cardiomyopathy leads to conduction system damage (RBBB), apical aneurysms, mural thrombi, and dilated cardiomyopathy.'
+  },
+  {
+    cat: 2,
+    q: 'A 62-year-old male with a history of exertional stable angina takes sublingual nitroglycerin during an episode of substernal discomfort. Within three minutes, the pain subsides. What is the primary hemodynamic mechanism responsible for this relief?',
+    a: ['Direct dilation of coronary resistance arterioles', 'Systemic venodilation resulting in reduced ventricular preload', 'Increased heart rate and increased contractility', 'Selective inhibition of cardiac slow calcium channels'],
+    c: 1,
+    r: 'Organic nitrates act primarily as systemic venodilators at therapeutic doses. By increasing peripheral venous capacitance, they reduce venous return (preload) to the heart, decreasing end-diastolic wall tension and myocardial oxygen demand.'
+  },
+  {
+    cat: 1,
+    q: "A 70-year-old male with long-standing severe chronic obstructive pulmonary disease (COPD) presents with worsening bilateral ankle edema, right upper quadrant fullness, and prominent jugular venous distension. Lungs reveal wheezes without crackles. What is the primary initiating pathological mechanism leading to this patient's cor pulmonale?",
+    a: ['Left ventricular systolic failure causing backward pulmonary congestion', 'Hypoxic pulmonary vasoconstriction and vascular remodeling', 'Direct sarcomeric gene mutations causing right ventricular dilation', 'Constrictive caseous pericarditis from previous infection'],
+    c: 1,
+    r: "In chronic lung disease like COPD, alveolar hypoxia triggers hypoxic pulmonary vasoconstriction and vascular remodeling (intimal thickening and medial hypertrophy). This elevates pulmonary vascular resistance, increasing right ventricular afterload and precipitating cor pulmonale."
+  },
+  {
+    cat: 0,
+    q: 'A newborn develops respiratory distress, cyanosis, and a scaphoid abdomen shortly after birth. Auscultation reveals bowel sounds in the left hemithorax and displaced heart sounds. Chest X-ray demonstrates bowel loops in the thoracic cavity. Defective development of which embryological structure causes this congenital diaphragmatic hernia?',
+    a: ['Septum transversum', 'Left pleuroperitoneal membrane', 'Dorsal mesentery of the esophagus', 'Muscular ingrowth from body wall'],
+    c: 1,
+    r: 'Congenital diaphragmatic hernia (Bochdalek hernia) results from failure of the pleuroperitoneal membrane (most commonly on the left posterolateral side) to fuse completely with the other diaphragmatic components, allowing abdominal viscera into the thorax.'
+  },
+  {
+    cat: 0,
+    q: 'A 54-year-old male undergoes surgical resection of a tumor in the posterior mediastinum. On postoperative day 3, thoracostomy drainage produces hundreds of milliliters of milky fluid rich in triglycerides (chyle). Through which anatomical hiatus in the diaphragm did the injured thoracic duct enter the thorax?',
+    a: ['Caval opening', 'Esophageal hiatus', 'Aortic hiatus', 'Foramen of Morgagni'],
+    c: 2,
+    r: 'The thoracic duct originates from the cisterna chyli at L2 and enters the posterior mediastinum through the aortic hiatus of the diaphragm (alongside the aorta and azygos vein). Laceration causes chylothorax.'
+  },
+  {
+    cat: 3,
+    q: 'A 44-year-old male with a history of intravenous drug abuse presents with high fever and a new systolic murmur. Physical exam reveals flat, nontender, erythematous macules on the palms and soles (Janeway lesions). What is the pathological mechanism of these lesions?',
+    a: ['Immune complex deposition causing localized vasculitis', 'Septic microemboli producing microabscesses', 'Fungal mycelial obstruction of large digital arteries', 'Localized hypersensitivity reaction to antibiotic therapy'],
+    c: 1,
+    r: "Janeway lesions are flat, painless, erythematous macules on the palms and soles caused by septic microemboli from valvar vegetations. By contrast, Osler's nodes are tender, painful subcutaneous nodules caused by immune complex deposition."
+  },
+  {
+    cat: 2,
+    q: 'A 61-year-old male presents with acute retrosternal chest pain. A 12-lead ECG demonstrates ST-segment elevation in leads II, III, and aVF with reciprocal depression in leads I and aVL. Which epicardial coronary artery is acutely occluded?',
+    a: ['Left anterior descending artery (LAD)', 'Left circumflex artery (LCx)', 'Right coronary artery (RCA)', 'Left internal thoracic artery (LITA)'],
+    c: 2,
+    r: 'Occlusion of the RCA leads to an inferior wall myocardial infarction, presenting with ST elevations in the inferior leads (II, III, aVF) and reciprocal depression in leads I and aVL.'
+  },
+  {
+    cat: 1,
+    q: 'A 58-year-old hypertensive patient has a low-frequency presystolic sound heard at the apex immediately before S1 (S4). What physiological event produces this fourth heart sound?',
+    a: ['Rapid passive filling of blood into an overcompliant ventricle', 'Atrial contraction forcing blood into a stiff, noncompliant ventricle', 'Sudden closure of the atrioventricular valves', 'Vibration of the aortic root during rapid ejection'],
+    c: 1,
+    r: 'The fourth heart sound (S4) occurs during atrial systole (late diastole) when active atrial contraction propels blood into a noncompliant, hypertrophied, or stiff ventricle.'
+  },
+  {
+    cat: 2,
+    q: 'A 63-year-old male suffers an acute STEMI. Two days later, while hospitalized, he develops recurrent severe crushing chest pain. Which biomarker is most clinically useful to diagnose an early re-infarction occurring within 48 to 72 hours?',
+    a: ['Troponin T', 'Troponin I', 'CK-MB', 'Lactate dehydrogenase (LDH)'],
+    c: 2,
+    r: 'Cardiac troponins remain elevated for 5 to 14 days, obscuring an acute recurrent event. CK-MB peaks within 24 hours and normalizes within 48 to 72 hours, making a secondary rise indicative of early re-infarction.'
+  },
+  {
+    cat: 2,
+    q: 'A 52-year-old female with hypercholesterolemia is started on atorvastatin. What is the primary molecular mechanism by which statins reduce circulating LDL-cholesterol?',
+    a: ['Binding bile acids in the intestine to prevent reabsorption', 'Inhibiting HMG-CoA reductase, leading to upregulation of hepatic LDL receptors', 'Activating lipoprotein lipase to hydrolyze plasma triglycerides', 'Selectively blocking cholesterol absorption at the brush border via NPC1L1'],
+    c: 1,
+    r: 'Statins competitively inhibit HMG-CoA reductase (the rate-limiting enzyme in cholesterol synthesis). The resulting depletion of intracellular hepatic cholesterol triggers upregulation of cell-surface LDL receptors, clearing LDL particles from circulation.'
+  },
+  {
+    cat: 2,
+    q: 'A 67-year-old male with stable exertional angina suffers sudden cardiac death. Autopsy reveals acute plaque rupture with occlusive coronary thrombosis. Histopathological evaluation of the vulnerable plaque shows which profile?',
+    a: ['Thick fibrous cap, minimal lipid, and low macrophage count', 'Thin fibrous cap, large lipid core, and increased inflammatory cells', 'Dense calcification without any lipid core', 'Extensive smooth muscle cell hyperplasia with intact endothelium'],
+    c: 1,
+    r: 'Vulnerable plaques are prone to acute rupture and thrombosis because they have a thin fibrous cap, a large necrotic lipid core, and a dense concentration of inflammatory cells (macrophages).'
+  },
+  {
+    cat: 3,
+    q: 'A 38-year-old hunter presents with fever, periorbital edema, muscle pain, and subungual splinter hemorrhages after eating undercooked wild meat. Blood work shows marked eosinophilia. What is the major cause of death associated with this parasitic infection?',
+    a: ['Massive gastrointestinal bleeding', 'Myocarditis (eosinophilic infiltration)', 'Chronic megaesophagus', 'Acute hepatic sinusoidal rupture'],
+    c: 1,
+    r: 'In trichinosis (Trichinella spiralis), larval invasion triggers profound eosinophilia, periorbital edema, myalgia, and splinter hemorrhages. Eosinophilic myocarditis is the most severe and primary life-threatening complication.'
+  },
+  {
+    cat: 0,
+    q: 'A 16-year-old male presents with upper extremity hypertension and weak, delayed femoral pulses. A chest radiograph demonstrates translucent notches along the inferior borders of ribs III to VI. Which collateral pathways enlarge to bypass the aortic coarctation?',
+    a: ['Vertebral and basilar arteries', 'Internal thoracic arteries anastomosing with posterior intercostal arteries', 'Bronchial arteries anastomosing with pulmonary veins', 'Celiac trunk anastomosing with superior mesenteric arteries'],
+    c: 1,
+    r: 'In aortic coarctation distal to the left subclavian, collateral flow travels from the internal thoracic arteries through anterior intercostals to posterior intercostals in a retrograde direction to supply the descending aorta. The resulting vascular enlargement erodes the costal grooves of ribs 3 to 6.'
+  },
+  {
+    cat: 0,
+    q: 'A 4-year-old girl is diagnosed with an ostium secundum atrial septal defect (ASD). Which embryological defect accounts for this cardiac abnormality?',
+    a: ['Complete absence of the endocardial cushions', 'Excessive resorption of septum primum or deficient septum secundum', 'Failure of the left sinus horn to regress into the coronary sinus', 'Incomplete absorption of the pulmonary veins into the left atrium'],
+    c: 1,
+    r: 'Ostium secundum ASD—the most common type of ASD—is located at the fossa ovalis and is caused by excessive apoptosis/resorption of the septum primum or incomplete growth of the septum secundum, preventing normal valve overlap.'
+  },
+  {
+    cat: 3,
+    q: 'A patient with fever and a new heart murmur has standard blood cultures that show no growth after 48 hours. However, extended incubation beyond 5 days yields fastidious Gram-negative bacilli. Which group of organisms is responsible for this culture-negative endocarditis?',
+    a: ['Enterobacteriaceae', 'HACEK group', 'Viridans group streptococci', 'Coagulase-negative staphylococci'],
+    c: 1,
+    r: 'The HACEK organisms are fastidious Gram-negative bacilli that colonize the oropharynx and represent a classic cause of culture-negative infective endocarditis due to their slow growth requiring extended incubation.'
+  },
+  {
+    cat: 2,
+    q: 'A 65-year-old male presents with progressive heart failure. Echocardiography reveals stiff ventricles with impaired compliance that do not relax and expand during diastole, accompanied by bi-atrial dilation. A myocardial biopsy reveals amyloid deposition and fibrosis. What is the diagnosis?',
+    a: ['Dilated cardiomyopathy', 'Hypertrophic cardiomyopathy', 'Restrictive cardiomyopathy', 'Arrhythmogenic right ventricular dysplasia'],
+    c: 2,
+    r: 'Restrictive cardiomyopathy is characterized by stiff, noncompliant ventricular walls that impair diastolic relaxation and filling while preserving systolic contractility early on. Amyloidosis and sarcoidosis are classic causes, and biopsy confirms diagnosis.'
+  },
+  {
+    cat: 1,
+    q: "In a cardiac physiology experiment, ventricular muscle fibers are stretched by increasing end-diastolic volume. According to Starling's law of the heart, what is the primary physical reason the force of contraction increases?",
+    a: ['Membrane resting potential shifts to -70 mV', 'Sarcomere length approaches optimal initial length (2.0 to 2.25 µm) maximizing myofilament overlap', 'Influx of sodium through fast channels increases', 'Potassium permeability through delayed rectifier channels is blocked'],
+    c: 1,
+    r: "Starling's law states that force of contraction is directly proportional to initial fiber length. Stretching the myocyte toward optimal resting sarcomere length (2.0–2.25 µm) maximizes crossbridge interaction between actin and myosin filaments."
+  },
+  {
+    cat: 2,
+    q: 'A young athlete experiences recurrent ventricular arrhythmias and syncope. Workup reveals fibrofatty tissue replacement restricted primarily to the right ventricular myocardium. An inherited problem with which structure causes arrhythmogenic right ventricular cardiomyopathy/dysplasia (ARVC)?',
+    a: ['Sarcomeric contractile proteins', 'Desmosomes', 'Sarcoplasmic reticulum Ryanodine receptors', 'Cytoskeletal titin proteins'],
+    c: 1,
+    r: 'ARVC/dysplasia is an inherited disorder characterized by fibrous and fatty tissue replacement of the right ventricular wall, leading to ventricular arrhythmias and sudden death, caused by mutations in desmosomal cell-adhesion proteins.'
+  },
+  {
+    cat: 2,
+    q: 'A 56-year-old male with exertional angina is prescribed oral atenolol. What is the fundamental antianginal mechanism of action of this cardioselective β1-blocker?',
+    a: ['Direct stimulation of endothelial nitric oxide synthase', 'Decreased heart rate and contractility, reducing oxygen demand and prolonging diastolic perfusion', 'Systemic venodilation reducing venous preload', 'Lowering blood pressure by inhibiting angiotensin-converting enzyme'],
+    c: 1,
+    r: 'Beta-blockers block β1-receptors on the myocardium, lowering heart rate and inotropy. This reduces myocardial oxygen demand and lengthens the duration of diastole, which enhances coronary perfusion.'
+  },
+  {
+    cat: 0,
+    q: 'During a dissection of the posterior mediastinum, a sympathetic trunk nerve originating from ganglia T5 to T9 is identified passing obliquely across the thoracic vertebrae. It pierces the crus of the diaphragm to relay in which ganglion?',
+    a: ['Celiac ganglion', 'Aorticorenal ganglion', 'Renal plexus', 'Inferior mesenteric ganglion'],
+    c: 0,
+    r: 'The greater splanchnic nerve arises from thoracic sympathetic ganglia 5 through 9 (or 10), traverses the posterior mediastinum, pierces the diaphragmatic crus, and terminates primarily in the celiac ganglion.'
+  },
+  {
+    cat: 0,
+    q: 'At birth, lung expansion dramatically alters vascular resistance. Which combination of pressure changes causes functional closure of the foramen ovale?',
+    a: ['Increased pulmonary vascular resistance and increased right atrial pressure', 'Decreased pulmonary vascular resistance and increased left atrial pressure', 'Constriction of the ductus venosus and loss of left ventricular pressure', 'Systemic hypotension and reversal of flow across the aortic arch'],
+    c: 1,
+    r: 'Expansion of neonatal lungs reduces pulmonary vascular resistance, increasing pulmonary venous return to the left atrium. When left atrial pressure exceeds right atrial pressure, the flexible septum primum is pressed against the septum secundum, producing functional closure.'
+  },
+  {
+    cat: 3,
+    q: 'A patient living in an area where freshwater snail control and sanitation measures are emphasized presents with shortness of breath and signs of right-sided heart dysfunction (cor pulmonale). Imaging demonstrates pulmonary granulomas and a pulmonary artery aneurysm. What is the primary mechanism causing this cardiac condition?',
+    a: ['Direct encystment of larvae in the ventricular myocardium', 'Schistosoma egg emboli lodging in the pulmonary vasculature and vasa vasorum', 'Reduviid bug feces contaminating a bite wound', 'Toxin production causing apical ventricular aneurysms'],
+    c: 1,
+    r: 'In schistosomiasis, eggs embolize into the pulmonary arterioles and vasa vasorum, inducing granulomatous inflammation and fibrosis, culminating in pulmonary arterial hypertension, aneurysms, and cor pulmonale.'
+  },
+  {
+    cat: 2,
+    q: 'A patient presents with extreme hypertriglyceridemia. Laboratory work confirms a hereditary defect in Apolipoprotein C-II. What enzymatic process is impaired by the lack of Apo C-II?',
+    a: ['Direct uptake of chylomicron remnants by hepatic Apo E receptors', 'Activation of lipoprotein lipase (LPL)', 'Esterification of free cholesterol via LCAT', 'Conversion of VLDL to IDL by hepatic lipase'],
+    c: 1,
+    r: 'Apolipoprotein C-II is an essential enzyme cofactor transferred from HDL to chylomicrons and VLDL that enhances and activates lipoprotein lipase (LPL). Absence of Apo C-II prevents triglyceride hydrolysis, causing hypertriglyceridemia.'
+  },
+  {
+    cat: 2,
+    q: 'A 54-year-old male with central chest pain is evaluated in the emergency department. Blood tests show elevated CK-MB and cardiac Troponin I. Based on the biomarkers lecture, within what timeframe does Troponin I typically peak, and when does it disappear from the blood?',
+    a: ['Peaks at 3–4 hours; disappears in 2–3 days', 'Peaks at 8–18 hours; disappears in 5–9 days', 'Peaks at 18–36 hours; disappears in 3–4 days', 'Peaks at 24–48 hours; disappears in 7–15 days'],
+    c: 1,
+    r: 'Following myocardial necrosis, Troponin I appears in blood within 2–6 hours, reaches its peak concentration between 8 and 18 hours, and remains elevated before disappearing at 5 to 9 days.'
+  },
+  {
+    cat: 1,
+    q: 'A 72-year-old patient with congestive heart failure is evaluated. On cardiac auscultation, a low-pitched third heart sound (S3) is heard at the apex during early diastole. During which mechanical phase of the cardiac cycle is this sound recorded?',
+    a: ['Isovolumetric contraction phase', 'Reduced ejection phase', 'Rapid filling phase', 'Atrial systole'],
+    c: 2,
+    r: 'S3 is generated during the early ventricular rapid filling phase when blood rushes into a dilated, volume-overloaded ventricle.'
+  },
+  {
+    cat: 0,
+    q: 'A histological section of an elastic artery (such as the aorta) is compared with a muscular artery. Which of the following features is uniquely characteristic of the tunica media of elastic arteries?',
+    a: ['Predominantly smooth muscle cells with a recognizable external elastic membrane', '40 to 70 broad fenestrated elastic lamellae with smooth muscle cells adopting fibroblast functions', 'Longitudinal bundles of smooth muscle fibers in the adventitia', 'Absence of an endothelial lining and basal lamina'],
+    c: 1,
+    r: 'Elastic (conducting) arteries have a media populated by 40–70 fenestrated sheets of elastic lamellae interlaced with smooth muscle cells that synthesize collagen and elastin, lacking a distinct external elastic lamina.'
+  },
+  {
+    cat: 3,
+    q: 'An ICU patient with a central venous catheter develops high fever, hypotension, and leukocytosis. Which two Gram-negative bacilli are common causes of bloodstream infections, and which structural component represents their major endotoxin?',
+    a: ['Streptococcus viridans and Staphylococcus aureus; coagulase', 'Escherichia coli and Klebsiella spp.; lipopolysaccharides (LPS)', 'Brucella spp. and Treponema pallidum; corkscrew flagella', 'Candida spp. and Aspergillus; ergosterol'],
+    c: 1,
+    r: 'E. coli and Klebsiella are common Gram-negative pathogens causing bloodstream infections whose primary outer-membrane endotoxin is lipopolysaccharide (LPS).'
+  },
+  {
+    cat: 3,
+    q: "A 45-year-old male with fever and a new heart murmur has blood drawn for suspected infective endocarditis. On exam, he has painful nodules on his finger pads (Osler's nodes) and retinal hemorrhages with pale centers (Roth spots). According to the Modified Duke Criteria, what category do these two findings fall under?",
+    a: ['Major criteria', 'Embolic phenomena (Minor criteria)', 'Immunological phenomena (Minor criteria)', 'Predisposition / Risk factor (Minor criteria)'],
+    c: 2,
+    r: "In the Modified Duke Criteria mnemonic (BE TIMER), the letter I stands for Immunological phenomena, which specifically comprises Osler's nodes, Roth spots, and glomerulonephritis."
+  },
+  {
+    cat: 3,
+    q: 'During evaluation of a prosthetic cardiac valve infection, laboratory diagnostic methods are discussed. Why might a patient with a confirmed mature biofilm on their prosthetic valve have negative blood cultures despite testing positive on PCR?',
+    a: ['The bacteria in a biofilm turn into dormant single-cell bacterial spores', 'The biofilm matrix protects the bacterial community and inhibits organism growth in culture, while PCR detects extracellular DNA (eDNA)', 'Biofilms only contain Gram-negative endotoxins without any intact bacteria', 'Biofilms only grow on MacConkey agar under anaerobic conditions'],
+    c: 1,
+    r: 'Biofilms sequester bacteria within an extracellular protective matrix, preventing active planktonic shedding into blood cultures, whereas molecular PCR can amplify shed extracellular DNA (eDNA).'
+  },
+  {
+    cat: 0,
+    q: 'A newborn infant is noted to have a heart that is completely exposed on the anterior surface of the thorax due to a cleft sternum. What is the diagnosis for this congenital defect?',
+    a: ['Dextrocardia', 'Ectopia cordis', 'Transposition of the great arteries', 'Eventration of the diaphragm'],
+    c: 1,
+    r: 'Ectopia cordis is a rare congenital anomaly where the embryonic heart fails to be internalized within the thoracic cage, leaving it exposed externally through a cleft sternum.'
+  },
+  {
+    cat: 1,
+    q: "A 28-year-old female presents with sudden onset of regular palpitations at a rate of 180 beats/min with narrow QRS complexes. An ECG demonstrates that P waves are buried within the QRS complexes, though a \"pseudo r'\" wave is visible in lead V1. What is the underlying re-entrant mechanism causing this typical arrhythmia?",
+    a: ['Multiple disorganized re-entrant wavelets in the atria fibrillating at 350–600 beats/min', 'An accessory bundle of Kent bypassing the AV node', 'Dual AV nodal pathways where the impulse travels antegrade down a slow pathway and retrograde up a fast pathway', 'Early afterdepolarizations triggered by prolonged QT interval'],
+    c: 2,
+    r: "Typical Atrioventricular Nodal Re-entrant Tachycardia (slow-fast AVNRT) utilizes dual AV nodal pathways (antegrade conduction via the slow pathway and retrograde conduction via the fast pathway), activating atria and ventricles concurrently to create hidden P waves or pseudo-r' in lead V1."
+  },
+  {
+    cat: 1,
+    q: 'A patient with severe atherosclerosis is found to have severe narrowing of the renal artery. How does the affected kidney attempt to restore perfusion through this stenosed vessel, causing secondary hypertension?',
+    a: ['By secreting nitric oxide to cause local venodilation', 'By activating the Renin-Angiotensin system to raise systemic blood pressure', 'By converting HDL into LDL to clear fat from the renal arterioles', 'By inhibiting lipoprotein lipase in the renal capillaries'],
+    c: 1,
+    r: 'Renal artery stenosis decreases renal perfusion pressure. The juxtaglomerular apparatus senses reduced renal blood flow and activates the Renin-Angiotensin-Aldosterone System (RAAS), producing systemic vasoconstriction and fluid retention that causes renovascular hypertension.'
+  },
+  {
+    cat: 0,
+    q: 'In the posterior mediastinum, the thoracic sympathetic trunk gives off splanchnic nerves from its lower ganglia. Which splanchnic nerve arises from the 12th thoracic ganglion and which autonomic plexus does it supply?',
+    a: ['Greater splanchnic nerve; Celiac ganglion', 'Lesser splanchnic nerve; Aorticorenal ganglion', 'Least splanchnic nerve; Renal plexus', 'Phrenic nerve; Diaphragmatic plexus'],
+    c: 2,
+    r: 'The lowest/least splanchnic nerve originates from the 12th thoracic sympathetic ganglion, pierces the diaphragmatic crus, and enters the abdomen to terminate in the renal plexus.'
+  },
+
+  // Questions 41 to 80
+  {
+    cat: 0,
+    q: 'During cardiac looping in the 4th week of development, the arterial and venous ends of the primitive heart tube remain relatively fixed. Rapid growth of which two segments causes the tube to bend rightward into the normal dextral U-shaped bulboventricular loop (D-loop)?',
+    a: ['Truncus arteriosus and sinus venosus', 'Bulbus cordis and primitive ventricle', 'Primitive atrium and sinus venosus', 'Truncus arteriosus and aortic sac'],
+    c: 1,
+    r: 'Because the arterial and venous poles are relatively fixed, the rapid elongation of the bulbus cordis (cranial limb) and the primitive ventricle (caudal limb) forces the heart tube to bend into a rightward U-shaped bulboventricular loop (D-loop).'
+  },
+  {
+    cat: 0,
+    q: 'In an embryo undergoing cardiac development, lineage tracing identifies cardiac progenitor cells arising specifically from pharyngeal mesoderm that migrate to the elongating heart tube. These cells belong to the secondary heart field (SHF). What major structural components of the definitive heart do these cells primarily form?',
+    a: ['Entire left ventricle and left auricle', 'Most of the right ventricle, outflow tract, and parts of the atria', 'Visceral pericardium and coronary arteries only', 'Fibrous cardiac skeleton and membranous interventricular septum'],
+    c: 1,
+    r: 'Progenitor cells of the Primary Heart Field (PHF) form the cardiac crescent and contribute mainly to the left ventricle and part of the atria. Cells of the Secondary Heart Field (SHF) arise from pharyngeal mesoderm and form most of the right ventricle, parts of the atria, the outflow tract (conus cordis and truncus arteriosus), and sinus venosus.'
+  },
+  {
+    cat: 0,
+    q: 'During embryological septation of the outflow tract, mesenchymal ridges develop in the walls of the bulbus cordis and truncus arteriosus. What specific population of migrating cells is primarily responsible for forming these bulbar and truncal ridges?',
+    a: ['Neural crest cells', 'Splanchnic mesoderm', 'Somatic mesoderm', 'Endodermal epithelial cells'],
+    c: 0,
+    r: 'Mesenchymal ridges in the bulbus cordis and truncus arteriosus are formed primarily by migrating neural crest cells. These ridges grow toward each other, spiral 180°, and fuse to form the spiral aorticopulmonary septum.'
+  },
+  {
+    cat: 0,
+    q: 'A neonate is born with dextrocardia, where the heart is situated in the right hemithorax with a right-pointing apex (mirror image). What precise developmental folding error explains this presentation?',
+    a: ['Failure of the endocardial cushions to fuse in the AV canal', 'The embryonic heart tube bends to the left instead of the right', 'Premature closure of the foramen secundum', 'Incomplete migration of neural crest cells into the outflow tract'],
+    c: 1,
+    r: 'Normal looping forms a rightward (dextral) bulboventricular loop. When the embryonic heart tube loops/bends to the left (sinistral loop) instead of to the right, dextrocardia results, creating a mirror-image anatomical arrangement.'
+  },
+  {
+    cat: 0,
+    q: 'During embryological partitioning of the heart, the bulbus cordis is incorporated into the definitive ventricular chambers. What smooth-walled outflow structure does the bulbus cordis form in the adult left ventricle?',
+    a: ['Conus arteriosus (infundibulum)', 'Aortic vestibule', 'Sinus venarum', 'Trabeculae carneae'],
+    c: 1,
+    r: 'The bulbus cordis forms the smooth outflow parts of both ventricles: in the right ventricle, it forms the conus arteriosus (infundibulum) leading to the pulmonary trunk, while in the left ventricle, it forms the aortic vestibule immediately inferior to the aortic valve.'
+  },
+  {
+    cat: 0,
+    q: 'In the developing embryonic cardiovascular system, vitelline arteries supply the yolk sac (umbilical vesicle). Later in development, what adult abdominal vessels do these paired vitelline arteries become?',
+    a: ['Renal and gonadal arteries', 'Celiac trunk, superior mesenteric artery, and inferior mesenteric artery', 'Internal iliac and superior vesical arteries', 'External iliac and femoral arteries'],
+    c: 1,
+    r: 'The vitelline arteries pass to the umbilical vesicle (yolk sac) and later supply the primordial gut, persisting in the adult as the three ventral branches of the abdominal aorta: the celiac trunk (foregut), superior mesenteric artery (midgut), and inferior mesenteric artery (hindgut).'
+  },
+  {
+    cat: 0,
+    q: 'A 5-year-old child is evaluated for a heart murmur. Echocardiography reveals a defect located high in the interatrial septum, close to the entrance of the superior vena cava, associated with anomalous pulmonary venous connection. Which specific type of atrial septal defect (ASD) is this?',
+    a: ['Ostium primum ASD', 'Ostium secundum ASD', 'Sinus venosus ASD', 'Common atrium'],
+    c: 2,
+    r: 'Sinus venosus ASD is a rare, high atrial septal defect located near the entrance of the superior vena cava. It results from incomplete absorption of the sinus venosus into the right atrium or abnormal development of the septum secundum, and is frequently accompanied by partial anomalous pulmonary venous return.'
+  },
+  {
+    cat: 0,
+    q: 'During anatomical inspection of the posterior wall of the adult right atrium, a distinct smooth-walled area called the sinus venarum is noted. From which embryonic structure is this smooth portion derived?',
+    a: ['Left horn of the sinus venosus', 'Right horn of the sinus venosus', 'Primitive atrium', 'Truncus arteriosus'],
+    c: 1,
+    r: 'Progressive left-to-right shunting causes the right horn of the sinus venosus to enlarge and incorporate into the right atrium, forming its smooth posterior wall (sinus venarum). The left horn regresses to become the coronary sinus, and the original primitive atrium forms the rough, pectinate-lined right auricle.'
+  },
+  {
+    cat: 0,
+    q: 'A 3-year-old girl is found to have an ostium primum atrial septal defect. On physical exam, a holosystolic regurgitant murmur is also noted at the apex. With which valvular anomaly is an ostium primum ASD classically associated?',
+    a: ['Cleft mitral valve', 'Bicuspid aortic valve', 'Pulmonary valve atresia', 'Ebstein\'s anomaly of the tricuspid valve'],
+    c: 0,
+    r: 'Ostium primum defects occur when the septum primum fails to fuse with the AV endocardial cushions. Because the fused endocardial cushions also form the septal leaflets of the AV valves, ostium primum ASD is characteristically accompanied by a cleft in the anterior leaflet of the mitral valve.'
+  },
+  {
+    cat: 0,
+    q: 'A patient with long-standing atrial fibrillation develops an enlarged left atrium. The dilated left atrium compresses the adjacent tubular structure lying immediately posterior to it, separated only by the pericardium. Which clinical symptom can this left atrial enlargement directly cause?',
+    a: ['Persistent hiccups from phrenic nerve irritation', 'Dysphagia (difficulty swallowing) due to esophageal compression', 'Loss of voice from superior laryngeal nerve damage', 'Facial swelling from brachiocephalic vein compression'],
+    c: 1,
+    r: 'The esophagus descends in the posterior mediastinum immediately posterior to the left atrium, separated only by the pericardial sac. Marked dilation of the left atrium directly compresses the anterior wall of the esophagus, causing mechanical dysphagia.'
+  },
+  {
+    cat: 0,
+    q: 'The esophagus possesses four normal anatomical constrictions where ingested foreign objects or caustic liquids tend to produce strictures. Which structure causes the constriction located in the superior mediastinum?',
+    a: ['Cricoid cartilage of the larynx', 'Arch of the aorta', 'Left main bronchus', 'Esophageal hiatus in the diaphragm'],
+    c: 1,
+    r: 'The four anatomical constrictions of the esophagus are: (1) pharyngoesophageal junction at C6, (2) crossing of the aortic arch in the superior mediastinum, (3) crossing of the left main bronchus in the posterior mediastinum, and (4) passing through the esophageal hiatus in the diaphragm at T10.'
+  },
+  {
+    cat: 0,
+    q: 'In the posterior mediastinum, the right and left vagus nerves form an extensive autonomic meshwork around the esophagus. Just above the diaphragm, this plexus reconstitutes into two trunks. What is the primary origin of the anterior vagal trunk?',
+    a: ['Fibers predominantly from the left vagus nerve', 'Fibers predominantly from the right vagus nerve', 'Greater splanchnic nerve from T5–T9', 'Sympathetic chain rami communicantes'],
+    c: 0,
+    r: 'As the stomach rotates during development, the left vagus nerve is carried anteriorly to form the anterior vagal trunk, whereas the right vagus nerve is carried posteriorly to form the posterior vagal trunk on the surface of the esophagus.'
+  },
+  {
+    cat: 0,
+    q: 'A thoracic surgeon operates at the level of the transverse thoracic plane (plane of Ludwig, intervertebral disc T4/T5). Which of the following anatomical events occurs precisely at this horizontal plane?',
+    a: ['Origin of the inferior mesenteric artery', 'The azygos vein arches anteriorly over the right lung root to enter the SVC', 'The thoracic duct empties into the left internal jugular vein', 'The esophagus passes through the muscular diaphragm'],
+    c: 1,
+    r: 'The transverse thoracic plane (T4/T5) is a major anatomical junction. Key events at this plane include: division of superior and inferior mediastinum, bifurcation of the trachea, bifurcation of the pulmonary trunk, beginning and end of the aortic arch, azygos vein emptying into the SVC, and origin of the left recurrent laryngeal nerve.'
+  },
+  {
+    cat: 0,
+    q: 'During a posterior mediastinal dissection, a surgeon identifies a vertical vein ascending on the left side of the vertebral column up to vertebral level T9, where it crosses the midline to join the azygos vein. Which vessel is this?',
+    a: ['Left superior intercostal vein', 'Accessory hemiazygos vein', 'Hemiazygos vein (inferior hemiazygos)', 'Left brachiocephalic vein'],
+    c: 2,
+    r: 'The hemiazygos vein forms from the left ascending lumbar and subcostal veins, ascends on the left side of the thoracic vertebrae up to approximately T9, and then crosses the vertebral column to drain into the azygos vein. The accessory hemiazygos descends to T8 before crossing.'
+  },
+  {
+    cat: 0,
+    q: 'Anatomical boundaries define the spaces within the thorax. What structure forms the anterior boundary of the superior mediastinum?',
+    a: ['Body of the sternum', 'Manubrium sterni', 'Fibrous pericardium', 'First four thoracic vertebrae'],
+    c: 1,
+    r: 'The boundaries of the superior mediastinum are: anteriorly the manubrium sterni, posteriorly the first four thoracic vertebral bodies (T1–T4), superiorly the superior thoracic aperture, and inferiorly the transverse plane passing from the sternal angle to T4/T5. The body of the sternum is anterior to the anterior mediastinum.'
+  },
+  {
+    cat: 0,
+    q: 'A 4-year-old child presents to the emergency room following a fall that produced severe anterior neck and chest trauma. The clinician notes that in young children, which vascular structure rises above the superior border of the manubrium sterni and is less protected from direct neck injury?',
+    a: ['Aortic arch', 'Left brachiocephalic vein', 'Inferior vena cava', 'Left subclavian artery'],
+    c: 1,
+    r: 'In infants and young children, the left brachiocephalic vein rises above the superior margin of the manubrium sterni into the base of the neck, making it much more vulnerable to blunt trauma or surgical tracheostomy injury than in adults.'
+  },
+  {
+    cat: 0,
+    q: 'During a subxiphoid pericardiocentesis, a needle is introduced to evacuate fluid from a cardiac tamponade. What anatomical structure forms the tough connective tissue outer layer of the pericardial sac that firmly anchors inferiorly to the central tendon of the diaphragm?',
+    a: ['Visceral layer of serous pericardium (epicardium)', 'Parietal layer of serous pericardium', 'Fibrous pericardium', 'Mediastinal pleura'],
+    c: 2,
+    r: 'The fibrous pericardium is a cone-shaped bag of tough, inextensible connective tissue whose apex blends with the adventitia of the great vessels and whose base is firmly attached to the central tendon of the diaphragm and a small muscular area on the left.'
+  },
+  {
+    cat: 0,
+    q: 'A surgeon inserts a hand under the cardiac apex and advances their fingers superiorly behind the heart into a blind-ended pericardial recess (cul-de-sac) situated posterior to the left atrium. Which anatomical space has been entered?',
+    a: ['Transverse pericardial sinus', 'Oblique pericardial sinus', 'Anterior mediastinal space', 'Pleural cupula'],
+    c: 1,
+    r: 'The reflection of serous pericardium surrounding the pulmonary veins and venae cavae forms a J-shaped blind cul-de-sac posterior to the left atrium known as the oblique pericardial sinus. A hand slipped beneath the apex and moved superiorly enters this space.'
+  },
+  {
+    cat: 0,
+    q: 'A 35-year-old male with acute viral pericarditis reports that his severe sharp chest pain radiates up into his left shoulder and the side of his neck. Which spinal cord segments provide the sensory dermatomes explaining this referred pain pattern?',
+    a: ['C1 and C2', 'C3, C4, and C5', 'T1, T2, and T3', 'T5 through T9'],
+    c: 1,
+    r: 'Pain sensation from the parietal pericardium is carried by somatic afferent fibers within the phrenic nerves. The phrenic nerves arise from spinal segments C3, C4, and C5; hence, inflammation is referred to the corresponding supraclavicular/shoulder dermatomes.'
+  },
+  {
+    cat: 1,
+    q: 'An ECG rhythm strip is recorded from an 82-year-old male presenting with lightheadedness. The tracing demonstrates completely normal-appearing P waves and regular QRS complexes, but every single PR interval is uniformly prolonged to 0.28 seconds (normal is 0.12 to 0.20 seconds) with no dropped beats. What is the diagnosis?',
+    a: ['First-degree AV block', 'Second-degree AV block, Mobitz Type I', 'Second-degree AV block, Mobitz Type II', 'Complete (third-degree) AV block'],
+    c: 0,
+    r: 'First-degree atrioventricular (AV) block is defined by a constant, uniform prolongation of the PR interval beyond 0.20 seconds (5 small squares), with every P wave followed by a QRS complex and no dropped beats.'
+  },
+  {
+    cat: 1,
+    q: 'An irregular rhythm strip is evaluated. The PR interval progressively lengthens with each successive beat until a P wave fails to conduct through the AV node, resulting in a dropped QRS complex. Following the pause, the cycle repeats. What conduction abnormality is present?',
+    a: ['First-degree AV block', 'Second-degree AV block, Mobitz Type I (Wenckebach)', 'Second-degree AV block, Mobitz Type II', 'Right bundle branch block'],
+    c: 1,
+    r: 'Second-degree AV block Mobitz Type I (Wenckebach) is characterized by progressive prolongation of the PR interval culminating in a single non-conducted P wave (dropped QRS), after which the PR interval resets to its shortest duration.'
+  },
+  {
+    cat: 1,
+    q: 'A 68-year-old male with palpitations has an ECG showing narrow-complex tachycardia at an atrial rate of 300 beats/min with characteristic "sawtooth" flutter waves best seen in leads II, III, and aVF. Ventricular conduction occurs in a regular 2:1 ratio (ventricular rate of 150 bpm). What is the underlying electrophysiological circuit?',
+    a: ['Ectopic automatic foci firing simultaneously across pulmonary vein cuffs', 'A large, macro-reentrant circuit typically circling the cavotricuspid isthmus in the right atrium', 'Ventricular micro-reentry within scarred myocardium', 'Slow-fast dual pathway re-entry within the AV node'],
+    c: 1,
+    r: 'Atrial flutter is a classic macro-reentrant atrial tachycardia that circles a defined anatomical loop (typically around the tricuspid annulus/cavotricuspid isthmus) at ~300 bpm, generating regular "sawtooth" flutter (F) waves on ECG.'
+  },
+  {
+    cat: 1,
+    q: 'On a Wiggers diagram of the cardiac cycle, which mechanical phase is bounded at its onset by the closure of the mitral and tricuspid valves, and at its end by the opening of the aortic and pulmonary semilunar valves?',
+    a: ['Atrial systole', 'Isovolumetric contraction phase', 'Rapid ejection phase', 'Isovolumetric relaxation phase'],
+    c: 1,
+    r: 'Isovolumetric ventricular contraction begins immediately when ventricular pressure exceeds atrial pressure (closing the AV valves) and ends when ventricular pressure exceeds arterial pressure in the aorta/pulmonary trunk, forcing the semilunar valves to pop open. Ventricular volume remains constant.'
+  },
+  {
+    cat: 1,
+    q: 'During inspection of a jugular venous pulse (JVP) tracing, a prominent positive wave occurs synchronously with ventricular systole, caused by the tricuspid valve bulging backward into the right atrium during isovolumetric contraction. Which wave on the venous pulse tracing is this?',
+    a: ['a wave', 'c wave', 'v wave', 'y descent'],
+    c: 1,
+    r: 'In the JVP waveform, the a wave corresponds to right atrial contraction (atrial systole), the c wave corresponds to tricuspid valve bulging into the right atrium during early isovolumetric contraction, and the v wave represents venous filling against a closed tricuspid valve.'
+  },
+  {
+    cat: 1,
+    q: 'A patient with severe myocardial ischemia has elevated left ventricular end-diastolic pressure. Under resting physiological conditions, when does maximum coronary blood flow to the left ventricular myocardium occur?',
+    a: ['During peak rapid ejection in systole', 'During isovolumetric contraction', 'During diastole', 'Equally throughout systole and diastole'],
+    c: 2,
+    r: 'During ventricular systole, forceful contraction of the thick left ventricular myocardium compresses intramural coronary vessels, markedly reducing flow. Perfusion to the left ventricle occurs predominantly during diastole, when the muscle relaxes and extravascular compression drops.'
+  },
+  {
+    cat: 1,
+    q: 'During cardiac muscle action potential propagation, what electrical event is primarily responsible for the rapid, instantaneous Phase 0 upstroke in ordinary ventricular contractile myocytes?',
+    a: ['Rapid influx of sodium ions (Na+) through voltage-gated fast sodium channels', 'Slow inward flow of calcium (Ca2+) via L-type channels', 'Outward flow of potassium (K+) through delayed rectifier channels', 'Inward funny current (If) activated by hyperpolarization'],
+    c: 0,
+    r: 'In non-pacemaker ventricular myocytes, the rapid Phase 0 depolarization is mediated by the sudden opening of voltage-gated fast Na+ channels, causing a steep inward rush of sodium. (Pacemaker cells in the SA/AV node rely on slow L-type calcium channels for Phase 0).'
+  },
+  {
+    cat: 1,
+    q: 'The prolonged Phase 2 "plateau" of the ventricular action potential prevents cardiac muscle from being tetanized. Which balanced opposing ionic currents maintain this prolonged plateau?',
+    a: ['Inward fast Na+ current balanced by inward chloride current', 'Inward slow Ca2+ current (via L-type channels) balanced by outward K+ current', 'Inward K+ current balanced by outward Na+ current', 'Efflux of magnesium balanced by calcium entry'],
+    c: 1,
+    r: 'Phase 2 (plateau) is sustained by a balance between the slow inward movement of calcium (Ca2+) through L-type channels and the outward repolarizing movement of potassium (K+) through delayed rectifier channels.'
+  },
+  {
+    cat: 1,
+    q: 'In contrast to skeletal muscle, cardiac myocytes require extracellular calcium influx to trigger muscle contraction. What is the term for the process where small calcium influx through sarcolemmal L-type channels stimulates massive calcium release from the sarcoplasmic reticulum?',
+    a: ['Primary active transport', 'Calcium-induced calcium release (CICR) via Ryanodine receptors', 'Phospholamban dephosphorylation', 'Calsequestrin buffering'],
+    c: 1,
+    r: 'Depolarization opens voltage-gated L-type calcium channels (dihydropyridine receptors) in the T-tubules. The entering trigger calcium binds to Ryanodine receptors (RyR2) on the sarcoplasmic reticulum, inducing massive intracellular calcium release into the sarcoplasm to initiate crossbridge cycling.'
+  },
+  {
+    cat: 0,
+    q: 'Cardiac muscle cells are interconnected end-to-end by specialized intercalated discs. Which junctional specialization within the longitudinal component of the intercalated disc provides low-resistance electrical coupling, allowing the myocardium to act as a functional syncytium?',
+    a: ['Fascia adherens', 'Macula adherens (desmosome)', 'Gap junctions (nexus)', 'Tight junctions (zonula occludens)'],
+    c: 2,
+    r: 'Intercalated discs contain transverse components (fascia adherens and desmosomes to anchor structural tension) and longitudinal components dominated by gap junctions, which provide low electrical resistance to allow ionic flow and rapid action potential spread across myocytes.'
+  },
+  {
+    cat: 2,
+    q: 'A 60-year-old female presents with low-grade fever, weight loss, and recurrent transient ischemic attacks. Echocardiogram demonstrates a soft, pedunculated, gelatinous mass in the left atrium attached to the interatrial septum, causing intermittent "ball-valve" obstruction of the mitral valve. Histology shows stellate cells in a mucopolysaccharide ground substance. What is the diagnosis?',
+    a: ['Cardiac rhabdomyoma', 'Atrial myxoma', 'Lipomatous hypertrophy of the interatrial septum', 'Papillary fibroelastoma'],
+    c: 1,
+    r: 'Atrial myxoma is the most common primary cardiac tumor in adults (90% arise in atria, left-to-right ratio 4:1). They are soft, gelatinous masses that produce systemic emboli, constitutional symptoms (fever), and "ball-valve" obstruction of AV valves.'
+  },
+  {
+    cat: 2,
+    q: 'A 52-year-old male with an acute myocardial infarction develops pericarditis 3 weeks after the index event. The patient has fever, pleuritic chest pain, an elevated erythrocyte sedimentation rate, and a pericardial friction rub. What is this autoimmune-mediated post-MI pericarditis called?',
+    a: ["Corvisart's syndrome", "Dressler's syndrome", 'Libman-Sacks endocarditis', 'Löffler endocarditis'],
+    c: 1,
+    r: 'Slide 6 of the Cardiac Pathology lecture lists "Dressler\'s syndrome — autoimmune disease" as an accepted delayed complication of myocardial infarction occurring weeks to months post-infarction, presenting with fever and pericarditis.'
+  },
+  {
+    cat: 2,
+    q: 'At autopsy, a patient who suffered from severe congestive right-sided heart failure is found to have an enlarged liver with a mottled "nutmeg" appearance on cut surface. What is the gross macroscopic and histopathological cause of this nutmeg liver pattern?',
+    a: ['Widespread macrovesicular fatty change due to alcoholism', 'Passive chronic venous congestion around central veins', 'Diffuse granulomatous inflammation with caseating necrosis', 'Hepatic arterial micro-aneurysms'],
+    c: 1,
+    r: 'Slide 9 of the Cardiac Pathology lecture illustrates "nutmeg liver," which exhibits alternating dark (congested/hemorrhagic central venules) and light (spared or steatotic periportal parenchyma) areas characteristic of chronic passive venous congestion from right heart failure.'
+  },
+  {
+    cat: 2,
+    q: 'A 49-year-old female presents with chest tightness. She undergoes a lipid panel. Her results are: Total Cholesterol = 240 mg/dL, Triglycerides = 150 mg/dL, and HDL = 40 mg/dL. According to the lipid calculations presented in the lecture, what is her calculated LDL-cholesterol concentration?',
+    a: ['150 mg/dL', '170 mg/dL', '190 mg/dL', '210 mg/dL'],
+    c: 1,
+    r: 'In the lipid profile calculation table (Slide 30): VLDL = TG / 5 = 150 / 5 = 30 mg/dL. Then, LDL = Total Cholesterol - (VLDL + HDL) = 240 - (30 + 40) = 240 - 70 = 170 mg/dL.'
+  },
+  {
+    cat: 2,
+    q: 'According to cardiovascular risk guidelines in the plasma lipoproteins lecture, which ratio of Total Cholesterol to HDL is considered dangerous/elevated?',
+    a: ['Greater than 1.5', 'Greater than 2.0', 'Greater than 3.5', 'Greater than 0.4'],
+    c: 2,
+    r: 'Slide 26 of the Plasma Lipoproteins lecture states: "If the ratio of total cholesterol / HDL is more than 3.5, it can be dangerous. Similarly, LDL:HDL ratio more than 2.5".'
+  },
+  {
+    cat: 2,
+    q: 'A patient undergoing evaluation for hyperlipidemia has apolipoprotein levels measured. Which apolipoprotein serves as the structural marker for LDL and VLDL particles, measuring "bad" atherogenic cholesterol?',
+    a: ['Apo A-I', 'Apo B (B-100)', 'Apo C-II', 'Apo E'],
+    c: 1,
+    r: 'Apo A-I is the major structural protein on HDL ("good" cholesterol). Apo B (specifically Apo B-100) is the structural component of LDL and VLDL; an elevated Apo B : Apo A-I ratio (e.g., 1.4) represents a very high risk for cardiovascular events.'
+  },
+  {
+    cat: 2,
+    q: 'A 50-year-old male with chronic exertional angina is treated with long-acting oral nitrates. After several weeks of continuous around-the-clock therapy, he notices that the drug has lost much of its antianginal effectiveness (tolerance development). What is the recommended strategy to prevent or overcome nitrate tolerance?',
+    a: ['Concomitant administration of high-dose aspirin', 'Incorporating a daily nitrate-free interval of 10 to 12 hours (e.g., overnight)', 'Switching to an immediate intravenous bolus', 'Adding a phosphodiesterase-5 inhibitor'],
+    c: 1,
+    r: 'Continuous exposure to nitrates depletes intracellular sulfhydryl groups and downregulates guanylyl cyclase activation, producing rapid tolerance. Incorporating a daily nitrate-free interval of 10–12 hours restores tissue sensitivity.'
+  },
+  {
+    cat: 2,
+    q: 'A 48-year-old male with recurrent chest pain that occurs characteristically at rest and is associated with transient ST-segment elevations is diagnosed with Prinzmetal (vasospastic) angina. Which class of drugs is highly effective in relieving symptoms and preventing coronary spasm in these patients?',
+    a: ['Non-selective beta-blockers (e.g., propranolol)', 'Calcium channel blockers (e.g., diltiazem, amlodipine)', 'Cardiac glycosides (e.g., digoxin)', 'Adenosine deaminase inhibitors'],
+    c: 1,
+    r: 'Prinzmetal (variant) angina is caused by coronary artery vasospasm. Calcium channel blockers and nitrates are the mainstays of therapy because they promote arterial vasodilation and prevent coronary spasm. (Beta-blockers can cause unopposed alpha-mediated vasoconstriction and are avoided).'
+  },
+  {
+    cat: 2,
+    q: 'A patient with dyslipidemia is prescribed a medication that directly activates Peroxisome Proliferator-Activated Receptor-alpha (PPAR-α), thereby markedly upregulating lipoprotein lipase (LPL) synthesis and dramatically lowering serum triglyceride levels. Which drug class has this mechanism?',
+    a: ['Statins (HMG-CoA reductase inhibitors)', 'Fibrates (e.g., fenofibrate, gemfibrozil)', 'Bile acid sequestrants (e.g., cholestyramine)', 'Cholesterol absorption inhibitors (ezetimibe)'],
+    c: 1,
+    r: 'Fibrates are PPAR-α agonists. Activation of PPAR-α enhances transcription of lipoprotein lipase (LPL) and decreases Apo C-III, accelerating the clearance of triglyceride-rich lipoproteins (VLDL and chylomicrons).'
+  },
+  {
+    cat: 3,
+    q: 'A 30-year-old male presents with persistent low back pain, recurrent morning stiffness, fever, and a newly discovered diastolic decrescendo murmur heard best along the left sternal border. An echocardiogram confirms aortic valve regurgitation and aortitis. Which seronegative spondyloarthropathy is classically associated with aortitis and aortic insufficiency?',
+    a: ['Rheumatoid arthritis', 'Ankylosing spondylitis', 'Osteoarthritis', 'Systemic lupus erythematosus'],
+    c: 1,
+    r: 'Ankylosing spondylitis (HLA-B27 associated) characteristically targets the axial skeleton and sacroiliac joints, and causes ascending aortitis and adventitial scarring extending to the aortic root, leading to aortic valve insufficiency.'
+  },
+  {
+    cat: 3,
+    q: 'A patient with an implantable cardiac defibrillator develops persistent bacteremia. The organism forms an adherent slime layer that allows it to survive in low nutrient conditions and resist vancomycin penetration. Which phenotypic stage of biofilm formation is characterized by the detachment and release of single bacterial cells into the bloodstream, seeding recurrent metastatic bacteremia?',
+    a: ['Initial reversible attachment', 'Irreversible microcolony formation', 'Biofilm maturation', 'Dispersal / Detachment phase'],
+    c: 3,
+    r: 'In the biofilm developmental lifecycle, bacteria first attach, produce extracellular polymeric substance (EPS) to form mature microcolonies, and eventually enter the dispersal/detachment phase, where single planktonic cells slough off into the surrounding fluid/bloodstream to colonize distant tissues.'
+  }
+];
