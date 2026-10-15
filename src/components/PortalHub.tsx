@@ -99,12 +99,22 @@ export const PortalHub: React.FC<PortalHubProps> = ({ onSelectBank }) => {
   return (
     <div className="min-h-screen bg-[#020617] text-slate-100 flex flex-col items-center px-4 py-8 sm:px-6 lg:px-8">
       {/* Top Navigation Bar */}
-      <nav className="w-full max-w-6xl flex items-center justify-between pb-6 border-b border-white/10 mb-8 sm:mb-12">
+      <nav className="w-full max-w-6xl relative flex items-center justify-between pb-6 border-b border-white/10 mb-8 sm:mb-12">
         <div className="flex items-center gap-3">
           <div className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-[0_0_12px_rgba(244,63,94,0.9)] animate-pulse" />
           <span className="text-xs sm:text-sm font-extrabold tracking-widest uppercase font-mono text-slate-200">
             Clinical Science Engine
           </span>
+        </div>
+
+        {/* Basmala (centered) */}
+        <div
+          dir="rtl"
+          lang="ar"
+          className="absolute left-1/2 -translate-x-1/2 font-mono text-base sm:text-lg md:text-xl text-slate-400 font-semibold tracking-wider pointer-events-none select-none drop-shadow-sm"
+          style={{ letterSpacing: '0.05em' }}
+        >
+          بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ
         </div>
 
         {/* Live Status indicator */}
