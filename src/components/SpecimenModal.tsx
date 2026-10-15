@@ -20,12 +20,10 @@ export const SpecimenModal: React.FC<SpecimenModalProps> = ({
   const handleZoomOut = () => setZoom((prev) => Math.max(prev - 0.3, 0.7));
   const handleReset = () => setZoom(1);
 
-  // Normalize image path for Vite /public/images/
-  const resolvedSrc = imageSrc.startsWith('/')
+  // Normalize image path with relative path for subpath compatibility
+  const resolvedSrc = imageSrc.startsWith('http')
     ? imageSrc
-    : imageSrc.startsWith('http')
-    ? imageSrc
-    : `/images/${imageSrc}`;
+    : `./images/${imageSrc.replace(/^\/?(images\/)?/, '')}`;
 
   return (
     <div

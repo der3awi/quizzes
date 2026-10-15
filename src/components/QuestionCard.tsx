@@ -54,13 +54,11 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 
   const optionLetters = ['A', 'B', 'C', 'D'];
 
-  // Normalize image source
+  // Normalize image source with relative path for GitHub Pages subpath compatibility
   const resolvedImg = question.img
-    ? question.img.startsWith('/')
+    ? question.img.startsWith('http')
       ? question.img
-      : question.img.startsWith('http')
-      ? question.img
-      : `/images/${question.img}`
+      : `./images/${question.img.replace(/^\/?(images\/)?/, '')}`
     : undefined;
 
   return (

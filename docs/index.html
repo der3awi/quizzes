@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinical Sciences &amp; Medical Study Portal</title>
+    <meta name="description" content="Comprehensive clinical sciences and pre-clinical study engine featuring interactive question banks, performance radar diagnostics, histology/radiology viewers, and exam simulations." />
+    <meta property="og:title" content="Clinical Sciences &amp; Medical Study Portal" />
+    <meta property="og:description" content="Comprehensive clinical sciences and pre-clinical study engine featuring interactive question banks, performance radar diagnostics, histology/radiology viewers, and exam simulations." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Load static css only in production (GitHub Pages)
+      if (window.location.port !== '3000' && !window.location.hostname.includes('run.app')) {
+        const l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.crossOrigin = 'anonymous';
+        l.href = './assets/index.css';
+        document.head.appendChild(l);
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index.css">
+  </head>
+  <body class="bg-[#020617] text-[#f1f5f9] antialiased selection:bg-rose-500/30 selection:text-white">
+    <div id="root"></div>
+
+
+    <script>
+      // If running on static host (e.g. GitHub Pages) and /src/main.tsx is not transpiled
+      if (window.location.port !== '3000' && !window.location.hostname.includes('run.app')) {
+        const s = document.createElement('script');
+        s.type = 'module';
+        s.crossOrigin = 'anonymous';
+        s.src = './assets/index.js';
+        document.body.appendChild(s);
+      }
+    </script>
+  </body>
+</html>
