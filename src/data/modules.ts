@@ -125,7 +125,7 @@ export const MODULE_REGISTRY: QuizBank[] = [
       'Anatomy & Histology',
       'Physiology & Mechanics',
       'PFTs & Spirometry',
-      'Obstructive Lung Diseases',
+      'Obstructive & Pharmacology',
       'Restrictive & ARDS',
     ],
     questions: respiratoryTblQuestions,
