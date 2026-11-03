@@ -7,7 +7,10 @@ import { podPastQuestions } from './podPast';
 import { cvbTbl1CoreQuestions, cvbTbl1PastQuestions } from './cvbTbl1';
 import { cvbTbl2Questions } from './cvbTbl2';
 import { cvbFinalCoreQuestions, cvbFinalPastQuestions } from './cvbFinal';
-import { respiratoryTblQuestions } from './respiratory';
+import {
+  respiratoryTblQuestions,
+  respiratoryCategories,
+} from './respiratory';
 import {
   respiratoryFinalCoreQuestions,
   respiratoryFinalPastQuestions,
@@ -120,14 +123,8 @@ export const MODULE_REGISTRY: QuizBank[] = [
     badge: 'Team-Based Learning',
     badgeColor: '#38bdf8',
     accentColor: '#38bdf8',
-    description: 'High-yield 100-question practice exam covering airway histology, pulmonary mechanics, PFT flow-volume loops, COPD/asthma, and restrictive/ARDS pathology.',
-    categories: [
-      'Anatomy & Histology',
-      'Physiology & Mechanics',
-      'PFTs & Spirometry',
-      'Obstructive & Pharmacology',
-      'Restrictive & ARDS',
-    ],
+    description: 'High-yield 125-question practice bank combining core pulmonary mechanics, histology, PFTs, obstructive/restrictive pathology, and dedicated respiratory pharmacology.',
+    categories: respiratoryCategories,
     questions: respiratoryTblQuestions,
     storageKey: 'res352_tbl1_practice_v1',
   },
