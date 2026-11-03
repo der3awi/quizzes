@@ -7,6 +7,12 @@ import { podPastQuestions } from './podPast';
 import { cvbTbl1CoreQuestions, cvbTbl1PastQuestions } from './cvbTbl1';
 import { cvbTbl2Questions } from './cvbTbl2';
 import { cvbFinalCoreQuestions, cvbFinalPastQuestions } from './cvbFinal';
+import { respiratoryTblQuestions } from './respiratory';
+import {
+  respiratoryFinalCoreQuestions,
+  respiratoryFinalPastQuestions,
+  respiratoryFinalCategories,
+} from './respiratoryFinal';
 
 export interface QuizBank {
   id: string;
@@ -100,6 +106,56 @@ export const MODULE_REGISTRY: QuizBank[] = [
         badge: '82 Qs',
         storageKey: 'cvb351_final_past_v1',
         questions: cvbFinalPastQuestions,
+      },
+    ],
+  },
+
+  // Year 3 Respiratory Module
+  {
+    id: 'res-tbl1',
+    title: 'TBL 1 // Respiratory High-Yield Practice',
+    subtitle: 'Year 3 • Respiratory System (RES 352)',
+    section: 'year3',
+    systemId: 'resp',
+    badge: 'Team-Based Learning',
+    badgeColor: '#38bdf8',
+    accentColor: '#38bdf8',
+    description: 'High-yield 100-question practice exam covering airway histology, pulmonary mechanics, PFT flow-volume loops, COPD/asthma, and restrictive/ARDS pathology.',
+    categories: [
+      'Anatomy & Histology',
+      'Physiology & Mechanics',
+      'PFTs & Spirometry',
+      'Obstructive Lung Diseases',
+      'Restrictive & ARDS',
+    ],
+    questions: respiratoryTblQuestions,
+    storageKey: 'res352_tbl1_practice_v1',
+  },
+  {
+    id: 'res-final',
+    title: 'Final Examination Simulation',
+    subtitle: 'Year 3 • Respiratory System (RES 352)',
+    section: 'year3',
+    systemId: 'resp',
+    badge: 'Assessment Bank',
+    badgeColor: '#fbbf24',
+    accentColor: '#fbbf24',
+    description: 'High-yield multi-step clinical vignettes, arterial blood gas analyses, PFT interpretation, and past exam recall questions.',
+    categories: respiratoryFinalCategories,
+    modes: [
+      {
+        key: 'core',
+        label: 'Core Practice',
+        badge: `${respiratoryFinalCoreQuestions.length} Qs`,
+        storageKey: 'res352_final_core_v1',
+        questions: respiratoryFinalCoreQuestions,
+      },
+      {
+        key: 'past',
+        label: 'Past Exam Recall',
+        badge: `${respiratoryFinalPastQuestions.length} Qs`,
+        storageKey: 'res352_final_past_v1',
+        questions: respiratoryFinalPastQuestions,
       },
     ],
   },

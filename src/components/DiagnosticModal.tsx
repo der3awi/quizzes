@@ -136,6 +136,7 @@ export const DiagnosticModal: React.FC<DiagnosticModalProps> = ({
               counts={counts}
               totalPerCategory={totalPerCategory}
               size={300}
+              accentColor={accentColor}
             />
           </div>
 

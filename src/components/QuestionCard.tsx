@@ -52,7 +52,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
   const hasAnswered = selectedAnswer !== undefined;
   const isCorrect = hasAnswered && selectedAnswer === question.c;
 
-  const optionLetters = ['A', 'B', 'C', 'D'];
+  const optionLetters = ['A', 'B', 'C', 'D', 'E', 'F'];
 
   // Normalize image source with relative path for GitHub Pages subpath compatibility
   const resolvedImg = question.img
@@ -264,7 +264,7 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         </button>
 
         <span className="font-mono text-xs text-slate-500 hidden sm:inline">
-          Shortcuts: [A-D] Select • [F] Flag • [N/P] Next/Prev
+          Shortcuts: [A–E] Select • [F] Flag • [N/P] Next/Prev
         </span>
 
         <button

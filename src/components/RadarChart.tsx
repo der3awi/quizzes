@@ -6,6 +6,7 @@ interface RadarChartProps {
   counts: number[]; // total questions answered in each category
   totalPerCategory: number[]; // total questions available in each category
   size?: number;
+  accentColor?: string;
 }
 
 export const RadarChart: React.FC<RadarChartProps> = ({
@@ -14,6 +15,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
   counts,
   totalPerCategory,
   size = 320,
+  accentColor = '#f43f5e',
 }) => {
   const center = size / 2;
   const radius = (size / 2) - 48; // padding for labels
@@ -99,8 +101,8 @@ export const RadarChart: React.FC<RadarChartProps> = ({
           {/* User Performance Filled Polygon */}
           <polygon
             points={scorePolygonPoints}
-            fill="rgba(244, 63, 94, 0.25)"
-            stroke="#f43f5e"
+            fill={`${accentColor}33`}
+            stroke={accentColor}
             strokeWidth="2.5"
             strokeLinejoin="round"
           />
@@ -115,7 +117,7 @@ export const RadarChart: React.FC<RadarChartProps> = ({
                 cx={x}
                 cy={y}
                 r="4.5"
-                fill="#fb7185"
+                fill={accentColor}
                 stroke="#0f172a"
                 strokeWidth="2"
                 className="transition-all duration-300"

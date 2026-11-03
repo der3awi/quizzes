@@ -129,6 +129,8 @@ export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, onBack }) => {
         if (questions[currentIndex]?.a[2]) handleSelectAnswer(2);
       } else if (['4', 'd', 'D'].includes(e.key)) {
         if (questions[currentIndex]?.a[3]) handleSelectAnswer(3);
+      } else if (['5', 'e', 'E'].includes(e.key)) {
+        if (questions[currentIndex]?.a[4]) handleSelectAnswer(4);
       }
     },
     [currentIndex, questions, answers, flagged]
@@ -243,7 +245,7 @@ export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, onBack }) => {
               className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 text-xs font-semibold text-slate-200 transition"
               title="View Radar Diagnostics"
             >
-              <BarChart2 className="w-4 h-4 text-rose-400" />
+              <BarChart2 className="w-4 h-4" style={{ color: bank.accentColor }} />
               <span className="hidden sm:inline">Diagnostics</span>
             </button>
 

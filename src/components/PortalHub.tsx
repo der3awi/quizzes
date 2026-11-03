@@ -312,27 +312,6 @@ export const PortalHub: React.FC<PortalHubProps> = ({ onSelectBank }) => {
             <div className="bg-[#0f172a]/40 border border-white/5 rounded-2xl p-6 flex flex-col justify-between opacity-60">
               <div className="flex flex-col gap-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-extrabold uppercase font-mono px-2.5 py-0.5 rounded-full bg-sky-500/10 text-sky-400">
-                    System 02 • Respiratory
-                  </span>
-                  <span className="font-mono text-xs text-slate-500">Scheduled</span>
-                </div>
-                <h3 className="text-lg font-bold text-slate-300">Respiratory System (RESP)</h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Pulmonary physiology, blood gas analysis, spirometry loops, obstructive vs restrictive
-                  pathology, and respiratory pharmacology.
-                </p>
-              </div>
-              <div className="pt-6 mt-6 border-t border-white/5">
-                <span className="text-xs font-mono text-slate-500 uppercase tracking-wider">
-                  Module in preparation
-                </span>
-              </div>
-            </div>
-
-            <div className="bg-[#0f172a]/40 border border-white/5 rounded-2xl p-6 flex flex-col justify-between opacity-60">
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center justify-between">
                   <span className="text-[10px] font-extrabold uppercase font-mono px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-400">
                     System 03 • Gastrointestinal
                   </span>
