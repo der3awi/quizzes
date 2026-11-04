@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Respiratory Pharmacology - 25 Practice Questions</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #222; max-width: 850px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { border-bottom: 2px solid #333; padding-bottom: 0.5rem; }
+    .question-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.25rem; margin-bottom: 1.5rem; background-color: #fafafa; }
+    .question-title { font-weight: 600; margin-bottom: 0.75rem; font-size: 1.05rem; }
+    .options-list { list-style-type: upper-alpha; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+    .options-list li { margin-bottom: 0.35rem; }
+    .answer-box { background: #eef7ee; border-left: 4px solid #2e7d32; padding: 0.5rem 0.75rem; font-size: 0.95rem; border-radius: 2px; }
+    .answer-key { font-weight: bold; color: #1b5e20; }
+  </style>
+</head>
+<body>
+
+<h1>Respiratory Pharmacology: 25 High-Yield Examination Questions</h1>
+
+<!-- Question 1 -->
+<div class="question-card">
+  <div class="question-title">1. A 32-year-old woman with moderate persistent asthma requires daily use of an inhaled corticosteroid (ICS). Which of the following best describes the primary anti-inflammatory mechanism of action of ICS in asthma?</div>
+  <ol class="options-list">
+    <li>Direct and immediate relaxation of pre-contracted bronchial smooth muscle cells</li>
+    <li>Inhibition of inflammatory cell influx (macrophages, eosinophils) and mediator release</li>
+    <li>Competitive antagonism of cysteinyl leukotriene-1 (LTD4) cell-surface receptors</li>
+    <li>Irreversible blockade of postganglionic parasympathetic muscarinic M3 receptors</li>
+    <li>Direct stabilization of sensitized mast cell membranes preventing degranulation</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Inhaled corticosteroids are not direct bronchodilators; their therapeutic effect is mediated by inhibiting the influx of inflammatory cells (macrophages, eosinophils, and lymphocytes) and suppressing inflammatory mediator transcription[cite: 3].
+  </div>
+</div>
+
+<!-- Question 2 -->
+<div class="question-card">
+  <div class="question-title">2. A 28-year-old patient who recently initiated high-dose inhaled budesonide reports hoarseness of voice and develops white, curd-like plaques over the tongue. Which strategy is recommended to reduce these adverse effects?</div>
+  <ol class="options-list">
+    <li>Replacing the inhaled steroid with oral theophylline maintenance</li>
+    <li>Using a spacer device with the inhaler and rinsing the mouth after use</li>
+    <li>Taking an oral broad-spectrum antibiotic concurrently with each puff</li>
+    <li>Doubling the inhalation frequency while halving the delivered drug dose</li>
+    <li>Taking the inhaler actuation exclusively immediately following meals</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Local adverse effects of inhaled corticosteroids—such as dysphonia and oral candidiasis (thrush)—occur due to oropharyngeal drug deposition and can be minimized by using a spacer device and rinsing the mouth after inhalation[cite: 3].
+  </div>
+</div>
+
+<!-- Question 3 -->
+<div class="question-card">
+  <div class="question-title">3. A 24-year-old runner uses an inhaled formulation of cromolyn sodium (cromoglicate) before exercising. Which pharmacological characteristic correctly describes this drug?</div>
+  <ol class="options-list">
+    <li>It rapidly relieves acute severe bronchospasm during sudden attacks</li>
+    <li>It is insoluble, poorly absorbed from the GIT, and acts prophylactically</li>
+    <li>It functions as an antagonist at cysteinyl leukotriene receptor sites</li>
+    <li>It causes extensive systemic hepatic microsomal enzyme inhibition</li>
+    <li>It possesses high oral bioavailability with extensive renal clearance</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Cromoglicate (cromolyn) is poorly absorbed from the gastrointestinal tract and must be given by inhalation[cite: 3]. It stabilizes mast cells prophylactically but is ineffective in acute attacks because it does not reverse active bronchospasm[cite: 3].
+  </div>
+</div>
+
+<!-- Question 4 -->
+<div class="question-card">
+  <div class="question-title">4. A 34-year-old woman with nasal polyps and chronic rhinosinusitis develops severe bronchospasm after ingesting aspirin. Which class of maintenance agents is most specifically effective for this condition?</div>
+  <ol class="options-list">
+    <li>Leukotriene receptor antagonists (e.g., montelukast)</li>
+    <li>Inhaled short-acting beta-2 agonists monotherapy</li>
+    <li>Short-acting antimuscarinic agents (e.g., ipratropium)</li>
+    <li>Centrally acting opioid cough suppressants</li>
+    <li>Over-the-counter expectorants (e.g., guaifenesin)</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: A</span><br>
+    <em>Rationale:</em> Leukotriene receptor antagonists (LTRAs) such as montelukast competitively block LTD4 receptors and are particularly effective in patients where leukotrienes play a central pathophysiological role, notably aspirin- and NSAID-induced asthma[cite: 3].
+  </div>
+</div>
+
+<!-- Question 5 -->
+<div class="question-card">
+  <div class="question-title">5. Which of the following anti-asthma medications is an orally administered leukotriene receptor antagonist dosed once daily?</div>
+  <ol class="options-list">
+    <li>Zafirlukast</li>
+    <li>Salmeterol</li>
+    <li>Montelukast</li>
+    <li>Aminophylline</li>
+    <li>Ipratropium</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: C</span><br>
+    <em>Rationale:</em> Montelukast (Singulair) is administered orally once daily, whereas zafirlukast is typically dosed twice daily[cite: 3].
+  </div>
+</div>
+
+<!-- Question 6 -->
+<div class="question-card">
+  <div class="question-title">6. A 20-year-old man with severe, poorly controlled persistent allergic asthma exhibits high serum total IgE levels despite adherence to high-dose ICS and LABA. Subcutaneous omalizumab is prescribed. What is its mechanism of action?</div>
+  <ol class="options-list">
+    <li>Competitive antagonism of cysteinyl leukotriene 1 receptors</li>
+    <li>Selective binding to circulating IgE to prevent allergic mediator release</li>
+    <li>Blockade of interleukin-5 receptors expressed on circulating eosinophils</li>
+    <li>Selective inhibition of bronchial cyclic GMP-specific phosphodiesterase</li>
+    <li>Direct opening of large-conductance calcium-activated potassium channels</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Omalizumab is a subcutaneously administered monoclonal antibody that binds to free circulating IgE, preventing it from binding to mast cells and basophils and thereby limiting the release of allergic mediators[cite: 3].
+  </div>
+</div>
+
+<!-- Question 7 -->
+<div class="question-card">
+  <div class="question-title">7. A 19-year-old man uses inhaled albuterol (salbutamol) for acute symptom relief. Which set of pharmacodynamic properties and adverse effects is characteristic of this short-acting agent?</div>
+  <ol class="options-list">
+    <li>Onset within 15–30 minutes, lasts 12 hours; produces bradycardia and hypouricemia</li>
+    <li>Onset within minutes, lasts 4–6 hours; produces tremor, tachycardia, and hypokalemia</li>
+    <li>Onset within 1–2 hours, lasts 24 hours; causes marked urinary retention and hyperkalemia</li>
+    <li>Onset within 30 minutes, lasts 8 hours; produces dose-dependent metabolic acidosis</li>
+    <li>Onset within seconds, lasts 1 hour; produces reflex bradycardia and sedation</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Salbutamol acts within a few minutes, reaches maximum bronchodilation at 30 minutes, and lasts 4–6 hours[cite: 3]. Its common adverse effects include fine skeletal muscle tremors, tachycardia, hyperglycemia, and hypokalemia (due to intracellular potassium shift)[cite: 3].
+  </div>
+</div>
+
+<!-- Question 8 -->
+<div class="question-card">
+  <div class="question-title">8. Why is salmeterol contraindicated as a rescue monotherapy during an acute, severe asthmatic bronchospasm?</div>
+  <ol class="options-list">
+    <li>It induces immediate mast cell degranulation upon airway contact</li>
+    <li>It has a slow onset of action (15–30 minutes) and is meant for prophylaxis</li>
+    <li>It undergoes instantaneous first-pass hepatic degradation when inhaled</li>
+    <li>It directly stimulates vagal M3 receptors, provoking reflex bronchospasm</li>
+    <li>It lacks selectivity and triggers life-threatening alpha-1 vasoconstriction</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Salmeterol is a long-acting beta-2 agonist (LABA) with a slow onset of action (15–30 minutes) and prolonged duration (12 hours)[cite: 3]. It is used for maintenance and nocturnal asthma prophylaxis, not acute attacks[cite: 3].
+  </div>
+</div>
+
+<!-- Question 9 -->
+<div class="question-card">
+  <div class="question-title">9. A 48-year-old hospitalized patient receives intravenous aminophylline for an acute severe asthma attack. Which statement regarding the pharmacokinetics and toxicities of this drug is correct?</div>
+  <ol class="options-list">
+    <li>It has a very broad therapeutic margin and is eliminated entirely by renal filtration</li>
+    <li>It is metabolized in the liver (t½ ~8 hours) with a narrow index; high doses cause arrhythmias and convulsions</li>
+    <li>It is an insoluble powder that cannot be administered parenterally</li>
+    <li>It acts as a potent selective agonist at cardiac M2 muscarinic receptors</li>
+    <li>It undergoes extensive ester hydrolysis in the bloodstream within minutes</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Theophylline (and IV aminophylline) is metabolized by the liver with an elimination half-life of approximately 8 hours[cite: 3]. Because of its narrow therapeutic window, elevated serum concentrations can provoke nausea, vomiting, cardiac arrhythmias, and convulsions[cite: 3].
+  </div>
+</div>
+
+<!-- Question 10 -->
+<div class="question-card">
+  <div class="question-title">10. Inhaled antimuscarinic bronchodilators such as ipratropium and oxitropium exert their clinical benefit in airway disease primarily by which mechanism?</div>
+  <ol class="options-list">
+    <li>Stimulating cyclic AMP synthesis in bronchial vascular smooth muscle</li>
+    <li>Blocking vagus nerve-mediated M3 receptor bronchospasm and mucus hypersecretion</li>
+    <li>Inactivating the central respiratory chemoreceptors in the medulla oblongata</li>
+    <li>Competitively blocking beta-2 receptors to prevent reflex tachyarrhythmias</li>
+    <li>Dissolving disulfide cross-links within luminal mucoprotein networks</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Synthetic atropine derivatives like ipratropium and oxitropium block vagally mediated M3 acetylcholine receptors in bronchial smooth muscle, preventing bronchospasm and hypersecretion[cite: 3].
+  </div>
+</div>
+
+<!-- Question 11 -->
+<div class="question-card">
+  <div class="question-title">11. A 45-year-old man initiating multidrug therapy for active pulmonary tuberculosis has a genetic polymorphism causing slow drug acetylation. Which drug's metabolism and toxicity profile is directly affected?</div>
+  <ol class="options-list">
+    <li>Rifampicin</li>
+    <li>Isoniazid</li>
+    <li>Ethambutol</li>
+    <li>Pyrazinamide</li>
+    <li>Streptomycin</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Isoniazid (INH) is metabolized by hepatic N-acetyltransferase 2 (NAT2)[cite: 4]. Genetically determined slow acetylators clear the drug more slowly, predisposing them to prolonged action and higher toxicity (e.g., peripheral neuropathy)[cite: 4].
+  </div>
+</div>
+
+<!-- Question 12 -->
+<div class="question-card">
+  <div class="question-title">12. A patient taking isoniazid for active tuberculosis develops symmetric tingling, numbness, and burning pain in both feet. Which agent should always be co-administered prophylactically to prevent this adverse effect?</div>
+  <ol class="options-list">
+    <li>Folic acid (vitamin B9)</li>
+    <li>Pyridoxine (vitamin B6)</li>
+    <li>Cyanocobalamin (vitamin B12)</li>
+    <li>Ascorbic acid (vitamin C)</li>
+    <li>Thiamine (vitamin B1)</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Peripheral neuropathy is the most common adverse effect of isoniazid and is prevented by prophylactic co-administration of pyridoxine (vitamin B6, 25–50 mg daily)[cite: 4].
+  </div>
+</div>
+
+<!-- Question 13 -->
+<div class="question-card">
+  <div class="question-title">13. A 29-year-old woman with active pulmonary tuberculosis begins standard anti-TB therapy. Two weeks later, she notes that her urine, sweat, and tears have become bright orange-red. Which drug is responsible?</div>
+  <ol class="options-list">
+    <li>Isoniazid</li>
+    <li>Pyrazinamide</li>
+    <li>Rifampicin</li>
+    <li>Ethambutol</li>
+    <li>Streptomycin</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: C</span><br>
+    <em>Rationale:</em> Rifampicin is known for harmlessly discoloring body fluids (urine, sweat, tears, sputum) a red-orange hue[cite: 4]. Patients must be warned in advance[cite: 4].
+  </div>
+</div>
+
+<!-- Question 14 -->
+<div class="question-card">
+  <div class="question-title">14. A patient maintained on chronic warfarin anticoagulation starts treatment for tuberculosis with a regimen including rifampin. What pharmacokinetic drug interaction must the physician anticipate?</div>
+  <ol class="options-list">
+    <li>Inhibition of renal tubular warfarin excretion causing bleeding</li>
+    <li>Hepatic microsomal enzyme induction decreasing warfarin efficacy and lowering INR</li>
+    <li>Displacement of warfarin from albumin binding sites causing hemorrhage</li>
+    <li>Direct chelation of warfarin in the gut lumen preventing oral absorption</li>
+    <li>Inhibition of hepatic cytochromes leading to elevated warfarin blood levels</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Rifampicin is a potent hepatic microsomal enzyme inducer that accelerates the hepatic clearance of co-administered agents such as warfarin, oral contraceptives, and azole antifungals, reducing their clinical efficacy[cite: 4].
+  </div>
+</div>
+
+<!-- Question 15 -->
+<div class="question-card">
+  <div class="question-title">15. Why is rifampicin strictly avoided as a monotherapy in the management of active tuberculosis?</div>
+  <ol class="options-list">
+    <li>It lacks bactericidal activity against extracellular bacilli</li>
+    <li>Resistant mycobacterial strains emerge rapidly when it is used alone</li>
+    <li>It causes severe nephrotoxicity unless combined with an aminoglycoside</li>
+    <li>It fails to penetrate the blood-brain barrier into the cerebrospinal fluid</li>
+    <li>It must be converted into an active molecule by ethambutol</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Because resistant bacterial mutants rapidly emerge during single-agent treatment, rifampicin is never administered as monotherapy for active tuberculosis[cite: 4].
+  </div>
+</div>
+
+<!-- Question 16 -->
+<div class="question-card">
+  <div class="question-title">16. Which first-line anti-tuberculosis agent exerts bactericidal activity against intracellular dividing bacilli specifically during the first 2–3 months of therapy and frequently causes hyperuricemia?</div>
+  <ol class="options-list">
+    <li>Pyrazinamide</li>
+    <li>Streptomycin</li>
+    <li>Ethambutol</li>
+    <li>Isoniazid</li>
+    <li>Rifampicin</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: A</span><br>
+    <em>Rationale:</em> Pyrazinamide is bactericidal against intracellular organisms during the initial 2–3 months of therapy[cite: 4]. Its characteristic adverse effects include hyperuricemia, joint aches, hepatitis, and rarely acute gout[cite: 4].
+  </div>
+</div>
+
+<!-- Question 17 -->
+<div class="question-card">
+  <div class="question-title">17. A 50-year-old man undergoing anti-TB therapy presents with blurred vision and difficulty distinguishing red and green colors. Which drug must be promptly discontinued?</div>
+  <ol class="options-list">
+    <li>Streptomycin</li>
+    <li>Isoniazid</li>
+    <li>Rifampin</li>
+    <li>Ethambutol</li>
+    <li>Pyrazinamide</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: D</span><br>
+    <em>Rationale:</em> The primary adverse effect of ethambutol is optic (retrobulbar) neuritis, manifesting as reduced visual acuity, central scotomas, and loss of red-green color discrimination[cite: 4]. Monthly visual testing is recommended[cite: 4].
+  </div>
+</div>
+
+<!-- Question 18 -->
+<div class="question-card">
+  <div class="question-title">18. Which first-line anti-tuberculosis agent is an aminoglycoside that must be administered parenterally by intramuscular (IM) injection and carries major risks of ototoxicity and nephrotoxicity?</div>
+  <ol class="options-list">
+    <li>Streptomycin</li>
+    <li>Capreomycin</li>
+    <li>Ethambutol</li>
+    <li>Cycloserine</li>
+    <li>Amikacin</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: A</span><br>
+    <em>Rationale:</em> Streptomycin is a bactericidal aminoglycoside that inhibits bacterial protein synthesis, is given by IM injection, and carries significant ototoxic and nephrotoxic risks[cite: 4].
+  </div>
+</div>
+
+<!-- Question 19 -->
+<div class="question-card">
+  <div class="question-title">19. A 3-year-old child presents with fever and exudative tonsillitis caused by Streptococcus pyogenes (group A beta-hemolytic). To prevent subsequent acute rheumatic fever, penicillin therapy must be continued for what minimum duration?</div>
+  <ol class="options-list">
+    <li>Exactly 24 hours</li>
+    <li>3 consecutive days</li>
+    <li>5 consecutive days</li>
+    <li>7 consecutive days</li>
+    <li>10 consecutive days</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: E</span><br>
+    <em>Rationale:</em> In follicular tonsillitis/pharyngitis caused by Streptococcus pyogenes, antibiotic therapy must be maintained for a full 10-day course specifically to eradicate the pathogen and prevent the development of acute rheumatic fever[cite: 1].
+  </div>
+</div>
+
+<!-- Question 20 -->
+<div class="question-card">
+  <div class="question-title">20. A 22-year-old university student is diagnosed with atypical pneumonia characterized by a dry hacking cough and patchy bilateral infiltrates. Which class of antimicrobial agents represents the first-line treatment of choice?</div>
+  <ol class="options-list">
+    <li>Macrolides (e.g., azithromycin)</li>
+    <li>Aminopenicillins (e.g., ampicillin)</li>
+    <li>First-generation cephalosporins (e.g., cephalexin)</li>
+    <li>Carbapenems (e.g., imipenem-cilastatin)</li>
+    <li>Natural penicillins (e.g., benzylpenicillin)</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: A</span><br>
+    <em>Rationale:</em> Atypical pneumonia (commonly caused by Mycoplasma pneumoniae or Chlamydia) lacks a typical peptidoglycan bacterial cell wall, rendering beta-lactams ineffective[cite: 1]. Macrolides (such as azithromycin), tetracyclines (doxycycline), or respiratory fluoroquinolones are the drugs of choice[cite: 1].
+  </div>
+</div>
+
+<!-- Question 21 -->
+<div class="question-card">
+  <div class="question-title">21. A 38-year-old HIV-positive patient with a CD4 count below 200/μL presents with exertional dyspnea, dry cough, and bilateral perihilar infiltrates caused by Pneumocystis jirovecii (carinii). What is the first-line therapeutic agent?</div>
+  <ol class="options-list">
+    <li>Oral amoxicillin-clavulanic acid</li>
+    <li>Co-trimoxazole (trimethoprim-sulfamethoxazole)</li>
+    <li>Intravenous vancomycin monotherapy</li>
+    <li>Inhaled tobramycin solution</li>
+    <li>Oral metronidazole maintenance</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Co-trimoxazole (TMP-SMX), administered orally or intravenously, is the treatment of choice for Pneumocystis pneumonia in immunocompromised individuals[cite: 1].
+  </div>
+</div>
+
+<!-- Question 22 -->
+<div class="question-card">
+  <div class="question-title">22. Why are opioid cough suppressants such as codeine and methadone strictly contraindicated in patients with asthma and chronic obstructive pulmonary disease (COPD)?</div>
+  <ol class="options-list">
+    <li>They induce acute crystal-induced tubulopathy and renal failure</li>
+    <li>They provoke bronchospasm, depress respiration, and cause thick sputum retention</li>
+    <li>They trigger hepatic cytochrome P450 enzymes, reducing bronchodilator levels</li>
+    <li>They accelerate bronchial mucociliary clearance to excessively high rates</li>
+    <li>They selectively block pulmonary beta-2 adrenergic receptors</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: B</span><br>
+    <em>Rationale:</em> Opioids are contraindicated in COPD and asthma because they suppress the central respiratory drive, can provoke bronchospasm, and cause thickening and retention of sputum, which impairs airway clearance[cite: 5].
+  </div>
+</div>
+
+<!-- Question 23 -->
+<div class="question-card">
+  <div class="question-title">23. A 62-year-old patient with inoperable advanced bronchogenic carcinoma suffers from an exhausting, severe, intractable cough. Which long-acting synthetic opioid with a half-life of ~24 hours is specifically indicated?</div>
+  <ol class="options-list">
+    <li>Methadone</li>
+    <li>Guaifenesin</li>
+    <li>Dextromethorphan</li>
+    <li>Ambroxol</li>
+    <li>Pholcodine</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: A</span><br>
+    <em>Rationale:</em> Methadone is a synthetic opioid with actions similar to morphine but with a prolonged duration of action of approximately 24 hours[cite: 5]. It is specifically highlighted for managing severe, intractable cough in patients with advanced lung cancer[cite: 5].
+  </div>
+</div>
+
+<!-- Question 24 -->
+<div class="question-card">
+  <div class="question-title">24. A 56-year-old patient with bronchiectasis and thick, tenacious bronchial secretions is prescribed carbocysteine. By which biochemical mechanism does this mucolytic agent reduce sputum viscosity?</div>
+  <ol class="options-list">
+    <li>Cleaving disulfide bonds between mucoprotein chains to liquefy secretions</li>
+    <li>Stimulating vagal efferent pathways to increase watery serous secretions</li>
+    <li>Suppressing the medullary cough reflex center to reduce mechanical shearing</li>
+    <li>Coating the mucosal lining to prevent irritation of sensory cough receptors</li>
+    <li>Enhancing the systemic synthesis of pulmonary surfactant by Type II pneumocytes</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: A</span><br>
+    <em>Rationale:</em> Respiratory mucus consists of water and glycoproteins cross-linked by disulfide bonds[cite: 5]. Carbocysteine opens (cleaves) these disulfide bonds, reducing mucus viscosity and thickness to facilitate expectoration[cite: 5].
+  </div>
+</div>
+
+<!-- Question 25 -->
+<div class="question-card">
+  <div class="question-title">25. Which FDA-approved expectorant drug acts by increasing the volume of bronchial secretions and reducing mucus viscosity to promote productive expulsion from the respiratory tract?</div>
+  <ol class="options-list">
+    <li>Guaifenesin</li>
+    <li>Codeine</li>
+    <li>Benzonatate</li>
+    <li>Dextromethorphan</li>
+    <li>Pholcodine</li>
+  </ol>
+  <div class="answer-box">
+    <span class="answer-key">Correct Answer: A</span><br>
+    <em>Rationale:</em> Guaifenesin is an FDA-approved expectorant that increases the volume and reduces the viscosity of bronchial secretions, promoting effective productive clearance[cite: 5].
+  </div>
+</div>
+
+</body>
+</html>
