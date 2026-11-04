@@ -123,7 +123,7 @@ export const MODULE_REGISTRY: QuizBank[] = [
     badge: 'Team-Based Learning',
     badgeColor: '#38bdf8',
     accentColor: '#38bdf8',
-    description: 'High-yield 125-question practice bank combining core pulmonary mechanics, histology, PFTs, obstructive/restrictive pathology, and dedicated respiratory pharmacology.',
+    description: 'High-yield 139-question practice bank combining core pulmonary mechanics, gross anatomy clinical vignettes, histology, PFTs, obstructive/restrictive pathology, and dedicated respiratory pharmacology.',
     categories: respiratoryCategories,
     questions: respiratoryTblQuestions,
     storageKey: 'res352_tbl1_practice_v1',
