@@ -137,12 +137,12 @@ export const MODULE_REGISTRY: QuizBank[] = [
     badge: 'Assessment Bank',
     badgeColor: '#fbbf24',
     accentColor: '#fbbf24',
-    description: 'High-yield multi-step clinical vignettes, arterial blood gas analyses, PFT interpretation, and past exam recall questions.',
+    description: 'High-yield dual-bank examination simulation: 100-question USMLE & IFOM Board Review plus 100-question Past Exam Recall bank with full ABG tables, PFT curves, and diagnostic radar breakdown.',
     categories: respiratoryFinalCategories,
     modes: [
       {
         key: 'core',
-        label: 'Core Practice',
+        label: 'USMLE & IFOM Bank',
         badge: `${respiratoryFinalCoreQuestions.length} Qs`,
         storageKey: 'res352_final_core_v1',
         questions: respiratoryFinalCoreQuestions,

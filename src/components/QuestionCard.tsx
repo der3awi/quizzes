@@ -143,9 +143,16 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       )}
 
       {/* Question Text */}
-      <div className="text-base sm:text-lg font-medium text-slate-100 leading-relaxed">
-        {question.q}
-      </div>
+      {typeof question.q === 'string' && question.q.includes('<') && question.q.includes('>') ? (
+        <div
+          className="text-base sm:text-lg font-medium text-slate-100 leading-relaxed [&_.q-stem-bold]:block [&_.q-stem-bold]:mt-3 [&_.q-stem-bold]:font-bold [&_.q-stem-bold]:text-amber-400 [&_.lab-table]:w-full [&_.lab-table]:my-3.5 [&_.lab-table]:text-xs [&_.lab-table]:border [&_.lab-table]:border-white/10 [&_.lab-table]:rounded-xl [&_.lab-table]:overflow-hidden [&_.lab-table_th]:bg-slate-800/80 [&_.lab-table_th]:text-amber-300 [&_.lab-table_th]:p-2.5 [&_.lab-table_th]:text-left [&_.lab-table_th]:font-mono [&_.lab-table_th]:text-[11px] [&_.lab-table_th]:uppercase [&_.lab-table_td]:p-2.5 [&_.lab-table_td]:border-t [&_.lab-table_td]:border-white/10 [&_.lab-table_td]:font-mono"
+          dangerouslySetInnerHTML={{ __html: question.q }}
+        />
+      ) : (
+        <div className="text-base sm:text-lg font-medium text-slate-100 leading-relaxed">
+          {question.q}
+        </div>
+      )}
 
       {/* Options List */}
       <div className="flex flex-col gap-2.5">
