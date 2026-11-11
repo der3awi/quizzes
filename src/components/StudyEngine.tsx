@@ -115,10 +115,14 @@ export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, onBack }) => {
         return;
       }
 
-      if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'n') {
+      if (e.key === 'ArrowRight' || e.key.toLowerCase() === 'n' || e.key === 'Enter') {
         if (currentIndex < questions.length - 1) setCurrentIndex((c) => c + 1);
       } else if (e.key === 'ArrowLeft' || e.key.toLowerCase() === 'p') {
         if (currentIndex > 0) setCurrentIndex((c) => c - 1);
+      } else if (e.key === ' ' && !e.repeat) {
+        // Space advances if not already on the last item
+        e.preventDefault();
+        if (currentIndex < questions.length - 1) setCurrentIndex((c) => c + 1);
       } else if (e.key.toLowerCase() === 'f') {
         handleToggleFlag();
       } else if (['1', 'a', 'A'].includes(e.key)) {
@@ -178,9 +182,9 @@ export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, onBack }) => {
   const progressPct = questions.length > 0 ? Math.round((answeredCount / questions.length) * 100) : 0;
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#020617] text-slate-100">
+    <div className="min-h-screen flex flex-col bg-[#0f1115] text-[#f3f4f6]">
       {/* Top Sticky Header */}
-      <header className="sticky top-0 z-30 bg-[#0f172a]/90 backdrop-blur-md border-b border-white/10 px-4 sm:px-6 py-3.5">
+      <header className="sticky top-0 z-30 bg-[#16181d]/95 backdrop-blur-md border-b border-white/[0.07] px-4 sm:px-6 py-3.5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-3">
           {/* Back button and Bank Title */}
           <div className="flex items-center gap-3">
@@ -304,10 +308,29 @@ export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, onBack }) => {
       </div>
 
       {/* Main Content Area */}
-      <main className="max-w-7xl mx-auto w-full p-4 sm:p-6 lg:p-8 flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        {/* Left Column: Question Card (8 cols) */}
-        <div
-          className={`lg:col-span-8 flex flex-col gap-6 ${
+      <main className="max-w-7xl mx-auto w-full p-3 sm:p-5 lg:p-6 flex-1 flex flex-col lg:flex-row gap-5 items-start">
+        {/* Left Column: Navigator Bar (Compact Left Sidebar, 260px - 280px) */}
+        <aside
+          className={`w-full lg:w-72 xl:w-80 shrink-0 flex flex-col gap-5 ${
+            mobileTab === 'question' ? 'hidden lg:flex' : 'flex'
+          }`}
+        >
+          <QuestionGrid
+            questions={questions}
+            currentIndex={currentIndex}
+            answers={answers}
+            flagged={flagged}
+            onSelectQuestion={(idx) => {
+              setCurrentIndex(idx);
+              setMobileTab('question');
+            }}
+            accentColor={bank.accentColor}
+          />
+        </aside>
+
+        {/* Right Column: Question Card (Expanded Main Canvas) */}
+        <section
+          className={`flex-1 w-full min-w-0 flex flex-col gap-6 ${
             mobileTab === 'grid' ? 'hidden lg:flex' : 'flex'
           }`}
         >
@@ -335,26 +358,7 @@ export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, onBack }) => {
               No questions found in this bank.
             </div>
           )}
-        </div>
-
-        {/* Right Column: Navigator & Radar Summary (4 cols) */}
-        <div
-          className={`lg:col-span-4 flex flex-col gap-6 ${
-            mobileTab === 'question' ? 'hidden lg:flex' : 'flex'
-          }`}
-        >
-          <QuestionGrid
-            questions={questions}
-            currentIndex={currentIndex}
-            answers={answers}
-            flagged={flagged}
-            onSelectQuestion={(idx) => {
-              setCurrentIndex(idx);
-              setMobileTab('question');
-            }}
-            accentColor={bank.accentColor}
-          />
-        </div>
+        </section>
       </main>
 
       {/* Reset Confirmation Dialog */}

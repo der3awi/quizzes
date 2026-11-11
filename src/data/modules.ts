@@ -17,6 +17,54 @@ import {
   respiratoryFinalCategories,
 } from './respiratoryFinal';
 
+export interface DisciplineGroup {
+  id: string;
+  title: string;
+  code: string;
+  section: 'year3' | 'preclinical';
+  badge: string;
+  badgeColor: string;
+  accentColor: string;
+  icon: 'wind' | 'heart' | 'archive';
+  description: string;
+}
+
+export const DISCIPLINE_GROUPS: DisciplineGroup[] = [
+  {
+    id: 'resp',
+    title: 'Respiratory System',
+    code: 'RES 352',
+    section: 'year3',
+    badge: '339 Qs Total',
+    badgeColor: '#38bdf8',
+    accentColor: '#38bdf8',
+    icon: 'wind',
+    description: 'Upper & lower airway anatomy, pulmonary mechanics, acid-base balance, PFT loops, obstructive/restrictive pathologies, and pharmacotherapy.',
+  },
+  {
+    id: 'cvb',
+    title: 'Cardiovascular & Blood',
+    code: 'CVB 351',
+    section: 'year3',
+    badge: '275 Qs Total',
+    badgeColor: '#f43f5e',
+    accentColor: '#f43f5e',
+    icon: 'heart',
+    description: 'Hemodynamics, embryological cardiac septation, 12-lead ECG interpretation, valvular heart disease, cardiomyopathies, and hematologic coagulation.',
+  },
+  {
+    id: 'preclinical',
+    title: 'Pre-Clinical Archive',
+    code: 'ARCHIVE',
+    section: 'preclinical',
+    badge: '429 Qs Total',
+    badgeColor: '#a78bfa',
+    accentColor: '#a78bfa',
+    icon: 'archive',
+    description: 'Foundational medical sciences archive covering Pathology Core, Pharmacology Principles, APY Systems, and Principles of Disease (POD 242).',
+  },
+];
+
 export interface QuizBank {
   id: string;
   title: string;
@@ -163,6 +211,7 @@ export const MODULE_REGISTRY: QuizBank[] = [
     title: 'Pathology Core & Specimen Hub',
     subtitle: 'Pre-Clinical • Pathology',
     section: 'preclinical',
+    systemId: 'preclinical',
     badge: 'Histology & Gross',
     badgeColor: '#38bdf8',
     accentColor: '#38bdf8',
@@ -176,6 +225,7 @@ export const MODULE_REGISTRY: QuizBank[] = [
     title: 'Pharmacology Foundations',
     subtitle: 'Pre-Clinical • Pharmacology',
     section: 'preclinical',
+    systemId: 'preclinical',
     badge: 'Active Bank',
     badgeColor: '#a78bfa',
     accentColor: '#a78bfa',
@@ -189,6 +239,7 @@ export const MODULE_REGISTRY: QuizBank[] = [
     title: 'APY Theory Examination',
     subtitle: 'Pre-Clinical • Anatomy & Physiology',
     section: 'preclinical',
+    systemId: 'preclinical',
     badge: 'Comprehensive',
     badgeColor: '#10b981',
     accentColor: '#10b981',
@@ -202,6 +253,7 @@ export const MODULE_REGISTRY: QuizBank[] = [
     title: 'APY Past Final Exam',
     subtitle: 'Pre-Clinical • Past Papers',
     section: 'preclinical',
+    systemId: 'preclinical',
     badge: 'Past Papers',
     badgeColor: '#fbbf24',
     accentColor: '#fbbf24',
@@ -215,6 +267,7 @@ export const MODULE_REGISTRY: QuizBank[] = [
     title: 'POD Past Exam Bank',
     subtitle: 'Pre-Clinical • Principles of Disease',
     section: 'preclinical',
+    systemId: 'preclinical',
     badge: 'Exam Bank',
     badgeColor: '#f43f5e',
     accentColor: '#f43f5e',

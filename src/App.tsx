@@ -39,7 +39,7 @@ export const App: React.FC = () => {
   const selectedBank = MODULE_REGISTRY.find((b) => b.id === activeBankId);
 
   return (
-    <div className="min-h-screen bg-[#020617] text-slate-100 font-sans selection:bg-rose-500/30 selection:text-white">
+    <div className="min-h-screen bg-[#0f1115] text-[#f3f4f6] font-sans selection:bg-rose-500/30 selection:text-white">
       {selectedBank ? (
         <StudyEngine bank={selectedBank} onBack={handleBackToHub} />
       ) : (
