@@ -1542,16 +1542,16 @@ export const respiratoryFinalPastQuestions: Question[] = [
   },
   {
     "cat": 0,
-    "q": "A 35-year-old trauma victim with severe panfacial fractures and upper airway hemorrhage cannot be intubated or ventilated via face mask. An emergency surgical infraglottic airway must be established immediately at the bedside. To minimize bleeding and safely enter the subglottic laryngeal lumen, the incision should be made through which of the following anatomical structures?",
+    "q": "A 24-year-old medical student is examining a prosected sagittal specimen of the human larynx in the anatomy laboratory. The prosector asks the student to classify the intrinsic laryngeal musculature according to their anatomical compartments relative to the true vocal folds (vocal cords).<span class='q-stem-bold'>Which of the following intrinsic muscles of the larynx is unique in being located in the infraglottic (subglottic) compartment below the level of the rima glottidis?</span>",
     "a": [
-      "Cricothyroid membrane located between the thyroid cartilage and cricoid cartilage",
-      "Thyrohyoid membrane situated between the hyoid bone and thyroid cartilage",
-      "Anterior tracheal rings between the 2nd and 4th tracheal rings through the thyroid isthmus",
-      "Median glossoepiglottic fold within the vallecula",
-      "Cricotracheal ligament inferior to the first tracheal ring"
+      "Posterior cricoarytenoid muscle",
+      "Lateral cricoarytenoid muscle",
+      "Cricothyroid muscle",
+      "Thyroarytenoid (vocalis) muscle",
+      "Transverse and oblique arytenoid muscles"
     ],
-    "c": 0,
-    "r": "Emergency cricothyroidotomy (cricothyroid puncture) provides rapid infraglottic airway access in a 'cannot intubate, cannot oxygenate' scenario. The cricothyroid membrane is palpable as a soft depression in the midline of the neck between the inferior border of the thyroid cartilage and the superior border of the cricoid cartilage. It is covered only by skin, superficial fascia, and thin cervical fascia, lacking large overlying vascular plexuses or the thyroid gland.\n\nHigh-Yield Pearl: Emergency surgical airway puncture is performed through the cricothyroid membrane, located between thyroid and cricoid cartilages."
+    "c": 2,
+    "r": "The cricothyroid muscle is unique among the intrinsic muscles of the larynx in two major anatomical respects:\n1. Infraglottic location: It is the only intrinsic laryngeal muscle positioned in the infraglottic compartment below the level of the vocal cords (lying on the anterolateral outer surface of the cricoid and thyroid cartilages), whereas all other intrinsic laryngeal muscles reside supraglottically or at the level of the glottis inside the laryngeal cavity.\n2. Innervation: It is the only intrinsic laryngeal muscle innervated by the external branch of the superior laryngeal nerve, whereas all other intrinsic muscles are supplied by the recurrent laryngeal nerve.\n\nHigh-Yield Pearl: The cricothyroid is the only intrinsic laryngeal muscle located infraglottically (below the vocal folds) and the only one innervated by the external laryngeal nerve."
   },
   {
     "cat": 0,
@@ -1645,17 +1645,17 @@ export const respiratoryFinalPastQuestions: Question[] = [
     "r": "Ergometrine (methylergonovine) is an ergot alkaloid that induces sustained tetanic uterine contractions and potent systemic alpha-adrenergic vasoconstriction. It is strictly contraindicated in women with gestational hypertension, preeclampsia, eclampsia, or cardiovascular disease because it can precipitate hypertensive crisis, intracerebral hemorrhage, or myocardial infarction. Oxytocin is the first-line uterotonic in hypertensive patients.\n\nHigh-Yield Pearl: Ergometrine (methylergonovine) is strictly contraindicated in preeclampsia and hypertension due to risk of fatal hypertensive crises."
   },
   {
-    "cat": 1,
-    "q": "A 48-year-old man in septic shock secondary to severe Pseudomonas aeruginosa ventilator-associated pneumonia develops bleeding from vascular puncture sites and petechiae. Coagulation studies demonstrate: Prothrombin Time (PT) 24 seconds (normal 11–13.5 s), Activated Partial Thromboplastin Time (APTT) 62 seconds (normal 25–35 s), Platelet count 45,000/µL, and elevated D-dimer. Which of the following pathophysiological mechanisms accounts for the prolongation of both PT and APTT?",
+    "cat": 3,
+    "q": "A 31-year-old G2P1 woman at 39 weeks of gestation undergoes uncomplicated induction of labor. Minutes after the delivery of a healthy infant, she suddenly develops acute severe dyspnea, cyanosis, seizure activity, and profound cardiovascular collapse with blood pressure dropping to 60/35 mm Hg. Tracheal intubation and aggressive fluid resuscitation are initiated. Shortly thereafter, torrential continuous dark blood is noted oozing from her IV puncture sites, venipuncture sites, and vaginal lacerations.\n\nLaboratory evaluation reveals:\n<table class='lab-table'><thead><tr><th>Parameter</th><th>Patient Value</th><th>Reference Range</th></tr></thead><tbody><tr><td>Prothrombin Time (PT)</td><td>26.4 seconds</td><td>11.0–13.5 seconds</td></tr><tr><td>Activated Partial Thromboplastin Time (APTT)</td><td>68.2 seconds</td><td>25.0–35.0 seconds</td></tr><tr><td>Fibrinogen</td><td>65 mg/dL</td><td>200–400 mg/dL</td></tr><tr><td>Platelet Count</td><td>38,000/µL</td><td>150,000–450,000/µL</td></tr><tr><td>D-dimer</td><td>14,500 ng/mL D-DU</td><td>< 500 ng/mL D-DU</td></tr></tbody></table><span class='q-stem-bold'>Which of the following primary pathophysiological triggers explains the profound prolongation of both PT and APTT in this patient?</span>",
     "a": [
-      "Direct pharmacological inhibition of thrombin by circulating heparin-like mucopolysaccharides",
-      "Selective autoimmune destruction of tissue factor pathway inhibitor (TFPI)",
-      "Isolated vitamin C deficiency causing impaired collagen cross-linking",
-      "Widespread consumptive coagulopathy with exhaustion of factors in both the extrinsic and intrinsic pathways",
-      "Isolated hereditary deficiency of clotting factor VIII (Hemophilia A)"
+      "Primary hyperfibrinolysis mediated by excessive placental release of urokinase-type plasminogen activator (uPA)",
+      "Massive entry of fetal thromboplastin-like tissue factor into the maternal circulation triggering consumptive disseminated intravascular coagulation (DIC)",
+      "Isolated hepatic microvascular thrombosis leading to sudden cessation of prothrombin and factor VII synthesis",
+      "Autoimmune production of antibodies directed against phospholipid-protein complexes and factor VIII",
+      "Circulating maternal anti-thrombin III excess induced by acute right ventricular strain"
     ],
-    "c": 3,
-    "r": "The patient presents with Disseminated Intravascular Coagulation (DIC) triggered by severe sepsis. Bacterial lipopolysaccharide (endotoxin) and proinflammatory cytokines (TNF-alpha, IL-1) cause widespread systemic endothelial injury and uncontrolled tissue factor exposure. This initiates massive intravascular thrombin generation and microvascular fibrin thrombi, followed by progressive consumption and depletion of platelets, fibrinogen, and coagulation factors across both the extrinsic (reflected by prolonged PT) and intrinsic (reflected by prolonged APTT) cascades.\n\nHigh-Yield Pearl: DIC secondary to sepsis causes consumptive depletion of platelets and clotting factors, resulting in prolonged PT and APTT with elevated D-dimer."
+    "c": 1,
+    "r": "This patient presents with classic Amniotic Fluid Embolism (AFE), a catastrophic obstetric emergency characterized by the triad of sudden cardiopulmonary arrest (or profound hypotension and hypoxia), seizures, and rapid-onset disseminated intravascular coagulation (DIC) with consumptive coagulopathy.\n\nPathophysiology of Prolonged PT and APTT:\n1. Tissue Factor (Thromboplastin) Release: Amniotic fluid contains large quantities of fetal tissue factor (thromboplastin-like procoagulants) and mucin. Breaches in the endocervical or uterine veins allow amniotic fluid to enter the maternal venous circulation.\n2. Massive Coagulation Cascade Activation: Circulating tissue factor complexes with maternal factor VIIa, initiating extensive extrinsic coagulation that rapidly activates the common and intrinsic pathways.\n3. Consumptive Coagulopathy: Uncontrolled widespread microvascular fibrin thrombus deposition consumes clotting factors (factors II, V, VII, VIII, IX, X, and fibrinogen) and platelets faster than the liver and bone marrow can replenish them. Because factors in both the extrinsic (factor VII, tissue factor) and intrinsic (factors VIII, IX, XI, XII) as well as common (factors X, V, II, fibrinogen) pathways are depleted, both the Prothrombin Time (PT) and Activated Partial Thromboplastin Time (APTT) become markedly prolonged.\n\nHigh-Yield Pearl: Amniotic fluid embolism introduces abundant fetal tissue factor into the maternal circulation, triggering widespread consumptive DIC that depletes both extrinsic and intrinsic clotting factors, resulting in markedly prolonged PT and APTT, hypofibrinogenemia, thrombocytopenia, and high D-dimer."
   },
   {
     "cat": 2,
@@ -1698,16 +1698,16 @@ export const respiratoryFinalPastQuestions: Question[] = [
   },
   {
     "cat": 3,
-    "q": "A 59-year-old male smoker presents with severe bilateral aching pain and swelling over both shins and wrists. Radiographs of the distal radius, ulna, and tibia demonstrate bilateral, symmetrical subperiosteal new bone formation (periostitis). Physical examination reveals prominent digital clubbing. A chest radiograph demonstrates a 4-cm peripheral pulmonary mass. This syndrome (hypertrophic pulmonary osteoarthropathy) is most frequently associated with which histological type of primary lung cancer?",
+    "q": "A 19-year-old man with cystic fibrosis (homozygous for the Delta-F508 mutation) presents to the pulmonary clinic with a 2-month history of worsening deep, aching pain and non-pitting edema over his distal forearms, wrists, and bilateral lower legs. The pain is worse with dependency and partially relieved by elevation and nonsteroidal anti-inflammatory drugs. Physical examination reveals prominent digital clubbing (Lovibond angle > 180 degrees), warmth and exquisite tenderness along the distal shafts of the radius, ulna, and tibia, and bilateral ankle joint effusions.\n\nPlain radiographs of the distal lower extremities demonstrate bilateral, symmetrical, linear subperiosteal new bone formation along the diaphyses of the tibia and fibula, without cortical destruction.<span class='q-stem-bold'>Which of the following conditions best accounts for this patient's presentation?</span>",
     "a": [
-      "Tracheal adenoid cystic carcinoma",
-      "Typical carcinoid tumor of the mainstem bronchus",
-      "Benign bronchial hamartoma",
-      "Small cell neuroendocrine carcinoma",
-      "Pulmonary adenocarcinoma"
+      "Pseudomonas-induced acute bacterial osteomyelitis of the long bone diaphyses",
+      "Hypertrophic pulmonary osteoarthropathy (HPOA) secondary to chronic suppurative lung disease",
+      "Vitamin D deficiency and secondary hyperparathyroidism causing renal osteodystrophy",
+      "Ciprofloxacin-induced tendinitis and subperiosteal hematoma",
+      "Chronic immune-complex-mediated systemic juvenile idiopathic arthritis"
     ],
-    "c": 4,
-    "r": "Hypertrophic pulmonary osteoarthropathy (HPOA / Pierre Marie-Bamberger syndrome) is characterized by the triad of digital clubbing, periostitis of distal long bones (producing severe symmetrical bone pain and swelling), and arthritis. It is a paraneoplastic manifestation most commonly associated with primary non-small cell lung cancer, particularly pulmonary adenocarcinoma. Pathophysiology involves tumor or megakaryocyte release of platelet-derived growth factor (PDGF) and VEGF, stimulating periosteal angiogenesis and osteogenesis.\n\nHigh-Yield Pearl: Hypertrophic pulmonary osteoarthropathy (clubbing + symmetrical periostitis) is strongly associated with pulmonary adenocarcinoma."
+    "c": 1,
+    "r": "This patient presents with Hypertrophic Pulmonary Osteoarthropathy (HPOA, also known as Pierre Marie-Bamberger syndrome) occurring as an established extrapulmonary complication of cystic fibrosis (CF) and chronic suppurative lung disease.\n\nKey Clinical & Pathophysiological Features of HPOA in Cystic Fibrosis:\n1. Triad: Digital clubbing, periostitis (new subperiosteal bone formation producing deep, burning, or aching long bone pain and tender swelling over distal extremities), and symmetrical oligo- or polyarthritis/effusions.\n2. Mechanism: In healthy individuals, megakaryocytes and large platelet clumps originating in bone marrow are fragmented into mature platelets within the pulmonary capillary bed. In CF with chronic pulmonary infection, severe ventilation-perfusion mismatch, and right-to-left shunting (or bronchopulmonary anastomoses), intact megakaryocytes bypass pulmonary fragmentation and impact in the peripheral microcirculation of the distal extremities. Once lodged, they release high concentrations of platelet-derived growth factor (PDGF) and vascular endothelial growth factor (VEGF). These cytokines trigger intense endothelial activation, periosteal angiogenesis, fibroblast proliferation, and rapid subperiosteal osteogenesis.\n3. Classic Radiography: Bilateral, symmetrical 'onion-skin' or linear subperiosteal appositional new bone formation along the diaphyses and metaphyses of distal tubular bones (tibia, fibula, radius, ulna), without focal osseous lytic destruction.\n\nHigh-Yield Pearl: In young patients, cystic fibrosis and bronchiectasis are classic pulmonary causes of hypertrophic pulmonary osteoarthropathy (HPOA), marked by digital clubbing, burning extremity pain, and symmetrical diaphyseal periostitis driven by peripheral megakaryocyte VEGF/PDGF release."
   },
   {
     "cat": 3,
@@ -1750,16 +1750,16 @@ export const respiratoryFinalPastQuestions: Question[] = [
   },
   {
     "cat": 2,
-    "q": "A 12-year-old girl with cystic fibrosis visits the pulmonary clinic for her annual comprehensive health evaluation. She has maintained stable lung function but has shown poor weight gain over the past six months. According to clinical consensus guidelines, routine annual screening for cystic fibrosis-related diabetes (CFRD) in all patients aged 10 and older is best performed using which of the following tests?",
+    "q": "A 32-year-old man with cystic fibrosis (CF) attends his scheduled adult transition clinic. He is currently on pancreatic enzyme replacement therapy, inhaled dornase alfa, and elexacaftor/tezacaftor/ivacaftor triple therapy. During a multidisciplinary review on long-term endocrine and metabolic comorbidities in surviving adult CF patients, the pulmonologist discusses screening for cystic fibrosis-related diabetes (CFRD).<span class='q-stem-bold'>Approximately what proportion of adults with cystic fibrosis aged 30 to 39 years develop cystic fibrosis-related diabetes (CFRD)?</span>",
     "a": [
-      "Two-hour 75-gram oral glucose tolerance test (OGTT)",
-      "Urinary ketone dipstick evaluation",
-      "Fasting serum c-peptide concentration alone",
-      "Random capillary fingerstick glucose check",
-      "Hemoglobin A1c measurement alone"
+      "Approximately 5%",
+      "Approximately 15%",
+      "Approximately 25%",
+      "Approximately 50%",
+      "Approximately 85%"
     ],
-    "c": 0,
-    "r": "Cystic fibrosis-related diabetes (CFRD) is the most common comorbidity in CF, affecting up to 50% of adults. It arises from progressive fibrotic destruction of islet architecture by thick pancreatic secretions. The gold standard for CFRD screening recommended by the Cystic Fibrosis Foundation and ADA is an annual 2-hour 75g oral glucose tolerance test (OGTT) starting at age 10. Hemoglobin A1c is notoriously insensitive in CF due to increased red cell turnover and chronic hemolysis.\n\nHigh-Yield Pearl: The 2-hour 75g oral glucose tolerance test (OGTT) is the gold standard annual screen for cystic fibrosis-related diabetes (CFRD)."
+    "c": 3,
+    "r": "Cystic fibrosis-related diabetes (CFRD) is the most common non-pulmonary comorbidity in cystic fibrosis. Its prevalence increases dramatically with advancing age:\n- Children and adolescents: ~15–20% by late adolescence.\n- Adults: Approximates 40–50% in patients aged 30 years and older.\n\nPathophysiology & Clinical Pearls:\n1. Pathophysiology: Thick, inspissated pancreatic exocrine secretions cause ductal obstruction, autodigestion, chronic pancreatitis, and extensive fatty-fibrotic architectural remodeling of the pancreas. This progressive fibrosis collateralizes into islet destruction with selective depletion of insulin-producing beta cells, combined with peripheral insulin resistance exacerbated by chronic pulmonary infections and systemic inflammation.\n2. Screening: The gold-standard screening test is an annual 2-hour 75-gram oral glucose tolerance test (OGTT) starting at age 10. Hemoglobin A1c is notoriously unreliable and insensitive in CF due to rapid red blood cell turnover and chronic hemolysis.\n3. Impact: CFRD is an independent predictor of worsening pulmonary function (accelerated FEV1 decline), catabolism/weight loss, and increased mortality unless treated with insulin replacement.\n\nHigh-Yield Pearl: Up to 50% of adult CF patients (aged 30+) develop cystic fibrosis-related diabetes (CFRD) due to progressive fibrotic destruction of pancreatic islets."
   },
   {
     "cat": 3,
@@ -1906,16 +1906,16 @@ export const respiratoryFinalPastQuestions: Question[] = [
   },
   {
     "cat": 3,
-    "q": "A 52-year-old healthy executive presents for a routine preventive health examination. He has no chronic medical conditions and had mild chickenpox during early childhood. In accordance with current CDC and ACIP immunization guidelines, which of the following recommendations regarding the Recombinant Zoster Vaccine (RZV, Shingrix) is most appropriate?",
+    "q": "A 54-year-old man visits the primary care clinic for an annual health maintenance evaluation. His past medical history is significant for well-controlled mild asthma, and his childhood immunizations were completed per schedule. During the visit, he asks about preventing herpes zoster (shingles) and postherpetic neuralgia after an acquaintance was hospitalized with severe ophthalmic zoster. In accordance with current Advisory Committee on Immunization Practices (ACIP) and CDC guidelines,<span class='q-stem-bold'>which of the following summarizes the correct vaccine formulation, schedule, and indicated target populations for shingles prophylaxis?</span>",
     "a": [
-      "Administer a 2-dose series of recombinant zoster vaccine separated by 2 to 6 months",
-      "Vaccinate only if the patient has experienced at least one prior documented episode of herpes zoster",
-      "Withhold vaccination until age 65 because healthy adults under 65 derive zero efficacy",
-      "Check varicella-zoster virus (VZV) IgG titers before deciding whether vaccination is indicated",
-      "Administer a single dose of live attenuated zoster vaccine (Zostavax)"
+      "RZV (2 doses, 50+ age, immunocompromised)",
+      "ZVL (1 dose, 65+ age only, strictly immunocompetent)",
+      "RZV (1 dose, 60+ age, immunocompromised)",
+      "Varicella live vaccine (2 doses, 50+ age, immunocompetent only)",
+      "ZVL (2 doses, 50+ age, immunocompromised)"
     ],
     "c": 0,
-    "r": "The ACIP recommends the Recombinant Zoster Vaccine (RZV, Shingrix) for all immunocompetent adults aged 50 years and older, regardless of prior herpes zoster episodes or prior receipt of the older live-attenuated vaccine. It is also recommended for immunocompromised adults aged 19 and older. RZV is administered as a 2-dose intramuscular series separated by 2 to 6 months, demonstrating >90% efficacy in preventing shingles and postherpetic neuralgia.\n\nHigh-Yield Pearl: Recombinant zoster vaccine (RZV) is administered as a 2-dose series (months 0 and 2–6) for all adults aged ≥50 and immunocompromised adults ≥19."
+    "r": "According to current CDC and ACIP guidelines, the Recombinant Zoster Vaccine (RZV, Shingrix) is the preferred vaccine formulation for herpes zoster prevention:\n1. Formulation & Dosing: RZV is a non-live recombinant adjuvanted glycoprotein E subunit vaccine administered as a 2-dose intramuscular series (0 and 2–6 months apart).\n2. Target Populations:\n   - Immunocompetent adults aged 50 years and older (50+ age).\n   - Immunocompromised adults aged 19 years and older (including patients with hematologic malignancies, solid tumors, HIV, or on immunosuppressive therapy).\n3. Superiority over ZVL: The older live-attenuated zoster vaccine (ZVL, Zostavax) is discontinued in the United States and contraindicated in immunocompromised patients due to risk of disseminated viral infection. In contrast, RZV is safe in immunocompromised patients because it is a non-live recombinant vaccine, delivering >90% efficacy against shingles and postherpetic neuralgia across all age groups.\n\nHigh-Yield Pearl: Herpes zoster prevention is achieved using RZV (2 doses, 50+ age, immunocompromised individuals ≥19 years)."
   },
   {
     "cat": 3,
@@ -2114,16 +2114,16 @@ export const respiratoryFinalPastQuestions: Question[] = [
   },
   {
     "cat": 3,
-    "q": "A 28-year-old asthmatic patient using high-dose inhaled beclomethasone dipropionate via a metered-dose inhaler (MDI) develops a sore mouth and hoarseness (dysphonia). Physical examination reveals curd-like white plaques on the buccal mucosa and posterior pharyngeal wall that scrape off easily with a tongue blade, exposing an erythematous, bleeding base. Which of the following clinical measures could have prevented this complication?",
+    "q": "A 28-year-old asthmatic patient using high-dose inhaled beclomethasone dipropionate (beclomethazone) via a metered-dose inhaler (MDI) develops a sore mouth and hoarseness (dysphonia). Physical examination reveals curd-like white plaques on the buccal mucosa and posterior pharyngeal wall that scrape off easily with a tongue blade, exposing an erythematous, bleeding base.<span class='q-stem-bold'>Which of the following clinical measures could have prevented this complication associated with inhaled beclomethasone (beclomethazone)?</span>",
     "a": [
-      "Switching from inhaled corticosteroid to daily oral prednisone",
-      "Using a spacer device with the inhaler and thoroughly rinsing the mouth with water and spitting after each administration",
-      "Immediately escalating the daily dosage of beclomethasone",
-      "Co-administering inhaled salmeterol without mouth rinsing",
-      "Administering broad-spectrum oral ampicillin prophylactically"
+      "Switching from inhaled beclomethazone to daily oral prednisone therapy",
+      "Using a spacer device with the inhaler and thoroughly rinsing the mouth with water and spitting after each beclomethazone administration",
+      "Immediately escalating the daily dosage of inhaled beclomethazone dipropionate",
+      "Co-administering inhaled salmeterol without subsequent mouth rinsing",
+      "Administering prophylactic broad-spectrum oral ampicillin before each dose"
     ],
     "c": 1,
-    "r": "Oropharyngeal candidiasis (thrush) and dysphonia (due to laryngeal myopathy) are the most common local adverse effects of inhaled corticosteroids (ICS) such as beclomethasone, fluticasone, and budesonide. They result from local immunosuppression by corticosteroid deposition in the oral cavity. Prevention requires the use of a spacer chamber (which reduces oropharyngeal particle deposition) and instructing the patient to rinse their mouth and spit after each dose. Treatment is with topical nystatin or oral fluconazole.\n\nHigh-Yield Pearl: Oropharyngeal candidiasis from inhaled corticosteroids is prevented by using a spacer and rinsing the mouth with water after each use."
+    "r": "Oropharyngeal candidiasis (thrush) and dysphonia (due to steroid-induced laryngeal myopathy) are the most frequent local adverse effects of inhaled corticosteroids (ICS) such as beclomethasone (beclomethazone), fluticasone, and budesonide. They result from local immunosuppression caused by drug deposition in the oropharyngeal cavity.\n\nPrevention & Management:\n1. Spacer Chamber: Greatly reduces oropharyngeal impaction of large aerosol droplets while facilitating pulmonary delivery.\n2. Mouth Rinsing: Instructing patients to rinse their mouth thoroughly with water and spit after each beclomethasone (beclomethazone) administration clears deposited steroid residue from the oral mucosa.\n3. Treatment: Topical antifungal therapy with nystatin oral suspension or oral fluconazole.\n\nHigh-Yield Pearl: Local adverse effects of inhaled corticosteroids like beclomethasone (beclomethazone), including oral candidiasis and dysphonia, are prevented by using a spacer and rinsing the mouth after each use."
   },
   {
     "cat": 3,
