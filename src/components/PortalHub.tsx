@@ -25,7 +25,7 @@ import {
 } from 'lucide-react';
 
 interface PortalHubProps {
-  onSelectBank: (bankId: string) => void;
+  onSelectBank: (bankId: string, modeKey?: string) => void;
 }
 
 export const PortalHub: React.FC<PortalHubProps> = ({ onSelectBank }) => {
@@ -189,7 +189,7 @@ export const PortalHub: React.FC<PortalHubProps> = ({ onSelectBank }) => {
               {mod.modes.map((m) => (
                 <button
                   key={m.key}
-                  onClick={() => onSelectBank(mod.id)}
+                  onClick={() => onSelectBank(mod.id, m.key)}
                   className="flex-1 py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-xs font-bold text-slate-200 flex items-center justify-between transition group/btn"
                 >
                   <span className="truncate">{m.label}</span>

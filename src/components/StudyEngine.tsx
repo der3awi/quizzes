@@ -15,6 +15,7 @@ import {
 
 interface StudyEngineProps {
   bank: QuizBank;
+  initialModeKey?: string;
   onBack: () => void;
 }
 
@@ -23,11 +24,24 @@ interface SavedState {
   flagged: number[];
 }
 
-export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, onBack }) => {
+export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, initialModeKey, onBack }) => {
   // Mode selection (if bank supports modes)
   const [selectedModeKey, setSelectedModeKey] = useState<string>(() => {
-    return bank.modes ? bank.modes[0].key : '';
+    if (bank.modes) {
+      if (initialModeKey && bank.modes.some((m) => m.key === initialModeKey)) {
+        return initialModeKey;
+      }
+      return bank.modes[0].key;
+    }
+    return '';
   });
+
+  // Keep selectedModeKey updated if initialModeKey changes from outside (e.g. hash routing)
+  useEffect(() => {
+    if (initialModeKey && bank.modes?.some((m) => m.key === initialModeKey)) {
+      setSelectedModeKey(initialModeKey);
+    }
+  }, [initialModeKey, bank.modes]);
 
   // Active question set and storage key
   const activeMode = bank.modes?.find((m) => m.key === selectedModeKey);
@@ -228,6 +242,7 @@ export const StudyEngine: React.FC<StudyEngineProps> = ({ bank, onBack }) => {
                     key={m.key}
                     onClick={() => {
                       setSelectedModeKey(m.key);
+                      window.location.hash = `${bank.id}:${m.key}`;
                     }}
                     className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 ${
                       selectedModeKey === m.key
