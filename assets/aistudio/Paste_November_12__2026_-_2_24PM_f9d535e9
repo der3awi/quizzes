@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RES Examination Practice Bank - New Past Recall Items</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background-color: #f1f5f9;
+      padding: 32px 16px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .page-header {
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+    }
+    .page-header h1 {
+      margin: 0 0 8px 0;
+      color: #0f172a;
+      font-size: 1.75rem;
+    }
+    .page-header p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+    .question-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    }
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #2563eb;
+    }
+    .vignette {
+      font-size: 1rem;
+      color: #334155;
+      margin-bottom: 14px;
+      line-height: 1.65;
+    }
+    .stem {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+    .options {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+    }
+    .options li {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .explanation {
+      background: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      border-radius: 0 8px 8px 0;
+      padding: 18px;
+      margin-top: 16px;
+    }
+    .correct-badge {
+      font-weight: 700;
+      color: #15803d;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .rationale {
+      font-size: 0.95rem;
+      color: #1e293b;
+      margin-bottom: 12px;
+    }
+    .distractors {
+      border-top: 1px solid #bbf7d0;
+      padding-top: 10px;
+      font-size: 0.9rem;
+      color: #14532d;
+    }
+    .distractors ul {
+      margin: 6px 0 0 0;
+      padding-left: 20px;
+    }
+    .citation {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      font-style: italic;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>RES Course Reverse-Engineered Exam Bank (New TBL & Final Recall Items)</h1>
+    <p>Targeted board-level clinical vignettes generated from recent TBLs, final exam answer keys, and theory recall items.</p>
+  </div>
+
+  <!-- ITEM 1: BOCHDALEK HERNIA -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 1</span>
+      <span>Category: Pediatric Embryology</span>
+    </div>
+    <div class="vignette">
+      A newborn male delivered at 38 weeks of gestation develops severe respiratory distress, cyanosis, and grunting within 15 minutes of birth. Physical examination reveals a scaphoid abdomen, absent vesicular breath sounds over the left hemithorax, and heart sounds displaced prominently to the right lateral thoracic wall. An emergent plain radiograph of the chest and abdomen demonstrates multiple air-filled loops of bowel within the left thoracic cavity and marked mediastinal shift.
+    </div>
+    <div class="stem">
+      Defective formation or incomplete fusion of which of the following embryological structures is the primary cause of this neonate's anatomical malformation?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Incomplete cranial development of the transverse fibrous septum transversum</li>
+      <li><strong>B.</strong> Defective lateral muscular ingrowth derived from the adjacent body wall</li>
+      <li><strong>C.</strong> Faulty closure of the posterolateral embryological pleuroperitoneal membrane</li>
+      <li><strong>D.</strong> Aberrant longitudinal development and migration of the esophageal mesentery</li>
+      <li><strong>E.</strong> Incomplete separation of the primitive foregut by lateral esophageal folds</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: C</div>
+      <div class="rationale">
+        This infant presents with a classic <strong>Bochdalek hernia</strong> (congenital diaphragmatic hernia), which accounts for >85% of cases and characteristically occurs on the <strong>left posterolateral side</strong>. It results from defective closure of the <strong>pleuroperitoneal membrane</strong> with the septum transversum and esophageal mesentery during the 6th to 8th weeks of development. Herniation of abdominal viscera into the thoracic cavity compresses developing bronchial buds, causing severe ipsilateral and contralateral pulmonary hypoplasia.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> The septum transversum forms the central tendon of the diaphragm; defects here cause central or anterior (Morgagni) hernias.</li>
+          <li><em>Option B:</em> Body wall muscular ingrowth forms the peripheral rim of the diaphragm; it is not the primary site of Bochdalek herniation.</li>
+          <li><em>Option D:</em> The dorsal mesentery of the esophagus forms the diaphragmatic crura; defects result in hiatal or paraesophageal hernias.</li>
+          <li><em>Option E:</em> Faulty tracheoesophageal septation results in tracheoesophageal fistulae, not diaphragmatic defects.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Development of the Respiratory System.pdf &amp; Screenshot Theory Recall Item 42 (Bochdalek hernia)</div>
+    </div>
+  </div>
+
+  <!-- ITEM 2: CHAOS SYNDROME -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 2</span>
+      <span>Category: Congenital Malformations</span>
+    </div>
+    <div class="vignette">
+      A routine prenatal ultrasound performed at 21 weeks of gestation demonstrates a fetus with massive, symmetrically enlarged and intensely echogenic lungs, flattened-to-inverted diaphragms, a centrally compressed heart, and severe fetal ascites with generalized subcutaneous soft tissue edema (hydrops fetalis). The trachea and bronchi distal to the larynx appear prominently dilated and fluid-distended.
+    </div>
+    <div class="stem">
+      Which of the following developmental errors is the underlying embryological cause of this fetal syndrome?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Failure of the lateral tracheoesophageal folds to fuse in the midline</li>
+      <li><strong>B.</strong> Arrest of distal branching morphogenesis at the pseudoglandular phase</li>
+      <li><strong>C.</strong> Agenesis of secondary interalveolar connective tissue septa</li>
+      <li><strong>D.</strong> Complete failure of recanalization of the primitive laryngeal lumen</li>
+      <li><strong>E.</strong> Premature regression of embryonic pulmonary arterial vascular branches</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: D</div>
+      <div class="rationale">
+        The fetus exhibits <strong>Congenital High Airway Obstruction Syndrome (CHAOS)</strong> secondary to <strong>complete laryngeal atresia</strong>. During normal laryngeal development, endodermal epithelial proliferation occludes the lumen, which then undergoes <strong>recanalization during the 10th week</strong>. Complete failure of this recanalization traps fetal pulmonary fluid secreted by the developing alveolar epithelium. The resulting intrapulmonary pressure distends distal airways, flattens or inverts the diaphragm, compresses the heart and inferior vena cava, impairs venous return, and precipitates fatal non-immune hydrops fetalis.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Midline fusion failure of tracheoesophageal folds causes tracheoesophageal fistula (TEF), where lungs are not fluid-hyperinflated.</li>
+          <li><em>Option B:</em> Arrest of branching morphogenesis causes pulmonary hypoplasia or agenesis, resulting in abnormally small (not distended) lungs.</li>
+          <li><em>Option C:</em> Failure of secondary septation occurs late in gestation (saccular/alveolar stages) and characterizes bronchopulmonary dysplasia.</li>
+          <li><em>Option E:</em> Pulmonary vascular regression causes pulmonary arterial hypoplasia, which does not trap fluid or distend distal lung parenchyma.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Development of the Respiratory System.pdf — Slides: "Laryngeal Atresia (CHAOS Syndrome)" &amp; Final Exam Recall Item 42</div>
+    </div>
+  </div>
+
+  <!-- ITEM 3: EMERGENCY CRICOTHYROIDOTOMY -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 3</span>
+      <span>Category: Clinical Anatomy & Emergencies</span>
+    </div>
+    <div class="vignette">
+      A 54-year-old male dining at a restaurant suffers sudden foreign body airway obstruction while eating steak. Witnesses perform abdominal thrusts (Heimlich maneuver) repeatedly without success. The patient collapses, becomes unresponsive, and demonstrates profound facial cyanosis. Emergency medical personnel arrive and identify complete supraglottic obstruction that cannot be relieved with Magill forceps or endotracheal intubation. An immediate emergency surgical airway must be established.
+    </div>
+    <div class="stem">
+      Which of the following anatomical structures should be directly incised to establish an immediate subglottic airway?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> The thyrohyoid membrane connecting the thyroid lamina to the hyoid bone</li>
+      <li><strong>B.</strong> The median cricothyroid ligament bridging the thyroid and cricoid cartilages</li>
+      <li><strong>C.</strong> The anterior tracheal fibroelastic rings situated between the 4th and 5th rings</li>
+      <li><strong>D.</strong> The posterior membranous trachealis wall separating trachea from esophagus</li>
+      <li><strong>E.</strong> The lateral quadrangular membrane superior to the false vestibular vocal cords</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        When acute upper airway obstruction cannot be relieved by basic life support maneuvers or endotracheal intubation ("cannot intubate, cannot oxygenate"), an emergency <strong>cricothyroidotomy</strong> is the procedure of choice. The <strong>median cricothyroid ligament</strong> (part of the conus elasticus) lies subcutaneously between the inferior border of the thyroid cartilage and the superior border of the cricoid ring. It provides the thinnest, most accessible subglottic entry point devoid of overlying major vascular structures or thyroid parenchyma.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> The thyrohyoid membrane lies superior to the vocal cords (supraglottic); incising it enters the pharyngeal cavity above the obstruction.</li>
+          <li><em>Option C:</em> Tracheostomy between the 4th and 5th rings is an elective surgical procedure obscured by the thyroid isthmus and inferior veins.</li>
+          <li><em>Option D:</em> The trachealis muscle forms the posterior wall of the trachea; incising it risks esophageal perforation.</li>
+          <li><em>Option E:</em> The quadrangular membrane lies within the supraglottic laryngeal vestibule above the obstruction.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Anatomy of the Upper respiratory Tract.pdf — Slides: "Cricothyroid membrane" &amp; Screenshot Theory Recall Item 49</div>
+    </div>
+  </div>
+
+  <!-- ITEM 4: OLFACTORY NEUROHISTOLOGY -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 4</span>
+      <span>Category: Histology & Neurophysiology</span>
+    </div>
+    <div class="vignette">
+      A neurobiologist studies the microscopic organization of the human nasal cavity mucosa lining the roof of each nasal cavity, the superior nasal concha, and the upper third of the nasal septum. Histological sections reveal a pseudostratified columnar neuroepithelium containing non-motile modified cilia, apical microvilli, supporting sustentacular cells, and basal stem cells.
+    </div>
+    <div class="stem">
+      Which of the following cell types in this specialized epithelium serves as the primary primary sensory receptor cell capable of transducing chemical odorants into electrical action potentials?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Sustentacular supporting cells equipped with apical secretory granules</li>
+      <li><strong>B.</strong> Bipolar sensory neurons with specialized non-motile apical olfactory cilia</li>
+      <li><strong>C.</strong> Basal stem cells exhibiting high rates of symmetrical mitotic division</li>
+      <li><strong>D.</strong> Submucosal Bowman serous cells that synthesize odorant-binding proteins</li>
+      <li><strong>E.</strong> Brush cells possessing blunt microvilli innervated by the trigeminal nerve</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        The primary sensory receptor cells in the olfactory mucosa are <strong>bipolar neurons</strong>. Their apical dendrites extend to the mucosal surface as swollen olfactory knobs bearing long, non-motile cilia containing G-protein coupled odorant receptors (Golf). Their unmyelinated basal axons coalesce into olfactory nerve bundles (filia olfactoria, CN I) that traverse the cribriform plate of the ethmoid bone to synapse in the olfactory bulb. Notably, they are unique true neurons capable of continuous neurogenesis from basal stem cells throughout adult life.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Sustentacular cells are metabolic and structural supporting cells analogous to glial cells.</li>
+          <li><em>Option C:</em> Basal cells are reserve stem cells that replenish olfactory neurons and sustentacular cells; they do not detect odorants.</li>
+          <li><em>Option D:</em> Bowman glands secrete a watery fluid that flushes away odorants; they are secretory cells, not sensory transducers.</li>
+          <li><em>Option E:</em> Brush cells transmit general somatosensory sensation (irritation) via CN V, not true olfaction.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: RESPIRATORY SYSTEM HISTOLOGY-RES 352.pdf &amp; Screenshot Theory Recall Item 50</div>
+    </div>
+  </div>
+
+  <!-- ITEM 5: PRE-BÖTZINGER COMPLEX -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 5</span>
+      <span>Category: Neural Control of Respiration</span>
+    </div>
+    <div class="vignette">
+      In an experimental mammalian model, patch-clamp microelectrodes record from various neuronal clusters throughout the brainstem during spontaneous breathing. A distinct localized cluster of specialized interneurons in the ventrolateral medulla oblongata demonstrates rhythmic, intrinsic burst discharges that persist even after pharmacological blockade of all synaptic sensory afferents and pontine inputs.
+    </div>
+    <div class="stem">
+      Which of the following anatomical structures is the primary neuroanatomical pacemaker responsible for initiating this basal respiratory rhythm?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Dorsal respiratory group situated within the nucleus tractus solitarius</li>
+      <li><strong>B.</strong> Pontine pneumotaxic center in the nucleus parabrachialis medialis</li>
+      <li><strong>C.</strong> Pre-Bötzinger complex located within the ventrolateral medullary column</li>
+      <li><strong>D.</strong> Caudal apneustic center located within the lower pontine reticular formation</li>
+      <li><strong>E.</strong> Chemosensitive neuronal zone situated on the ventrolateral medullary surface</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: C</div>
+      <div class="rationale">
+        The primary rhythm-generating pacemaker for automatic, involuntary respiration is the <strong>pre-Bötzinger complex</strong>, situated within the ventral respiratory column of the rostral ventrolateral medulla. Neurons in this complex exhibit intrinsic autorhythmic pacemaker properties (analogous to the sinoatrial node of the heart) that set the fundamental baseline cadence of inspiratory ramp generation, subsequently driving motor neurons in the phrenic and intercostal motor pools.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> The dorsal respiratory group (DRG) integrates sensory input (from CN IX and X) and relays inspiratory signals, but does not contain the primary pacemaker.</li>
+          <li><em>Option B:</em> The pneumotaxic center terminates inspiration to modulate rate and depth; it is not the primary pacemaker.</li>
+          <li><em>Option D:</em> The apneustic center provides excitatory input to prolong inspiration; it does not set the intrinsic pace.</li>
+          <li><em>Option E:</em> Central chemoreceptors detect CSF H+ to modulate ventilatory amplitude, not initiate basic rhythmic pacing.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Neural control of respiration.pdf &amp; Screenshot Theory Recall Item 41</div>
+    </div>
+  </div>
+
+  <!-- ITEM 6: VOCAL CORD HISTOLOGY -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 6</span>
+      <span>Category: Respiratory Histology</span>
+    </div>
+    <div class="vignette">
+      A 38-year-old female opera singer presents with progressive dysphonia and voice fatigue after intense concert rehearsals. Laryngoscopy reveals bilateral small, smooth nodules located symmetrically at the junction of the anterior one-third and posterior two-thirds of the true vocal folds (vocal cords). A biopsy is obtained to confirm vocal cord nodules (singer's nodes).
+    </div>
+    <div class="stem">
+      Which of the following types of epithelium normally lines the surface of the true vocal cords to provide mechanical protection against repetitive vibratory stress?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Pseudostratified ciliated columnar epithelium containing goblet mucus cells</li>
+      <li><strong>B.</strong> Simple columnar epithelium with prominent apical microvillous borders</li>
+      <li><strong>C.</strong> Non-keratinized stratified squamous epithelium devoid of ciliated cells</li>
+      <li><strong>D.</strong> Keratinized stratified squamous epithelium possessing a stratum corneum</li>
+      <li><strong>E.</strong> Simple cuboidal epithelium interspersed with Clara secretory lipoproteins</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: C</div>
+      <div class="rationale">
+        While the vast majority of the conducting respiratory tract is lined by pseudostratified ciliated columnar epithelium, areas subject to mechanical friction, abrasion, and high-velocity airflow transition to <strong>non-keratinized stratified squamous epithelium</strong>. In the larynx, the <strong>true vocal folds (cords)</strong> and the superior surface of the epiglottis are lined by stratified squamous epithelium to withstand intense mechanical stress during phonation and swallowing.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Pseudostratified ciliated columnar lines the vestibular (false) vocal cords, laryngeal ventricle, and infraglottic space.</li>
+          <li><em>Option B:</em> Simple columnar epithelium is found in the gastrointestinal tract, not the laryngeal folds.</li>
+          <li><em>Option D:</em> Keratinized stratified squamous epithelium is found on the external skin epidermis, not on mucosal vocal folds.</li>
+          <li><em>Option E:</em> Simple cuboidal epithelium with Clara (club) cells characterizes terminal bronchioles.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: RESPIRATORY SYSTEM HISTOLOGY-RES 352.pdf — Slide: "Laryngeal Mucosa Transitions" &amp; Theory Recall Item 38</div>
+    </div>
+  </div>
+
+  <!-- ITEM 7: THORACOCENTESIS LANDMARKS -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 7</span>
+      <span>Category: Clinical Anatomy & Landmarks</span>
+    </div>
+    <div class="vignette">
+      A 62-year-old male with decompensated heart failure develops a massive right-sided pleural effusion causing severe orthopnea. Diagnostic and therapeutic thoracocentesis (pleural tap) is planned to evacuate 1.5 L of fluid. With the patient seated leaning forward, the physician identifies the right midaxillary line and prepares to insert a needle into the costodiaphragmatic recess.
+    </div>
+    <div class="stem">
+      To avoid damaging thoracic and subdiaphragmatic structures, which intercostal space along the midaxillary line should be safely entered, and along which rib border should the needle advance?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Fourth intercostal space, advancing the needle along the inferior border of the fourth rib</li>
+      <li><strong>B.</strong> Sixth intercostal space, advancing the needle along the inferior border of the sixth rib</li>
+      <li><strong>C.</strong> Ninth intercostal space, advancing the needle along the superior border of the tenth rib</li>
+      <li><strong>D.</strong> Eleventh intercostal space, advancing the needle along the superior border of the twelfth rib</li>
+      <li><strong>E.</strong> Twelfth intercostal space, advancing the needle along the inferior border of the twelfth rib</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: C</div>
+      <div class="rationale">
+        Along the <strong>midaxillary line</strong>, the inferior border of the lung reaches the 8th rib, whereas the parietal pleura extends down to the 10th rib, creating the costodiaphragmatic recess between ribs 8 and 10. The ideal site for midaxillary thoracocentesis is the <strong>8th or 9th intercostal space</strong> (typically the 9th intercostal space). The needle must be advanced directly over the <strong>superior border of the lower rib (10th rib)</strong> to avoid injuring the intercostal neurovascular bundle (Vein, Artery, Nerve: VAN) situated in the costal groove along the inferior border of the upper rib.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A & B:</em> The 4th and 6th spaces lie within pulmonary parenchyma; advancing along the inferior border injures the intercostal neurovascular bundle.</li>
+          <li><em>Option D & E:</em> The 11th and 12th intercostal spaces risk penetrating the diaphragm and lacerating the liver (on the right) or spleen (on the left).</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Anatomy of the lower respiratory tract.pdf &amp; Final Exam Recall Item 48</div>
+    </div>
+  </div>
+
+  <!-- ITEM 8: SCEDOSPORIUM RESISTANCE -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 8</span>
+      <span>Category: Medical Microbiology & Mycology</span>
+    </div>
+    <div class="vignette">
+      A 45-year-old male lung transplant recipient maintained on tacrolimus and mycophenolate mofetil develops high fever, hemoptysis, and chest pain 6 months post-transplant. Chest CT reveals multiple nodular cavitary lesions with halo signs. Bronchoalveolar lavage culture grows a filamentous fungus identified as <em>Scedosporium apiospermum</em> (asexual state of <em>Pseudallescheria boydii</em>).
+    </div>
+    <div class="stem">
+      Which of the following antifungal agents is clinically ineffective against this specific fungal pathogen due to inherent intrinsic pharmacological resistance?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Voriconazole
+      <li><strong>B.</strong> Posaconazole
+      <li><strong>C.</strong> Amphotericin B
+      <li><strong>D.</strong> Isavuconazole
+      <li><strong>E.</strong> Itraconazole
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: C</div>
+      <div class="rationale">
+        <em>Scedosporium</em> species (including <em>Scedosporium apiospermum</em> and <em>Lomentospora prolificans</em>) are opportunistic filamentous molds increasingly recognized in immunocompromised hosts. They are notoriously characterized by <strong>intrinsic resistance to Amphotericin B</strong> (polyenes). Voriconazole is the primary antifungal of choice for <em>Scedosporium</em> infections.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Voriconazole is the first-line treatment of choice for invasive scedosporiosis.</li>
+          <li><em>Option B, D, & E:</em> Extended-spectrum triazoles exhibit variable to good activity against <em>Scedosporium</em>, unlike amphotericin B which is completely ineffective.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Respiratory Infections &amp; Clinical Reasoning Study Guide.pdf &amp; Final Exam Recall Item 6</div>
+    </div>
+  </div>
+
+  <!-- ITEM 9: GALACTOMANNAN ANTIGEN TEST -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 9</span>
+      <span>Category: Infectious Disease & Diagnostics</span>
+    </div>
+    <div class="vignette">
+      A 58-year-old female with acute myeloid leukemia undergoing induction chemotherapy develops profound neutropenia (absolute neutrophil count 120/mcL). On day 14 of chemotherapy, she develops persistent fever refractory to broad-spectrum piperacillin-tazobactam, right pleuritic chest pain, and dry cough. High-resolution chest CT reveals a macronodule surrounded by a ground-glass perimeter ("CT halo sign"). A non-invasive serum enzyme immunoassay is ordered to detect a major fungal cell wall carbohydrate antigen.
+    </div>
+    <div class="stem">
+      Which of the following diagnostic biomarkers is specific for confirming invasive infection caused by <em>Aspergillus</em> species?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Serum cryptococcal glucuronoxylomannan antigen assay</li>
+      <li><strong>B.</strong> Serum and bronchoalveolar lavage galactomannan antigen</li>
+      <li><strong>C.</strong> Urinary Histoplasma capsulatum polysaccharide antigen</li>
+      <li><strong>D.</strong> Serum (1,3)-beta-D-glucan pan-fungal cell wall assay</li>
+      <li><strong>E.</strong> Serum cold agglutinin IgM autoantibody titer measurement</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        The detection of <strong>galactomannan antigen</strong> (a polysaccharide component of the cell wall released during active hyphal growth of <em>Aspergillus</em>) in serum or bronchoalveolar lavage (BAL) fluid is a sensitive, validated biomarker for early diagnosis of <strong>Invasive Pulmonary Aspergillosis (IPA)</strong> in neutropenic patients.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Cryptococcal antigen tests for <em>Cryptococcus neoformans</em>, which forms yeast cells in bird/pigeon guano.</li>
+          <li><em>Option C:</em> Urinary Histoplasma antigen tests for <em>Histoplasma capsulatum</em>, an endemic dimorphic fungus.</li>
+          <li><em>Option D:</em> (1,3)-beta-D-glucan is a broad pan-fungal marker (positive in Candida, Aspergillus, and Pneumocystis) and lacks specificity for Aspergillus.</li>
+          <li><em>Option E:</em> Cold agglutinins are IgM antibodies seen in <em>Mycoplasma pneumoniae</em> infections.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Respiratory Infections &amp; Clinical Reasoning Study Guide.pdf &amp; Final Exam Recall Item 7</div>
+    </div>
+  </div>
+
+  <!-- ITEM 10: DUAL BRONCHODILATION IN COPD -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 10</span>
+      <span>Category: Respiratory Pharmacology</span>
+    </div>
+    <div class="vignette">
+      A 66-year-old male with a 45 pack-year smoking history presents for evaluation of chronic breathlessness and morning cough. Post-bronchodilator spirometry demonstrates an FEV1/FVC ratio of 0.58 and an FEV1 of 62% of predicted. His COPD Assessment Test (CAT) score is 16. In the past 12 months, he experienced zero moderate exacerbations and has never required emergency room evaluation or hospital admission.
+    </div>
+    <div class="stem">
+      According to international COPD guidelines (GOLD Category B / symptomatic, non-exacerbator) taught in the pharmacology curriculum, which of the following represents the preferred initial maintenance pharmacological therapy?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> As-needed short-acting beta2-agonist monotherapy during daytime activity</li>
+      <li><strong>B.</strong> Combination long-acting muscarinic antagonist plus long-acting beta2-agonist</li>
+      <li><strong>C.</strong> High-dose inhaled corticosteroid combined with an oral leukotriene antagonist</li>
+      <li><strong>D.</strong> Daily oral phosphodiesterase-4 inhibitor combined with prophylactic azithromycin</li>
+      <li><strong>E.</strong> Inhaled corticosteroid plus long-acting beta2-agonist as first-line controller</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        This patient meets criteria for GOLD Category B (or Group E in recent revisions): high symptom burden (CAT &ge; 10, here 16) but low exacerbation risk (0 exacerbations, no hospitalizations). For patients with significant dyspnea and exercise limitation, first-line maintenance is <strong>dual bronchodilator therapy: a Long-Acting Muscarinic Antagonist (LAMA) combined with a Long-Acting Beta2-Agonist (LABA)</strong> (e.g., tiotropium + olodaterol or umeclidinium + vilanterol). Dual bronchodilation provides superior improvements in FEV1, hyperinflation, and dyspnea compared to either monotherapy.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> SABA monotherapy is inadequate for persistent dyspnea with a CAT score &ge; 10.</li>
+          <li><em>Option C & E:</em> Inhaled corticosteroids are reserved for patients with frequent exacerbations (&ge;2/year or &ge;1 hospitalization) and elevated blood eosinophils (&ge;300 cells/mcL); they are not indicated as first-line in non-exacerbators due to increased pneumonia risk.</li>
+          <li><em>Option D:</em> PDE-4 inhibitors (roflumilast) and azithromycin are add-on options for severe COPD with chronic bronchitis and frequent exacerbations on triple therapy.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Treatment of Bronchial Asthma.pptx &amp; Final Exam Recall Item 11</div>
+    </div>
+  </div>
+
+  <!-- ITEM 11: USUAL INTERSTITIAL PNEUMONIA (IPF) -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 11</span>
+      <span>Category: Restrictive Lung Pathology</span>
+    </div>
+    <div class="vignette">
+      A 67-year-old male presents with a 9-month history of worsening dry cough and progressive exertional dyspnea. Physical examination reveals digital clubbing and bilateral fine, end-inspiratory "Velcro-like" crackles predominantly audible at the lung bases. High-resolution CT of the chest demonstrates bilateral, peripheral, subpleural reticular opacities with subpleural cystic airspaces ("honeycombing") and traction bronchiectasis without discreet mass lesions.
+    </div>
+    <div class="stem">
+      Which of the following histopathological patterns on surgical lung biopsy is diagnostic of this condition?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Diffuse uniform alveolar wall thickening with non-caseating sarcoid granulomas</li>
+      <li><strong>B.</strong> Patchy parenchymal interstitial fibrosis alternating with normal lung and fibroblastic foci</li>
+      <li><strong>C.</strong> Alveolar airspace filling by dense, intra-alveolar polypoid plugs of granulation tissue</li>
+      <li><strong>D.</strong> Widespread intra-alveolar accumulation of pigmented smoker's macrophages in distal sacs</li>
+      <li><strong>E.</strong> Diffuse necrotizing vasculitis of small arteries with neutrophilic nuclear debris</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        The clinical presentation and HRCT features represent Idiopathic Pulmonary Fibrosis (IPF), whose morphological hallmark is the <strong>Usual Interstitial Pneumonia (UIP)</strong> pattern. The diagnostic histological hallmark of UIP is <strong>spatial and temporal heterogeneity</strong>: patchy interstitial fibrosis that varies from field to field, where densely fibrotic collagenous areas with <strong>honeycomb change</strong> alternate with normal lung parenchyma, accompanied by active <strong>fibroblastic foci</strong>.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Non-caseating granulomas along lymphatic routes characterize pulmonary sarcoidosis.</li>
+          <li><em>Option C:</em> Intra-alveolar plugs of loose organizing connective tissue (Masson bodies) define Cryptogenic Organizing Pneumonia (COP / BOOP).</li>
+          <li><em>Option D:</em> Intra-alveolar accumulation of pigmented macrophages defines Respiratory Bronchiolitis-Interstitial Lung Disease (RB-ILD) and Desquamative Interstitial Pneumonia (DIP).</li>
+          <li><em>Option E:</em> Necrotizing vasculitis defines Granulomatosis with Polyangiitis (Wegener's).</li>
+        </ul>
+      </div>
+      <div class="citation">Source: PostLecture 2 - Restrictive Lung Disease Complete.pdf &amp; TBL Year 3 Recall Items 15 &amp; 16</div>
+    </div>
+  </div>
+
+  <!-- ITEM 12: BRONCHIECTASIS HISTOPATHOLOGY -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 12</span>
+      <span>Category: Chronic Obstructive Pathology</span>
+    </div>
+    <div class="vignette">
+      A 34-year-old female with a childhood history of severe necrotizing adenovirus pneumonia presents with chronic daily production of copious, foul-smelling, purulent, three-layered sputum and recurrent hemoptysis. Chest CT reveals abnormal, irreversible dilation of segmental and subsegmental bronchi extending to within 1 cm of the pleural surface, with signet-ring airway configurations. Spirometry demonstrates an obstructive pattern with an FEV1/FVC ratio of 0.61.
+    </div>
+    <div class="stem">
+      Which of the following microscopic descriptions represents the hallmark histopathological finding within the affected bronchial walls?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Marked hypertrophy of smooth muscle bundles with prominent eosinophilic crystalline Charcot-Leyden deposits</li>
+      <li><strong>B.</strong> Transmural intense mixed acute and chronic inflammation with destruction of elastic and muscular wall layers</li>
+      <li><strong>C.</strong> Marked hyperplasia of submucosal seromucous glands with a Reid index exceeding fifty percent</li>
+      <li><strong>D.</strong> Extensive replacement of pseudostratified epithelium by well-differentiated keratinizing stratified squamous sheets</li>
+      <li><strong>E.</strong> Subpleural non-inflammatory destruction of terminal alveolar septa without architectural fibrosis</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        The patient has <strong>bronchiectasis</strong>, characterized by permanent abnormal dilation of bronchi and bronchioles caused by a vicious cycle of infection and transmural inflammation. Histopathologically, the bronchial walls show <strong>intense, mixed acute and chronic inflammatory cell infiltration</strong> (neutrophils, lymphocytes, plasma cells), mucosal ulceration, and <strong>complete enzymatic destruction of supporting elastic fibers, smooth muscle, and cartilage</strong>, leading to structural collapse and dilation.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Smooth muscle hypertrophy with eosinophils and Charcot-Leyden crystals defines bronchial asthma.</li>
+          <li><em>Option C:</em> Submucosal gland hyperplasia with an elevated Reid index (>0.50) defines chronic bronchitis.</li>
+          <li><em>Option D:</em> Squamous metaplasia is an adaptive response to cigarette smoke, but not the primary destructive hallmark of bronchiectasis.</li>
+          <li><em>Option E:</em> Destruction of alveolar septa without fibrosis defines emphysema.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Post Lecture 1 - Obstructive Lung Disease.pdf &amp; TBL Year 3 Recall Items 13 &amp; 14</div>
+    </div>
+  </div>
+
+  <!-- ITEM 13: GOODPASTURE SYNDROME (ANTI-GBM) -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 13</span>
+      <span>Category: Pulmonary-Renal Syndromes</span>
+    </div>
+    <div class="vignette">
+      A 23-year-old male presents with a 4-day history of hemoptysis, dyspnea, fatigue, and dark cola-colored urine. Laboratory evaluation reveals a serum creatinine of 3.8 mg/dL (baseline 0.9 mg/dL), urinalysis with red blood cell casts and proteinuria, and diffuse alveolar infiltrates on chest radiograph. Direct immunofluorescence of a renal core biopsy demonstrates smooth, linear deposition of IgG and complement along the glomerular basement membranes.
+    </div>
+    <div class="stem">
+      Which of the following molecular targets is the autoantigen bound by the pathogenic antibodies responsible for this patient's pulmonary and renal manifestations?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Neutrophil cytoplasmic proteinase-3 enzyme within azurophilic granules</li>
+      <li><strong>B.</strong> Non-collagenous domain of the alpha-3 chain of basement membrane type IV collagen</li>
+      <li><strong>C.</strong> Epithelial transmembrane chloride conductance regulator channel protein</li>
+      <li><strong>D.</strong> Desmosomal cadherin desmoglein-3 bridging intercellular epidermal junctions</li>
+      <li><strong>E.</strong> Myeloperoxidase enzyme associated with surrounding nuclear membranes</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        The patient presents with <strong>Goodpasture syndrome (Anti-Glomerular Basement Membrane [Anti-GBM] disease)</strong>, a classic Type II hypersensitivity autoimmune disease. Circulating pathogenic antibodies target the <strong>non-collagenous domain 1 (NC1) of the alpha-3 chain of Type IV collagen</strong> (found in both glomerular and pulmonary alveolar basement membranes). Cross-reactivity between alveolar septa and renal glomeruli results in the clinical triad of diffuse pulmonary hemorrhage (hemoptysis) and rapidly progressive glomerulonephritis (hematuria, RBC casts, renal failure), characterized by pathognomonic <strong>linear IgG immunofluorescence</strong>.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Proteinase-3 (PR3-ANCA / c-ANCA) is the target in Granulomatosis with Polyangiitis (Wegener's), which shows pauci-immune crescentic GN (not linear IgG).</li>
+          <li><em>Option C:</em> CFTR protein mutation causes cystic fibrosis.</li>
+          <li><em>Option D:</em> Desmoglein-3 autoantibodies cause pemphigus vulgaris (blistering skin disease).</li>
+          <li><em>Option E:</em> Myeloperoxidase (MPO-ANCA / p-ANCA) is targeted in microscopic polyangiitis and Churg-Strauss syndrome.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: PostLecture 2 - Restrictive Lung Disease Complete.pdf &amp; Final Exam Recall Item 50</div>
+    </div>
+  </div>
+
+  <!-- ITEM 14: ABG ARTERIAL SAMPLING PROTOCOL -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 14</span>
+      <span>Category: Clinical Laboratory Investigations</span>
+    </div>
+    <div class="vignette">
+      A 60-year-old male in the intensive care unit with acute hypoxemic respiratory failure requires arterial blood gas (ABG) analysis to assess acid-base balance and oxygenation. A junior resident prepares to draw the sample from the right radial artery following a normal modified Allen's test.
+    </div>
+    <div class="stem">
+      According to standard clinical laboratory protocols detailed in the course curriculum, which of the following represents the appropriate blood volume and processing timeframe for an un-iced sample?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Collect approximately 1 mL into a pre-heparinized syringe and analyze within twenty minutes</li>
+      <li><strong>B.</strong> Collect approximately 5 mL into a non-heparinized tube and analyze within sixty minutes</li>
+      <li><strong>C.</strong> Collect approximately 10 mL into an EDTA tube and centrifuge immediately within five minutes</li>
+      <li><strong>D.</strong> Collect approximately 3 mL into a sodium citrate tube and process within ninety minutes</li>
+      <li><strong>E.</strong> Collect approximately 0.5 mL into a lithium fluoride vial and store at room temperature overnight</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: A</div>
+      <div class="rationale">
+        According to the clinical laboratory protocols in the curriculum, standard arterial blood gas collection requires <strong>approximately 1 mL of arterial blood drawn into a pre-heparinized syringe</strong> (to prevent clotting while avoiding dilutional artifact from liquid heparin). The sample must be analyzed <strong>within 20 minutes</strong> if kept at room temperature. Delaying analysis causes continued cellular metabolism (leukocytes and erythrocytes consume O2 and generate CO2), leading to falsely low PaO2, elevated PaCO2, and acidosis.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option B, C, D, & E:</em> Tubes without heparin will clot immediately; collecting 5–10 mL is unnecessary for gas analysis; delaying analysis to 60–90 minutes without ice severely alters blood gas values through erythrocyte metabolism.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: ABG acid-base balance.pdf &amp; TBL Year 3 Recall Item 10</div>
+    </div>
+  </div>
+
+  <!-- ITEM 15: PHYSIOLOGICAL RESPIRATORY ADAPTATIONS IN PREGNANCY -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 15</span>
+      <span>Category: Obstetric Respiratory Medicine</span>
+    </div>
+    <div class="vignette">
+      A 28-year-old primigravida at 30 weeks of gestation presents for routine prenatal care. She reports mild, gradual exertional shortness of breath when climbing stairs, but denies cough, wheezing, orthopnea, or chest pain. Her physical examination is entirely normal. Blood pressure is 114/72 mmHg, pulse is 76/min, and respiratory rate is 16 breaths per minute with an oxygen saturation of 99% on room air.
+    </div>
+    <div class="stem">
+      Which of the following physiological respiratory parameters typically remains **unchanged** throughout normal, uncomplicated pregnancy?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Tidal volume (VT)
+      <li><strong>B.</strong> Minute ventilation (VE)
+      <li><strong>C.</strong> Resting respiratory rate (RR)
+      <li><strong>D.</strong> Maternal oxygen consumption (VO2)
+      <li><strong>E.</strong> Functional residual capacity (FRC)
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: C</div>
+      <div class="rationale">
+        Under the influence of elevated circulating <strong>progesterone</strong>, maternal minute ventilation increases by 30% to 50% primarily via an increase in <strong>tidal volume (VT)</strong> (deeper breaths), while the <strong>resting respiratory rate remains essentially unchanged</strong>. FRC decreases by ~20% as the enlarging gravid uterus elevates the diaphragm by up to 4 cm; maternal oxygen consumption increases by 20% to 30% to meet fetal and placental metabolic demands.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A & B:</em> Tidal volume and minute ventilation increase substantially due to progesterone-mediated stimulation of the respiratory center.</li>
+          <li><em>Option D:</em> Maternal oxygen consumption increases significantly throughout gestation.</li>
+          <li><em>Option E:</em> Functional residual capacity (FRC) decreases as diaphragmatic elevation reduces resting lung volume.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Respiratory_Diseases_in_Pregnancy_Year3_November 2026.pdf — Slide: "Normal Respiratory Adaptation" &amp; Final Exam Recall Item 14</div>
+    </div>
+  </div>
+
+  <!-- ITEM 16: MONTELUKAST PSYCHIATRIC TOXICITY -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 16</span>
+      <span>Category: Pharmacology & Adverse Reactions</span>
+    </div>
+    <div class="vignette">
+      A 12-year-old boy with mild persistent asthma and allergic rhinitis is prescribed oral montelukast tablets once daily at bedtime. Four weeks later, his mother brings him back to the clinic expressing grave concern. She reports that he has become uncharacteristically irritable and aggressive, has experienced frequent night terrors with vivid nightmares, and has expressed sudden feelings of depression.
+    </div>
+    <div class="stem">
+      Which of the following regulatory warnings is associated with this class of leukotriene receptor antagonists?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Irreversible sensorineural cochlear ototoxicity requiring auditory screening</li>
+      <li><strong>B.</strong> Boxed warning regarding serious neuropsychiatric and behavioral disturbances</li>
+      <li><strong>C.</strong> Accelerated renal tubular calcification leading to nephrogenic diabetes</li>
+      <li><strong>D.</strong> Severe acute hemolytic anemia associated with erythrocyte glucose-6-phosphate deficiency</li>
+      <li><strong>E.</strong> Fatal bone marrow aplasia secondary to idiosyncratic stem cell suppression</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        <strong>Montelukast</strong> (a CysLT1 receptor antagonist) carries an explicit <strong>FDA Boxed Warning regarding serious neuropsychiatric events</strong>. Reported adverse effects include agitation, aggressive behavior, nightmares, sleep disturbances, hallucinations, depression, and suicidal thoughts. Clinicians are instructed to counsel families regarding these behavioral risks and discontinue the medication promptly if psychiatric symptoms arise.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Ototoxicity is associated with aminoglycosides (streptomycin) and loop diuretics.</li>
+          <li><em>Option C:</em> Nephrogenic diabetes insipidus is linked to lithium therapy.</li>
+          <li><em>Option D:</em> Hemolytic anemia in G6PD deficiency is triggered by dapsone, primaquine, and rasburicase.</li>
+          <li><em>Option E:</em> Aplastic anemia is famously associated with chloramphenicol and carbamazepine.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Treatment of Bronchial Asthma.pptx &amp; Final Exam Recall Item 88</div>
+    </div>
+  </div>
+
+  <!-- ITEM 17: MYCOPLASMA COLD AGGLUTININS -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 17</span>
+      <span>Category: Microbiology & Hematology</span>
+    </div>
+    <div class="vignette">
+      A 19-year-old military recruit presents with 2 weeks of dry cough, malaise, and low-grade fever. Physical examination reveals mild pallor and scattered bilateral rhonchi. A peripheral blood smear exhibits red blood cell clumping at room temperature that dissolves upon warming to 37°C. Sputum PCR confirms <em>Mycoplasma pneumoniae</em>.
+    </div>
+    <div class="stem">
+      Which of the following immunoglobulins and target erythrocyte surface antigens mediates this autoimmune agglutination phenomenon?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Monomeric IgG antibodies directed against the erythrocyte Rh(D) protein antigen</li>
+      <li><strong>B.</strong> Pentameric IgM autoantibodies directed against the erythrocyte I carbohydrate antigen</li>
+      <li><strong>C.</strong> Secretory dimeric IgA antibodies directed against glycophorin A surface glycoproteins</li>
+      <li><strong>D.</strong> Circulating IgE antibodies directed against spectrin intracellular scaffolding fibers</li>
+      <li><strong>E.</strong> Polyclonal IgG antibodies binding directly to Duffy chemokine surface receptors</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: B</div>
+      <div class="rationale">
+        <em>Mycoplasma pneumoniae</em> shares antigenic mimicry with erythrocyte membrane carbohydrates. Infection triggers the production of <strong>cold agglutinins: polyclonal IgM antibodies directed against the I antigen on human erythrocytes</strong>. At lower temperatures (e.g., in peripheral acral capillary beds at 0°C to 4°C), these pentameric IgM antibodies bind erythrocytes and fix complement, leading to agglutination, transient acrocyanosis, and mild extravascular hemolysis.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Warm autoimmune hemolytic anemia is mediated by warm-reactive IgG directed against Rh antigens.</li>
+          <li><em>Option C, D, & E:</em> Cold agglutinin disease is mediated by IgM against the I antigen, not IgA, IgE, or Duffy/spectrin interactions.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Treatment of Respiratory Bacterial Infections.pptx &amp; Final Exam Recall Item 53</div>
+    </div>
+  </div>
+
+  <!-- ITEM 18: DEFINITION OF EXTENSIVELY DRUG-RESISTANT TB (XDR-TB) -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 18</span>
+      <span>Category: Pharmacology & Tuberculosis</span>
+    </div>
+    <div class="vignette">
+      A 48-year-old male immigrant from an area with high prevalence of refractory tuberculosis is admitted with persistent cavitary pulmonary disease despite compliance with multiple antitubercular courses. Sputum cultures grow <em>Mycobacterium tuberculosis</em>. Drug susceptibility testing confirms resistance to isoniazid, rifampicin, levofloxacin, and amikacin.
+    </div>
+    <div class="stem">
+      According to World Health Organization criteria detailed in the pharmacology course, which of the following categories correctly classifies this mycobacterial strain?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Monoresistant tuberculosis</li>
+      <li><strong>B.</strong> Polyresistant tuberculosis</li>
+      <li><strong>C.</strong> Multidrug-resistant tuberculosis (MDR-TB)</li>
+      <li><strong>D.</strong> Extensively drug-resistant tuberculosis (XDR-TB)</li>
+      <li><strong>E.</strong> Pan-susceptible tuberculosis</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: D</div>
+      <div class="rationale">
+        By definition, <strong>Multidrug-Resistant TB (MDR-TB)</strong> refers to resistance to at least <strong>both Isoniazid and Rifampicin</strong>. <strong>Extensively Drug-Resistant TB (XDR-TB)</strong> is defined as MDR-TB (resistant to both isoniazid and rifampicin) plus resistance to <strong>any fluoroquinolone</strong> (e.g., levofloxacin or moxifloxacin) AND at least <strong>one second-line injectable agent</strong> (e.g., amikacin, capreomycin, or kanamycin) or bedaquiline/linezolid in updated WHO definitions.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A:</em> Monoresistant TB is resistance to only one first-line drug.</li>
+          <li><em>Option B:</em> Polyresistant TB is resistance to two or more first-line drugs, but not to both isoniazid and rifampicin together.</li>
+          <li><em>Option C:</em> MDR-TB is resistant to isoniazid and rifampicin, but retains susceptibility to fluoroquinolones and second-line injectables.</li>
+          <li><em>Option E:</em> Pan-susceptible implies full susceptibility to all first-line agents.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Treatment of Tuberculosis.pptx &amp; Final Exam Recall Item 82</div>
+    </div>
+  </div>
+
+  <!-- ITEM 19: CEFTRIAXONE BILIARY EXCRETION -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 19</span>
+      <span>Category: Antimicrobial Pharmacokinetics</span>
+    </div>
+    <div class="vignette">
+      An 81-year-old female with severe chronic kidney disease (baseline estimated GFR 18 mL/min/1.73m²) is admitted to the hospital with acute community-acquired lobar pneumonia. Empiric therapy requires an intravenous third-generation cephalosporin active against <em>Streptococcus pneumoniae</em>.
+    </div>
+    <div class="stem">
+      Which of the following beta-lactam antibiotics can be administered at standard therapeutic doses without requiring dosage reduction in patients with severe renal impairment?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Cefotaxime
+      <li><strong>B.</strong> Cefepime
+      <li><strong>C.</strong> Ceftriaxone
+      <li><strong>D.</strong> Ceftazidime
+      <li><strong>E.</strong> Ampicillin
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: C</div>
+      <div class="rationale">
+        Unlike almost all other cephalosporins and beta-lactams, which are eliminated primarily by glomerular filtration and tubular secretion and thus accumulate toxically in renal failure, <strong>ceftriaxone</strong> undergoes dual elimination. It is excreted <strong>predominantly via the biliary system into the feces (~40% to 50%)</strong> as well as via the kidneys. Consequently, no dosage adjustment is necessary in patients with isolated renal impairment unless concomitant severe hepatic failure is present.
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option A, B, D, & E:</em> Cefotaxime, cefepime, ceftazidime, and ampicillin are eliminated almost exclusively via renal clearance; failure to reduce doses in severe renal failure can cause drug accumulation and severe neurotoxicity (encephalopathy, myoclonus, seizures).</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Treatment of Respiratory Bacterial Infections.pptx &amp; Final Exam Recall Item 83</div>
+    </div>
+  </div>
+
+  <!-- ITEM 20: HERBAL COUGH THERAPY (DRIED IVY EXTRACT) -->
+  <div class="question-card">
+    <div class="meta-bar">
+      <span>Question 20</span>
+      <span>Category: Pharmacology of Cough</span>
+    </div>
+    <div class="vignette">
+      The parents of a 5-year-old girl present to an outpatient clinic seeking a safe over-the-counter remedy for their daughter's dry, irritating cough associated with a mild viral upper respiratory tract infection. The mother is hesitant to give opioid suppressants or synthetic chemical antitussives and requests an evidence-based plant-derived herbal preparation.
+    </div>
+    <div class="stem">
+      Which of the following botanical extracts is clinically indicated in pediatric patients to relieve respiratory spasms and facilitate secretolysis?
+    </div>
+    <ul class="options">
+      <li><strong>A.</strong> Standardized dried ivy leaf extract (<em>Hedera helix</em>)</li>
+      <li><strong>B.</strong> St. John's Wort extract (<em>Hypericum perforatum</em>)</li>
+      <li><strong>C.</strong> Concentrated Gingko biloba leaf extract</li>
+      <li><strong>D.</strong> Purified evening primrose oil suspension</li>
+      <li><strong>E.</strong> Standardized black cohosh root extract</li>
+    </ul>
+    <div class="explanation">
+      <div class="correct-badge">Correct Answer: A</div>
+      <div class="rationale">
+        <strong>Dried ivy leaf extract (<em>Hedera helix</em>)</strong> is a recognized herbal preparation used in cough syrups (e.g., Prospan) for children and adults. Its active triterpene saponins (notably hederacoside C and alpha-hederin) inhibit the internalization of beta2-adrenergic receptors in airway smooth muscle cells and alveolar type II cells. This produces dual therapeutic actions: <strong>secretolysis</strong> (reduces mucus viscosity by promoting surfactant release) and <strong>bronchospasmolysis</strong> (smooth muscle relaxation).
+      </div>
+      <div class="distractors">
+        <strong>Distractor Breakdown:</strong>
+        <ul>
+          <li><em>Option B:</em> St. John's Wort is an herbal remedy for mild depression notorious for inducing cytochrome P450 enzymes.</li>
+          <li><em>Option C:</em> Ginkgo biloba is marketed for cognitive enhancement and peripheral vascular disease.</li>
+          <li><em>Option D & E:</em> Evening primrose oil and black cohosh are used for gynecological symptoms and menopausal flushes.</li>
+        </ul>
+      </div>
+      <div class="citation">Source: Treatment of Cough.pptx &amp; TBL Year 3 Recall Item 5</div>
+    </div>
+  </div>
+
+</body>
+</html>
